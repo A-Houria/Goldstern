@@ -19,7 +19,7 @@ a {
   color: white;
   text-decoration: none;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 1vw;
   letter-spacing: 2px;
   font-weight: 400;
   transition: all 0.3s ease-in;
@@ -188,89 +188,97 @@ a {
     }
     .home {
       overflow: hidden;
-      .hero {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        color: black;
-        padding: 50px 0px;
 
-        .text {
+      .hero {
+        width: 100%;
+        aspect-ratio: 16/9;
+        margin: 0px auto;
+        position: relative;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 3.5vw;
+        .heading-1 {
+          position: absolute;
+          top: 10%;
+          left: 20%;
+        }
+        .heading-2 {
+          position: absolute;
+          top: 23%;
+          left: 20%;
+        }
+
+        img {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          filter: brightness(0.8);
+          z-index: -1;
+        }
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
+        width: fit-content;
+        width: 100%;
+        h1 {
+          letter-spacing: 2px;
+          font-size: 3.5vw;
+          font-weight: 400;
+          margin: 20px 0px;
+          align-self: center;
+        }
+        .services {
           display: flex;
           flex-direction: column;
-          margin-left: 25px;
-          width: fit-content;
+          align-items: center;
+          justify-content: space-between;
           width: 100%;
-          h1 {
-            letter-spacing: 2px;
-            font-size: 42px;
-            font-weight: 400;
-            margin: 20px 0px;
-            align-self: flex-start;
-          }
-          .services {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
+          padding: 0px 10%;
+          .services-list {
+            list-style: none;
             width: 100%;
-            padding: 0px 10%;
-            .services-list {
-              list-style: none;
-              width: 100%;
-              align-self: flex-start;
-              li {
-                letter-spacing: 2px;
-                margin: 25px auto;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                text-wrap: nowrap;
-                font-size: 18px;
-                letter-spacing: 2px;
-                border: 2px solid black;
-                border-radius: 7px;
-                padding: 10px 0px;
-                cursor: default;
-                user-select: none;
-                img {
-                  max-width: 25px;
-                  margin-right: 5px;
-                }
-                @for $i from 1 through 4 {
-                  &:nth-child(#{$i}) {
-                    padding-left: $i * 10%;
-                  }
+            align-self: flex-start;
+            li {
+              letter-spacing: 2px;
+              margin: 25px auto;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              text-wrap: nowrap;
+              font-size: 1vw;
+              letter-spacing: 2px;
+              border: 2px solid black;
+              border-radius: 7px;
+              padding: 10px 0px;
+              cursor: default;
+              user-select: none;
+              img {
+                max-width: 1.5vw;
+                margin-right: 5px;
+              }
+              @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                  padding-left: $i * 10%;
                 }
               }
             }
           }
-        }
-        .hero-image {
-          transform: translateX(10%);
-          border-top-left-radius: 13px;
-          border-bottom-left-radius: 13px;
-          aspect-ratio: 1/1;
-          width: 45%;
         }
       }
       .featured {
         margin: 50px;
 
         .header {
-          font-size: 64px;
+          font-size: 3.5vw;
           margin-top: 150px;
           margin-bottom: 50px;
           text-align: center;
         }
         h1 {
-          font-size: 42px;
+          font-size: 3.5px;
           font-weight: 400;
           letter-spacing: 3px;
         }
@@ -302,7 +310,7 @@ a {
               h1 {
                 text-align: center;
                 width: 100%;
-                font-size: 22px;
+                font-size: 1.5vw;
                 letter-spacing: 3px;
                 margin: 15px;
               }
@@ -317,7 +325,7 @@ a {
                   display: flex;
                   flex-direction: row;
                   align-items: center;
-                  font-size: 16px;
+                  font-size: 1vw;
                   letter-spacing: 2px;
                   font-weight: 400;
                   text-align: start;
@@ -325,7 +333,7 @@ a {
                   color: grey;
 
                   img {
-                    width: 25px;
+                    width: 1.5vw;
                     margin: 0px 10px;
                   }
                 }
@@ -341,7 +349,7 @@ a {
         h1 {
           text-align: center;
           letter-spacing: 2px;
-          font-size: 52px;
+          font-size: 3.5vw;
           font-weight: 400;
           margin: 25px;
         }
@@ -352,13 +360,13 @@ a {
 
           h1 {
             text-align: start;
-            font-size: 42px;
+            font-size: 2.5vw;
             letter-spacing: 2px;
             font-weight: 400;
           }
           .process-list {
             list-style: none;
-            font-size: 20px;
+            font-size: 1.2vw;
             letter-spacing: 2px;
 
             li {
@@ -373,13 +381,13 @@ a {
           padding: 0px 50px;
           h1 {
             text-align: start;
-            font-size: 42px;
+            font-size: 2.5vw;
             letter-spacing: 2px;
             font-weight: 400;
           }
           p {
             padding: 0px 45px;
-            font-size: 20px;
+            font-size: 1.2vw;
             letter-spacing: 2px;
           }
         }

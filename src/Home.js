@@ -12,34 +12,36 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="hero" data-aos="fade-left">
-        <div className="text">
-          <div className="services" data-aos="fade-right">
-            <h1>Our Services</h1>
-            <ul className="services-list">
-              <li data-aos="fade-right">
-                <img src="./Icons/fast-delivery.png" alt="fast delivery" />
-                Fastest Shipping (40 Days)
-              </li>
-              <li data-aos="fade-right" data-aos-delay="100">
-                <img src="./Icons/discount.png" alt="cheapest Shipping" />
-                Cheapest Shipping
-              </li>
-              <li data-aos="fade-right" data-aos-delay="200">
-                <img src="./Icons/secure.png" alt="Most Secure shipping" />
-                Most Secure shipping
-              </li>
-              <li data-aos="fade-right" data-aos-delay="300">
-                <img
-                  src="./Icons/guaranteed.png"
-                  alt="Guaranteed Delivery promises"
-                />
-                Guaranteed Delivery promises
-              </li>
-            </ul>
-          </div>
+      <div className="hero" data-aos="fade-up">
+        <h1 className="heading-1">SAVE BIG,</h1>
+        <h1 className="heading-2">DRIVE BOLD.</h1>
+        <img src="./Icons/hero.png" alt="background" className="hero" />
+      </div>
+      <div className="text">
+        <div className="services" data-aos="fade-right">
+          <h1>Our Services</h1>
+          <ul className="services-list">
+            <li data-aos="fade-right">
+              <img src="./Icons/fast-delivery.png" alt="fast delivery" />
+              Fastest Shipping (40 Days)
+            </li>
+            <li data-aos="fade-right" data-aos-delay="100">
+              <img src="./Icons/discount.png" alt="cheapest Shipping" />
+              Cheapest Shipping
+            </li>
+            <li data-aos="fade-right" data-aos-delay="200">
+              <img src="./Icons/secure.png" alt="Most Secure shipping" />
+              Most Secure shipping
+            </li>
+            <li data-aos="fade-right" data-aos-delay="300">
+              <img
+                src="./Icons/guaranteed.png"
+                alt="Guaranteed Delivery promises"
+              />
+              Guaranteed Delivery promises
+            </li>
+          </ul>
         </div>
-        <img src="./Icons/hero.jpg" alt="background" className="hero-image" />
       </div>
 
       <div className="featured" data-aos="fade-left">
@@ -156,33 +158,33 @@ const Home = () => {
         <div className="process" data-aos="fade-right">
           <h1>Step By Step Process</h1>
           <ul className="process-list">
-            <li data-aos="fade-up">1. Choosing your car</li>
-            <li data-aos="fade-up" data-aos-delay="100">
+            <li data-aos="fade-right">1. Choosing your car</li>
+            <li data-aos="fade-right" data-aos-delay="100">
               2. Configuring your car options
             </li>
-            <li data-aos="fade-up" data-aos-delay="200">
+            <li data-aos="fade-right" data-aos-delay="200">
               3. Buying the car
             </li>
-            <li data-aos="fade-up" data-aos-delay="300">
+            <li data-aos="fade-right" data-aos-delay="300">
               4. Shipping it to Egypt
             </li>
-            <li data-aos="fade-up" data-aos-delay="400">
+            <li data-aos="fade-right" data-aos-delay="400">
               5. Finishing Customs and Paperwork
             </li>
-            <li data-aos="fade-up" data-aos-delay="500">
+            <li data-aos="fade-right" data-aos-delay="500">
               6. Delivering the car to your doorstep
             </li>
           </ul>
         </div>
-        <div className="customs" data-aos="fade-left">
-          <h1 data-aos="fade-up">Customs & Paperwork</h1>
-          <p data-aos="fade-up" data-aos-delay="100">
+        <div className="customs" data-aos="fade-up">
+          <h1 data-aos="fade-left">Customs & Paperwork</h1>
+          <p data-aos="fade-right" data-aos-delay="100">
             What we handle for you
           </p>
         </div>
-        <div className="support" data-aos="fade-right">
-          <h1 data-aos="fade-up">After-Sales Support</h1>
-          <p data-aos="fade-up" data-aos-delay="100">
+        <div className="support" data-aos="fade-up">
+          <h1 data-aos="fade-left">After-Sales Support</h1>
+          <p data-aos="fade-right" data-aos-delay="100">
             Warranty and maintenance information
           </p>
         </div>

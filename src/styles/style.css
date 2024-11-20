@@ -17,7 +17,7 @@ a {
   color: white;
   text-decoration: none;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 1vw;
   letter-spacing: 2px;
   font-weight: 400;
   transition: all 0.3s ease-in;
@@ -193,19 +193,33 @@ a {
   overflow: hidden;
 }
 .app .layout .home .hero {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  overflow-x: hidden;
   width: 100%;
+  aspect-ratio: 16/9;
+  margin: 0px auto;
   position: relative;
-  overflow: hidden;
-  color: black;
-  padding: 50px 0px;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 3.5vw;
 }
-.app .layout .home .hero .text {
+.app .layout .home .hero .heading-1 {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+.app .layout .home .hero .heading-2 {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+}
+.app .layout .home .hero img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.8);
+  z-index: -1;
+}
+.app .layout .home .text {
   display: flex;
   flex-direction: column;
   margin-left: 25px;
@@ -213,14 +227,14 @@ a {
   width: fit-content;
   width: 100%;
 }
-.app .layout .home .hero .text h1 {
+.app .layout .home .text h1 {
   letter-spacing: 2px;
-  font-size: 42px;
+  font-size: 3.5vw;
   font-weight: 400;
   margin: 20px 0px;
-  align-self: flex-start;
+  align-self: center;
 }
-.app .layout .home .hero .text .services {
+.app .layout .home .text .services {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,19 +242,19 @@ a {
   width: 100%;
   padding: 0px 10%;
 }
-.app .layout .home .hero .text .services .services-list {
+.app .layout .home .text .services .services-list {
   list-style: none;
   width: 100%;
   align-self: flex-start;
 }
-.app .layout .home .hero .text .services .services-list li {
+.app .layout .home .text .services .services-list li {
   letter-spacing: 2px;
   margin: 25px auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-wrap: nowrap;
-  font-size: 18px;
+  font-size: 1vw;
   letter-spacing: 2px;
   border: 2px solid black;
   border-radius: 7px;
@@ -250,40 +264,33 @@ a {
      -moz-user-select: none;
           user-select: none;
 }
-.app .layout .home .hero .text .services .services-list li img {
-  max-width: 25px;
+.app .layout .home .text .services .services-list li img {
+  max-width: 1.5vw;
   margin-right: 5px;
 }
-.app .layout .home .hero .text .services .services-list li:nth-child(1) {
+.app .layout .home .text .services .services-list li:nth-child(1) {
   padding-left: 10%;
 }
-.app .layout .home .hero .text .services .services-list li:nth-child(2) {
+.app .layout .home .text .services .services-list li:nth-child(2) {
   padding-left: 20%;
 }
-.app .layout .home .hero .text .services .services-list li:nth-child(3) {
+.app .layout .home .text .services .services-list li:nth-child(3) {
   padding-left: 30%;
 }
-.app .layout .home .hero .text .services .services-list li:nth-child(4) {
+.app .layout .home .text .services .services-list li:nth-child(4) {
   padding-left: 40%;
-}
-.app .layout .home .hero .hero-image {
-  transform: translateX(10%);
-  border-top-left-radius: 13px;
-  border-bottom-left-radius: 13px;
-  aspect-ratio: 1/1;
-  width: 45%;
 }
 .app .layout .home .featured {
   margin: 50px;
 }
 .app .layout .home .featured .header {
-  font-size: 64px;
+  font-size: 3.5vw;
   margin-top: 150px;
   margin-bottom: 50px;
   text-align: center;
 }
 .app .layout .home .featured h1 {
-  font-size: 42px;
+  font-size: 3.5px;
   font-weight: 400;
   letter-spacing: 3px;
 }
@@ -318,7 +325,7 @@ a {
 .app .layout .home .featured .cards .card .text h1 {
   text-align: center;
   width: 100%;
-  font-size: 22px;
+  font-size: 1.5vw;
   letter-spacing: 3px;
   margin: 15px;
 }
@@ -334,7 +341,7 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 16px;
+  font-size: 1vw;
   letter-spacing: 2px;
   font-weight: 400;
   text-align: start;
@@ -342,7 +349,7 @@ a {
   color: grey;
 }
 .app .layout .home .featured .cards .card .text .parts p img {
-  width: 25px;
+  width: 1.5vw;
   margin: 0px 10px;
 }
 .app .layout .home .details {
@@ -353,7 +360,7 @@ a {
 .app .layout .home .details h1 {
   text-align: center;
   letter-spacing: 2px;
-  font-size: 52px;
+  font-size: 3.5vw;
   font-weight: 400;
   margin: 25px;
 }
@@ -364,13 +371,13 @@ a {
 }
 .app .layout .home .details .process h1 {
   text-align: start;
-  font-size: 42px;
+  font-size: 2.5vw;
   letter-spacing: 2px;
   font-weight: 400;
 }
 .app .layout .home .details .process .process-list {
   list-style: none;
-  font-size: 20px;
+  font-size: 1.2vw;
   letter-spacing: 2px;
 }
 .app .layout .home .details .process .process-list li {
@@ -385,14 +392,14 @@ a {
 .app .layout .home .details .customs h1,
 .app .layout .home .details .support h1 {
   text-align: start;
-  font-size: 42px;
+  font-size: 2.5vw;
   letter-spacing: 2px;
   font-weight: 400;
 }
 .app .layout .home .details .customs p,
 .app .layout .home .details .support p {
   padding: 0px 45px;
-  font-size: 20px;
+  font-size: 1.2vw;
   letter-spacing: 2px;
 }
 .app .layout .about {
