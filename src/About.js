@@ -51,12 +51,31 @@ const About = () => {
       <div className="story" data-aos="fade-up">
         <h1>Our Story</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-          ullam dignissimos expedita distinctio perferendis rerum, totam, dolore
-          eos ab mollitia deserunt sint perspiciatis molestias? Recusandae,
-          commodi cumque impedit possimus eius eveniet voluptas assumenda.
-          Molestiae omnis voluptatibus debitis animi quasi maxime! Quo mollitia
-          est sit, quaerat tempore corporis molestiae distinctio ab?
+          It all started with a passion, When Abderhaman Horia, a brilliant car
+          engineer who set out to make a difference. While studying automotive
+          engineering in Germany. Abderhaman noticed a Huge gap between the car
+          industry in Egypt and Europe. The result? Overpriced vehicles and a
+          limited selection for Egyptian car enthusiasts.
+        </p>
+        <p>
+          But he couldn’t do it alone. Mr. Mostafa Shafie, his trusted partner
+          and co-founder, joined him on this ambitious journey. Together, they
+          launched Goldstern in 2019, with a clear mission: to close the gap and
+          offer Egyptian consumers access to the finest European cars at
+          reasonable prices. In the early years, Goldstern focused on B2B deals,
+          importing unique and luxury cars to Egypt, and helping businesses and
+          dealers get access to these high-demand vehicles.
+        </p>
+        <p>
+          By the end of 2023, after exporting over 5,000 cars to Egypt and the
+          Arabian world—Jordan, Dubai, and Saudi Arabia—Abderhaman and Mostafa
+          saw another crucial gap: the Over prices customers were paying at
+          local car dealerships and importers. The system was broken, and they
+          knew they had to fix it.
+        </p>
+        <p>
+          So they decided to offer seamless car imports, no middlemen
+          experience, a wide range of options, and transparent pricing.
         </p>
       </div>
 
@@ -65,18 +84,17 @@ const About = () => {
           <div className="card" data-aos="fade-right">
             <h1>Our Mission</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-              placeat eveniet vel pariatur at eligendi qui aperiam adipisci, aut
-              nesciunt.
+              revolutionize the car-buying experience in Egypt by providing
+              luxury European cars directly to customers at factory prices. We
+              are committed to delivering a seamless, transparent, and
+              affordable car import service, ensuring that every car enthusiast
+              can access their dream vehicle with ease, efficiency, and
+              unmatched value.
             </p>
           </div>
           <div className="card" data-aos="fade-left">
             <h1>Our Values</h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque,
-              vero! Suscipit nesciunt veritatis eaque, eius vero vitae
-              consequuntur ipsa non.
-            </p>
+            <p>Transparency, Trust, Satisfaction, and Quality</p>
           </div>
         </div>
       </div>
@@ -84,17 +102,11 @@ const About = () => {
       <div className="message" data-aos="fade-up">
         <h1>Founders' Message</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut hic
-          nostrum eius temporibus numquam, vero sequi magnam deleniti facere
-          consequuntur error tempore vitae cupiditate itaque nemo maxime. Magni
-          iure voluptas aliquid deleniti quod dolorum blanditiis minus et in
-          tempora nemo natus possimus pariatur doloremque quasi odio aliquam
-          temporibus ab fugiat, delectus accusamus! Corrupti aspernatur a atque
-          blanditiis cum fugit odio rem voluptas. Pariatur harum excepturi,
-          quisquam ut dolor vero quos inventore sapiente minima porro nesciunt
-          eligendi veniam temporibus autem enim totam quidem sit a distinctio
-          quo alias? Quo, earum! Officiis quasi commodi deleniti similique
-          quisquam nam placeat repellat iste vel.
+          At Goldstern, we’re not just bringing luxury cars to Egypt—we’re
+          delivering dreams. With a passion for excellence and a commitment to
+          transparency, we’re here to redefine the car-buying experience. From
+          our family to yours, thank you for trusting us to bring your dream
+          ride to life.
         </p>
       </div>
 
@@ -102,19 +114,50 @@ const About = () => {
         <h1>Why Import with Us</h1>
         <div className="cards">
           <div className="card" data-aos="zoom-in">
-            <h1>Cost Savings</h1>
+            <h1>Cheapest Prices, No Middlemen</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et sint
-              dolores, vel omnis totam at blanditiis molestiae a. Dignissimos,
-              nemo.
+              We bring you luxury European cars at direct prices, cutting out
+              the extra cost from middlemen and giving you the best deal
+              possible.
             </p>
           </div>
-          <div className="card" data-aos="zoom-in" data-aos-delay="100">
-            <h1>Fast Delivery</h1>
+          <div className="card" data-aos="zoom-in">
+            <h1>Wide Range of Options</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et sint
-              dolores, vel omnis totam at blanditiis molestiae a. Dignissimos,
-              nemo.
+              Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or any
+              other European Brand we offer a variety of high-end vehicles to
+              match your style and needs.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Fast & Seamless Process</h1>
+            <p>
+              Forget about long waiting times and complicated processes. We
+              provide a smooth and fast import experience, getting your dream
+              car to you quicker.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Transparent Pricing</h1>
+            <p>
+              No hidden fees, no surprises. We believe in honesty and
+              transparency throughout your buying journey.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Trusted Expertise</h1>
+            <p>
+              With over 5,000 cars imported to Egypt and the Middle East, we
+              have the experience and knowledge to guide you every step of the
+              way.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Customer-Focused Service</h1>
+            <p>
+              Your satisfaction is our priority. From the moment you choose your
+              car until it’s delivered to your door, we ensure you have the best
+              experience possible.
             </p>
           </div>
         </div>

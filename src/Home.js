@@ -22,23 +22,23 @@ const Home = () => {
           <h1>Our Services</h1>
           <ul className="services-list">
             <li data-aos="fade-right">
-              <img src="./Icons/fast-delivery.png" alt="fast delivery" />
-              Fastest Shipping (40 Days)
+              <img src="./Icons/import.png" alt="fast delivery" />
+              Importing your Car
             </li>
             <li data-aos="fade-right" data-aos-delay="100">
-              <img src="./Icons/discount.png" alt="cheapest Shipping" />
-              Cheapest Shipping
+              <img src="./Icons/expat.png" alt="cheapest Shipping" />
+              Importing Cars for Expats
             </li>
             <li data-aos="fade-right" data-aos-delay="200">
-              <img src="./Icons/secure.png" alt="Most Secure shipping" />
-              Most Secure shipping
+              <img src="./Icons/guide.png" alt="Most Secure shipping" />
+              Guidance and Consultation
             </li>
             <li data-aos="fade-right" data-aos-delay="300">
               <img
-                src="./Icons/guaranteed.png"
+                src="./Icons/support.png"
                 alt="Guaranteed Delivery promises"
               />
-              Guaranteed Delivery promises
+              After-Sales Support
             </li>
           </ul>
         </div>
@@ -158,35 +158,71 @@ const Home = () => {
         <div className="process" data-aos="fade-right">
           <h1>Step By Step Process</h1>
           <ul className="process-list">
-            <li data-aos="fade-right">1. Choosing your car</li>
-            <li data-aos="fade-right" data-aos-delay="100">
-              2. Configuring your car options
+            <li>
+              <h1>1. Contact Our Team</h1>
+              <p>
+                Reach out to us via phone, email, or our website. Our friendly
+                team will assist you in choosing the perfect car based on your
+                preferences, budget, and needs.
+              </p>
             </li>
-            <li data-aos="fade-right" data-aos-delay="200">
-              3. Buying the car
+            <li>
+              <h1>2. Consultation & Car Selection</h1>
+              <p>
+                Once we understand your requirements, we’ll provide you with a
+                range of options from European car inventory. You can ask any
+                questions and get expert advice to help you make the right
+                choice.
+              </p>
             </li>
-            <li data-aos="fade-right" data-aos-delay="300">
-              4. Shipping it to Egypt
+            <li>
+              <h1>3. Quotation & Agreement</h1>
+              <p>
+                After selecting your car, we’ll give you a clear and transparent
+                quote with factory-direct pricing, including all costs
+                involved—no hidden fees. Once you’re happy, we move forward with
+                the agreement.
+              </p>
             </li>
-            <li data-aos="fade-right" data-aos-delay="400">
-              5. Finishing Customs and Paperwork
+            <li>
+              <h1>4. Car Ordering & Shipping</h1>
+              <p>
+                After finalizing your order, we will process the import and
+                handle all the logistics, including shipping and documentation.
+              </p>
             </li>
-            <li data-aos="fade-right" data-aos-delay="500">
-              6. Delivering the car to your doorstep
+            <li>
+              <h1>5. Customs Clearance & Delivery</h1>
+              <p>
+                Your car will be cleared through customs quickly and
+                efficiently. Once everything is in order, we’ll schedule a
+                convenient delivery date right to your doorstep.
+              </p>
             </li>
+            <li>
+              <h1>6. Car Inspection & Handover</h1>
+              <p>
+                Upon delivery, we’ll conduct a thorough inspection to ensure the
+                car meets your expectations. You’ll receive all the necessary
+                documentation, and we’ll explain all the car features before
+                handing over the keys.
+              </p>
+            </li>
+            <li>
+              <h1>7. After-Sales Service</h1>
+              <p>
+                Our relationship doesn’t end at delivery. We provide
+                post-purchase support and offer ongoing services through our
+                partners like maintenance, repairs, and assistance, ensuring
+                your car stays in top condition.
+              </p>
+            </li>
+            <h1>
+              "From start to finish, we make the importing process easy,
+              efficient, and transparent, so you can enjoy your dream car
+              without the hassle."
+            </h1>
           </ul>
-        </div>
-        <div className="customs" data-aos="fade-up">
-          <h1 data-aos="fade-left">Customs & Paperwork</h1>
-          <p data-aos="fade-right" data-aos-delay="100">
-            What we handle for you
-          </p>
-        </div>
-        <div className="support" data-aos="fade-up">
-          <h1 data-aos="fade-left">After-Sales Support</h1>
-          <p data-aos="fade-right" data-aos-delay="100">
-            Warranty and maintenance information
-          </p>
         </div>
       </div>
     </div>

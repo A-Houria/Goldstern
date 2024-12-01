@@ -66,6 +66,7 @@ a {
   margin: 0px 30px;
   color: grey;
   border-radius: 2px;
+  font-size: 1vw;
 }
 .app .layout .nav .cont .list a:hover {
   color: black;
@@ -77,6 +78,7 @@ a {
 @media (max-width: 1150px) {
   .app .layout .nav .cont .list {
     min-width: 100%;
+    font-size: 2vw;
   }
   .app .layout .nav .cont .list a {
     min-width: 100%;
@@ -97,6 +99,7 @@ a {
   background-color: black;
   color: white;
   border-radius: 2px;
+  font-size: 1vw;
 }
 .app .layout .nav .cont .login:hover {
   filter: brightness(1.5);
@@ -108,6 +111,7 @@ a {
   .app .layout .nav .cont .login.open {
     display: block;
     width: 100%;
+    font-size: 2vw;
   }
 }
 .app .layout .nav .cont .burger-cont {
@@ -222,7 +226,7 @@ a {
 .app .layout .home .text {
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
+  align-items: center;
   width: -moz-fit-content;
   width: fit-content;
   width: 100%;
@@ -239,8 +243,13 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   padding: 0px 10%;
+}
+@media screen and (max-width: 1100px) {
+  .app .layout .home .text .services {
+    padding: 0;
+  }
 }
 .app .layout .home .text .services .services-list {
   list-style: none;
@@ -254,7 +263,8 @@ a {
   flex-direction: row;
   align-items: center;
   text-wrap: nowrap;
-  font-size: 1vw;
+  justify-content: center;
+  font-size: 1.7vw;
   letter-spacing: 2px;
   border: 2px solid black;
   border-radius: 7px;
@@ -268,17 +278,10 @@ a {
   max-width: 1.5vw;
   margin-right: 5px;
 }
-.app .layout .home .text .services .services-list li:nth-child(1) {
-  padding-left: 10%;
-}
-.app .layout .home .text .services .services-list li:nth-child(2) {
-  padding-left: 20%;
-}
-.app .layout .home .text .services .services-list li:nth-child(3) {
-  padding-left: 30%;
-}
-.app .layout .home .text .services .services-list li:nth-child(4) {
-  padding-left: 40%;
+@media screen and (max-width: 1100px) {
+  .app .layout .home .text .services .services-list li img {
+    max-width: 2vw;
+  }
 }
 .app .layout .home .featured {
   margin: 50px;
@@ -307,14 +310,19 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 35%;
+  min-width: 35%;
   padding: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
   border-radius: 3px;
 }
 .app .layout .home .featured .cards .card img {
-  width: 100%;
+  width: 500px;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .home .featured .cards .card img {
+    width: 90%;
+  }
 }
 .app .layout .home .featured .cards .card .text {
   width: 100%;
@@ -328,6 +336,11 @@ a {
   font-size: 1.5vw;
   letter-spacing: 3px;
   margin: 15px;
+}
+@media screen and (max-width: 1100px) {
+  .app .layout .home .featured .cards .card .text h1 {
+    font-size: 3.5vw;
+  }
 }
 .app .layout .home .featured .cards .card .text .parts {
   display: flex;
@@ -352,6 +365,21 @@ a {
   width: 1.5vw;
   margin: 0px 10px;
 }
+@media screen and (max-width: 1100px) {
+  .app .layout .home .featured .cards .card .text .parts p img {
+    width: 2vw;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .app .layout .home .featured .cards .card .text .parts p {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  .app .layout .home .featured .cards .card .text .parts p {
+    font-size: 2vw;
+  }
+}
 .app .layout .home .details {
   display: flex;
   flex-direction: column;
@@ -364,10 +392,16 @@ a {
   font-weight: 400;
   margin: 25px;
 }
+@media screen and (max-width: 750px) {
+  .app .layout .home .details h1 {
+    font-size: 8vw;
+  }
+}
 .app .layout .home .details .process {
   display: flex;
   flex-direction: column;
   padding: 0px 50px;
+  margin: 50px 0px;
 }
 .app .layout .home .details .process h1 {
   text-align: start;
@@ -375,13 +409,57 @@ a {
   letter-spacing: 2px;
   font-weight: 400;
 }
+@media screen and (max-width: 750px) {
+  .app .layout .home .details .process h1 {
+    font-size: 3.5vw;
+  }
+}
 .app .layout .home .details .process .process-list {
   list-style: none;
   font-size: 1.2vw;
   letter-spacing: 2px;
+  line-height: 1.5;
+}
+.app .layout .home .details .process .process-list h1 {
+  width: 100%;
+  margin: 0px;
+}
+@media screen and (max-width: 750px) {
+  .app .layout .home .details .process .process-list {
+    font-size: 2.5vw;
+  }
 }
 .app .layout .home .details .process .process-list li {
-  margin: 15px 45px;
+  margin: 50px 0px;
+  text-wrap: wrap;
+  line-height: 1.5;
+}
+.app .layout .home .details .process .process-list li h1 {
+  font-size: 1.5vw;
+  margin: 25px 0px;
+}
+@media screen and (max-width: 780px) {
+  .app .layout .home .details .process .process-list li h1 {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .app .layout .home .details .process .process-list li h1 {
+    font-size: 2.5vw;
+  }
+}
+.app .layout .home .details .process .process-list li p {
+  font-size: 1.1vw;
+}
+@media screen and (max-width: 780px) {
+  .app .layout .home .details .process .process-list li p {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .app .layout .home .details .process .process-list li p {
+    font-size: 2vw;
+  }
 }
 .app .layout .home .details .customs,
 .app .layout .home .details .support {
@@ -396,11 +474,23 @@ a {
   letter-spacing: 2px;
   font-weight: 400;
 }
+@media screen and (max-width: 750px) {
+  .app .layout .home .details .customs h1,
+  .app .layout .home .details .support h1 {
+    font-size: 3.5vw;
+  }
+}
 .app .layout .home .details .customs p,
 .app .layout .home .details .support p {
   padding: 0px 45px;
   font-size: 1.2vw;
   letter-spacing: 2px;
+}
+@media screen and (max-width: 750px) {
+  .app .layout .home .details .customs p,
+  .app .layout .home .details .support p {
+    font-size: 2.5vw;
+  }
 }
 .app .layout .about {
   width: 100%;
@@ -416,28 +506,30 @@ a {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 2px;
+  margin: 15px 0px;
 }
 .app .layout .about .story p {
   width: 80%;
   letter-spacing: 2px;
   font-weight: 400;
   font-size: 18px;
-  margin: 25px 0px;
+  margin: 15px 0px;
   text-align: center;
-  line-height: 25px;
+  line-height: 1.5;
 }
 .app .layout .about .mission {
   margin: 0px 50px;
 }
 .app .layout .about .mission .cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 .app .layout .about .mission .cards .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
 }
 .app .layout .about .mission .cards .card h1 {
   font-size: 38px;
@@ -478,7 +570,6 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0px 50px;
 }
 .app .layout .about .import h1 {
   font-size: 38px;
@@ -487,19 +578,25 @@ a {
 }
 .app .layout .about .import .cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 .app .layout .about .import .cards .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  text-align: center;
   margin-top: 100px;
+  width: 80%;
 }
 .app .layout .about .import .cards .card h1 {
   font-size: 34px;
   font-weight: 700;
   letter-spacing: 2px;
+  margin: 25px 0px;
+  width: 90%;
 }
 .app .layout .about .import .cards .card p {
   font-size: 18px;
@@ -508,7 +605,7 @@ a {
   width: 80%;
   text-align: center;
   margin: 25px 0px;
-  line-height: 25px;
+  line-height: 1.5;
 }
 .app .layout .about .cst-test {
   display: flex;
@@ -522,6 +619,11 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   margin: 50px 0px;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .about .cst-test h1 {
+    font-size: 7.5vw;
+  }
 }
 .app .layout .about .cst-test .carousel {
   width: 100%;
@@ -551,12 +653,20 @@ a {
   flex-direction: column;
   align-items: flex-start;
   margin: 0px 50px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .app .layout .about .faqs h1 {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 2px;
   margin: 50px 0px;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .about .faqs h1 {
+    font-size: 7.5vw;
+  }
 }
 .app .layout .about .faqs .card {
   display: flex;
@@ -572,6 +682,11 @@ a {
   text-align: start;
   cursor: pointer;
 }
+@media screen and (max-width: 650px) {
+  .app .layout .about .faqs .card h1 {
+    font-size: 2.5vw;
+  }
+}
 .app .layout .about .faqs .card p {
   padding-left: 25px;
   font-size: 18px;
@@ -583,6 +698,11 @@ a {
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.4s ease;
   opacity: 0;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .about .faqs .card p {
+    font-size: 2vw;
+  }
 }
 .app .layout .about .faqs .card p.show {
   max-height: 100px;
@@ -600,10 +720,15 @@ a {
   margin: 0px 50px;
 }
 .app .layout .services .service h1 {
-  font-size: 42px;
+  font-size: 2.5vw;
   font-weight: 400;
   margin: 20px 0px;
   letter-spacing: 2px;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .services .service h1 {
+    font-size: 4.5vw;
+  }
 }
 .app .layout .services .service p {
   text-align: center;
@@ -618,7 +743,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px;
+  margin: 0px 50px;
+  margin-top: 100px;
 }
 .app .layout .services .contact-us h1 {
   text-align: center;
@@ -626,6 +752,11 @@ a {
   font-weight: 400;
   margin: 20px 0px;
   letter-spacing: 2px;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .services .contact-us h1 {
+    font-size: 7.5vw;
+  }
 }
 .app .layout .services .contact-us p {
   text-align: center;
@@ -635,6 +766,11 @@ a {
   line-height: 1.5;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 550px) {
+  .app .layout .services .contact-us p {
+    font-size: 3.5vw;
+  }
+}
 .app .layout .services .contact-us form {
   display: flex;
   flex-direction: column;
@@ -642,6 +778,9 @@ a {
   background-color: white;
   padding: 50px;
   margin: 20px;
+  max-width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .app .layout .services .contact-us form .input {
   display: flex;
@@ -667,6 +806,11 @@ a {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.03);
 }
+@media screen and (max-width: 550px) {
+  .app .layout .services .contact-us form .input input {
+    width: 55vw;
+  }
+}
 .app .layout .services .contact-us form .input textarea {
   width: 25rem;
   height: 7rem;
@@ -680,6 +824,11 @@ a {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.03);
   resize: vertical;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .services .contact-us form .input textarea {
+    width: 55vw;
+  }
 }
 .app .layout .services .contact-us form button {
   width: 25rem;
@@ -697,22 +846,32 @@ a {
   margin-top: 30px;
   cursor: pointer;
 }
+@media screen and (max-width: 550px) {
+  .app .layout .services .contact-us form button {
+    width: 55vw;
+  }
+}
 .app .layout .services .import {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0px 50px;
 }
 .app .layout .services .import h1 {
   font-size: 38px;
   font-weight: 700;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 550px) {
+  .app .layout .services .import h1 {
+    font-size: 7.5vw;
+  }
+}
 .app .layout .services .import .cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  width: 90%;
 }
 .app .layout .services .import .cards .card {
   display: flex;
@@ -724,6 +883,12 @@ a {
   font-size: 34px;
   font-weight: 700;
   letter-spacing: 2px;
+  text-align: center;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .services .import .cards .card h1 {
+    font-size: 5.5vw;
+  }
 }
 .app .layout .services .import .cards .card p {
   font-size: 18px;
@@ -733,6 +898,11 @@ a {
   text-align: center;
   margin: 25px 0px;
   line-height: 25px;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .services .import .cards .card p {
+    font-size: 3.5vw;
+  }
 }
 .app .layout .services .cst-test {
   display: flex;
@@ -746,6 +916,11 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   margin: 50px 0px;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .services .cst-test h1 {
+    font-size: 7.5vw;
+  }
 }
 .app .layout .services .cst-test .carousel {
   width: 100%;
@@ -775,12 +950,20 @@ a {
   flex-direction: column;
   align-items: flex-start;
   margin: 0px 50px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .app .layout .services .faqs h1 {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 2px;
   margin: 50px 0px;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .services .faqs h1 {
+    font-size: 7.5vw;
+  }
 }
 .app .layout .services .faqs .card {
   display: flex;
@@ -796,6 +979,11 @@ a {
   text-align: start;
   cursor: pointer;
 }
+@media screen and (max-width: 650px) {
+  .app .layout .services .faqs .card h1 {
+    font-size: 3vw;
+  }
+}
 .app .layout .services .faqs .card p {
   padding-left: 25px;
   font-size: 18px;
@@ -807,6 +995,11 @@ a {
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.4s ease;
   opacity: 0;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .services .faqs .card p {
+    font-size: 2.5vw;
+  }
 }
 .app .layout .services .faqs .card p.show {
   max-height: 100px;
@@ -826,6 +1019,11 @@ a {
   margin: 20px 0px;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 550px) {
+  .app .layout .contact .contact-us h1 {
+    font-size: 7.5vw;
+  }
+}
 .app .layout .contact .contact-us p {
   text-align: center;
   font-size: 20px;
@@ -834,6 +1032,11 @@ a {
   line-height: 1.5;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 550px) {
+  .app .layout .contact .contact-us p {
+    font-size: 3.5vw;
+  }
+}
 .app .layout .contact .contact-us form {
   display: flex;
   flex-direction: column;
@@ -841,6 +1044,7 @@ a {
   background-color: white;
   padding: 50px;
   margin: 20px;
+  max-width: 100%;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -868,6 +1072,11 @@ a {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.03);
 }
+@media screen and (max-width: 550px) {
+  .app .layout .contact .contact-us form .input input {
+    width: 55vw;
+  }
+}
 .app .layout .contact .contact-us form .input textarea {
   width: 25rem;
   height: 7rem;
@@ -881,6 +1090,11 @@ a {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.03);
   resize: vertical;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .contact .contact-us form .input textarea {
+    width: 55vw;
+  }
 }
 .app .layout .contact .contact-us form button {
   width: 25rem;
@@ -897,6 +1111,11 @@ a {
   transition: all 0.2s ease-in;
   margin-top: 30px;
   cursor: pointer;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .contact .contact-us form button {
+    width: 55vw;
+  }
 }
 .app .layout .contact .team {
   display: flex;
@@ -953,9 +1172,19 @@ a {
   background-color: white;
   padding: 50px;
 }
+@media screen and (max-width: 1400px) {
+  .app .layout .contact .details {
+    flex-direction: column;
+  }
+}
 .app .layout .contact .details .contact-details {
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 1400px) {
+  .app .layout .contact .details .contact-details {
+    width: 80%;
+  }
 }
 .app .layout .contact .details .contact-details .phone {
   display: flex;
@@ -967,6 +1196,11 @@ a {
   align-self: center;
   margin: 25px 0px;
 }
+@media screen and (max-width: 600px) {
+  .app .layout .contact .details .contact-details .phone img {
+    width: 15vw;
+  }
+}
 .app .layout .contact .details .contact-details .phone h1 {
   align-self: center;
   text-align: center;
@@ -974,6 +1208,11 @@ a {
   font-weight: 400;
   letter-spacing: 2px;
   width: 80%;
+}
+@media screen and (max-width: 600px) {
+  .app .layout .contact .details .contact-details .phone h1 {
+    font-size: 4.5vw;
+  }
 }
 .app .layout .contact .details .contact-details .phone p {
   display: flex;
@@ -986,6 +1225,11 @@ a {
   margin: 10px;
   aspect-ratio: 1/1;
 }
+@media screen and (max-width: 600px) {
+  .app .layout .contact .details .contact-details .phone p img {
+    width: 3.5vw;
+  }
+}
 .app .layout .contact .details .contact-details .social-media {
   display: flex;
   flex-direction: column;
@@ -996,6 +1240,11 @@ a {
   font-weight: 400;
   letter-spacing: 2px;
   margin: 20px 0px;
+}
+@media screen and (max-width: 600px) {
+  .app .layout .contact .details .contact-details .social-media h1 {
+    font-size: 3.5vw;
+  }
 }
 .app .layout .contact .details .contact-details .social-media .imgs {
   display: flex;
@@ -1009,18 +1258,45 @@ a {
   width: 50px;
   aspect-ratio: 1/1;
 }
+@media screen and (max-width: 600px) {
+  .app .layout .contact .details .contact-details .social-media .imgs a img {
+    width: 7.5vw;
+  }
+}
 .app .layout .contact .details .map {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 1400px) {
+  .app .layout .contact .details .map {
+    width: 80%;
+  }
 }
 .app .layout .contact .details .map h1 {
   font-size: 42px;
   font-weight: 400;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 600px) {
+  .app .layout .contact .details .map h1 {
+    font-size: 3.5vw;
+  }
+}
 .app .layout .contact .details .map iframe {
   margin: 30px 0px;
+}
+@media screen and (max-width: 1400px) {
+  .app .layout .contact .details .map iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}
+@media screen and (max-width: 750px) {
+  .app .layout .contact .details .map iframe {
+    width: 65vw;
+    height: 35vw;
+  }
 }
 .app .layout .footer {
   display: flex;
@@ -1049,13 +1325,15 @@ a {
   flex-direction: row;
   align-items: center;
   letter-spacing: 2px;
+  font-size: 1.5vw;
 }
 .app .layout .footer .social-media p img {
-  width: 45px;
-  margin-right: 15px;
+  width: 3vw;
+  margin-right: 5px;
 }
 .app .layout .footer p {
   color: white;
   padding: 20px;
   letter-spacing: 3px;
+  font-size: 2vw;
 }/*# sourceMappingURL=style.css.map */

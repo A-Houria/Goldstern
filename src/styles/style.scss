@@ -63,6 +63,7 @@ a {
             margin: 0px 30px;
             color: grey;
             border-radius: 2px;
+            font-size: 1vw;
             &:hover {
               color: black;
             }
@@ -74,6 +75,7 @@ a {
 
           @media (max-width: 1150px) {
             min-width: 100%;
+            font-size: 2vw;
 
             a {
               min-width: 100%;
@@ -98,6 +100,7 @@ a {
           background-color: black;
           color: white;
           border-radius: 2px;
+          font-size: 1vw;
 
           &:hover {
             filter: brightness(1.5);
@@ -108,6 +111,7 @@ a {
             &.open {
               display: block;
               width: 100%;
+              font-size: 2vw;
             }
           }
         }
@@ -220,7 +224,7 @@ a {
       .text {
         display: flex;
         flex-direction: column;
-        margin-left: 25px;
+        align-items: center;
         width: fit-content;
         width: 100%;
         h1 {
@@ -235,8 +239,12 @@ a {
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
-          width: 100%;
+          width: 90%;
           padding: 0px 10%;
+          @media screen and (max-width: 1100px) {
+            padding: 0;
+          }
+
           .services-list {
             list-style: none;
             width: 100%;
@@ -248,7 +256,8 @@ a {
               flex-direction: row;
               align-items: center;
               text-wrap: nowrap;
-              font-size: 1vw;
+              justify-content: center;
+              font-size: 1.7vw;
               letter-spacing: 2px;
               border: 2px solid black;
               border-radius: 7px;
@@ -258,10 +267,8 @@ a {
               img {
                 max-width: 1.5vw;
                 margin-right: 5px;
-              }
-              @for $i from 1 through 4 {
-                &:nth-child(#{$i}) {
-                  padding-left: $i * 10%;
+                @media screen and (max-width: 1100px) {
+                  max-width: 2vw;
                 }
               }
             }
@@ -294,13 +301,16 @@ a {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 35%;
+            min-width: 35%;
             padding: 10px;
             background-color: rgb(248, 248, 248);
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
-              width: 100%;
+              width: 500px;
+              @media screen and (max-width: 650px) {
+                width: 90%;
+              }
             }
             .text {
               width: 100%;
@@ -313,6 +323,9 @@ a {
                 font-size: 1.5vw;
                 letter-spacing: 3px;
                 margin: 15px;
+                @media screen and (max-width: 1100px) {
+                  font-size: 3.5vw;
+                }
               }
               .parts {
                 display: flex;
@@ -335,6 +348,15 @@ a {
                   img {
                     width: 1.5vw;
                     margin: 0px 10px;
+                    @media screen and (max-width: 1100px) {
+                      width: 2vw;
+                    }
+                  }
+                  @media screen and (max-width: 1100px) {
+                    font-size: 1.5vw;
+                  }
+                  @media screen and (max-width: 700px) {
+                    font-size: 2vw;
                   }
                 }
               }
@@ -352,25 +374,63 @@ a {
           font-size: 3.5vw;
           font-weight: 400;
           margin: 25px;
+          @media screen and (max-width: 750px) {
+            font-size: 8vw;
+          }
         }
         .process {
           display: flex;
           flex-direction: column;
           padding: 0px 50px;
+          margin: 50px 0px;
 
           h1 {
             text-align: start;
             font-size: 2.5vw;
             letter-spacing: 2px;
             font-weight: 400;
+            @media screen and (max-width: 750px) {
+              font-size: 3.5vw;
+            }
           }
           .process-list {
             list-style: none;
             font-size: 1.2vw;
             letter-spacing: 2px;
+            line-height: 1.5;
 
+            h1 {
+              width: 100%;
+              margin: 0px;
+            }
+            @media screen and (max-width: 750px) {
+              font-size: 2.5vw;
+            }
             li {
-              margin: 15px 45px;
+              margin: 50px 0px;
+              text-wrap: wrap;
+              line-height: 1.5;
+
+              h1 {
+                font-size: 1.5vw;
+                margin: 25px 0px;
+
+                @media screen and (max-width: 780px) {
+                  font-size: 2vw;
+                }
+                @media screen and (max-width: 500px) {
+                  font-size: 2.5vw;
+                }
+              }
+              p {
+                font-size: 1.1vw;
+                @media screen and (max-width: 780px) {
+                  font-size: 1.5vw;
+                }
+                @media screen and (max-width: 500px) {
+                  font-size: 2vw;
+                }
+              }
             }
           }
         }
@@ -384,11 +444,17 @@ a {
             font-size: 2.5vw;
             letter-spacing: 2px;
             font-weight: 400;
+            @media screen and (max-width: 750px) {
+              font-size: 3.5vw;
+            }
           }
           p {
             padding: 0px 45px;
             font-size: 1.2vw;
             letter-spacing: 2px;
+            @media screen and (max-width: 750px) {
+              font-size: 2.5vw;
+            }
           }
         }
       }
@@ -405,28 +471,29 @@ a {
           font-size: 52px;
           font-weight: 700;
           letter-spacing: 2px;
+          margin: 15px 0px;
         }
         p {
           width: 80%;
           letter-spacing: 2px;
           font-weight: 400;
           font-size: 18px;
-          margin: 25px 0px;
+          margin: 15px 0px;
           text-align: center;
-          line-height: 25px;
+          line-height: 1.5;
         }
       }
       .mission {
         margin: 0px 50px;
         .cards {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           align-items: center;
           .card {
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            margin-top: 50px;
             h1 {
               font-size: 38px;
               font-weight: 700;
@@ -469,7 +536,6 @@ a {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin: 0px 50px;
         h1 {
           font-size: 38px;
           font-weight: 700;
@@ -477,18 +543,25 @@ a {
         }
         .cards {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           align-items: center;
+          flex-wrap: wrap;
 
           .card {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
+            text-align: center;
             margin-top: 100px;
+            width: 80%;
+
             h1 {
               font-size: 34px;
               font-weight: 700;
               letter-spacing: 2px;
+              margin: 25px 0px;
+              width: 90%;
             }
             p {
               font-size: 18px;
@@ -497,7 +570,7 @@ a {
               width: 80%;
               text-align: center;
               margin: 25px 0px;
-              line-height: 25px;
+              line-height: 1.5;
             }
           }
         }
@@ -513,6 +586,9 @@ a {
           font-weight: 700;
           letter-spacing: 2px;
           margin: 50px 0px;
+          @media screen and (max-width: 650px) {
+            font-size: 7.5vw;
+          }
         }
         .carousel {
           width: 100%;
@@ -543,11 +619,15 @@ a {
         flex-direction: column;
         align-items: flex-start;
         margin: 0px 50px;
+        user-select: none;
         h1 {
           font-size: 52px;
           font-weight: 700;
           letter-spacing: 2px;
           margin: 50px 0px;
+          @media screen and (max-width: 650px) {
+            font-size: 7.5vw;
+          }
         }
         .card {
           display: flex;
@@ -561,6 +641,9 @@ a {
             margin: 15px 0px;
             text-align: start;
             cursor: pointer;
+            @media screen and (max-width: 650px) {
+              font-size: 2.5vw;
+            }
           }
           p {
             padding-left: 25px;
@@ -573,6 +656,10 @@ a {
             overflow: hidden;
             transition: max-height 0.4s ease, opacity 0.4s ease;
             opacity: 0;
+
+            @media screen and (max-width: 650px) {
+              font-size: 2vw;
+            }
 
             &.show {
               max-height: 100px;
@@ -592,10 +679,13 @@ a {
         flex-direction: column;
         margin: 0px 50px;
         h1 {
-          font-size: 42px;
+          font-size: 2.5vw;
           font-weight: 400;
           margin: 20px 0px;
           letter-spacing: 2px;
+          @media screen and (max-width: 650px) {
+            font-size: 4.5vw;
+          }
         }
         p {
           text-align: center;
@@ -611,209 +701,6 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 50px;
-        h1 {
-          text-align: center;
-          font-size: 42px;
-          font-weight: 400;
-          margin: 20px 0px;
-          letter-spacing: 2px;
-        }
-        p {
-          text-align: center;
-          font-size: 20px;
-          font-weight: 400;
-          letter-spacing: 2px;
-          line-height: 1.5;
-          margin-bottom: 50px;
-        }
-        form {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          background-color: white;
-          padding: 50px;
-          margin: 20px;
-          .input {
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
-            label {
-              font-size: 16px;
-              font-weight: 400;
-              letter-spacing: 2px;
-              margin: 5px 0px;
-            }
-            input {
-              width: 25rem;
-              height: 3rem;
-              padding: 5px 10px;
-              font-size: 14px;
-              letter-spacing: 1.5px;
-              font-weight: 400;
-              border: none;
-              outline: none;
-              border: 2px solid rgba(0, 0, 0, 0.3);
-              border-radius: 5px;
-              background-color: rgba(0, 0, 0, 0.03);
-            }
-            textarea {
-              width: 25rem;
-              height: 7rem;
-              padding: 5px 10px;
-              font-size: 14px;
-              letter-spacing: 1.5px;
-              font-weight: 400;
-              border: none;
-              outline: none;
-              border: 2px solid rgba(0, 0, 0, 0.3);
-              border-radius: 5px;
-              background-color: rgba(0, 0, 0, 0.03);
-              resize: vertical;
-            }
-          }
-          button {
-            width: 25rem;
-            height: 3rem;
-            background-color: black;
-            color: white;
-            font-size: 20px;
-            letter-spacing: 2px;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(0, 0, 0, 0.3);
-            font-weight: 400;
-            border-radius: 5px;
-            transition: all 0.2s ease-in;
-            margin-top: 30px;
-            cursor: pointer;
-          }
-        }
-      }
-      .import {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin: 0px 50px;
-        h1 {
-          font-size: 38px;
-          font-weight: 700;
-          letter-spacing: 2px;
-        }
-        .cards {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-
-          .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 100px;
-            h1 {
-              font-size: 34px;
-              font-weight: 700;
-              letter-spacing: 2px;
-            }
-            p {
-              font-size: 18px;
-              font-weight: 400;
-              letter-spacing: 2px;
-              width: 80%;
-              text-align: center;
-              margin: 25px 0px;
-              line-height: 25px;
-            }
-          }
-        }
-      }
-      .cst-test {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 100px 50px;
-        overflow-x: hidden;
-        h1 {
-          font-size: 52px;
-          font-weight: 700;
-          letter-spacing: 2px;
-          margin: 50px 0px;
-        }
-        .carousel {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          overflow: hidden;
-          white-space: nowrap;
-          position: relative;
-          margin: 100px 0px 50px 0px;
-          .carousel-inner {
-            display: inline-block;
-            animation: slide-left 10s linear infinite;
-            white-space: nowrap;
-            h1 {
-              font-size: 32px;
-              font-weight: 400;
-              letter-spacing: 2px;
-              display: inline-block;
-              margin-right: 150px;
-            }
-          }
-        }
-      }
-      .faqs {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0px 50px;
-        h1 {
-          font-size: 52px;
-          font-weight: 700;
-          letter-spacing: 2px;
-          margin: 50px 0px;
-        }
-        .card {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          margin: 15px 0px;
-          h1 {
-            font-size: 34px;
-            padding: 5px 20px;
-            width: 100%;
-            margin: 15px 0px;
-            text-align: start;
-            cursor: pointer;
-          }
-          p {
-            padding-left: 25px;
-            font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            width: 80%;
-            line-height: 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.4s ease;
-            opacity: 0;
-
-            &.show {
-              max-height: 100px;
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }
-
-    .contact {
-      .contact-us {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin: 0px 50px;
         margin-top: 100px;
         h1 {
@@ -822,6 +709,9 @@ a {
           font-weight: 400;
           margin: 20px 0px;
           letter-spacing: 2px;
+          @media screen and (max-width: 550px) {
+            font-size: 7.5vw;
+          }
         }
         p {
           text-align: center;
@@ -830,6 +720,9 @@ a {
           letter-spacing: 2px;
           line-height: 1.5;
           margin-bottom: 50px;
+          @media screen and (max-width: 550px) {
+            font-size: 3.5vw;
+          }
         }
         form {
           display: flex;
@@ -838,6 +731,7 @@ a {
           background-color: white;
           padding: 50px;
           margin: 20px;
+          max-width: 100%;
           width: fit-content;
           .input {
             display: flex;
@@ -861,6 +755,9 @@ a {
               border: 2px solid rgba(0, 0, 0, 0.3);
               border-radius: 5px;
               background-color: rgba(0, 0, 0, 0.03);
+              @media screen and (max-width: 550px) {
+                width: 55vw;
+              }
             }
             textarea {
               width: 25rem;
@@ -875,6 +772,9 @@ a {
               border-radius: 5px;
               background-color: rgba(0, 0, 0, 0.03);
               resize: vertical;
+              @media screen and (max-width: 550px) {
+                width: 55vw;
+              }
             }
           }
           button {
@@ -892,6 +792,251 @@ a {
             transition: all 0.2s ease-in;
             margin-top: 30px;
             cursor: pointer;
+            @media screen and (max-width: 550px) {
+              width: 55vw;
+            }
+          }
+        }
+      }
+      .import {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        h1 {
+          font-size: 38px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          @media screen and (max-width: 550px) {
+            font-size: 7.5vw;
+          }
+        }
+        .cards {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 90%;
+          .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            h1 {
+              font-size: 34px;
+              font-weight: 700;
+              letter-spacing: 2px;
+              text-align: center;
+              @media screen and (max-width: 550px) {
+                font-size: 5.5vw;
+              }
+            }
+            p {
+              font-size: 18px;
+              font-weight: 400;
+              letter-spacing: 2px;
+              width: 80%;
+              text-align: center;
+              margin: 25px 0px;
+              line-height: 25px;
+              @media screen and (max-width: 550px) {
+                font-size: 3.5vw;
+              }
+            }
+          }
+        }
+      }
+      .cst-test {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 100px 50px;
+        overflow-x: hidden;
+        h1 {
+          font-size: 52px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin: 50px 0px;
+          @media screen and (max-width: 650px) {
+            font-size: 7.5vw;
+          }
+        }
+        .carousel {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+          margin: 100px 0px 50px 0px;
+          .carousel-inner {
+            display: inline-block;
+            animation: slide-left 10s linear infinite;
+            white-space: nowrap;
+            h1 {
+              font-size: 32px;
+              font-weight: 400;
+              letter-spacing: 2px;
+              display: inline-block;
+              margin-right: 150px;
+            }
+          }
+        }
+      }
+      .faqs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0px 50px;
+        user-select: none;
+        h1 {
+          font-size: 52px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin: 50px 0px;
+          @media screen and (max-width: 650px) {
+            font-size: 7.5vw;
+          }
+        }
+        .card {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 15px 0px;
+          h1 {
+            font-size: 34px;
+            padding: 5px 20px;
+            width: 100%;
+            margin: 15px 0px;
+            text-align: start;
+            cursor: pointer;
+            @media screen and (max-width: 650px) {
+              font-size: 3vw;
+            }
+          }
+          p {
+            padding-left: 25px;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            width: 80%;
+            line-height: 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+            @media screen and (max-width: 650px) {
+              font-size: 2.5vw;
+            }
+            &.show {
+              max-height: 100px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      .contact-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 50px;
+        margin-top: 100px;
+        h1 {
+          text-align: center;
+          font-size: 42px;
+          font-weight: 400;
+          margin: 20px 0px;
+          letter-spacing: 2px;
+          @media screen and (max-width: 550px) {
+            font-size: 7.5vw;
+          }
+        }
+        p {
+          text-align: center;
+          font-size: 20px;
+          font-weight: 400;
+          letter-spacing: 2px;
+          line-height: 1.5;
+          margin-bottom: 50px;
+          @media screen and (max-width: 550px) {
+            font-size: 3.5vw;
+          }
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: white;
+          padding: 50px;
+          margin: 20px;
+          max-width: 100%;
+          width: fit-content;
+          .input {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            label {
+              font-size: 16px;
+              font-weight: 400;
+              letter-spacing: 2px;
+              margin: 5px 0px;
+            }
+            input {
+              width: 25rem;
+              height: 3rem;
+              padding: 5px 10px;
+              font-size: 14px;
+              letter-spacing: 1.5px;
+              font-weight: 400;
+              border: none;
+              outline: none;
+              border: 2px solid rgba(0, 0, 0, 0.3);
+              border-radius: 5px;
+              background-color: rgba(0, 0, 0, 0.03);
+              @media screen and (max-width: 550px) {
+                width: 55vw;
+              }
+            }
+            textarea {
+              width: 25rem;
+              height: 7rem;
+              padding: 5px 10px;
+              font-size: 14px;
+              letter-spacing: 1.5px;
+              font-weight: 400;
+              border: none;
+              outline: none;
+              border: 2px solid rgba(0, 0, 0, 0.3);
+              border-radius: 5px;
+              background-color: rgba(0, 0, 0, 0.03);
+              resize: vertical;
+              @media screen and (max-width: 550px) {
+                width: 55vw;
+              }
+            }
+          }
+          button {
+            width: 25rem;
+            height: 3rem;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            letter-spacing: 2px;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            font-weight: 400;
+            border-radius: 5px;
+            transition: all 0.2s ease-in;
+            margin-top: 30px;
+            cursor: pointer;
+            @media screen and (max-width: 550px) {
+              width: 55vw;
+            }
           }
         }
       }
@@ -949,9 +1094,17 @@ a {
         margin: 100px 50px;
         background-color: white;
         padding: 50px;
+
+        @media screen and (max-width: 1400px) {
+          flex-direction: column;
+        }
+
         .contact-details {
           display: flex;
           flex-direction: column;
+          @media screen and (max-width: 1400px) {
+            width: 80%;
+          }
           .phone {
             display: flex;
             flex-direction: column;
@@ -960,6 +1113,9 @@ a {
               aspect-ratio: 1/1;
               align-self: center;
               margin: 25px 0px;
+              @media screen and (max-width: 600px) {
+                width: 15vw;
+              }
             }
             h1 {
               align-self: center;
@@ -968,6 +1124,9 @@ a {
               font-weight: 400;
               letter-spacing: 2px;
               width: 80%;
+              @media screen and (max-width: 600px) {
+                font-size: 4.5vw;
+              }
             }
             p {
               display: flex;
@@ -978,6 +1137,9 @@ a {
                 width: 40px;
                 margin: 10px;
                 aspect-ratio: 1/1;
+                @media screen and (max-width: 600px) {
+                  width: 3.5vw;
+                }
               }
             }
           }
@@ -990,16 +1152,23 @@ a {
               font-weight: 400;
               letter-spacing: 2px;
               margin: 20px 0px;
+              @media screen and (max-width: 600px) {
+                font-size: 3.5vw;
+              }
             }
             .imgs {
               display: flex;
               flex-direction: row;
               align-items: center;
+
               a {
                 margin: 10px;
                 img {
                   width: 50px;
                   aspect-ratio: 1/1;
+                  @media screen and (max-width: 600px) {
+                    width: 7.5vw;
+                  }
                 }
               }
             }
@@ -1009,13 +1178,30 @@ a {
           display: flex;
           flex-direction: column;
           align-items: center;
+
+          @media screen and (max-width: 1400px) {
+            width: 80%;
+          }
+
           h1 {
             font-size: 42px;
             font-weight: 400;
             letter-spacing: 2px;
+            @media screen and (max-width: 600px) {
+              font-size: 3.5vw;
+            }
           }
           iframe {
             margin: 30px 0px;
+
+            @media screen and (max-width: 1400px) {
+              width: 100%;
+              aspect-ratio: 16/9;
+            }
+            @media screen and (max-width: 750px) {
+              width: 65vw;
+              height: 35vw;
+            }
           }
         }
       }
@@ -1047,9 +1233,10 @@ a {
           flex-direction: row;
           align-items: center;
           letter-spacing: 2px;
+          font-size: 1.5vw;
           img {
-            width: 45px;
-            margin-right: 15px;
+            width: 3vw;
+            margin-right: 5px;
           }
         }
       }
@@ -1057,6 +1244,7 @@ a {
         color: white;
         padding: 20px;
         letter-spacing: 3px;
+        font-size: 2vw;
       }
     }
   }

@@ -53,35 +53,14 @@ const Services = () => {
   return (
     <div className="services">
       <div className="service" data-aos="fade-up">
-        <h1>Car Importing</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          expedita saepe reprehenderit molestias doloremque incidunt
-          perspiciatis optio labore eum inventore eligendi adipisci, nulla
-          provident? Reprehenderit libero, nostrum earum amet provident eveniet
-          aspernatur accusantium omnis possimus facere doloribus dicta veritatis
-          rerum doloremque vitae repellendus ad adipisci suscipit optio
-          corporis. Corporis, et?
-        </p>
-      </div>
-      <div className="service" data-aos="fade-up">
-        <h1>Shipping</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum
-          necessitatibus sed inventore nam. In aliquid sint, sed officia
-          voluptatem facilis quibusdam autem unde, architecto, consectetur
-          fugiat suscipit deserunt earum totam.
-        </p>
-      </div>
-      <div className="service" data-aos="fade-up">
-        <h1>Customs</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-          rem enim architecto officia rerum labore, molestiae corrupti ratione
-          inventore hic quae vero ea, molestias laboriosam voluptatibus!
-          Nesciunt est vel vitae sit reiciendis natus eligendi saepe? Sed
-          obcaecati aliquid at iure?
-        </p>
+        <h1>Our Services</h1>
+        <div className="services">
+          <h1>1. Importing Your Car</h1>
+          <h1>2. Importing Cars For Expats</h1>
+          <h1>3. Specification Customization ( Factory Configuration) </h1>
+          <h1>4. Guidance and Consultation</h1>
+          <h1>5. After-Sales Support</h1>
+        </div>
       </div>
       <div className="contact-us" data-aos="fade-up">
         <form>
@@ -107,20 +86,51 @@ const Services = () => {
       <div className="import" data-aos="fade-up">
         <h1>Why Import with Us</h1>
         <div className="cards">
-          <div className="card" data-aos="fade-right">
-            <h1>Cost Savings</h1>
+          <div className="card" data-aos="zoom-in">
+            <h1>Cheapest Prices, No Middlemen</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et sint
-              dolores, vel omnis totam at blanditiis molestiae a. Dignissimos,
-              nemo.
+              We bring you luxury European cars at direct prices, cutting out
+              the extra cost from middlemen and giving you the best deal
+              possible.
             </p>
           </div>
-          <div className="card" data-aos="fade-left">
-            <h1>Fast Delivery</h1>
+          <div className="card" data-aos="zoom-in">
+            <h1>Wide Range of Options</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et sint
-              dolores, vel omnis totam at blanditiis molestiae a. Dignissimos,
-              nemo.
+              Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or any
+              other European Brand we offer a variety of high-end vehicles to
+              match your style and needs.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Fast & Seamless Process</h1>
+            <p>
+              Forget about long waiting times and complicated processes. We
+              provide a smooth and fast import experience, getting your dream
+              car to you quicker.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Transparent Pricing</h1>
+            <p>
+              No hidden fees, no surprises. We believe in honesty and
+              transparency throughout your buying journey.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Trusted Expertise</h1>
+            <p>
+              With over 5,000 cars imported to Egypt and the Middle East, we
+              have the experience and knowledge to guide you every step of the
+              way.
+            </p>
+          </div>
+          <div className="card" data-aos="zoom-in">
+            <h1>Customer-Focused Service</h1>
+            <p>
+              Your satisfaction is our priority. From the moment you choose your
+              car until it’s delivered to your door, we ensure you have the best
+              experience possible.
             </p>
           </div>
         </div>
