@@ -1,23 +1,23 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD3Qm8h7rehLiUPU2ga10mmBd5p9_6uNVI",
-  authDomain: "goldstern-99b27.firebaseapp.com",
-  projectId: "goldstern-99b27",
-  storageBucket: "goldstern-99b27.firebasestorage.app",
-  messagingSenderId: "754868940403",
-  appId: "1:754868940403:web:107370b50121cdc5c88406",
-  measurementId: "G-BM963E7WTD",
+  apiKey: "AIzaSyALvr8sVaGoh4RRqwGeyPOHljMBttMeldo",
+  authDomain: "goldstone-db.firebaseapp.com",
+  projectId: "goldstone-db",
+  storageBucket: "goldstone-db.appspot.com",
+  messagingSenderId: "779215555436",
+  appId: "1:779215555436:web:cf3810ac66ca51710b4149",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-export default app;
+export { db, storage };

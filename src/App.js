@@ -14,6 +14,7 @@ import Login from "./Login";
 import Inventory from "./Inventory";
 import Services from "./Services";
 import Contact from "./Contact";
+import CarDetails from "./CarDetails";
 
 //Router
 const router = createBrowserRouter(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="/inventory" element={<Inventory />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/car/:id" element={<CarDetails />} />
     </Route>
   )
 );

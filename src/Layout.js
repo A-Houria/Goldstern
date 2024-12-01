@@ -44,8 +44,8 @@ const Layout = () => {
           <Link
             className={`login ${isOpen ? "open" : ""}`}
             onClick={handleBurgerClick}
-            to="/login">
-            Login
+            to="/">
+            User-Portal
           </Link>
         </div>
       </div>
