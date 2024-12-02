@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db, storage } from "./firebase"; 
 import { ref, getDownloadURL } from "firebase/storage";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const CarDetails = () => {
-  const { id } = useParams(); // Get car id from the URL
+  const { id } = useParams(); 
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [subCollections, setSubCollections] = useState({});
 
   useEffect(() => {
+    AOS.init({ duration: 800, once: false }); // Initialize AOS
+
     const fetchCarDetails = async () => {
       try {
         const docRef = doc(db, "Cars", id);
@@ -22,12 +25,9 @@ const CarDetails = () => {
           const imageRef = ref(storage, carData.Img);
           const imageUrl = await getDownloadURL(imageRef);
 
-          // Store the car data with imageUrl
           const carWithImage = { ...carData, imageUrl };
           setCar(carWithImage);
 
-          // Now check if there are any sub-collections and fetch them
-          await fetchSubCollections(docRef);
         } else {
           setError("Car not found.");
         }
@@ -36,25 +36,6 @@ const CarDetails = () => {
       } finally {
         setLoading(false);
       }
-    };
-
-    // Fetch the sub-collections
-    const fetchSubCollections = async (docRef) => {
-      const subCollectionNames = ['Engine']; // List of known sub-collection names
-      const subCollectionsData = {};
-
-      // Loop through known sub-collections and fetch their documents
-      for (let subCol of subCollectionNames) {
-        const subCollectionRef = collection(docRef, subCol);
-        const subColSnap = await getDocs(subCollectionRef);
-
-        // Map the documents in the sub-collection
-        const subDocs = subColSnap.docs.map((doc) => doc.data());
-        subCollectionsData[subCol] = subDocs;
-      }
-
-      // Store the sub-collections data
-      setSubCollections(subCollectionsData);
     };
 
     fetchCarDetails();
@@ -66,7 +47,7 @@ const CarDetails = () => {
   return (
     <div className="car-details">
       {car && (
-        <div className="card">
+        <div className="card" data-aos="fade-up"> {/* Add AOS animation */}
           <img src={car.imageUrl} alt={car.Model} />
           <div className="general">
             <p>Car Brand: {car.Name}</p>
@@ -76,11 +57,39 @@ const CarDetails = () => {
           </div>
         </div>
       )}
-
      
       <div className="details">
-        
+        <div className="special-features" data-aos="fade-right"> {/* Add AOS animation */}
+          <h1>Special Features</h1>
+          {car.Special_Features.map((feature) => (
+            <p key={feature.index}>{feature}</p>
+          ))}
+        </div>
+        <div className="engine-specs" data-aos="fade-right"> {/* Add AOS animation */}
+          <h1>Engine Specs</h1>
+          {car.Engine_Specs.map((spec) => (
+            <p key={spec.index}>{spec}</p>
+          ))}
+        </div>
+        <div className="exterior" data-aos="fade-right"> {/* Add AOS animation */}
+          <h1>Exterior</h1>
+          {car.Exterior.map((ex) => (
+            <p key={ex.index}>{ex}</p>
+          ))}
+        </div>
+        <div className="interior" data-aos="fade-right"> {/* Add AOS animation */}
+          <h1>Interior</h1>
+          {car.Interior.map((int) => (
+            <p key={int.index}>{int}</p>
+          ))}
+        </div>
       </div>
+      {car.Description && (
+        <div className="description" data-aos="fade-up"> {/* Add AOS animation */}
+          <h1>Description</h1>
+          <p>{car.Description}</p>
+        </div>
+      )}
     </div>
   );
 };

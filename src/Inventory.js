@@ -4,16 +4,15 @@ import { db, storage } from "./firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; 
 
 const Inventory = () => {
   const [cars, setCars] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState(""); // Track the selected brand from the dropdown
+  const [selectedBrand, setSelectedBrand] = useState(""); 
 
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
@@ -52,7 +51,6 @@ const Inventory = () => {
   }, []);
 
   useEffect(() => {
-    // Filter cars based on selected brand and search query
     const filtered = cars.filter((car) => {
       const matchesBrand = selectedBrand
         ? car.Model.toLowerCase().includes(selectedBrand.toLowerCase())
@@ -65,10 +63,6 @@ const Inventory = () => {
     setFilteredCars(filtered);
   }, [selectedBrand, searchQuery, cars]);
 
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev);
-  };
-
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
@@ -76,7 +70,6 @@ const Inventory = () => {
 
   const handleBrandSelect = (brand) => {
     setSelectedBrand(brand);
-    setDropdownOpen(false); // Close dropdown after selecting
   };
 
   if (loading)
@@ -96,31 +89,31 @@ const Inventory = () => {
 
   return (
     <div className="inventory">
-      {/* Featured Cars Section */}
       <div className="featured" data-aos="fade-left">
         <h1 className="header">Our Featured Cars</h1>
         <div className="cards">
-          {cars.map((car) => (
-            <Link to={`/car/${car.id}`} key={car.id}> {/* Link to car details */}
-              <div className="card" data-aos="fade-up">
-                <img src={car.imageUrl} alt={car.Model} />
-                <div className="text">
-                  <div className="parts">
-                    <p>{car.Name} {car.Model} {car.Prod_Year}</p>
+          {cars
+            .filter((car) => car.Featured === true) 
+            .map((car) => (
+              <Link to={`/car/${car.id}`} key={car.id}> 
+                <div className="card" data-aos="fade-up">
+                  <img src={car.imageUrl} alt={car.Model} />
+                  <div className="text">
+                    <div className="parts">
+                      <p>{car.Name} {car.Model} {car.Prod_Year}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
         </div>
       </div>
 
-      {/* Car List Section */}
+      
       <div className="car-list">
         <div className="car-nav">
           <h1>Our Inventory</h1>
 
-          {/* Search Bar */}
           <div className="search-bar">
             <input
               type="text"
@@ -132,7 +125,6 @@ const Inventory = () => {
           </div>
         </div>
 
-        {/* Display Filtered Cars */}
         <div className="filtered-cars">
           {filteredCars.length > 0 ? (
             filteredCars.map((car) => (
