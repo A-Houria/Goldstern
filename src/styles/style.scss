@@ -311,6 +311,9 @@ a {
               width: 500px;
               aspect-ratio: 3/2;
               margin-bottom: 20px;
+              @media screen and (max-width: 500px) {
+                width: 100%;
+              }
             }
             .text {
               width: 100%;
@@ -726,6 +729,9 @@ a {
               width: 500px;
               aspect-ratio: 3/2;
               margin-bottom: 20px;
+              @media screen and (max-width: 500px) {
+                width: 100%;
+              }
             }
             .text {
               width: 100%;
