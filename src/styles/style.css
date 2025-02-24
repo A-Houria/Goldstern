@@ -1005,17 +1005,17 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1000px) {
   .app .layout .car-details .card .general {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 .app .layout .car-details .card .general p {
-  font-size: 1vw;
+  font-size: 0.8vw;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1000px) {
   .app .layout .car-details .card .general p {
     font-size: 2vw;
     margin: 5px 0px;
