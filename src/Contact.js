@@ -78,28 +78,28 @@ const Contact = () => {
         <h1>Our Team</h1>
         <div className="cards">
           <div className="card">
-            <img src=".\Icons\Logo-black.png" alt="profile image" />
+            <img src="/Icons/Logo-black.png" alt="profile image" />
             <div className="line"></div>
             <p>Abdelrahman Houria</p>
             <p>General Manager</p>
             <p>28 Years old</p>
           </div>
           <div className="card">
-            <img src=".\Icons\Logo-black.png" alt="profile image" />
+            <img src="/Icons/Logo-black.png" alt="profile image" />
             <div className="line"></div>
             <p>Mostafa Shafiee</p>
             <p>General Manager</p>
             <p>28 Years old</p>
           </div>
           <div className="card">
-            <img src=".\Icons\Logo-black.png" alt="profile image" />
+            <img src="/Icons/Logo-black.png" alt="profile image" />
             <div className="line"></div>
             <p>Abdelrahman Houria</p>
             <p>General Manager</p>
             <p>28 Years old</p>
           </div>
           <div className="card">
-            <img src=".\Icons\Logo-black.png" alt="profile image" />
+            <img src="/Icons/Logo-black.png" alt="profile image" />
             <div className="line"></div>
             <p>Mostafa Shafiee</p>
             <p>General Manager</p>
@@ -111,13 +111,13 @@ const Contact = () => {
         <div className="contact-details">
           <div className="phone">
             <h1>call us or send a message on whatsapp</h1>
-            <img src=".\Icons\phone.png" alt="telephone" />
+            <img src="/Icons/phone.png" alt="telephone" />
             <p>
-              <img src=".\Icons\phone-num.png" alt="phone" />
+              <img src="/Icons/phone-num.png" alt="phone" />
               +20 12 3456 7891
             </p>
             <p>
-              <img src=".\Icons\whatsapp.png" alt="whatsapp" />
+              <img src="/Icons/whatsapp.png" alt="whatsapp" />
               +20 12 3456 7891
             </p>
           </div>
@@ -127,13 +127,13 @@ const Contact = () => {
               <a
                 href="https://www.facebook.com/profile.php?id=61552608263446"
                 target="_blank">
-                <img src=".\Icons\facebook-colored.png" alt="facebook" />
+                <img src="/Icons/facebook-colored.png" alt="facebook" />
               </a>
               <a href="https://www.instagram.com/goldstern_eg/" target="_blank">
-                <img src=".\Icons\instagram-colored.png" alt="instagram" />
+                <img src="/Icons/instagram-colored.png" alt="instagram" />
               </a>
               <a href="https://www.tiktok.com/@goldstern.eg" target="_blank">
-                <img src=".\Icons\tiktok-colored.png" alt="tiktok" />
+                <img src="/Icons/tiktok-colored.png" alt="tiktok" />
               </a>
             </div>
           </div>

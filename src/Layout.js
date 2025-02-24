@@ -60,7 +60,7 @@ const Layout = () => {
             target="_blank"
             rel="noreferrer">
             <p>
-              <img src=".\Icons\facebook.png" alt="Facebook" />
+              <img src="/Icons/facebook.png" alt="Facebook" />
               Goldstern
             </p>
           </a>
@@ -69,7 +69,7 @@ const Layout = () => {
             target="_blank"
             rel="noreferrer">
             <p>
-              <img src=".\Icons\instagram.png" alt="Instagram" />
+              <img src="/Icons/instagram.png" alt="Instagram" />
               goldstern_eg
             </p>
           </a>
@@ -78,7 +78,7 @@ const Layout = () => {
             target="_blank"
             rel="noreferrer">
             <p>
-              <img src=".\Icons\tiktok.png" alt="Tiktok" />
+              <img src="/Icons/tiktok.png" alt="Tiktok" />
               goldstern.eg
             </p>
           </a>
