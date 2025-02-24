@@ -75,7 +75,7 @@ const Inventory = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <div className="spinner"></div>
+        <img src=".\Icons\Logo-black.png" alt=""/>
       </div>
     );
 

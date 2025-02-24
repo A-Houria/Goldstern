@@ -50,8 +50,20 @@ const CarDetails = () => {
     fetchCarDetails();
   }, [id]);
 
-  if (loading) return <div className="loading-container">Loading...</div>;
-  if (error) return <div className="error-container">{error}</div>;
+  if (loading)
+    return (
+      <div className="loading-container">
+        <img src=".\Icons\Logo-black.png" alt=""/>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="error-container">
+        <p>Error: {error}</p>
+        <p>Please refresh the page.</p>
+      </div>
+    );
 
   return (
     <div className="car-details">
