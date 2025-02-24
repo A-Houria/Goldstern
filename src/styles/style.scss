@@ -307,7 +307,9 @@ a {
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
-              width: 500px;
+              min-width: 100%;
+              aspect-ratio: 3/2;
+              margin-bottom: 20px;
               @media screen and (max-width: 650px) {
                 width: 90%;
               }
@@ -710,7 +712,8 @@ a {
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
-              width: 500px;
+              min-width: 100%;
+              aspect-ratio: 3/2;
               margin-bottom: 20px;
               @media screen and (max-width: 650px) {
                 width: 90%;

@@ -317,7 +317,9 @@ a {
   border-radius: 3px;
 }
 .app .layout .home .featured .cards .card img {
-  width: 500px;
+  min-width: 100%;
+  aspect-ratio: 3/2;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
   .app .layout .home .featured .cards .card img {
@@ -754,7 +756,8 @@ a {
   border-radius: 3px;
 }
 .app .layout .inventory .featured .cards .card img {
-  width: 500px;
+  min-width: 100%;
+  aspect-ratio: 3/2;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
