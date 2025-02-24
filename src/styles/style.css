@@ -499,7 +499,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 50px;
+  width: 60%;
+  margin: 100px auto;
+}
+@media screen and (max-width: 450px) {
+  .app .layout .about .story {
+    width: 90%;
+  }
 }
 .app .layout .about .story h1 {
   font-size: 52px;
@@ -513,7 +519,6 @@ a {
   font-weight: 400;
   font-size: 18px;
   margin: 15px 0px;
-  text-align: center;
   line-height: 1.5;
 }
 .app .layout .about .mission {
@@ -523,6 +528,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 60%;
+  margin: auto;
+}
+@media screen and (max-width: 450px) {
+  .app .layout .about .mission .cards {
+    width: 90%;
+  }
 }
 .app .layout .about .mission .cards .card {
   display: flex;
@@ -540,7 +552,6 @@ a {
   font-weight: 400;
   letter-spacing: 2px;
   width: 80%;
-  text-align: center;
   margin: 25px 0px;
   line-height: 25px;
 }
@@ -549,18 +560,27 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 60%;
+  margin: 100px auto;
+  padding: 0px 30px;
+}
+@media screen and (max-width: 450px) {
+  .app .layout .about .message {
+    width: 90%;
+    margin: 100px auto;
+  }
 }
 .app .layout .about .message h1 {
   font-size: 38px;
   font-weight: 700;
   letter-spacing: 2px;
+  text-align: center;
 }
 .app .layout .about .message p {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 2px;
   width: 80%;
-  text-align: center;
   margin: 25px 0px;
   line-height: 25px;
 }
@@ -586,7 +606,6 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  text-align: center;
   margin-top: 100px;
   width: 80%;
 }
@@ -602,12 +621,12 @@ a {
   font-weight: 400;
   letter-spacing: 2px;
   width: 80%;
-  text-align: center;
   margin: 25px 0px;
   line-height: 1.5;
 }
 .app .layout .about .cst-test {
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   margin: 100px 50px;
@@ -1265,6 +1284,7 @@ a {
 }
 .app .layout .services .cst-test {
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   margin: 100px 50px;
@@ -1478,6 +1498,7 @@ a {
 }
 .app .layout .contact .team {
   display: flex;
+  display: none;
   flex-direction: column;
   margin: 0px 50px;
   margin-top: 100px;
