@@ -95,6 +95,7 @@ a {
   }
 }
 .app .layout .nav .cont .login {
+  display: none;
   padding: 20px 15px;
   background-color: black;
   color: white;
