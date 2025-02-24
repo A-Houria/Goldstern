@@ -308,7 +308,6 @@ a {
             border-radius: 3px;
             img {
               width: 500px;
-              aspect-ratio: 3/2;
               @media screen and (max-width: 650px) {
                 width: 90%;
               }
@@ -712,7 +711,6 @@ a {
             border-radius: 3px;
             img {
               width: 500px;
-              aspect-ratio: 3/2;
               margin-bottom: 20px;
               @media screen and (max-width: 650px) {
                 width: 90%;
@@ -846,7 +844,6 @@ a {
             border-radius: 3px;
             img {
               width: 500px;
-              aspect-ratio: 3/2;
               margin-bottom: 20px;
               @media screen and (max-width: 650px) {
                 width: 90%;
@@ -934,6 +931,7 @@ a {
           }
             img{
               width: 30%;
+              aspect-ratio: 3/2;
               @media screen and (max-width: 850px) {
                 width: 90%;
               }

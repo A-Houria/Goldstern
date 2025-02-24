@@ -318,7 +318,6 @@ a {
 }
 .app .layout .home .featured .cards .card img {
   width: 500px;
-  aspect-ratio: 3/2;
 }
 @media screen and (max-width: 650px) {
   .app .layout .home .featured .cards .card img {
@@ -756,7 +755,6 @@ a {
 }
 .app .layout .inventory .featured .cards .card img {
   width: 500px;
-  aspect-ratio: 3/2;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
@@ -898,7 +896,6 @@ a {
 }
 .app .layout .inventory .car-list .filtered-cars .card img {
   width: 500px;
-  aspect-ratio: 3/2;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
@@ -996,6 +993,7 @@ a {
 }
 .app .layout .car-details .gallary .images img {
   width: 30%;
+  aspect-ratio: 3/2;
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .gallary .images img {
