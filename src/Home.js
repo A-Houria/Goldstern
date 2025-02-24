@@ -98,35 +98,25 @@ const Home = () => {
       </div>
 
       {/* Featured Cars Section */}
-      {featuredCars.filter((car) => car.Featured === true).map((car, index) => (
       <div className="featured" data-aos="fade-left">
         <h1 className="header">Our Featured Cars</h1>
         <div className="cards">
-            <Link to={`/car/${car.id}`} key={car.id}> 
-            <div className="card" data-aos="fade-up" data-aos-delay={index * 100} key={car.id}>
-              <img src={car.imageUrl} alt={car.Model} />
-              <div className="text">
-                <h1>{car.Name}</h1>
-                <div className="parts">
-                  <p>
-                    <img src="./Icons/piston.png" alt="Power" />
-                    {car.Engine_Specs[0]}
-                  </p>
-                  <p>
-                    <img src="./Icons/speed.png" alt="Speed" />
-                    {car.Engine_Specs[2]}
-                  </p>
-                  <p>
-                    <img src="./Icons/price.png" alt="Price" />
-                    {car.Price}
-                  </p>
+          {featuredCars
+            .filter((car) => car.Featured === true) 
+            .map((car) => (
+              <Link to={`/car/${car.id}`} key={car.id}> 
+                <div className="card" data-aos="fade-up">
+                  <img src={car.imageUrl} alt={car.Model} />
+                  <div className="text">
+                    <div className="parts">
+                      <p>{car.Name} {car.Model} {car.Production_Year}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            </Link>
+              </Link>
+            ))}
         </div>
       </div>
-      ))}
 
       {/* Process Section */}
       <div className="details" data-aos="fade-up">

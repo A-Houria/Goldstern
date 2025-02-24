@@ -311,13 +311,14 @@ a {
   flex-direction: column;
   align-items: center;
   min-width: 35%;
-  padding: 10px;
+  padding-bottom: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
   border-radius: 3px;
 }
 .app .layout .home .featured .cards .card img {
   width: 500px;
+  aspect-ratio: 3/2;
 }
 @media screen and (max-width: 650px) {
   .app .layout .home .featured .cards .card img {
@@ -329,6 +330,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px 0px;
 }
 .app .layout .home .featured .cards .card .text h1 {
   text-align: center;
@@ -747,13 +749,15 @@ a {
   flex-direction: column;
   align-items: center;
   min-width: 35%;
-  padding: 10px;
+  padding-bottom: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
   border-radius: 3px;
 }
 .app .layout .inventory .featured .cards .card img {
   width: 500px;
+  aspect-ratio: 3/2;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
   .app .layout .inventory .featured .cards .card img {
@@ -873,31 +877,36 @@ a {
   box-shadow: 0 0 5px rgba(173, 173, 173, 0.5);
 }
 .app .layout .inventory .car-list .filtered-cars {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+.app .layout .inventory .car-list .filtered-cars .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 35%;
-  padding: 10px;
+  padding-bottom: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
   border-radius: 3px;
-  margin: 100px;
 }
-@media screen and (max-width: 650px) {
-  .app .layout .inventory .car-list .filtered-cars {
-    min-width: 90%;
-  }
-}
-.app .layout .inventory .car-list .filtered-cars img {
+.app .layout .inventory .car-list .filtered-cars .card img {
   width: 500px;
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/2;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
-  .app .layout .inventory .car-list .filtered-cars img {
+  .app .layout .inventory .car-list .filtered-cars .card img {
     width: 90%;
   }
 }
-.app .layout .inventory .car-list .filtered-cars p {
+.app .layout .inventory .car-list .filtered-cars .card p {
   width: 100%;
   text-align: center;
   font-size: 1vw;
@@ -906,22 +915,13 @@ a {
   margin: 10px;
   color: grey;
 }
-.app .layout .inventory .car-list .filtered-cars p img {
-  width: 1.5vw;
-  margin: 0px 10px;
-}
 @media screen and (max-width: 1100px) {
-  .app .layout .inventory .car-list .filtered-cars p img {
-    width: 2vw;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .app .layout .inventory .car-list .filtered-cars p {
+  .app .layout .inventory .car-list .filtered-cars .card p {
     font-size: 1.5vw;
   }
 }
 @media screen and (max-width: 700px) {
-  .app .layout .inventory .car-list .filtered-cars p {
+  .app .layout .inventory .car-list .filtered-cars .card p {
     font-size: 2vw;
   }
 }
@@ -934,19 +934,24 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 80%;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .card {
     width: 90%;
   }
 }
 .app .layout .car-details .card img {
-  width: 100%;
-  aspect-ratio: 16/9;
+  width: 65%;
+  margin: 50px;
+}
+@media screen and (max-width: 850px) {
+  .app .layout .car-details .card img {
+    width: 75%;
+  }
 }
 .app .layout .car-details .card .general {
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -968,14 +973,43 @@ a {
     margin: 5px 0px;
   }
 }
+.app .layout .car-details .gallary {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+}
+.app .layout .car-details .gallary .images {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin: 50px auto;
+}
+@media screen and (max-width: 850px) {
+  .app .layout .car-details .gallary .images {
+    flex-direction: column;
+  }
+}
+.app .layout .car-details .gallary .images img {
+  width: 30%;
+}
+@media screen and (max-width: 850px) {
+  .app .layout .car-details .gallary .images img {
+    width: 90%;
+  }
+}
 .app .layout .car-details .details {
-  width: 60%;
-  margin: 100px auto;
+  width: 80%;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .details {
     width: 90%;
     margin: 25px auto;
@@ -992,7 +1026,7 @@ a {
   font-weight: 400;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .details .special-features h1, .app .layout .car-details .details .engine-specs h1, .app .layout .car-details .details .exterior h1, .app .layout .car-details .details .interior h1 {
     font-size: 2.5vw;
   }
@@ -1003,19 +1037,19 @@ a {
   line-height: 1.5;
   font-weight: 400;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .details .special-features p, .app .layout .car-details .details .engine-specs p, .app .layout .car-details .details .exterior p, .app .layout .car-details .details .interior p {
     font-size: 2vw;
   }
 }
 .app .layout .car-details .description {
-  width: 60%;
+  width: 80%;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .description {
     width: 90%;
   }
@@ -1026,7 +1060,7 @@ a {
   font-weight: 400;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .description h1 {
     font-size: 2.5vw;
   }
@@ -1037,7 +1071,7 @@ a {
   line-height: 1.5;
   font-weight: 400;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .app .layout .car-details .description p {
     font-size: 2vw;
   }

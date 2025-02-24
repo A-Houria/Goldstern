@@ -100,7 +100,7 @@ const Inventory = () => {
                   <img src={car.imageUrl} alt={car.Model} />
                   <div className="text">
                     <div className="parts">
-                      <p>{car.Name} {car.Model} {car.Prod_Year}</p>
+                      <p>{car.Name} {car.Model} {car.Production_Year}</p>
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const Inventory = () => {
                 <div className="card">
                   <img src={car.imageUrl} alt={car.Model} />
                   <div className="text">
-                    <p>{car.Name} {car.Model} {car.Prod_Year}</p>
+                    <p>{car.Name} {car.Model} {car.Production_Year}</p>
                   </div>
                 </div>
               </Link>

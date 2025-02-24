@@ -302,12 +302,13 @@ a {
             flex-direction: column;
             align-items: center;
             min-width: 35%;
-            padding: 10px;
+            padding-bottom: 10px;
             background-color: rgb(248, 248, 248);
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
               width: 500px;
+              aspect-ratio: 3/2;
               @media screen and (max-width: 650px) {
                 width: 90%;
               }
@@ -317,6 +318,7 @@ a {
               display: flex;
               flex-direction: column;
               align-items: center;
+              margin: 10px 0px;
               h1 {
                 text-align: center;
                 width: 100%;
@@ -704,12 +706,14 @@ a {
             flex-direction: column;
             align-items: center;
             min-width: 35%;
-            padding: 10px;
+            padding-bottom: 10px;
             background-color: rgb(248, 248, 248);
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
               width: 500px;
+              aspect-ratio: 3/2;
+              margin-bottom: 20px;
               @media screen and (max-width: 650px) {
                 width: 90%;
               }
@@ -823,50 +827,49 @@ a {
 
         }
         .filtered-cars {
+          min-width: 100%;
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           align-items: center;
-          min-width: 35%;
-          padding: 10px;
-          background-color: rgb(248, 248, 248);
-          border: 2px solid rgb(235, 235, 235);
-          border-radius: 3px;
-          margin: 100px;
-
-          @media screen and (max-width: 650px) {
-            min-width: 90%;
-          }
-          img {
-            width: 500px;
-            aspect-ratio: 16/9;
-            @media screen and (max-width: 650px) {
-              width: 90%;
-            }
-          }
-          p {
-            width: 100%;
-            text-align: center;
-            font-size: 1vw;
-            letter-spacing: 2px;
-            font-weight: 400;
-            margin: 10px;
-            color: grey;
-
+          justify-content: center;
+          gap: 35px;
+          flex-wrap: wrap;
+          margin: 50px;
+          .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 35%;
+            padding-bottom: 10px;
+            background-color: rgb(248, 248, 248);
+            border: 2px solid rgb(235, 235, 235);
+            border-radius: 3px;
             img {
-              width: 1.5vw;
-              margin: 0px 10px;
-              @media screen and (max-width: 1100px) {
-                width: 2vw;
+              width: 500px;
+              aspect-ratio: 3/2;
+              margin-bottom: 20px;
+              @media screen and (max-width: 650px) {
+                width: 90%;
               }
             }
-            @media screen and (max-width: 1100px) {
-              font-size: 1.5vw;
+            p {
+              width: 100%;
+              text-align: center;
+              font-size: 1vw;
+              letter-spacing: 2px;
+              font-weight: 400;
+              margin: 10px;
+              color: grey;
+  
+              @media screen and (max-width: 1100px) {
+                font-size: 1.5vw;
+              }
+              @media screen and (max-width: 700px) {
+                font-size: 2vw;
+              }
             }
-            @media screen and (max-width: 700px) {
-              font-size: 2vw;
-            }
+            
           }
-          
         }
       }
     }
@@ -879,16 +882,19 @@ a {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 60%;
-          @media screen and (max-width: 750px) {
+          width: 80%;
+          @media screen and (max-width: 850px) {
             width: 90%;
           }
           img{
-            width: 100%;
-            aspect-ratio: 16/9;
+            width: 65%;
+            margin: 50px;
+            @media screen and (max-width: 850px) {
+              width:75%;
+            }
           }
           .general{
-            width: 100%;
+            width: 65%;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -908,16 +914,44 @@ a {
             }
           }
         }
+        .gallary{
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          margin: 50px auto;
+          
+          .images{
+          width: 95%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 35px;
+          flex-wrap: wrap ;
+          margin: 50px auto;
+          @media screen and (max-width: 850px) {
+            flex-direction: column;
+          }
+            img{
+              width: 30%;
+              @media screen and (max-width: 850px) {
+                width: 90%;
+              }
+            }
+          }
+          
+        }
         .details{
-          width: 60%;
-          margin: 100px auto;
+          width: 80%;
+          margin: 50px auto;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          @media screen and (max-width: 750px) {
+          @media screen and (max-width: 850px) {
             width: 90%;
             margin: 25px auto;
           }
+          
           .special-features, .engine-specs, .exterior, .interior{
             display: flex;
             flex-direction: column;
@@ -927,7 +961,7 @@ a {
               font-size: 1.5vw;
               font-weight: 400;
               letter-spacing: 2px;
-              @media screen and (max-width: 750px) {
+              @media screen and (max-width: 850px) {
                 font-size: 2.5vw;
               }
             }
@@ -936,20 +970,20 @@ a {
               letter-spacing: 2px;
               line-height: 1.5;
               font-weight: 400;
-              @media screen and (max-width: 750px) {
+              @media screen and (max-width: 850px) {
                 font-size: 2vw;
               }
             }
           }
         }
         .description{
-          width: 60%;
+          width: 80%;
           margin: 0px auto;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
 
-          @media screen and (max-width: 750px) {
+          @media screen and (max-width: 850px) {
             width: 90%;
           }
 
@@ -959,7 +993,7 @@ a {
             font-weight: 400;
             letter-spacing: 2px;
 
-            @media screen and (max-width: 750px) {
+            @media screen and (max-width: 850px) {
               font-size: 2.5vw;
             }
           }
@@ -968,7 +1002,7 @@ a {
             letter-spacing: 2px;
             line-height: 1.5;
             font-weight: 400;
-            @media screen and (max-width: 750px) {
+            @media screen and (max-width: 850px) {
               font-size: 2vw;
             }
           }
