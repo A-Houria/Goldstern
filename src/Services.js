@@ -4,13 +4,35 @@ import "aos/dist/aos.css";
 
 const Services = () => {
   const [activeCard, setActiveCard] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const handlesubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Your inquiry was sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("There was an issue sending your inquiry.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("There was an error sending your inquiry.");
+    }
   };
 
   const toggleCard = (index) => {
@@ -63,24 +85,43 @@ const Services = () => {
         </div>
       </div>
       <div className="contact-us" data-aos="fade-up">
-        <form>
+      <form onSubmit={handleSubmit}>
           <h1>Contact Us</h1>
           <p>We will get in touch shortly</p>
           <div className="input">
             <label htmlFor="name">Name</label>
-            <input required type="text" name="name" id="name" />
+            <input
+              required
+              type="text"
+              name="name"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
           </div>
           <div className="input">
             <label htmlFor="email">Email</label>
-            <input required type="email" name="email" id="email" />
+            <input
+              required
+              type="email"
+              name="email"
+              id="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </div>
           <div className="input">
             <label htmlFor="message">Your Inquiry</label>
-            <textarea required type="message" name="message" id="message" />
+            <textarea
+              required
+              type="message"
+              name="message"
+              id="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
           </div>
-          <button onClick={handlesubmit} type="submit">
-            Submit
-          </button>
+          <button type="submit">Send</button>
         </form>
       </div>
       <div className="import" data-aos="fade-up">
