@@ -317,14 +317,9 @@ a {
   border-radius: 3px;
 }
 .app .layout .home .featured .cards .card img {
-  min-width: 100%;
+  width: 500px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
-}
-@media screen and (max-width: 650px) {
-  .app .layout .home .featured .cards .card img {
-    width: 90%;
-  }
 }
 .app .layout .home .featured .cards .card .text {
   width: 100%;
@@ -756,14 +751,9 @@ a {
   border-radius: 3px;
 }
 .app .layout .inventory .featured .cards .card img {
-  min-width: 100%;
+  width: 500px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
-}
-@media screen and (max-width: 650px) {
-  .app .layout .inventory .featured .cards .card img {
-    width: 90%;
-  }
 }
 .app .layout .inventory .featured .cards .card .text {
   width: 100%;

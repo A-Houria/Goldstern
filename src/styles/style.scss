@@ -307,12 +307,9 @@ a {
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
-              min-width: 100%;
+              width: 500px;
               aspect-ratio: 3/2;
               margin-bottom: 20px;
-              @media screen and (max-width: 650px) {
-                width: 90%;
-              }
             }
             .text {
               width: 100%;
@@ -712,12 +709,9 @@ a {
             border: 2px solid rgb(235, 235, 235);
             border-radius: 3px;
             img {
-              min-width: 100%;
+              width: 500px;
               aspect-ratio: 3/2;
               margin-bottom: 20px;
-              @media screen and (max-width: 650px) {
-                width: 90%;
-              }
             }
             .text {
               width: 100%;
