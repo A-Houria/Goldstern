@@ -203,6 +203,7 @@ a {
     -webkit-user-select: none;
        -moz-user-select: none;
             user-select: none;
+    font-size: 12px;
   }
   .app .layout .nav .cont .list a:hover {
     color: black;
@@ -1860,6 +1861,16 @@ a {
 @media screen and (max-width: 750px) {
   .app .layout .footer .social-media p {
     font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 650px) {
+  .app .layout .footer .social-media p {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .app .layout .footer .social-media p {
+    font-size: 2.2vw;
   }
 }
 .app .layout .footer .social-media p img {

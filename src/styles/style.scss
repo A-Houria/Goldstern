@@ -196,6 +196,7 @@ a {
               max-width: fit-content;
               text-align: start;
               user-select: none;
+              font-size: 12px;
               &:hover {
                 color: black;
               }
@@ -1686,6 +1687,12 @@ a {
           font-size: 1.2vw;
           @media screen and (max-width: 750px) {
             font-size: 1.5vw;
+          }
+          @media screen and (max-width: 650px) {
+            font-size: 2vw;
+          }
+          @media screen and (max-width: 550px) {
+            font-size: 2.2vw;
           }
           img {
             width: 3vw;
