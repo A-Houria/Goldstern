@@ -14,7 +14,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/.netlify/functions/send-email", {
+      const response = await fetch("/.netlify/functions/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -64,7 +64,6 @@ const Contact = () => {
             <label htmlFor="message">Your Inquiry</label>
             <textarea
               required
-              type="message"
               name="message"
               id="message"
               value={formData.message}
