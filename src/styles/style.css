@@ -1152,7 +1152,7 @@ a {
 .app .layout .car-details .details .special-features p, .app .layout .car-details .details .engine-specs p, .app .layout .car-details .details .exterior p, .app .layout .car-details .details .interior p {
   font-size: 0.9vw;
   letter-spacing: 2px;
-  line-height: 1.5;
+  line-height: 2.5;
   font-weight: 400;
 }
 @media screen and (max-width: 850px) {
@@ -1186,7 +1186,7 @@ a {
 .app .layout .car-details .description p {
   font-size: 0.9vw;
   letter-spacing: 2px;
-  line-height: 1.5;
+  line-height: 2.5;
   font-weight: 400;
 }
 @media screen and (max-width: 850px) {
@@ -1808,6 +1808,7 @@ a {
   font-size: 42px;
   font-weight: 400;
   letter-spacing: 2px;
+  text-align: center;
 }
 @media screen and (max-width: 600px) {
   .app .layout .contact .details .map h1 {
@@ -1865,12 +1866,7 @@ a {
 }
 @media screen and (max-width: 650px) {
   .app .layout .footer .social-media p {
-    font-size: 2vw;
-  }
-}
-@media screen and (max-width: 550px) {
-  .app .layout .footer .social-media p {
-    font-size: 2.2vw;
+    font-size: 1.8vw;
   }
 }
 .app .layout .footer .social-media p img {

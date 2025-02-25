@@ -1052,7 +1052,7 @@ a {
             p{
               font-size: .9vw;
               letter-spacing: 2px;
-              line-height: 1.5;
+              line-height: 2.5;
               font-weight: 400;
               @media screen and (max-width: 850px) {
                 font-size: 2vw;
@@ -1084,7 +1084,7 @@ a {
           p{
             font-size: .9vw;
             letter-spacing: 2px;
-            line-height: 1.5;
+            line-height: 2.5;
             font-weight: 400;
             @media screen and (max-width: 850px) {
               font-size: 2vw;
@@ -1638,6 +1638,7 @@ a {
             font-size: 42px;
             font-weight: 400;
             letter-spacing: 2px;
+            text-align: center;
             @media screen and (max-width: 600px) {
               font-size: 3.5vw;
             }
@@ -1689,10 +1690,7 @@ a {
             font-size: 1.5vw;
           }
           @media screen and (max-width: 650px) {
-            font-size: 2vw;
-          }
-          @media screen and (max-width: 550px) {
-            font-size: 2.2vw;
+            font-size: 1.8vw;
           }
           img {
             width: 3vw;
