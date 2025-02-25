@@ -32,9 +32,9 @@ exports.handler = async (event) => {
       subject: `!!Testing!! New Website Inquiry from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `
-      <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Images/bg.jpg); background-size: cover;">
+      <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Icons/bg.jpg); background-size: cover;">
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-            <p style="display: flex; flex-direction: row; align-items: center; font-size: 24px; letter-spacing: 2px; font-weight: 600;"><img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Images/Logo-black.png" alt="Logo">Goldstern</p>
+            <p style="display: flex; flex-direction: row; align-items: center; font-size: 24px; letter-spacing: 2px; font-weight: 600;"><img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">Goldstern</p>
         </div>
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
             <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-bottom: 30px; ">Hi Team,</p>
@@ -55,9 +55,9 @@ exports.handler = async (event) => {
       to: email,
       subject: "We Received Your Inquiry!",
       html: `
-      <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Images/bg.jpg); background-size: cover;">
+      <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Icons/bg.jpg); background-size: cover;">
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-            <p style="display: flex; flex-direction: row; align-items: center; font-size: 24px; letter-spacing: 2px; font-weight: 600;"><img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Images/Logo-black.png" alt="Logo">Goldstern</p>
+            <p style="display: flex; flex-direction: row; align-items: center; font-size: 24px; letter-spacing: 2px; font-weight: 600;"><img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">Goldstern</p>
         </div>
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
             <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-bottom: 30px; ">Hi ${name},</p>
