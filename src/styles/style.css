@@ -529,9 +529,9 @@ a {
   width: 60%;
   margin: 100px auto;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) {
   .app .layout .about .story {
-    width: 90%;
+    width: 100%;
   }
 }
 .app .layout .about .story h1 {
@@ -539,6 +539,16 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   margin: 15px 0px;
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .story h1 {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .app .layout .about .story h1 {
+    font-size: 32px;
+  }
 }
 .app .layout .about .story p {
   width: 80%;
@@ -551,6 +561,12 @@ a {
 .app .layout .about .mission {
   margin: 0px 50px;
 }
+@media screen and (max-width: 750px) {
+  .app .layout .about .mission {
+    width: 100%;
+    margin: 0px;
+  }
+}
 .app .layout .about .mission .cards {
   display: flex;
   flex-direction: column;
@@ -558,9 +574,10 @@ a {
   width: 60%;
   margin: auto;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) {
   .app .layout .about .mission .cards {
-    width: 90%;
+    width: 100%;
+    margin: 0px;
   }
 }
 .app .layout .about .mission .cards .card {
@@ -573,6 +590,16 @@ a {
   font-size: 38px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .mission .cards .card h1 {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .app .layout .about .mission .cards .card h1 {
+    font-size: 32px;
+  }
 }
 .app .layout .about .mission .cards .card p {
   font-size: 18px;
@@ -591,9 +618,9 @@ a {
   margin: 100px auto;
   padding: 0px 30px;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) {
   .app .layout .about .message {
-    width: 90%;
+    width: 100%;
     margin: 100px auto;
   }
 }
@@ -602,6 +629,16 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   text-align: center;
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .message h1 {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .app .layout .about .message h1 {
+    font-size: 32px;
+  }
 }
 .app .layout .about .message p {
   font-size: 18px;
@@ -621,6 +658,21 @@ a {
   font-size: 38px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+@media screen and (max-width: 1000px) {
+  .app .layout .about .import h1 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .import h1 {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .app .layout .about .import h1 {
+    font-size: 32px;
+  }
 }
 .app .layout .about .import .cards {
   display: flex;
@@ -642,6 +694,22 @@ a {
   letter-spacing: 2px;
   margin: 25px 0px;
   width: 90%;
+}
+@media screen and (max-width: 1000px) {
+  .app .layout .about .import .cards .card h1 {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .import .cards .card h1 {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .app .layout .about .import .cards .card h1 {
+    font-size: 18px;
+  }
 }
 .app .layout .about .import .cards .card p {
   font-size: 18px;
@@ -697,7 +765,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0px 50px;
+  margin: 100px 50px 0px 50px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -1163,6 +1231,12 @@ a {
   margin: 0px 50px;
   margin-top: 100px;
 }
+@media screen and (max-width: 650px) {
+  .app .layout .services .contact-us {
+    width: 100%;
+    margin: 100px 0px;
+  }
+}
 .app .layout .services .contact-us h1 {
   text-align: center;
   font-size: 42px;
@@ -1198,6 +1272,12 @@ a {
   max-width: 100%;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .services .contact-us form {
+    width: 90%;
+    margin: 0px;
+  }
 }
 .app .layout .services .contact-us form .input {
   display: flex;
@@ -1279,7 +1359,7 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 750px) {
   .app .layout .services .import h1 {
     font-size: 7.5vw;
   }
@@ -1302,9 +1382,9 @@ a {
   letter-spacing: 2px;
   text-align: center;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 750px) {
   .app .layout .services .import .cards .card h1 {
-    font-size: 5.5vw;
+    font-size: 4.5vw;
   }
 }
 .app .layout .services .import .cards .card p {
@@ -1430,6 +1510,12 @@ a {
   margin: 0px 50px;
   margin-top: 100px;
 }
+@media screen and (max-width: 650px) {
+  .app .layout .contact .contact-us {
+    width: 100%;
+    margin: 100px 0px;
+  }
+}
 .app .layout .contact .contact-us h1 {
   text-align: center;
   font-size: 42px;
@@ -1465,6 +1551,11 @@ a {
   max-width: 100%;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media screen and (max-width: 650px) {
+  .app .layout .contact .contact-us form {
+    width: 90%;
+  }
 }
 .app .layout .contact .contact-us form .input {
   display: flex;
