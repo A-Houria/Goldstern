@@ -287,6 +287,9 @@ a {
               padding: 10px 0px;
               cursor: default;
               user-select: none;
+              @media screen and (max-width: 550px) {
+                font-size: 2.2vw;
+              }
               img {
                 max-width: 1.5vw;
                 margin-right: 5px;
@@ -1109,6 +1112,7 @@ a {
           @media screen and (max-width: 650px) {
             font-size: 4.5vw;
           }
+          
         }
         p {
           text-align: center;
@@ -1680,6 +1684,20 @@ a {
         justify-content: space-evenly;
         align-items: center;
         padding: 25px;
+        
+        @media screen and (max-width: 1100px) {
+          a{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: rgb(42, 42, 42);
+            margin: 5px;
+          }
+          flex-direction: column;
+        }
         p {
           display: flex;
           flex-direction: row;
@@ -1687,14 +1705,11 @@ a {
           letter-spacing: 2px;
           font-size: 1.2vw;
           @media screen and (max-width: 750px) {
-            font-size: 1.5vw;
-          }
-          @media screen and (max-width: 650px) {
-            font-size: 1.8vw;
+            font-size: 14px;
           }
           img {
-            width: 3vw;
-            margin-right: 5px;
+            width: 20px;
+            margin-right: 10px;
           }
         }
       }
@@ -1702,10 +1717,7 @@ a {
         color: white;
         padding: 20px;
         letter-spacing: 3px;
-        font-size: 1.2vw;
-        @media screen and (max-width: 750px) {
-          font-size: 1.5vw;
-        }
+        font-size: 12px;
       }
     }
   }
