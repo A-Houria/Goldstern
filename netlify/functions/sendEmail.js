@@ -34,7 +34,7 @@ exports.handler = async (event) => {
       html: `
       <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Icons/bg.jpg); background-size: cover;">
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-            <img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo"
+          <img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
         </div>
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
             <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-bottom: 30px; ">Hi Team,</p>
@@ -57,7 +57,7 @@ exports.handler = async (event) => {
       html: `
       <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Icons/bg.jpg); background-size: cover;">
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-            <img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo"
+          <img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
         </div>
         <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
             <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-bottom: 30px; ">Hi ${name},</p>
