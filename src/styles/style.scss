@@ -279,16 +279,18 @@ a {
               flex-direction: row;
               align-items: center;
               text-wrap: nowrap;
-              justify-content: center;
+              justify-content: flex-start;
               font-size: 1.7vw;
               letter-spacing: 2px;
               border: 2px solid black;
               border-radius: 7px;
               padding: 10px 0px;
+              padding-left: 38%;
               cursor: default;
               user-select: none;
               @media screen and (max-width: 550px) {
                 font-size: 2.2vw;
+                padding-left: 30%;
               }
               img {
                 max-width: 1.5vw;
@@ -373,7 +375,7 @@ a {
                   font-weight: 400;
                   text-align: start;
                   margin: 10px;
-                  color: grey;
+                  color: black;
 
                   img {
                     width: 1.5vw;
@@ -1694,6 +1696,8 @@ a {
             align-items: center;
             justify-content: flex-start;
             background-color: rgb(42, 42, 42);
+            border: 1px solid white;
+            border-radius: 3px;
             margin: 5px;
           }
           flex-direction: column;
