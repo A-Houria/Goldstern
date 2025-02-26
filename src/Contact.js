@@ -107,10 +107,10 @@ const Contact = () => {
         </div>
       </div>
       <div className="details">
+      <div className="wrap"></div>
         <div className="contact-details">
           <div className="phone">
             <h1>call us or send a message on whatsapp</h1>
-            <img src="/Icons/phone.png" alt="telephone" />
             <p>
               <img src="/Icons/phone-num.png" alt="phone" />
               +20 12 3456 7891
@@ -138,7 +138,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="map">
-          <h1>or you can visit or office</h1>
+          <h1>or you can visit our office</h1>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.781725146643!2d30.941566911133943!3d30.07179057480521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859dff6b9c047%3A0x452cc613a0ce1844!2sGoldstern%20for%20cars%20import!5e0!3m2!1sen!2sde!4v1727536311185!5m2!1sen!2sde"
             width="600"

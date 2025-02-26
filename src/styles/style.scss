@@ -498,8 +498,7 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 60%;
-        margin: 100px auto;
+        margin: 100px 0px;
         @media screen and (max-width: 750px) {
           width: 100%;
         }
@@ -507,7 +506,9 @@ a {
           font-size: 52px;
           font-weight: 700;
           letter-spacing: 2px;
-          margin: 15px 0px;
+          margin: 15px auto;
+          align-self: flex-start;
+          width: 80%;
           @media screen and (max-width: 750px) {
             font-size: 42px;
           }
@@ -525,7 +526,7 @@ a {
         }
       }
       .mission {
-        margin: 0px 50px;
+        margin: 0px;
         @media screen and (max-width: 750px) {
           width: 100%;
           margin: 0px;
@@ -534,8 +535,6 @@ a {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 60%;
-          margin: auto;
           @media screen and (max-width: 750px) {
             width: 100%;
             margin: 0px;
@@ -544,11 +543,15 @@ a {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 50px;
+            width: 100%;
+            margin: 50px auto;
             h1 {
               font-size: 38px;
               font-weight: 700;
               letter-spacing: 2px;
+              align-self: start;
+              width: 80%;
+              margin: 15px auto;
               @media screen and (max-width: 750px) {
                 font-size: 42px;
               }
@@ -568,27 +571,23 @@ a {
         }
       }
       .message {
-        margin: 100px 50px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 60%;
+        align-items: flex-start;
+        width: 80%;
         margin: 100px auto;
-        padding: 0px 30px;
-        @media screen and (max-width: 750px) {
-          width: 100%;
-          margin: 100px auto;
-        }
+        padding: 0px;
+        
         h1 {
           font-size: 38px;
           font-weight: 700;
           letter-spacing: 2px;
-          text-align: center;
+          text-align: start;
           @media screen and (max-width: 750px) {
             font-size: 42px;
           }
           @media screen and (max-width: 550px) {
-            font-size: 32px;
+            font-size: 28px;
           }
         }
         p {
@@ -639,8 +638,8 @@ a {
               letter-spacing: 2px;
               margin: 25px 0px;
               width: 90%;
+              text-align: start;
               @media screen and (max-width: 1000px) {
-                text-align: center;
                 width: 100%;
               }
               @media screen and (max-width: 750px) {
@@ -654,9 +653,12 @@ a {
               font-size: 18px;
               font-weight: 400;
               letter-spacing: 2px;
-              width: 80%;
+              width: 90%;
               margin: 25px 0px;
               line-height: 1.5;
+              @media screen and (max-width: 1000px) {
+                width: 100%;
+              }
             }
           }
         }
@@ -1533,18 +1535,32 @@ a {
         }
       }
       .details {
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        margin: 100px 50px;
-        background-color: white;
-        padding: 50px;
+        margin: 100px 0px;
+        padding: 25px;
+        color: white;
         @media screen and (max-width: 1400px) {
           flex-direction: column;
         }
         @media screen and (max-width: 500px) {
           margin: 100px 20px;
+        }
+        .wrap{
+          background-image: url("/public/Icons/Phone.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          min-width: 100%;
+          min-height: 100%;
+          filter: blur(3px);
+          z-index: -300;
         }
 
         .contact-details {
@@ -1562,22 +1578,15 @@ a {
             @media screen and (max-width: 400px) {
               width: 100%;
             }
-            img {
-              width: 150px;
-              aspect-ratio: 1/1;
-              align-self: center;
-              margin: 25px 0px;
-              @media screen and (max-width: 600px) {
-                width: 15vw;
-              }
-            }
+            
             h1 {
               align-self: center;
               text-align: center;
-              font-size: 42px;
+              font-size: 28px;
               font-weight: 400;
               letter-spacing: 2px;
               width: 80%;
+              margin: 25px 0px;
               @media screen and (max-width: 600px) {
                 font-size: 4.5vw;
               }
@@ -1641,7 +1650,7 @@ a {
           }
 
           h1 {
-            font-size: 42px;
+            font-size: 28px;
             font-weight: 400;
             letter-spacing: 2px;
             text-align: center;
