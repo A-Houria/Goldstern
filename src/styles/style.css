@@ -1689,7 +1689,6 @@ a {
   align-items: center;
   justify-content: space-between;
   margin: 100px 0px;
-  padding: 25px;
   color: white;
 }
 @media screen and (max-width: 1400px) {
@@ -1815,11 +1814,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-@media screen and (max-width: 1400px) {
-  .app .layout .contact .details .map {
-    width: 80%;
-  }
+  width: 100%;
 }
 .app .layout .contact .details .map h1 {
   font-size: 28px;
@@ -1833,7 +1828,8 @@ a {
   }
 }
 .app .layout .contact .details .map iframe {
-  margin: 30px 0px;
+  margin: 0px;
+  margin-top: 30px;
 }
 @media screen and (max-width: 1400px) {
   .app .layout .contact .details .map iframe {
@@ -1843,8 +1839,8 @@ a {
 }
 @media screen and (max-width: 750px) {
   .app .layout .contact .details .map iframe {
-    width: 65vw;
-    height: 35vw;
+    width: 100%;
+    height: 50vw;
   }
 }
 .app .layout .footer {
