@@ -1547,7 +1547,7 @@ a {
           flex-direction: column;
         }
         @media screen and (max-width: 500px) {
-          margin: 100px 20px;
+          margin: 100px 0px;
         }
         .wrap{
           background-image: url("/public/Icons/Phone.jpg");
@@ -1561,6 +1561,9 @@ a {
           min-height: 100%;
           filter: blur(3px);
           z-index: -300;
+          @media screen and (max-width: 500px) {
+            filter: blur(2px);
+          }
         }
 
         .contact-details {

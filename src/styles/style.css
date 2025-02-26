@@ -1699,7 +1699,7 @@ a {
 }
 @media screen and (max-width: 500px) {
   .app .layout .contact .details {
-    margin: 100px 20px;
+    margin: 100px 0px;
   }
 }
 .app .layout .contact .details .wrap {
@@ -1714,6 +1714,11 @@ a {
   min-height: 100%;
   filter: blur(3px);
   z-index: -300;
+}
+@media screen and (max-width: 500px) {
+  .app .layout .contact .details .wrap {
+    filter: blur(2px);
+  }
 }
 .app .layout .contact .details .contact-details {
   display: flex;
