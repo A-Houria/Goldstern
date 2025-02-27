@@ -68,48 +68,50 @@ exports.handler = async (event) => {
       to: email,
       subject: "We Received Your Inquiry!",
       html: ` 
-<center style="background-color: black;">
-<img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
-</center>
-<div style="
-width: 80%;
-margin: 0 auto;
-padding: 25px;
-box-sizing: border-box;
-font-family: Arial, Helvetica, sans-serif;">
-<p style="letter-spacing: 1.5px; line-height: 1.5;">
-Hey ${name}!
-</p>
-<p style="letter-spacing: 1.5px; line-height: 1.5;">
-We're thrilled to let you know that we've received your inquiry at Your Company Name. Our dedicated sales team is already on it and will be reaching out to you shortly. We truly appreciate your interest and are excited to assist you with your needs!
-</p>
-<p style="letter-spacing: 1.5px; line-height: 1.5;">
-In the meantime, feel free to explore our website for more information about our services and offerings. We're here to ensure you have the best experience possible, and we can't wait to connect with you soon!
-</p>
-<p style="letter-spacing: 1.5px; line-height: 1.5;">
-Thank you for choosing us, and have a fantastic day!
-</p>
-</div>
-<center style="background-color: black;">
-<center>
-<a href="">
-    <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/facebook.png" alt="facebook">
-</a>
-<a href="">
-    <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/instagram.png" alt="instagram">
-</a>
-<a href="">
-    <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/tiktok.png" alt="tiktok">
-</a>
-</center>
-<center style="background-color: black;">
-<p style="padding: 0px 15px; letter-spacing: 1.5px; color: white;">Home</p>
-<p style="padding: 0px 15px; letter-spacing: 1.5px; color: white;">About Us</p>
-<p style="padding: 0px 15px; letter-spacing: 1.5px; color: white;">Car Inventory</p>
-<p style="padding: 0px 15px; letter-spacing: 1.5px; color: white;">Services</p>
-<p style="padding: 0px 15px; letter-spacing: 1.5px; color: white;">Contact</p>
-</center>
-</center>
+
+      <center style="background-color: black;">
+      <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo.png" alt="Logo">
+  </center>
+  <div style="
+  width: 80%;
+  margin: 0 auto;
+  padding: 25px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;">
+      <p style="letter-spacing: 1.5px; line-height: 1.5;">
+      Hey ${name}!
+      </p>
+      <p style="letter-spacing: 1.5px; line-height: 1.5;">
+      We're thrilled to let you know that we've received your inquiry at Your Company Name. Our dedicated sales team is already on it and will be reaching out to you shortly. We truly appreciate your interest and are excited to assist you with your needs!
+      </p>
+      <p style="letter-spacing: 1.5px; line-height: 1.5;">
+      In the meantime, feel free to explore our website for more information about our services and offerings. We're here to ensure you have the best experience possible, and we can't wait to connect with you soon!
+      </p>
+      <p style="letter-spacing: 1.5px; line-height: 1.5;">
+      Thank you for choosing us, and have a fantastic day!
+      </p>
+  </div>
+  <center>
+      <div style="background-color: black; margin: 0; padding: 10px;">
+          <a href="">
+              <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/facebook.png" alt="facebook">
+          </a>
+          <a href="">
+              <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/instagram.png" alt="instagram">
+          </a>
+          <a href="">
+              <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/tiktok.png" alt="tiktok">
+          </a>
+      </div>
+      <div style="background-color: black; background-color: black; margin: 0; padding: 10px;">
+          <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Home</p>
+          <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">About Us</p>
+          <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Car Inventory</p>
+          <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Services</p>
+          <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Contact</p>
+      </div>
+  </center>
+      
     `,
     });
 
