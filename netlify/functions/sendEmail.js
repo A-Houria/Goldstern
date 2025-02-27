@@ -29,25 +29,32 @@ exports.handler = async (event) => {
       from: process.env.GOOGLE_EMAIL,
       to: process.env.GOOGLE_EMAIL,
       replyTo: email,
-      subject: `!!Testing!! New Website Inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      subject: `New Customer Inquiry Received From ${name}`,
       html: `
-      <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Icons/bg.jpg); background-size: cover;">
-        <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-          <img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
-        </div>
-        <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-bottom: 30px; ">Hi Team,</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">We received a new inquiry from ${name}</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">Email: ${email}</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">Message:</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">${message}</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-top: 50px;">Best of luck,</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">Goldstern</p>
-        </div>
+      <div style=" 
+      margin:0; 
+      padding: 15px;
+      box-sizing: border-box;
+      background-color: black;
+      display: flex;
+      align-items: center; 
+      justify-content: center;">
+        <img style="max-width: 100px;" src="/public/Icons/Logo.png" alt="Logo">
       </div>
+      <div style="margin: 0 auto; padding: 25px; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">Hey Team!</p>
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">We received a new inquiry from (${name}, ${email}) with the following details:</p>
+          <ul>
+              <li>
+                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Message:</strong> ${message}</p>
+              </li>
+          </ul>
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">Thank you for your attention!</p>
+      </div>
+    </div>
       `,
     });
+
 
     // Send confirmation email to the customer
     await transporter.sendMail({
@@ -55,20 +62,72 @@ exports.handler = async (event) => {
       to: email,
       subject: "We Received Your Inquiry!",
       html: `
-      <div style="margin: 0; padding: 20px; box-sizing: border-box; width: 100%; background-image: url(https://goldsternonline.de/Icons/bg.jpg); background-size: cover;">
-        <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-          <img style="width: 75px; aspect-ratio: 1/1;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
+      <div style=" 
+    margin:0; 
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: black;
+    display: flex;
+    align-items: center; 
+    justify-content: center;">
+        <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
+    </div>
+    <div style="
+    width: 80%;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;">
+        <p style="letter-spacing: 1.5px; line-height: 1.5;">
+            Hey ${name}!
+          </p>
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">
+            We're thrilled to let you know that we've received your inquiry at Your Company Name. Our dedicated sales team is already on it and will be reaching out to you shortly. We truly appreciate your interest and are excited to assist you with your needs!
+          </p>
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">
+            In the meantime, feel free to explore our website for more information about our services and offerings. We're here to ensure you have the best experience possible, and we can't wait to connect with you soon!
+          </p>
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">
+            Thank you for choosing us, and have a fantastic day!
+          </p>
+    </div>
+    <div style="
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ">
+        <div style="
+        padding: 15px;
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        ">
+            <a href="">
+                <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/facebook.png" alt="facebook">
+            </a>
+            <a href="">
+                <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/instagram.png" alt="instagram">
+            </a>
+            <a href="">
+                <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/tiktok.png" alt="tiktok">
+            </a>
         </div>
-        <div style="margin: 0 auto; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; margin-bottom: 30px; ">Hi ${name},</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">Thanks for reaching out to us! We've received your message and our team is already on it. We'll be in touch soon!</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">We're excited to connect with you and will get back to you as quickly as possible.</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1;  margin-top: 30px;">Best regards,</p>
-            <p style="font-size: 18px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1; ">Goldstern</p>
-            <hr style="margin: 50px 0px;">
-            <p style="font-size: 14px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1;">&copy; Goldstern 2025</p>
-            <p style="font-size: 14px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1;">Sodic portal A office 311, Second Al Sheikh Zayed, Giza Governorate</p>
-            <p style="font-size: 14px; font-weight: 700; color: #5f5f5f; letter-spacing: 1.5px; line-height: 1;">Follow us on <a href="https://www.tiktok.com/@goldstern.eg">TikTok</a>, <a href="https://www.facebook.com/profile.php?id=61552608263446">Facebook</a>, and <a href="https://www.instagram.com/goldstern_eg">Instagram</a></p>
+        <div style="
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        color: white;
+        ">
+            <p style="padding: 0px 15px; letter-spacing: 1.5px;">Home</p>
+            <p style="padding: 0px 15px; letter-spacing: 1.5px;">About Us</p>
+            <p style="padding: 0px 15px; letter-spacing: 1.5px;">Car Inventory</p>
+            <p style="padding: 0px 15px; letter-spacing: 1.5px;">Services</p>
+            <p style="padding: 0px 15px; letter-spacing: 1.5px;">Contact</p>
         </div>
     </div>
       `,
