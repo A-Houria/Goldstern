@@ -39,14 +39,20 @@ exports.handler = async (event) => {
       display: flex;
       align-items: center; 
       justify-content: center;">
-        <img style="max-width: 100px;" src="/public/Icons/Logo.png" alt="Logo">
+        <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo.png" alt="Logo">
       </div>
       <div style="margin: 0 auto; padding: 25px; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
           <p style="letter-spacing: 1.5px; line-height: 1.5;">Hey Team!</p>
           <p style="letter-spacing: 1.5px; line-height: 1.5;">We received a new inquiry from (${name}, ${email}) with the following details:</p>
           <ul>
               <li>
-                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Message:</strong> ${message}</p>
+                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Name:</strong> ${name}</p>
+              </li>
+              <li>
+                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Email:</strong> ${email}</p>
+              </li>
+              <li>
+                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Message:</strong> ${message}</p>
               </li>
           </ul>
           <p style="letter-spacing: 1.5px; line-height: 1.5;">Thank you for your attention!</p>
@@ -62,16 +68,9 @@ exports.handler = async (event) => {
       to: email,
       subject: "We Received Your Inquiry!",
       html: `
-      <div style=" 
-    margin:0; 
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: black;
-    display: flex;
-    align-items: center; 
-    justify-content: center;">
-        <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
-    </div>
+      <center>
+    <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo-black.png" alt="Logo">
+</center>
     <div style="
     width: 80%;
     margin: 0 auto;
@@ -91,16 +90,7 @@ exports.handler = async (event) => {
             Thank you for choosing us, and have a fantastic day!
           </p>
     </div>
-    <div style="
-    margin: 0;
-    padding: 15px;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    ">
+    <center>
         <div style="
         padding: 15px;
         display: flex;
@@ -129,7 +119,8 @@ exports.handler = async (event) => {
             <p style="padding: 0px 15px; letter-spacing: 1.5px;">Services</p>
             <p style="padding: 0px 15px; letter-spacing: 1.5px;">Contact</p>
         </div>
-    </div>
+    </center>
+    
       `,
     });
 
