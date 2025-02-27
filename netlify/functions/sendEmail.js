@@ -31,16 +31,11 @@ exports.handler = async (event) => {
       replyTo: email,
       subject: `New Customer Inquiry Received From ${name}`,
       html: `
-      <div style=" 
-      margin:0; 
-      padding: 15px;
-      box-sizing: border-box;
+      <center
       background-color: black;
-      display: flex;
-      align-items: center; 
-      justify-content: center;">
+      ">
         <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo.png" alt="Logo">
-      </div>
+      </center>
       <div style="margin: 0 auto; padding: 25px; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
           <p style="letter-spacing: 1.5px; line-height: 1.5;">Hey Team!</p>
           <p style="letter-spacing: 1.5px; line-height: 1.5;">We received a new inquiry from (${name}, ${email}) with the following details:</p>
