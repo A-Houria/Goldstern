@@ -99,11 +99,21 @@ exports.handler = async (event) => {
             </a>
         </div>
         <div style="background-color: black; background-color: black; margin: 0; padding-bottom: 30px;">
-            <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Home</p>
-            <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">About Us</p>
-            <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Car Inventory</p>
-            <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Services</p>
-            <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Contact</p>
+            <a href="https://goldsternonline.de/" target="_blank" style="text-decoration: none;">
+                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Home</p>
+            </a>
+            <a href="https://goldsternonline.de/about" target="_blank" style="text-decoration: none;"> 
+                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">About Us</p>
+            </a>
+            <a href="https://goldsternonline.de/inventory" target="_blank" style="text-decoration: none;">
+                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Car Inventory</p>
+            </a>
+            <a href="https://goldsternonline.de/services" target="_blank" style="text-decoration: none;"> 
+                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Services</p>
+            </a>
+            <a href="https://goldsternonline.de/contact" target="_blank" style="text-decoration: none;">
+                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Contact</p>
+            </a>
         </div>
     </center>      
 </div>
