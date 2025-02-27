@@ -31,12 +31,11 @@ exports.handler = async (event) => {
       replyTo: email,
       subject: `New Customer Inquiry Received From ${name}`,
       html: `
-      <center
-      background-color: black;
-      ">
+     <div style="width: 550px; margin: auto; border-bottom: 5px solid black; border-radius: 5px;">
+    <center style="background-color: black;">
         <img style="max-width: 100px;" src="https://goldsternonline.de/Icons/Logo.png" alt="Logo">
       </center>
-      <div style="margin: 0 auto; padding: 25px; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
+      <div style="margin: 0 auto; padding: 25px; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 100%;">
           <p style="letter-spacing: 1.5px; line-height: 1.5;">Hey Team!</p>
           <p style="letter-spacing: 1.5px; line-height: 1.5;">We received a new inquiry from ${name} with the following details:</p>
           <ul>
@@ -52,7 +51,8 @@ exports.handler = async (event) => {
           </ul>
           <p style="letter-spacing: 1.5px; line-height: 1.5;">Thank you for your attention!</p>
       </div>
-    </div>
+      </div>
+</div>
       `,
     });
 
@@ -63,12 +63,12 @@ exports.handler = async (event) => {
       to: email,
       subject: "We Received Your Inquiry!",
       html: `
-      <div style="max-width: 600px; margin: auto;">
+      <div style="max-width: 550px; margin: auto;">
     <center style="background-color: black; padding: 20px;">
         <img style="width: 100px;" src="https://goldsternonline.de/Icons/Logo.png" alt="Logo">
     </center>
     <div style="
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 25px;
     box-sizing: border-box;
