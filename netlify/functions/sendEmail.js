@@ -38,7 +38,7 @@ exports.handler = async (event) => {
       </center>
       <div style="margin: 0 auto; padding: 25px; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; width: 80%;">
           <p style="letter-spacing: 1.5px; line-height: 1.5;">Hey Team!</p>
-          <p style="letter-spacing: 1.5px; line-height: 1.5;">We received a new inquiry from (${name}, ${email}) with the following details:</p>
+          <p style="letter-spacing: 1.5px; line-height: 1.5;">We received a new inquiry from ${name} with the following details:</p>
           <ul>
               <li>
                   <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Name:</strong> ${name}</p>
