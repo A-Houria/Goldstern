@@ -17,7 +17,7 @@ const Services = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -79,17 +79,29 @@ const Services = () => {
   return (
     <div className="services">
       <div className="service" data-aos="fade-up">
-        <h1>Our Services</h1>
+        <h1 className="title">Our Services</h1>
         <div className="services">
-          <h1>1. Importing Your Car</h1>
-          <h1>2. Importing Cars For Expats</h1>
-          <h1>3. Specification Customization ( Factory Configuration) </h1>
-          <h1>4. Guidance and Consultation</h1>
-          <h1>5. After-Sales Support</h1>
+          <h1>
+            <img src="./Icons/speed.png" alt="immediate delivery" />
+            On-Ground Cars - Ready for Immediate Delivery
+          </h1>
+          <h1>
+            <img src="./Icons/ship.png" alt="Import" />
+            Import Your Dream Car
+          </h1>
+          <h1>
+            {" "}
+            <img src="./Icons/guide.png" alt="Most Secure shipping" />
+            Expert Guidance & Consultation
+          </h1>
+          <h1>
+            <img src="./Icons/support.png" alt="Guaranteed Delivery promises" />
+            After-Sales Support
+          </h1>
         </div>
       </div>
       <div className="contact-us" data-aos="fade-up">
-      <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <h1>Contact Us</h1>
           <p>We will get in touch shortly</p>
           <div className="input">
@@ -131,51 +143,75 @@ const Services = () => {
         <h1>Why Import with Us</h1>
         <div className="cards">
           <div className="card" data-aos="zoom-in">
-            <h1>Cheapest Prices, No Middlemen</h1>
-            <p>
-              We bring you luxury European cars at direct prices, cutting out
-              the extra cost from middlemen and giving you the best deal
-              possible.
-            </p>
+            <img
+              src="./Icons/Piggy_Bank.jpg"
+              alt="Cheapest Prices, No Middlemen"
+            />
+            <div className="text">
+              <h1>Cheapest Prices, No Middlemen</h1>
+              <p>
+                We bring you luxury European cars at direct prices, cutting out
+                the extra cost from middlemen and giving you the best deal
+                possible.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Wide Range of Options</h1>
-            <p>
-              Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or any
-              other European Brand we offer a variety of high-end vehicles to
-              match your style and needs.
-            </p>
+            <img src="./Icons/Options.jpg" alt="Wide Range of Options" />
+            <div className="text">
+              <h1>Wide Range of Options</h1>
+              <p>
+                Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or
+                any other European Brand we offer a variety of high-end vehicles
+                to match your style and needs.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Fast & Seamless Process</h1>
-            <p>
-              Forget about long waiting times and complicated processes. We
-              provide a smooth and fast import experience, getting your dream
-              car to you quicker.
-            </p>
+            <img src="./Icons/Fast_Ship.jpg" alt="Fast & Seamless Process" />
+            <div className="text">
+              <h1>Fast & Seamless Process</h1>
+              <p>
+                Forget about long waiting times and complicated processes. We
+                provide a smooth and fast import experience, getting your dream
+                car to you quicker.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Transparent Pricing</h1>
-            <p>
-              No hidden fees, no surprises. We believe in honesty and
-              transparency throughout your buying journey.
-            </p>
+            <img
+              src="./Icons/Transparent_Pricing.jpg"
+              alt="Transparent Pricing"
+            />
+            <div className="text">
+              <h1>Transparent Pricing</h1>
+              <p>
+                No hidden fees, no surprises. We believe in honesty and
+                transparency throughout your buying journey.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Trusted Expertise</h1>
-            <p>
-              With over 5,000 cars imported to Egypt and the Middle East, we
-              have the experience and knowledge to guide you every step of the
-              way.
-            </p>
+            <img src="./Icons/Trust.jpg" alt="Trusted Expertise" />
+            <div className="text">
+              <h1>Trusted Expertise</h1>
+              <p>
+                With over 5,000 cars imported to Egypt and the Middle East, we
+                have the experience and knowledge to guide you every step of the
+                way.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Customer-Focused Service</h1>
-            <p>
-              Your satisfaction is our priority. From the moment you choose your
-              car until it’s delivered to your door, we ensure you have the best
-              experience possible.
-            </p>
+            <img src="./Icons/Rating.jpg" alt="Customer-Focused Service" />
+            <div className="text">
+              <h1>Customer-Focused Service</h1>
+              <p>
+                Your satisfaction is our priority. From the moment you choose
+                your car until it’s delivered to your door, we ensure you have
+                the best experience possible.
+              </p>
+            </div>
           </div>
         </div>
       </div>

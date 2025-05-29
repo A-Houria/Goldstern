@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { Link, NavLink } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db, storage } from "./firebase"; // Adjust this import path based on your project structure
 import { ref, getDownloadURL } from "firebase/storage";
@@ -10,6 +10,11 @@ const Home = () => {
   const [featuredCars, setFeaturedCars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleBurgerClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
@@ -51,7 +56,7 @@ const Home = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.png" alt=""/>
+        <img src="/Icons/Logo-black.png" alt="" />
       </div>
     );
 
@@ -78,19 +83,22 @@ const Home = () => {
           <h1>Our Services</h1>
           <ul className="services-list">
             <li data-aos="fade-right">
-              <img src="./Icons/import.png" alt="fast delivery" />
-              Importing your Car
+              <img src="./Icons/speed.png" alt="immediate delivery" />
+              On-Ground Cars - Ready for Immediate Delivery
             </li>
             <li data-aos="fade-right" data-aos-delay="100">
-              <img src="./Icons/expat.png" alt="cheapest Shipping" />
-              Importing Cars for Expats
+              <img src="./Icons/ship.png" alt="Import" />
+              Import Your Dream Car
             </li>
             <li data-aos="fade-right" data-aos-delay="200">
               <img src="./Icons/guide.png" alt="Most Secure shipping" />
-              Guidance and Consultation
+              Expert Guidance & Consultation
             </li>
             <li data-aos="fade-right" data-aos-delay="300">
-              <img src="./Icons/support.png" alt="Guaranteed Delivery promises" />
+              <img
+                src="./Icons/support.png"
+                alt="Guaranteed Delivery promises"
+              />
               After-Sales Support
             </li>
           </ul>
@@ -102,15 +110,20 @@ const Home = () => {
         <h1 className="header">Our Featured Cars</h1>
         <div className="cards">
           {featuredCars
-            .filter((car) => car.Featured === true) 
+            .filter((car) => car.Featured === true)
             .map((car) => (
-              <Link to={`/car/${car.id}`} key={car.id}> 
+              <Link to={`/car/${car.id}`} key={car.id}>
                 <div className="card" data-aos="fade-up">
                   <img src={car.imageUrl} alt={car.Model} />
                   <div className="text">
                     <div className="parts">
-                      <p>{car.Name} {car.Model} {car.Production_Year}</p>
+                      <p>
+                        {car.Name} {car.Model} {car.Production_Year}
+                      </p>
                     </div>
+                    <NavLink onClick={handleBurgerClick} to="/inventory">
+                      <button className="inventory">View Inventory</button>
+                    </NavLink>
                   </div>
                 </div>
               </Link>
@@ -127,47 +140,66 @@ const Home = () => {
             <li>
               <h1>1. Contact Our Team</h1>
               <p>
-                Reach out to us via phone, email, or our website. Our friendly team will assist you in choosing the perfect car based on your preferences, budget, and needs.
+                Reach out to us via phone, email, or our website. Our friendly
+                team will assist you in choosing the perfect car based on your
+                preferences, budget, and needs.
               </p>
             </li>
             <li>
               <h1>2. Consultation & Car Selection</h1>
               <p>
-                Once we understand your requirements, we’ll provide you with a range of options from European car inventory. You can ask any questions and get expert advice to help you make the right choice.
+                Once we understand your requirements, we’ll provide you with a
+                range of options from European car inventory. You can ask any
+                questions and get expert advice to help you make the right
+                choice.
               </p>
             </li>
             <li>
               <h1>3. Quotation & Agreement</h1>
               <p>
-                After selecting your car, we’ll give you a clear and transparent quote with factory-direct pricing, including all costs involved—no hidden fees. Once you’re happy, we move forward with the agreement.
+                After selecting your car, we’ll give you a clear and transparent
+                quote with factory-direct pricing, including all costs
+                involved—no hidden fees. Once you’re happy, we move forward with
+                the agreement.
               </p>
             </li>
             <li>
               <h1>4. Car Ordering & Shipping</h1>
               <p>
-                After finalizing your order, we will process the import and handle all the logistics, including shipping and documentation.
+                After finalizing your order, we will process the import and
+                handle all the logistics, including shipping and documentation.
               </p>
             </li>
             <li>
               <h1>5. Customs Clearance & Delivery</h1>
               <p>
-                Your car will be cleared through customs quickly and efficiently. Once everything is in order, we’ll schedule a convenient delivery date right to your doorstep.
+                Your car will be cleared through customs quickly and
+                efficiently. Once everything is in order, we’ll schedule a
+                convenient delivery date right to your doorstep.
               </p>
             </li>
             <li>
               <h1>6. Car Inspection & Handover</h1>
               <p>
-                Upon delivery, we’ll conduct a thorough inspection to ensure the car meets your expectations. You’ll receive all the necessary documentation, and we’ll explain all the car features before handing over the keys.
+                Upon delivery, we’ll conduct a thorough inspection to ensure the
+                car meets your expectations. You’ll receive all the necessary
+                documentation, and we’ll explain all the car features before
+                handing over the keys.
               </p>
             </li>
             <li>
               <h1>7. After-Sales Service</h1>
               <p>
-                Our relationship doesn’t end at delivery. We provide post-purchase support and offer ongoing services through our partners like maintenance, repairs, and assistance, ensuring your car stays in top condition.
+                Our relationship doesn’t end at delivery. We provide
+                post-purchase support and offer ongoing services through our
+                partners like maintenance, repairs, and assistance, ensuring
+                your car stays in top condition.
               </p>
             </li>
             <h1>
-              "From start to finish, we make the importing process easy, efficient, and transparent, so you can enjoy your dream car without the hassle."
+              "From the first step to the final handover, we make importing your
+              dream car easy, seamless, and completely transparent — so you can
+              drive with confidence and peace of mind."
             </h1>
           </ul>
         </div>

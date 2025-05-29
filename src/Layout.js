@@ -1,16 +1,27 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsSticky(offset > 100); // Adjust threshold as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="layout">
-      <div className="nav">
+      <div className={`nav ${isSticky ? "sticky" : ""}`}>
         <div className="cont">
           <div className="burger-cont">
             <Link to="/">
@@ -49,7 +60,7 @@ const Layout = () => {
           </Link>
         </div>
       </div>
-      <main>
+      <main className={isSticky ? "padded" : ""}>
         <Outlet />
         <div className="wrapper"></div>
       </main>
@@ -80,6 +91,15 @@ const Layout = () => {
             <p>
               <img src="/Icons/tiktok.png" alt="Tiktok" />
               goldstern.eg
+            </p>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/103967635"
+            target="_blank"
+            rel="noreferrer">
+            <p>
+              <img src="/Icons/LinkedIn.png" alt="LinkedIn" />
+              Goldstern
             </p>
           </a>
         </div>
