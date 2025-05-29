@@ -1094,11 +1094,34 @@ a {
           display: flex;
           flex-direction: column;
           margin: 25px 0px;
+          background-color: white;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+          padding: 0px 20px;
+
+          .content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+          }
+
+          .content-wrapper.open {
+            max-height: 1500px; // enough to contain full content
+            opacity: 1;
+          }
+
           h1 {
             margin: 20px 0px;
             font-size: 1.5vw;
             font-weight: 400;
             letter-spacing: 2px;
+            margin-left: 20px;
+            user-select: none;
+            .arrow-icon {
+              margin-left: 10px;
+              font-size: 0.8em;
+            }
             @media screen and (max-width: 850px) {
               font-size: 2.5vw;
             }
@@ -1108,6 +1131,10 @@ a {
             letter-spacing: 2px;
             line-height: 2.5;
             font-weight: 400;
+            margin: 20px 20px 20px 20px;
+            padding: 5px 20px;
+            border-bottom: 1px solid rgb(235, 235, 235);
+            user-select: none;
             @media screen and (max-width: 850px) {
               font-size: 2vw;
             }
@@ -1116,7 +1143,7 @@ a {
       }
       .description {
         width: 80%;
-        margin: 0px auto;
+        margin: 100px auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;

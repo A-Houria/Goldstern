@@ -1192,6 +1192,26 @@ a {
   display: flex;
   flex-direction: column;
   margin: 25px 0px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 0px 20px;
+}
+.app .layout .car-details .details .special-features .content-wrapper,
+.app .layout .car-details .details .engine-specs .content-wrapper,
+.app .layout .car-details .details .exterior .content-wrapper,
+.app .layout .car-details .details .interior .content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.app .layout .car-details .details .special-features .content-wrapper.open,
+.app .layout .car-details .details .engine-specs .content-wrapper.open,
+.app .layout .car-details .details .exterior .content-wrapper.open,
+.app .layout .car-details .details .interior .content-wrapper.open {
+  max-height: 1500px;
+  opacity: 1;
 }
 .app .layout .car-details .details .special-features h1,
 .app .layout .car-details .details .engine-specs h1,
@@ -1201,6 +1221,17 @@ a {
   font-size: 1.5vw;
   font-weight: 400;
   letter-spacing: 2px;
+  margin-left: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.app .layout .car-details .details .special-features h1 .arrow-icon,
+.app .layout .car-details .details .engine-specs h1 .arrow-icon,
+.app .layout .car-details .details .exterior h1 .arrow-icon,
+.app .layout .car-details .details .interior h1 .arrow-icon {
+  margin-left: 10px;
+  font-size: 0.8em;
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .details .special-features h1,
@@ -1218,6 +1249,12 @@ a {
   letter-spacing: 2px;
   line-height: 2.5;
   font-weight: 400;
+  margin: 20px 20px 20px 20px;
+  padding: 5px 20px;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .details .special-features p,
@@ -1229,7 +1266,7 @@ a {
 }
 .app .layout .car-details .description {
   width: 80%;
-  margin: 0px auto;
+  margin: 100px auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

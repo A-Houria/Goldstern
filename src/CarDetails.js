@@ -1,16 +1,29 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
-import { db, storage } from "./firebase"; 
+import { db, storage } from "./firebase";
 import { ref, getDownloadURL } from "firebase/storage";
-import AOS from "aos"; 
-import "aos/dist/aos.css"; 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CarDetails = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [openSections, setOpenSections] = useState({
+    specialFeatures: false,
+    engineSpecs: false,
+    exterior: false,
+    interior: false,
+  });
+
+  const toggleSection = (section) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
@@ -35,7 +48,11 @@ const CarDetails = () => {
             })
           );
 
-          const carWithImages = { ...carData, imageUrl, galleryUrls: imageUrls };
+          const carWithImages = {
+            ...carData,
+            imageUrl,
+            galleryUrls: imageUrls,
+          };
           setCar(carWithImages);
         } else {
           setError("Car not found.");
@@ -53,7 +70,7 @@ const CarDetails = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.png" alt=""/>
+        <img src="/Icons/Logo-black.png" alt="" />
       </div>
     );
 
@@ -79,62 +96,117 @@ const CarDetails = () => {
         </div>
       )}
 
-      {car.Images && (
-          <div className="gallary" data-aos="fade-right">
-          <h1>Gallery</h1>
-          <div className="images">
-          {car.galleryUrls.map((img, index) => (
-            <img key={index} src={img} alt={`${car.Model} ${index + 1}`} />
-          ))}
-          </div>
-        </div>
-        )}
-
-      <div className="details">
-        
-        {car.Special_Features && (
-          <div className="special-features" data-aos="fade-right">
-          <h1>Special Features</h1>
-          {car.Special_Features.map((feature, index) => (
-            <p key={index}>{feature}</p>
-          ))}
-        </div>
-        )}
-
-        {car.Engine_Specs && (
-          <div className="engine-specs" data-aos="fade-right">
-          <h1>Engine Specs</h1>
-          {car.Engine_Specs.map((spec, index) => (
-            <p key={index}>{spec}</p>
-          ))}
-        </div>
-        )}
-
-        {car.Exterior && (
-          <div className="exterior" data-aos="fade-right">
-          <h1>Exterior</h1>
-          {car.Exterior.map((ex, index) => (
-            <p key={index}>{ex}</p>
-          ))}
-        </div>
-        )}
-
-        {car.Interior && (
-          <div className="interior" data-aos="fade-right">
-          <h1>Interior</h1>
-          {car.Interior.map((int, index) => (
-            <p key={index}>{int}</p>
-          ))}
-        </div>
-        )}
-      </div>
-
       {car.Description && (
         <div className="description" data-aos="fade-up">
           <h1>Description</h1>
           <p>{car.Description}</p>
         </div>
       )}
+
+      {car.Images && (
+        <div className="gallary" data-aos="fade-right">
+          <h1>Gallery</h1>
+          <div className="images">
+            {car.galleryUrls.map((img, index) => (
+              <img key={index} src={img} alt={`${car.Model} ${index + 1}`} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="details">
+        {car.Special_Features && (
+          <div
+            className="special-features"
+            data-aos="fade-right"
+            onClick={() => toggleSection("specialFeatures")}
+            style={{ cursor: "pointer" }}>
+            <h1>
+              Special Features
+              <span className="arrow-icon">
+                {openSections.specialFeatures ? "▲" : "▼"}
+              </span>
+            </h1>
+            <div
+              className={`content-wrapper ${
+                openSections.specialFeatures ? "open" : ""
+              }`}>
+              {car.Special_Features.map((feature, index) => (
+                <p key={index}>{feature}</p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {car.Engine_Specs && (
+          <div
+            className="engine-specs"
+            data-aos="fade-right"
+            onClick={() => toggleSection("engineSpecs")}
+            style={{ cursor: "pointer" }}>
+            <h1>
+              Engine Specs
+              <span className="arrow-icon">
+                {openSections.engineSpecs ? "▲" : "▼"}
+              </span>
+            </h1>
+            <div
+              className={`content-wrapper ${
+                openSections.engineSpecs ? "open" : ""
+              }`}>
+              {car.Engine_Specs.map((spec, index) => (
+                <p key={index}>{spec}</p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {car.Exterior && (
+          <div
+            className="exterior"
+            data-aos="fade-right"
+            onClick={() => toggleSection("exterior")}
+            style={{ cursor: "pointer" }}>
+            <h1>
+              Exterior
+              <span className="arrow-icon">
+                {openSections.exterior ? "▲" : "▼"}
+              </span>
+            </h1>
+            <div
+              className={`content-wrapper ${
+                openSections.exterior ? "open" : ""
+              }`}>
+              {car.Exterior.map((ex, index) => (
+                <p key={index}>{ex}</p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {car.Interior && (
+          <div
+            className="interior"
+            data-aos="fade-right"
+            onClick={() => toggleSection("interior")}
+            style={{ cursor: "pointer" }}>
+            <h1>
+              Interior
+              <span className="arrow-icon">
+                {openSections.interior ? "▲" : "▼"}
+              </span>
+            </h1>
+            <div
+              className={`content-wrapper ${
+                openSections.interior ? "open" : ""
+              }`}>
+              {car.Interior.map((int, index) => (
+                <p key={index}>{int}</p>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
