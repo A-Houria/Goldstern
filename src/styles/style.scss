@@ -98,7 +98,8 @@
     font-size: 16px;
 
     &.loading {
-      background: #f8f9fa;
+      background: rgba($color: white, $alpha: 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     &.error {
@@ -107,8 +108,9 @@
     }
 
     &.no-results {
-      color: #6c757d;
-      background: #f8f9fa;
+      color: black;
+      background: rgba($color: white, $alpha: 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
   }
 

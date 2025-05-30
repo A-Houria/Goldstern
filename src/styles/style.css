@@ -90,15 +90,17 @@
   font-size: 16px;
 }
 .tracking-container .status-message.loading {
-  background: #f8f9fa;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .tracking-container .status-message.error {
   color: #dc3545;
   background: #f8d7da;
 }
 .tracking-container .status-message.no-results {
-  color: #6c757d;
-  background: #f8f9fa;
+  color: black;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .tracking-container .order-details {
   background: rgba(255, 255, 255, 0.2);
