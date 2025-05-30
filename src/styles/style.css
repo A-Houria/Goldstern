@@ -81,12 +81,14 @@ a {
 }
 .app .layout .nav.sticky {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
+  top: 3%;
+  left: 2.5%;
+  width: 95%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   animation: slideDown 0.3s ease forwards;
 }
 .app .layout .nav .cont {
@@ -121,7 +123,7 @@ a {
 }
 @media (max-width: 1150px) {
   .app .layout .nav .cont .list {
-    min-width: 100%;
+    min-width: 95%;
     font-size: 2vw;
   }
   .app .layout .nav .cont .list a {
@@ -365,12 +367,15 @@ a {
   padding-bottom: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
-  border-radius: 3px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .home .featured .cards .card img {
   width: 500px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 @media screen and (max-width: 500px) {
   .app .layout .home .featured .cards .card img {
@@ -915,12 +920,15 @@ a {
   padding-bottom: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
-  border-radius: 3px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .inventory .featured .cards .card img {
   width: 500px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 @media screen and (max-width: 500px) {
   .app .layout .inventory .featured .cards .card img {
@@ -1057,7 +1065,8 @@ a {
   padding-bottom: 10px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
-  border-radius: 3px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 500px) {
   .app .layout .inventory .car-list .filtered-cars .card {
@@ -1069,6 +1078,8 @@ a {
   width: 500px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 @media screen and (max-width: 500px) {
   .app .layout .inventory .car-list .filtered-cars .card img {
@@ -1707,7 +1718,7 @@ a {
   width: 80%;
   margin: 10px auto;
   padding: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
