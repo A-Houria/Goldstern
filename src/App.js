@@ -15,6 +15,7 @@ import Inventory from "./Inventory";
 import Services from "./Services";
 import Contact from "./Contact";
 import CarDetails from "./CarDetails";
+import Tracking from "./Tracking";
 
 //Router
 const router = createBrowserRouter(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/car/:id" element={<CarDetails />} />
+      <Route path="/tracking" element={<Tracking />} />
     </Route>
   )
 );

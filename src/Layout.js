@@ -51,6 +51,9 @@ const Layout = () => {
             <NavLink onClick={handleBurgerClick} to="/contact">
               Contact Us
             </NavLink>
+            <NavLink onClick={handleBurgerClick} to="/tracking">
+              Tracking
+            </NavLink>
           </ul>
           <Link
             className={`login ${isOpen ? "open" : ""}`}
