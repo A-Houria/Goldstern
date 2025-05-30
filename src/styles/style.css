@@ -192,11 +192,16 @@
   }
   .tracking-container .search-section .search-inputs {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
   .tracking-container .search-section .search-inputs .search-field,
   .tracking-container .search-section .search-inputs .search-button {
-    width: 80%;
+    width: 90%;
+  }
+  .tracking-container .search-section .search-inputs .search-field:hover,
+  .tracking-container .search-section .search-inputs .search-button:hover {
+    transform: scale(1.025);
   }
   .tracking-container .order-details {
     padding: 15px;
