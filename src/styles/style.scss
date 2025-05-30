@@ -1022,8 +1022,11 @@ a {
           width: 90%;
         }
         img {
-          width: 65%;
+          width: 100%;
           margin: 50px;
+          //border: 3px solid white;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           @media screen and (max-width: 850px) {
             width: 75%;
           }
@@ -1049,33 +1052,66 @@ a {
           }
         }
       }
-      .gallary {
+      .gallery-carousel {
         width: 80%;
+        margin: 50px auto;
         display: flex;
         flex-direction: column;
-        margin: 50px auto;
+        align-items: center;
 
-        .images {
-          width: 95%;
+        h1 {
+          font-size: 48px;
+          font-weight: 400;
+          margin-bottom: 50px;
+        }
+
+        .main-image {
+          width: 100%;
           display: flex;
-          flex-direction: row;
-          align-items: center;
           justify-content: center;
-          gap: 35px;
-          flex-wrap: wrap;
-          margin: 50px auto;
-          @media screen and (max-width: 850px) {
-            flex-direction: column;
-          }
+          margin-bottom: 20px;
+          padding: 2px;
+          border-radius: 10px;
+          background-color: white;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
           img {
-            width: 30%;
-            aspect-ratio: 3/2;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        .thumbnails {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 15px;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border 0.3s ease;
+
+            &.selected {
+              border: 2px solid #333;
+            }
+
             @media screen and (max-width: 850px) {
-              width: 90%;
+              width: 60px;
+              height: 45px;
             }
           }
         }
       }
+
       .details {
         width: 80%;
         margin: 50px auto;
@@ -1378,6 +1414,9 @@ a {
               padding: 50px 50px 20px 50px;
               display: flex;
               flex-direction: column;
+              @media screen and (max-width: 500px) {
+                padding: 50px 20px 20px 20px;
+              }
               h1 {
                 font-size: 22px;
                 font-weight: 700;
@@ -1391,7 +1430,7 @@ a {
                 font-size: 16px;
                 font-weight: 400;
                 letter-spacing: 2px;
-                width: 80%;
+                width: 100%;
                 text-align: start;
                 margin: 25px 0px;
                 line-height: 25px;
@@ -1798,7 +1837,7 @@ a {
       align-items: center;
       width: 100%;
       background-color: black;
-      margin-top: 100px;
+      margin-top: 50px;
       .line-break {
         background-color: white;
         width: 90%;

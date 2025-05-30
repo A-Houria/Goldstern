@@ -11,6 +11,7 @@ const CarDetails = () => {
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [openSections, setOpenSections] = useState({
     specialFeatures: false,
     engineSpecs: false,
@@ -103,12 +104,26 @@ const CarDetails = () => {
         </div>
       )}
 
-      {car.Images && (
-        <div className="gallary" data-aos="fade-right">
+      {car.galleryUrls && car.galleryUrls.length > 0 && (
+        <div className="gallery-carousel" data-aos="fade-right">
           <h1>Gallery</h1>
-          <div className="images">
+
+          <div className="main-image">
+            <img
+              src={car.galleryUrls[selectedImageIndex]}
+              alt={`Main ${car.Model}`}
+            />
+          </div>
+
+          <div className="thumbnails">
             {car.galleryUrls.map((img, index) => (
-              <img key={index} src={img} alt={`${car.Model} ${index + 1}`} />
+              <img
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
+                className={index === selectedImageIndex ? "selected" : ""}
+                onClick={() => setSelectedImageIndex(index)}
+              />
             ))}
           </div>
         </div>
