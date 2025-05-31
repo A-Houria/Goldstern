@@ -78,6 +78,9 @@ const Contact = () => {
           message: "",
         });
         setIsFocused(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000); // 1-second delay
       } else {
         setStatus("Failed to send message.");
       }
@@ -145,11 +148,8 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required></textarea>
-              {status ? (
-                <p>{status}</p>
-              ) : (
-                <input className="btn" type="submit" value="Submit" />
-              )}
+              <input className="btn" type="submit" value="Submit" />
+              {status && <p>{status}</p>}
             </form>
           </div>
           <div className="map">
