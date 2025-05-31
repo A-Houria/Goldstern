@@ -7,6 +7,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const CarDetails = () => {
+  // New state for form visibility
+  const [showInquiryForm, setShowInquiryForm] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [status, setStatus] = useState("");
   const { id } = useParams();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -19,11 +23,96 @@ const CarDetails = () => {
     interior: false,
   });
 
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    car: "",
+    message: "",
+  });
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    if (!formData.phone.startsWith("+20")) {
+      setFormData((prev) => ({ ...prev, phone: "+20" }));
+    }
+  };
+
+  const handleBlur = () => {
+    if (formData.phone === "+20") {
+      setFormData((prev) => ({ ...prev, phone: "" }));
+      setIsFocused(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      let input = value;
+
+      // Ensure it starts with "+20"
+      if (!input.startsWith("+20")) {
+        input = "+20" + input.replace(/^\+?20?/, "");
+      }
+
+      // Strip non-digits after +20
+      const digits = input.slice(3).replace(/\D/g, "");
+
+      // Limit to 10 digits after +20
+      const formatted = "+20" + digits.slice(0, 10);
+      setFormData((prev) => ({ ...prev, phone: formatted }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
   const toggleSection = (section) => {
     setOpenSections((prev) => ({
       ...prev,
       [section]: !prev[section],
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone: formData.phone,
+      car: formData.car,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          car: `${car.Name} ${car.Model} ${car.Production_Year}`,
+          message: "",
+        });
+        setIsFocused(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      } else {
+        setStatus("Failed to send message.");
+      }
+    } catch (error) {
+      setStatus("Error sending message.");
+    }
   };
 
   useEffect(() => {
@@ -85,6 +174,60 @@ const CarDetails = () => {
 
   return (
     <div className="car-details">
+      <div
+        className="floating-message"
+        style={{ cursor: "pointer" }}
+        onClick={() => setShowInquiryForm(!showInquiryForm)}>
+        <img src="/Icons/message.png" alt="Message" />
+        <div className="notification"></div>
+      </div>
+      {showInquiryForm && (
+        <div className="inquiry-form-container" data-aos="fade-down">
+          <h1>Interested? Send your car inquiry!</h1>
+          <p>
+            {car.Name} {car.Model} {car.Production_Year}
+          </p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              pattern="\[1-9][0-9]{9}"
+              title="Phone number must start with +20 and be followed by 10 digits"
+              placeholder={isFocused ? "" : "Phone Number"}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">Submit</button>
+            {status && <p>{status}</p>}
+          </form>
+        </div>
+      )}
       {car && (
         <div className="card" data-aos="fade-up">
           <img src={car.imageUrl} alt={car.Model} />
