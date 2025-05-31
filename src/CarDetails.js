@@ -82,7 +82,9 @@ const CarDetails = () => {
       name: `${formData.firstName} ${formData.lastName}`,
       email: formData.email,
       phone: formData.phone,
-      car: `${carWithImages.Name} ${carWithImages.Model} ${carWithImages.Production_Year}`,
+      car: `${car?.Name || ""} ${car?.Model || ""} ${
+        car?.Production_Year || ""
+      }`,
       message: formData.message,
     };
 
@@ -207,7 +209,7 @@ const CarDetails = () => {
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={handleChange}
-              pattern="\[1-9][0-9]{9}"
+              pattern="^\[1-9][0-9]{8}$"
               title="Phone number must start with +20 and be followed by 10 digits"
               placeholder={isFocused ? "" : "Phone Number"}
               required
