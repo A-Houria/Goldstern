@@ -86,6 +86,7 @@ exports.handler = async (event) => {
         Thank you for choosing us, and have a fantastic day!
         </p>
     </div>
+    <!--
     <center>
         <div style="background-color: black; margin: 0; padding: 20px; padding-top: 30px;">
             <a href="https://www.facebook.com/profile.php?id=61552608263446" style="cursor: pointer; text-decoration: none; color: transparent;">
@@ -102,6 +103,7 @@ exports.handler = async (event) => {
             </a>
         </div>
     </center>      
+    -->
 </div>
 `,
     });
