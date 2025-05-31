@@ -203,6 +203,14 @@ const CarDetails = () => {
               required
             />
             <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
               type="tel"
               name="phone"
               value={formData.phone}
