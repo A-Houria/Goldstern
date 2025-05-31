@@ -105,6 +105,7 @@ const CarDetails = () => {
           car: "",
           message: "",
         });
+        setShowInquiryForm(false);
         setIsFocused(false);
       } else {
         setStatus("Failed to send message.");
