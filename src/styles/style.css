@@ -1362,9 +1362,10 @@ a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .car-details .inquiry-form-container h1 {
-  font-size: 22px;
+  font-size: 19.5px;
   font-weight: 400;
   letter-spacing: 2px;
+  line-height: 1.25;
   margin: 20px 0px 40px 0px;
   text-align: center;
   letter-spacing: 1.2px;
