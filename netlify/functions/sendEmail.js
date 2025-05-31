@@ -77,10 +77,10 @@ exports.handler = async (event) => {
         Hey ${name}!
         </p>
         <p style="letter-spacing: 1.5px; line-height: 1.5;">
-        We're thrilled to let you know that we've received your inquiry at Your Company Name. Our dedicated sales team is already on it and will be reaching out to you shortly. We truly appreciate your interest and are excited to assist you with your needs!
+        We've received your inquiry. Our dedicated sales team is already on it and will be reaching out to you shortly. We truly appreciate your interest and are excited to assist you with your needs!
         </p>
         <p style="letter-spacing: 1.5px; line-height: 1.5;">
-        In the meantime, feel free to explore our website for more information about our services and offerings. We're here to ensure you have the best experience possible, and we can't wait to connect with you soon!
+        In the meantime, feel free to explore our website for more information about our services and offerings.
         </p>
         <p style="letter-spacing: 1.5px; line-height: 1.5;">
         Thank you for choosing us, and have a fantastic day!
@@ -97,22 +97,8 @@ exports.handler = async (event) => {
             <a href="https://www.tiktok.com/@goldstern.eg" style="cursor: pointer; text-decoration: none; color: transparent;">
                 <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/tiktok.png" alt="tiktok">
             </a>
-        </div>
-        <div style="background-color: black; background-color: black; margin: 0; padding-bottom: 30px;">
-            <a href="https://goldsternonline.de/" target="_blank" style="text-decoration: none;">
-                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Home</p>
-            </a>
-            <a href="https://goldsternonline.de/about" target="_blank" style="text-decoration: none;"> 
-                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">About Us</p>
-            </a>
-            <a href="https://goldsternonline.de/inventory" target="_blank" style="text-decoration: none;">
-                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Car Inventory</p>
-            </a>
-            <a href="https://goldsternonline.de/services" target="_blank" style="text-decoration: none;"> 
-                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Services</p>
-            </a>
-            <a href="https://goldsternonline.de/contact" target="_blank" style="text-decoration: none;">
-                <p style="padding: 0px 15px; letter-spacing: 1.5px; color: white; display: inline;">Contact</p>
+            <a  href="https://www.linkedin.com/company/103967635" style="cursor: pointer; text-decoration: none; color: transparent;">
+                <img style="max-width: 35px; margin: 0px 20px;" src="https://goldsternonline.de/Icons/LinkedIn.png" alt="tiktok">
             </a>
         </div>
     </center>      
