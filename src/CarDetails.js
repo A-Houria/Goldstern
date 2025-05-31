@@ -106,7 +106,8 @@ const CarDetails = () => {
           message: "",
         });
         setTimeout(() => {
-          window.location.reload();
+          setShowInquiryForm(false);
+          setStatus("");
         }, 3000);
         setIsFocused(false);
       } else {
