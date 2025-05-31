@@ -1439,7 +1439,7 @@ a {
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .card img {
-    width: 75%;
+    width: 90%;
   }
 }
 .app .layout .car-details .card .general {
