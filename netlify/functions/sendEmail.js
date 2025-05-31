@@ -77,7 +77,7 @@ exports.handler = async (event) => {
         Hey ${name}!
         </p>
         <p style="letter-spacing: 1.5px; line-height: 1.5;">
-        We've received your inquiry. Our dedicated sales team is already on it and will be reaching out to you shortly. We truly appreciate your interest and are excited to assist you with your needs!
+        We've received your inquiry. Our dedicated sales team is already on it and will be reaching out to you shortly.
         </p>
         <p style="letter-spacing: 1.5px; line-height: 1.5;">
         In the meantime, feel free to explore our website for more information about our services and offerings.
