@@ -2,18 +2,15 @@ const nodemailer = require("nodemailer");
 
 require("dotenv").config();
 
-// Nodemailer transporter (Google)
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: process.env.GOOGLE_EMAIL, // Your Google email
-    pass: process.env.GOOGLE_PASSWORD, // Your Google password
+    user: process.env.GOOGLE_EMAIL,
+    pass: process.env.GOOGLE_PASSWORD,
   },
 });
 
-// Netlify function handler
 exports.handler = async (event) => {
-  // Ensure it's a POST request
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -22,9 +19,8 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { name, email, message } = JSON.parse(event.body);
+    const { name, email, phone, car, message } = JSON.parse(event.body);
 
-    // Send inquiry email to your inbox
     await transporter.sendMail({
       from: process.env.GOOGLE_EMAIL,
       to: process.env.GOOGLE_EMAIL,
@@ -46,6 +42,12 @@ exports.handler = async (event) => {
                   <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Email:</strong> ${email}</p>
               </li>
               <li>
+                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Phone:</strong> ${phone}</p>
+              </li>
+              <li>
+                  <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Requested Car:</strong> ${car}</p>
+              </li>
+              <li>
                   <p style="letter-spacing: 1.5px; line-height: 1.5;"><strong>Customer's Message:</strong> ${message}</p>
               </li>
           </ul>
@@ -55,8 +57,6 @@ exports.handler = async (event) => {
 </div>
       `,
     });
-
-
     // Send confirmation email to the customer
     await transporter.sendMail({
       from: process.env.GOOGLE_EMAIL,
