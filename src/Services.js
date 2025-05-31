@@ -100,45 +100,6 @@ const Services = () => {
           </h1>
         </div>
       </div>
-      <div className="contact-us" data-aos="fade-up">
-        <form onSubmit={handleSubmit}>
-          <h1>Contact Us</h1>
-          <p>We will get in touch shortly</p>
-          <div className="input">
-            <label htmlFor="name">Name</label>
-            <input
-              required
-              type="text"
-              name="name"
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="input">
-            <label htmlFor="email">Email</label>
-            <input
-              required
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="input">
-            <label htmlFor="message">Your Inquiry</label>
-            <textarea
-              required
-              name="message"
-              id="message"
-              value={formData.message}
-              onChange={handleChange}
-            />
-          </div>
-          <button type="submit">Send</button>
-        </form>
-      </div>
       <div className="import" data-aos="fade-up">
         <h1>Why Import with Us</h1>
         <div className="cards">
