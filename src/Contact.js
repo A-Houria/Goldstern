@@ -61,7 +61,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch("/.netlify/functions/contact", {
+      const response = await fetch("/.netlify/functions/sendEmail", {
         method: "POST",
         body: JSON.stringify(payload),
       });
