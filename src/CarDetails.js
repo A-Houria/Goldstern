@@ -82,7 +82,7 @@ const CarDetails = () => {
       name: `${formData.firstName} ${formData.lastName}`,
       email: formData.email,
       phone: formData.phone,
-      car: formData.car,
+      car: `${carWithImages.Name} ${carWithImages.Model} ${carWithImages.Production_Year}`,
       message: formData.message,
     };
 
@@ -100,13 +100,10 @@ const CarDetails = () => {
           lastName: "",
           email: "",
           phone: "",
-          car: `${car.Name} ${car.Model} ${car.Production_Year}`,
+          car: "",
           message: "",
         });
         setIsFocused(false);
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
       } else {
         setStatus("Failed to send message.");
       }
@@ -114,7 +111,6 @@ const CarDetails = () => {
       setStatus("Error sending message.");
     }
   };
-
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
 

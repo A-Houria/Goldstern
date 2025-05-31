@@ -78,9 +78,6 @@ const Contact = () => {
           message: "",
         });
         setIsFocused(false);
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000); // 1-second delay
       } else {
         setStatus("Failed to send message.");
       }
