@@ -78,6 +78,9 @@ const Contact = () => {
           message: "",
         });
         setIsFocused(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       } else {
         setStatus("Failed to send message.");
       }
