@@ -1,13 +1,18 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const location = useLocation(); // 👈 get current route
 
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // 👈 scroll to top on route change
+  }, [location.pathname]); // 👈 trigger on pathname change
 
   useEffect(() => {
     const handleScroll = () => {
