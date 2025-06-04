@@ -188,13 +188,13 @@ const Contact = () => {
                 <span>
                   <img src="./Icons/call.png" alt="Phone" />
                 </span>
-                +20 12 3456 7891
+                +20-10-00445786
               </p>
               <p>
                 <span>
                   <img src="./Icons/whatsapp.png" alt="Whatsapp" />
                 </span>
-                +20 12 3456 7891
+                +20-10-00445786
               </p>
             </div>
           </div>
