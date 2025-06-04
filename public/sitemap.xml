@@ -4,13 +4,40 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+  <url>
+    <loc>https://goldsternonline.de/</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
 
-<url>
-  <loc>https://goldsternonline.de/</loc>
-  <lastmod>2025-06-04T18:25:31+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://goldsternonline.de/about</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
 
+  <url>
+    <loc>https://goldsternonline.de/login</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://goldsternonline.de/inventory</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://goldsternonline.de/services</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://goldsternonline.de/contact</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://goldsternonline.de/tracking</loc>
+    <lastmod>2025-06-04T18:25:31+00:00</lastmod>
+  </url>
 
 </urlset>
