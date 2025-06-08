@@ -1809,7 +1809,7 @@ a {
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
-          @media screen and (max-width: 1250px) {
+          @media screen and (max-width: 1500px) {
             flex-direction: column;
             justify-content: center;
             gap: 50px;
@@ -1818,7 +1818,10 @@ a {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            @media screen and (max-width: 500px) {
+            @media screen and (max-width: 1100px) {
+              width: 90%;
+            }
+            @media screen and (max-width: 1500px) {
               align-items: center;
             }
             h1 {
@@ -1848,9 +1851,16 @@ a {
             .form {
               display: flex;
               flex-direction: column;
-              @media screen and (max-width: 500px) {
-                max-width: 70%;
-                margin: 0 auto;
+              @media screen and (max-width:1500px) {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+
+              }
+              @media screen and (max-width: 1100px) {
+                flex-direction: column;
+                max-width: 100%;
               }
               .btn {
                 padding: 0px;
@@ -1867,8 +1877,11 @@ a {
                 transition: all 0.2s ease;
                 letter-spacing: 2px;
                 font-weight: 600;
-                @media screen and (max-width: 800px) {
-                  width: 100%;
+                @media screen and (max-width: 1100px) {
+                  align-self: center;
+                  width: 90%;
+                  height: 65px;
+                  align-self: center;
                 }
                 cursor: pointer;
                 &:hover {
@@ -1882,9 +1895,11 @@ a {
                 max-width: 350px;
                 min-width: 350px;
                 min-height: 150px;
-                @media screen and (max-width: 800px) {
+                @media screen and (max-width: 1100px) {
                   min-width: 0px;
-                  width: 100%;
+                  max-width: 100%;
+                  width: 90%;
+                  align-self: center;
                 }
               }
               input,
@@ -1896,30 +1911,32 @@ a {
                 letter-spacing: 2px;
                 outline: none;
                 border: none;
-                margin: 15px 0px;
+                margin: 15px ;
                 border-radius: 5px;
                 background-color: white;
                 color: black;
                 border: 1px solid rgb(199, 199, 199);
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                @media screen and (max-width: 500px) {
-                  max-width: 100%;
+                @media screen and (max-width: 1100px) {
+                  width: 90%;
+                  height: 65px;
+                  align-self: center;
                 }
               }
             }
           }
           .map {
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 1500px) {
               width: 100%;
             }
             iframe {
-              width: 500px;
-              aspect-ratio: 1/1;
+              width: 700px;
+              height: 800px;
               border-radius: 5px;
               border: none;
               outline: none;
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-              @media screen and (max-width: 800px) {
+              @media screen and (max-width: 1500px) {
                 width: 100%;
               }
             }
@@ -1930,9 +1947,11 @@ a {
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          flex-wrap: wrap;
           padding: 100px 0px 50px 0px;
-          gap: 75px;
+          gap: 50px;
+          @media screen and (max-width: 1500px) {
+            flex-direction: column;
+          }
           .card {
             display: flex;
             flex-direction: row;
@@ -1974,11 +1993,11 @@ a {
                 flex-direction: row;
                 align-items: center;
                 @media screen and (max-width: 500px) {
-                  margin-bottom: 20px;
+                  margin-bottom: 10px;
                 }
                 img {
                   width: 25px;
-                  aspect-ratio: 1/1;
+                  height: 25px;
                   margin-right: 10px;
                   @media screen and (max-width: 500px) {
                     margin-bottom: 0px;
