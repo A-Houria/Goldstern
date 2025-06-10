@@ -17,43 +17,51 @@ const Home = () => {
   };
 
   useEffect(() => {
-  AOS.init({ duration: 800, once: false });
 
-  const fetchFeaturedCars = async () => {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const isBot = /Googlebot|Bingbot|Slurp|DuckDuckBot|Baiduspider/i.test(navigator.userAgent);
 
-      // Fetch Firestore docs with timeout
-      const querySnapshot = await getDocs(collection(db, "Cars"), { signal: controller.signal });
-      clearTimeout(timeoutId);
-
-      // Fetch images similarly with timeout, or skip if it takes too long
-      const carItems = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      const featuredCarsWithImages = await Promise.all(
-        carItems.filter(car => car.Featured).map(async (car) => {
-          try {
-            const imageRef = ref(storage, car.Img);
-            const imageUrl = await getDownloadURL(imageRef);
-            return { ...car, imageUrl };
-          } catch {
-            return { ...car, imageUrl: "" };
-          }
-        })
-      );
-
-      setFeaturedCars(featuredCarsWithImages);
-    } catch (err) {
-      console.error("Fetch failed or aborted:", err);
-      setError("Failed to load featured cars. Please try again later.");
-    } finally {
+    if (isBot) {
+      // Skip fetch for bots, set featuredCars to empty or default static array
+      setFeaturedCars([]);
       setLoading(false);
+      return;
     }
-  };
 
-  fetchFeaturedCars();
-}, []);
+    AOS.init({ duration: 800, once: false });
 
+    const fetchFeaturedCars = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "Cars"));
+        const carItems = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        const featuredCarsWithImages = await Promise.all(
+          carItems
+            .filter((car) => car.Featured === true) // Filter only featured cars
+            .map(async (car) => {
+              try {
+                const imageRef = ref(storage, car.Img);
+                const imageUrl = await getDownloadURL(imageRef);
+                return { ...car, imageUrl };
+              } catch (err) {
+                console.error("Error fetching car image URL:", err);
+                return { ...car, imageUrl: "" };
+              }
+            })
+        );
+
+        setFeaturedCars(featuredCarsWithImages);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeaturedCars();
+  }, []);
 
   if (loading)
     return (
