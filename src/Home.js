@@ -17,16 +17,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-
-    const isBot = /Googlebot|Bingbot|Slurp|DuckDuckBot|Baiduspider/i.test(navigator.userAgent);
-
-    if (isBot) {
-      // Skip fetch for bots, set featuredCars to empty or default static array
-      setFeaturedCars([]);
-      setLoading(false);
-      return;
-    }
-
     AOS.init({ duration: 800, once: false });
 
     const fetchFeaturedCars = async () => {
