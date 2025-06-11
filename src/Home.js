@@ -133,7 +133,7 @@ const Home = () => {
 
       {/* Process Section */}
       <div className="details" data-aos="fade-up">
-        <h1>How it works</h1>
+        <h1 className="how">How it works</h1>
         <div className="process" data-aos="fade-right">
           <h1>Step By Step Process</h1>
           <ul className="process-list">

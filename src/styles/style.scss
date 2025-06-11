@@ -68,9 +68,10 @@
 
   .search-section {
     margin-bottom: 40px;
-    background: rgba($color: white, $alpha: 0.2);
-    padding: 20px;
-    border-radius: 8px;
+    background-color: rgba($color: white, $alpha: 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     .search-inputs {
       display: flex;
@@ -78,12 +79,14 @@
       max-width: 800px;
       margin: 0 auto;
       flex-wrap: wrap;
-
       .search-field {
         flex: 1;
         min-width: 200px;
-        padding: 12px;
-        border: 1px solid #ddd;
+        border: none;
+        outline: none;
+        background-color: rgba($color: white, $alpha: 1.0);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        padding: 10px 20px;
         border-radius: 4px;
         font-size: 16px;
       }
@@ -542,7 +545,14 @@ a {
           @media screen and (max-width: 1100px) {
             padding: 0;
           }
-
+          h1{
+            width: 100%;
+            text-align: center;
+            background-color: rgba($color: white, $alpha: 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px 30px;
+          }
           .services-list {
             list-style: none;
             width: 100%;
@@ -590,6 +600,10 @@ a {
           font-size: 3.5px;
           font-weight: 400;
           letter-spacing: 3px;
+          background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          padding: 10px 30px;
         }
         .cards {
           min-width: 100%;
@@ -699,12 +713,20 @@ a {
         display: flex;
         flex-direction: column;
         margin-top: 100px;
+        .how{
+            width: 95%;
+          }
         h1 {
           text-align: center;
           letter-spacing: 2px;
           font-size: 3.5vw;
           font-weight: 400;
-          margin: 25px;
+          margin: 25px auto;
+          background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          padding: 10px 30px;
+          
           @media screen and (max-width: 750px) {
             font-size: 8vw;
           }
@@ -755,6 +777,10 @@ a {
               }
               p {
                 font-size: 1.1vw;
+                background-color: rgba($color: white, $alpha: 0.4);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                padding: 10px 30px;
+                border-radius: 10px;
                 @media screen and (max-width: 780px) {
                   font-size: 1.5vw;
                 }
@@ -1077,6 +1103,10 @@ a {
           font-size: 3.5px;
           font-weight: 400;
           letter-spacing: 3px;
+          background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 10px 30px;
+          border-radius: 10px;
         }
         .cards {
           min-width: 100%;
@@ -1181,6 +1211,10 @@ a {
             font-size: 2.5vw;
             font-weight: 400;
             letter-spacing: 2px;
+            background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 10px 30px;
+          border-radius: 10px;
             @media screen and (max-width: 650px) {
               font-size: 3.5vw;
               margin: 25px;
@@ -1191,24 +1225,24 @@ a {
             display: flex;
             justify-content: center;
             width: 45%;
-
+            background-color: rgba($color: white, $alpha: 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: none;
+            outline: none;
             @media screen and (max-width: 650px) {
               width: 80%;
             }
 
             .search-input {
               width: 100%;
-              padding: 10px;
+              padding: 20px;
               font-size: 16px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
+              border-radius: 4px;
+              background-color: rgba($color: white, $alpha: 0.4);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              border: none;
               outline: none;
-              transition: border-color 0.3s;
-
-              &:focus {
-                border-color: grey; /* Change to your preferred theme color */
-                box-shadow: 0 0 5px rgba(173, 173, 173, 0.5);
-              }
             }
           }
         }
@@ -1579,6 +1613,7 @@ a {
           font-size: 42px;
           letter-spacing: 2px;
           align-self: center;
+          padding: 10px 30px;
           @media screen and (max-width: 750px) {
             font-size: 32px;
           }
@@ -1591,6 +1626,10 @@ a {
           display: flex;
           flex-direction: row;
           align-items: center;
+          background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          border-radius: 10px;
           img {
             max-width: 50px;
             margin: 0px 25px;
@@ -1622,6 +1661,10 @@ a {
           font-size: 42px;
           font-weight: 400;
           letter-spacing: 2px;
+          background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 10px 30px;
+          border-radius: 10px;
           @media screen and (max-width: 750px) {
             font-size: 32px;
           }
@@ -1674,6 +1717,9 @@ a {
                 font-weight: 700;
                 letter-spacing: 2px;
                 text-align: start;
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
                 @media screen and (max-width: 750px) {
                   font-size: 4.5vw;
                 }
@@ -1738,13 +1784,17 @@ a {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 0px 50px;
+        margin: 50px;
         user-select: none;
+        background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          border-radius: 10px;
         h1 {
           font-size: 52px;
           font-weight: 700;
           letter-spacing: 2px;
-          margin: 50px 0px;
+          margin: 50px 20px;
           @media screen and (max-width: 650px) {
             font-size: 7.5vw;
           }

@@ -63,9 +63,10 @@
 }
 .tracking-container .search-section {
   margin-bottom: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .tracking-container .search-section .search-inputs {
@@ -78,8 +79,11 @@
 .tracking-container .search-section .search-inputs .search-field {
   flex: 1;
   min-width: 200px;
-  padding: 12px;
-  border: 1px solid #ddd;
+  border: none;
+  outline: none;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
   border-radius: 4px;
   font-size: 16px;
 }
@@ -514,6 +518,14 @@ a {
     padding: 0;
   }
 }
+.app .layout .home .text .services h1 {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 30px;
+}
 .app .layout .home .text .services .services-list {
   list-style: none;
   width: 100%;
@@ -565,6 +577,10 @@ a {
   font-size: 3.5px;
   font-weight: 400;
   letter-spacing: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 30px;
 }
 .app .layout .home .featured .cards {
   min-width: 100%;
@@ -683,12 +699,19 @@ a {
   flex-direction: column;
   margin-top: 100px;
 }
+.app .layout .home .details .how {
+  width: 95%;
+}
 .app .layout .home .details h1 {
   text-align: center;
   letter-spacing: 2px;
   font-size: 3.5vw;
   font-weight: 400;
-  margin: 25px;
+  margin: 25px auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 30px;
 }
 @media screen and (max-width: 750px) {
   .app .layout .home .details h1 {
@@ -748,6 +771,10 @@ a {
 }
 .app .layout .home .details .process .process-list li p {
   font-size: 1.1vw;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
 }
 @media screen and (max-width: 780px) {
   .app .layout .home .details .process .process-list li p {
@@ -1117,6 +1144,10 @@ a {
   font-size: 3.5px;
   font-weight: 400;
   letter-spacing: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
 }
 .app .layout .inventory .featured .cards {
   min-width: 100%;
@@ -1231,6 +1262,10 @@ a {
   font-size: 2.5vw;
   font-weight: 400;
   letter-spacing: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
 }
 @media screen and (max-width: 650px) {
   .app .layout .inventory .car-list .car-nav h1 {
@@ -1242,6 +1277,11 @@ a {
   display: flex;
   justify-content: center;
   width: 45%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }
 @media screen and (max-width: 650px) {
   .app .layout .inventory .car-list .car-nav .search-bar {
@@ -1250,16 +1290,13 @@ a {
 }
 .app .layout .inventory .car-list .car-nav .search-bar .search-input {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
   outline: none;
-  transition: border-color 0.3s;
-}
-.app .layout .inventory .car-list .car-nav .search-bar .search-input:focus {
-  border-color: grey; /* Change to your preferred theme color */
-  box-shadow: 0 0 5px rgba(173, 173, 173, 0.5);
 }
 .app .layout .inventory .car-list .filtered-cars {
   min-width: 100%;
@@ -1663,6 +1700,7 @@ a {
   font-size: 42px;
   letter-spacing: 2px;
   align-self: center;
+  padding: 10px 30px;
 }
 @media screen and (max-width: 750px) {
   .app .layout .services .service .title {
@@ -1677,6 +1715,10 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
 }
 .app .layout .services .service h1 img {
   max-width: 50px;
@@ -1711,6 +1753,10 @@ a {
   font-size: 42px;
   font-weight: 400;
   letter-spacing: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
 }
 @media screen and (max-width: 750px) {
   .app .layout .services .import h1 {
@@ -1776,6 +1822,9 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   text-align: start;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 @media screen and (max-width: 750px) {
   .app .layout .services .import .cards .card .text h1 {
@@ -1842,16 +1891,20 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0px 50px;
+  margin: 50px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
 }
 .app .layout .services .faqs h1 {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 2px;
-  margin: 50px 0px;
+  margin: 50px 20px;
 }
 @media screen and (max-width: 650px) {
   .app .layout .services .faqs h1 {
