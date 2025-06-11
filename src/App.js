@@ -15,6 +15,7 @@ import Services from "./Services";
 import Contact from "./Contact";
 import CarDetails from "./CarDetails";
 import Tracking from "./Tracking";
+import Nopage from "./Nopage";
 
 //Router
 const router = createBrowserRouter(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/car/:id" element={<CarDetails />} />
       <Route path="/tracking" element={<Tracking />} />
+      <Route path="*" element={<Nopage />} />
     </Route>
   )
 );

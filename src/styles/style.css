@@ -460,6 +460,38 @@ a {
     display: flex;
   }
 }
+.app .layout .nopage {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+.app .layout .nopage a {
+  color: black;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 10px 30px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  margin: 20px 0px;
+  transition: all ease-in-out 0.3s;
+}
+.app .layout .nopage a:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.app .layout .nopage h1, .app .layout .nopage h2, .app .layout .nopage p {
+  letter-spacing: 2px;
+  padding: 10px 30px;
+  font-weight: 400;
+  text-align: center;
+}
+.app .layout .nopage h1 {
+  font-size: 58px;
+}
 .app .layout .home {
   overflow: hidden;
 }
