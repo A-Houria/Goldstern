@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db, storage } from "./firebase"; // Adjust this import path based on your project structure
 import { ref, getDownloadURL } from "firebase/storage";
 import AOS from "aos";
+import { Helmet } from "react-helmet";
 import "aos/dist/aos.css";
 
 const Home = () => {
@@ -69,6 +70,68 @@ const Home = () => {
     );
 
   return (
+    <>
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CarDealer",
+          "name": "Goldstern",
+          "url": "https://goldsternonline.de",
+          "logo": "https://goldsternonline.de/Icons/Logo.png",
+          "image": "https://goldsternonline.de/Icons/Logo.png",
+          "description": "Goldstern, founded in 2019 by automotive engineer Abderhaman Horia, offers premium European cars to Egypt and the Arabian region with transparent pricing and a seamless import process.",
+          "telephone": "+20-10-00445786",
+          "email": "info@goldsternonline.de",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Makan Mall, Waslet Dahshur Rd",
+            "addressLocality": "Second Al Sheikh Zayed",
+            "addressRegion": "Giza Governorate",
+            "addressCountry": "EG"
+          },
+          "openingHours": "Mo-Su 10:00-22:00",
+          "areaServed": [
+            { "@type": "Country", "name": "Egypt" }
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Abderhaman Horia"
+          },
+          "foundingDate": "2019",
+          "makesOffer": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "On-Ground Cars - Ready for Immediate Delivery"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Import Your Dream Car"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Expert Guidance & Consultation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "After-Sales Support"
+              }
+            }
+          ]
+        })}
+      </script>
+    </Helmet>
     <div className="home">
       {/* Hero Section */}
       <div className="hero" data-aos="fade-up">
@@ -205,6 +268,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

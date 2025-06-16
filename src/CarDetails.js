@@ -175,6 +175,50 @@ const CarDetails = () => {
     );
 
   return (
+    <>
+    
+    {car && (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Vehicle",
+            "name": `${car.Name} ${car.Model}`,
+            "modelDate": car.Production_Year,
+            "vehicleEngine": car.Engine_Specs ? {
+              "@type": "EngineSpecification",
+              "engineType": car.Engine_Specs.join(", "),
+            } : undefined,
+            "description": car.Description,
+            "image": car.imageUrl,
+            "manufacturer": {
+              "@type": "Organization",
+              "name": car.Name,
+            },
+            "additionalProperty": [
+              ...(car.Special_Features || []).map((feature) => ({
+                "@type": "PropertyValue",
+                "name": "Special Feature",
+                "value": feature,
+              })),
+              ...(car.Exterior || []).map((ex) => ({
+                "@type": "PropertyValue",
+                "name": "Exterior",
+                "value": ex,
+              })),
+              ...(car.Interior || []).map((int) => ({
+                "@type": "PropertyValue",
+                "name": "Interior",
+                "value": int,
+              })),
+            ],
+            "url": window.location.href
+          }),
+        }}
+      />
+    )}
+
     <div className="car-details">
       <div
         className="floating-message"
@@ -376,6 +420,7 @@ const CarDetails = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

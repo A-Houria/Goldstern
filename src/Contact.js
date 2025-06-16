@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useState } from "react";
 
 const Contact = () => {
@@ -89,8 +90,44 @@ const Contact = () => {
     }
   };
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Goldstern",
+    "url": "https://goldsternonline.de",
+    "logo": "https://goldsternonline.de/logo.png", 
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+20-10-00445786",
+        "contactType": "customer service",
+        "areaServed": "EG",
+        "availableLanguage": ["English", "German", "Arabic"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+20-10-00445786",
+        "contactType": "sales",
+        "areaServed": "EG",
+        "availableLanguage": ["English", "German", "Arabic"]
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Makan Mall, Waslet Dahshur Rd",
+      "addressLocality": "Second Al Sheikh Zayed",
+      "addressRegion": "Giza Governorate",
+      "addressCountry": "EG"
+    }
+  };
+
   return (
     <div className="contact">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(contactSchema)}
+        </script>
+      </Helmet>
       <div className="cont">
         <div className="main">
           <div className="text">
@@ -177,7 +214,7 @@ const Contact = () => {
             <img src="./Icons/email.png" alt="Email" />
             <div className="details">
               <h1>Email</h1>
-              <p>Sales@goldsternonline.de</p>
+              <p>info@goldsternonline.de</p>
             </div>
           </div>
           <div className="card">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 const Services = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -76,8 +77,89 @@ const Services = () => {
     },
   ];
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Goldstern",
+        "url": "https://goldsternonline.de",
+        "logo": "https://goldsternonline.de/logo.png", // update if you have logo
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+20-10-00445786",
+          "contactType": "customer service",
+          "areaServed": "EG",
+          "availableLanguage": ["English", "German", "Arabic"],
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61552608263446",
+          "https://www.instagram.com/goldstern_eg",
+          "https://www.tiktok.com/@goldstern.eg",
+          "https://www.linkedin.com/company/103967635"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Goldstern Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "On-Ground Cars - Ready for Immediate Delivery",
+                "description":
+                  "Luxury European cars ready for immediate delivery.",
+              },
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Import Your Dream Car",
+                "description":
+                  "We assist with importing your dream car from Europe.",
+              },
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Expert Guidance & Consultation",
+                "description":
+                  "Professional guidance and consultation during the import process.",
+              },
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "After-Sales Support",
+                "description":
+                  "Comprehensive after-sales support for all imported vehicles.",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(({ question, answer }) => ({
+          "@type": "Question",
+          "name": question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": answer,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="services">
+       <Helmet>
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      </Helmet>
       <div className="service" data-aos="fade-up">
         <h1 className="title">Our Services</h1>
         <div className="services">
