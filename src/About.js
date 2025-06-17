@@ -182,7 +182,8 @@ const About = () => {
             className="card"
             key={index}
             onClick={() => toggleCard(index)}
-            style={{ cursor: "pointer" }}>
+            style={{ cursor: "pointer" }}
+          >
             <h1>{faq.question}</h1>
             <p className={`${activeCard === index ? "show" : ""}`}>
               {faq.answer}

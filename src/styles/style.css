@@ -483,7 +483,9 @@ a {
 .app .layout .nopage a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
-.app .layout .nopage h1, .app .layout .nopage h2, .app .layout .nopage p {
+.app .layout .nopage h1,
+.app .layout .nopage h2,
+.app .layout .nopage p {
   letter-spacing: 2px;
   padding: 10px 30px;
   font-weight: 400;

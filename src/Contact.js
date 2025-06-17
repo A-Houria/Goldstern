@@ -93,32 +93,32 @@ const Contact = () => {
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Goldstern",
-    "url": "https://goldsternonline.de",
-    "logo": "https://goldsternonline.de/logo.png", 
-    "contactPoint": [
+    name: "Goldstern",
+    url: "https://goldsternonline.de",
+    logo: "https://goldsternonline.de/logo.png",
+    contactPoint: [
       {
         "@type": "ContactPoint",
-        "telephone": "+20-10-00445786",
-        "contactType": "customer service",
-        "areaServed": "EG",
-        "availableLanguage": ["English", "German", "Arabic"]
+        telephone: "+20-10-00445786",
+        contactType: "customer service",
+        areaServed: "EG",
+        availableLanguage: ["English", "German", "Arabic"],
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+20-10-00445786",
-        "contactType": "sales",
-        "areaServed": "EG",
-        "availableLanguage": ["English", "German", "Arabic"]
-      }
+        telephone: "+20-10-00445786",
+        contactType: "sales",
+        areaServed: "EG",
+        availableLanguage: ["English", "German", "Arabic"],
+      },
     ],
-    "address": {
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Makan Mall, Waslet Dahshur Rd",
-      "addressLocality": "Second Al Sheikh Zayed",
-      "addressRegion": "Giza Governorate",
-      "addressCountry": "EG"
-    }
+      streetAddress: "Makan Mall, Waslet Dahshur Rd",
+      addressLocality: "Second Al Sheikh Zayed",
+      addressRegion: "Giza Governorate",
+      addressCountry: "EG",
+    },
   };
 
   return (
@@ -177,6 +177,7 @@ const Contact = () => {
                 placeholder="Requested Car"
                 value={formData.car}
                 onChange={handleChange}
+                required
               />
               <textarea
                 name="message"
@@ -184,7 +185,8 @@ const Contact = () => {
                 placeholder="Message"
                 value={formData.message}
                 onChange={handleChange}
-                required></textarea>
+                required
+              ></textarea>
               <input className="btn" type="submit" value="Submit" />
               {status && <p>{status}</p>}
             </form>
@@ -196,7 +198,8 @@ const Contact = () => {
               height="450"
               allowFullScreen=""
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"></iframe>
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
         <div className="icons">
