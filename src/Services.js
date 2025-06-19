@@ -82,59 +82,59 @@ const Services = () => {
     "@graph": [
       {
         "@type": "Organization",
-        "name": "Goldstern",
-        "url": "https://goldsternonline.de",
-        "logo": "https://goldsternonline.de/logo.png", // update if you have logo
-        "contactPoint": {
+        name: "Goldstern",
+        url: "https://goldsternonline.de",
+        logo: "https://goldsternonline.de/logo.png", // update if you have logo
+        contactPoint: {
           "@type": "ContactPoint",
-          "telephone": "+20-10-00445786",
-          "contactType": "customer service",
-          "areaServed": "EG",
-          "availableLanguage": ["English", "German", "Arabic"],
+          telephone: "+20-10-00445786",
+          contactType: "customer service",
+          areaServed: "EG",
+          availableLanguage: ["English", "German", "Arabic"],
         },
-        "sameAs": [
+        sameAs: [
           "https://www.facebook.com/profile.php?id=61552608263446",
           "https://www.instagram.com/goldstern_eg",
           "https://www.tiktok.com/@goldstern.eg",
-          "https://www.linkedin.com/company/103967635"
+          "https://www.linkedin.com/company/103967635",
         ],
-        "hasOfferCatalog": {
+        hasOfferCatalog: {
           "@type": "OfferCatalog",
-          "name": "Goldstern Services",
-          "itemListElement": [
+          name: "Goldstern Services",
+          itemListElement: [
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "Service",
-                "name": "On-Ground Cars - Ready for Immediate Delivery",
-                "description":
+                name: "In-Stock Cars - Ready for Immediate Delivery",
+                description:
                   "Luxury European cars ready for immediate delivery.",
               },
             },
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "Service",
-                "name": "Import Your Dream Car",
-                "description":
+                name: "Import Your Dream Car",
+                description:
                   "We assist with importing your dream car from Europe.",
               },
             },
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "Service",
-                "name": "Expert Guidance & Consultation",
-                "description":
+                name: "Expert Guidance & Consultation",
+                description:
                   "Professional guidance and consultation during the import process.",
               },
             },
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "Service",
-                "name": "After-Sales Support",
-                "description":
+                name: "After-Sales Support",
+                description:
                   "Comprehensive after-sales support for all imported vehicles.",
               },
             },
@@ -143,12 +143,12 @@ const Services = () => {
       },
       {
         "@type": "FAQPage",
-        "mainEntity": faqs.map(({ question, answer }) => ({
+        mainEntity: faqs.map(({ question, answer }) => ({
           "@type": "Question",
-          "name": question,
-          "acceptedAnswer": {
+          name: question,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": answer,
+            text: answer,
           },
         })),
       },
@@ -157,7 +157,7 @@ const Services = () => {
 
   return (
     <div className="services">
-       <Helmet>
+      <Helmet>
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
       <div className="service" data-aos="fade-up">
@@ -278,7 +278,8 @@ const Services = () => {
             className="card"
             key={index}
             onClick={() => toggleCard(index)}
-            style={{ cursor: "pointer" }}>
+            style={{ cursor: "pointer" }}
+          >
             <h1>{faq.question}</h1>
             <p className={`${activeCard === index ? "show" : ""}`}>
               {faq.answer}
