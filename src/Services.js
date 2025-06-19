@@ -165,7 +165,7 @@ const Services = () => {
         <div className="services">
           <h1>
             <img src="./Icons/speed.png" alt="immediate delivery" />
-            On-Ground Cars - Ready for Immediate Delivery
+            In-Stock Cars - Ready for Immediate Delivery
           </h1>
           <h1>
             <img src="./Icons/ship.png" alt="Import" />
