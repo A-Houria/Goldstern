@@ -148,7 +148,7 @@ const Home = () => {
             <ul className="services-list">
               <li data-aos="fade-right">
                 <img src="./Icons/speed.png" alt="immediate delivery" />
-                On-Ground Cars - Ready for Immediate Delivery
+                In-Stock Cars - Ready for Immediate Delivery
               </li>
               <li data-aos="fade-right" data-aos-delay="100">
                 <img src="./Icons/ship.png" alt="Import" />
@@ -174,7 +174,7 @@ const Home = () => {
           <h1 className="header">Our Featured Cars</h1>
           <div className="cards">
             {featuredCars
-              .filter((car) => car.Featured === true)
+              .filter((car) => car.Featured === true && car.imageUrl)
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
                   <div className="card" data-aos="fade-up">
