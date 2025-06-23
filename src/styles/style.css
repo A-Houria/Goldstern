@@ -297,6 +297,7 @@ a {
      -moz-user-select: none;
           user-select: none;
   padding: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .app .layout .nav.sticky {
   position: fixed;
@@ -348,7 +349,7 @@ a {
   .app .layout .nav .cont .list a {
     min-width: 100%;
     padding: 5px;
-    border-bottom: 1px solid silver;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.2);
   }
   .app .layout .nav .cont .list a:hover {
     color: black;
@@ -708,9 +709,11 @@ a {
 .app .layout .home .featured .cards .card .text .inventory {
   padding: 12px 40px;
   background-color: transparent;
-  color: black;
-  border: 1px solid black;
+  color: white;
+  background-color: black;
+  box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.2);
   outline: none;
+  border: none;
   border-radius: 4px;
   font-size: 15px;
   transition: all 0.2s ease;
@@ -793,10 +796,15 @@ a {
   margin: 50px 0px;
   text-wrap: wrap;
   line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .home .details .process .process-list li h1 {
   font-size: 1.5vw;
   margin: 25px 0px;
+  padding-top: 30px;
+  box-shadow: none;
 }
 @media screen and (max-width: 780px) {
   .app .layout .home .details .process .process-list li h1 {
@@ -810,10 +818,9 @@ a {
 }
 .app .layout .home .details .process .process-list li p {
   font-size: 1.1vw;
-  background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px 30px;
-  border-radius: 10px;
+  padding: 10px 30px 30px 30px;
+  box-shadow: none;
 }
 @media screen and (max-width: 780px) {
   .app .layout .home .details .process .process-list li p {
@@ -1558,6 +1565,12 @@ a {
   font-size: 48px;
   font-weight: 400;
   margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 10x;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .car-details .gallery-carousel .main-image {
   width: 100%;
@@ -1706,6 +1719,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .description {
@@ -2266,13 +2283,15 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: black;
   margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
 }
 .app .layout .footer .line-break {
   background-color: white;
+  box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.2);
   width: 90%;
-  height: 2px;
+  height: 1px;
   margin: auto;
 }
 .app .layout .footer .social-media {
@@ -2294,8 +2313,8 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    border: 1px solid white;
-    border-radius: 3px;
+    border-radius: 10px;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
     margin: 5px;
   }
 }
