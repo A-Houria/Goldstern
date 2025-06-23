@@ -176,250 +176,261 @@ const CarDetails = () => {
 
   return (
     <>
-    
-    {car && (
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Vehicle",
-            "name": `${car.Name} ${car.Model}`,
-            "modelDate": car.Production_Year,
-            "vehicleEngine": car.Engine_Specs ? {
-              "@type": "EngineSpecification",
-              "engineType": car.Engine_Specs.join(", "),
-            } : undefined,
-            "description": car.Description,
-            "image": car.imageUrl,
-            "manufacturer": {
-              "@type": "Organization",
-              "name": car.Name,
-            },
-            "additionalProperty": [
-              ...(car.Special_Features || []).map((feature) => ({
-                "@type": "PropertyValue",
-                "name": "Special Feature",
-                "value": feature,
-              })),
-              ...(car.Exterior || []).map((ex) => ({
-                "@type": "PropertyValue",
-                "name": "Exterior",
-                "value": ex,
-              })),
-              ...(car.Interior || []).map((int) => ({
-                "@type": "PropertyValue",
-                "name": "Interior",
-                "value": int,
-              })),
-            ],
-            "url": window.location.href
-          }),
-        }}
-      />
-    )}
-
-    <div className="car-details">
-      <div
-        className="floating-message"
-        style={{ cursor: "pointer" }}
-        onClick={() => setShowInquiryForm(!showInquiryForm)}>
-        <img src="/Icons/message.png" alt="Message" />
-        <div className="notification"></div>
-      </div>
-      {showInquiryForm && (
-        <div className="inquiry-form-container" data-aos="fade-down">
-          <h1>Interested? Send your car inquiry!</h1>
-          <p>
-            {car.Name} {car.Model} {car.Production_Year}
-          </p>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              pattern="^\[1-9][0-9]{8}$"
-              title="Phone number must start with +20 and be followed by 10 digits"
-              placeholder={isFocused ? "" : "Phone Number"}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-            <button type="submit">Submit</button>
-            {status && <p>{status}</p>}
-          </form>
-        </div>
-      )}
       {car && (
-        <div className="card" data-aos="fade-up">
-          <img src={car.imageUrl} alt={car.Model} />
-          <div className="general">
-            <p>Car Brand: {car.Name}</p>
-            <p>Car Model: {car.Model}</p>
-            <p>Production Year: {car.Production_Year}</p>
-            <p>Condition: {car.Condition}</p>
-          </div>
-        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Vehicle",
+              name: `${car.Name} ${car.Model}`,
+              modelDate: car.Production_Year,
+              vehicleEngine: car.Engine_Specs
+                ? {
+                    "@type": "EngineSpecification",
+                    engineType: car.Engine_Specs.join(", "),
+                  }
+                : undefined,
+              description: car.Description,
+              image: car.imageUrl,
+              manufacturer: {
+                "@type": "Organization",
+                name: car.Name,
+              },
+              additionalProperty: [
+                ...(car.Special_Features || []).map((feature) => ({
+                  "@type": "PropertyValue",
+                  name: "Special Feature",
+                  value: feature,
+                })),
+                ...(car.Exterior || []).map((ex) => ({
+                  "@type": "PropertyValue",
+                  name: "Exterior",
+                  value: ex,
+                })),
+                ...(car.Interior || []).map((int) => ({
+                  "@type": "PropertyValue",
+                  name: "Interior",
+                  value: int,
+                })),
+              ],
+              url: window.location.href,
+            }),
+          }}
+        />
       )}
 
-      {car.Description && (
-        <div className="description" data-aos="fade-up">
-          <h1>Description</h1>
-          <p>{car.Description}</p>
+      <div className="car-details">
+        <div
+          className="floating-message"
+          style={{ cursor: "pointer" }}
+          onClick={() => setShowInquiryForm(!showInquiryForm)}
+        >
+          <img src="/Icons/message.png" alt="Message" />
+          <div className="notification"></div>
         </div>
-      )}
-
-      {car.galleryUrls && car.galleryUrls.length > 0 && (
-        <div className="gallery-carousel" data-aos="fade-right">
-          <h1>Gallery</h1>
-
-          <div className="main-image">
-            <img
-              src={car.galleryUrls[selectedImageIndex]}
-              alt={`Main ${car.Model}`}
-            />
-          </div>
-
-          <div className="thumbnails">
-            {car.galleryUrls.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`Thumbnail ${index + 1}`}
-                className={index === selectedImageIndex ? "selected" : ""}
-                onClick={() => setSelectedImageIndex(index)}
+        {showInquiryForm && (
+          <div className="inquiry-form-container" data-aos="fade-down">
+            <h1>Interested? Send your car inquiry!</h1>
+            <p>
+              {car.Name} {car.Model} {car.Production_Year}
+            </p>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
               />
-            ))}
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                pattern="^\[1-9][0-9]{8}$"
+                title="Phone number must start with +20 and be followed by 10 digits"
+                placeholder={isFocused ? "" : "Phone Number"}
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Your message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+              <button type="submit">Submit</button>
+              {status && <p>{status}</p>}
+            </form>
           </div>
+        )}
+        {car && (
+          <div className="card" data-aos="fade-up">
+            <img src={car.imageUrl} alt={car.Model} />
+            <div className="general">
+              <p>Car Brand: {car.Name}</p>
+              <p>Car Model: {car.Model}</p>
+              <p>Production Year: {car.Production_Year}</p>
+              <p>Condition: {car.Condition}</p>
+              <p>Price: {car.Price}</p>
+            </div>
+          </div>
+        )}
+
+        {car.Description && (
+          <div className="description" data-aos="fade-up">
+            <h1>Description</h1>
+            <p>{car.Description}</p>
+          </div>
+        )}
+
+        {car.galleryUrls && car.galleryUrls.length > 0 && (
+          <div className="gallery-carousel" data-aos="fade-right">
+            <h1>Gallery</h1>
+
+            <div className="main-image">
+              <img
+                src={car.galleryUrls[selectedImageIndex]}
+                alt={`Main ${car.Model}`}
+              />
+            </div>
+
+            <div className="thumbnails">
+              {car.galleryUrls.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Thumbnail ${index + 1}`}
+                  className={index === selectedImageIndex ? "selected" : ""}
+                  onClick={() => setSelectedImageIndex(index)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="details">
+          {car.Special_Features && (
+            <div
+              className="special-features"
+              data-aos="fade-right"
+              onClick={() => toggleSection("specialFeatures")}
+              style={{ cursor: "pointer" }}
+            >
+              <h1>
+                Special Features
+                <span className="arrow-icon">
+                  {openSections.specialFeatures ? "▲" : "▼"}
+                </span>
+              </h1>
+              <div
+                className={`content-wrapper ${
+                  openSections.specialFeatures ? "open" : ""
+                }`}
+              >
+                {car.Special_Features.map((feature, index) => (
+                  <p key={index}>{feature}</p>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {car.Engine_Specs && (
+            <div
+              className="engine-specs"
+              data-aos="fade-right"
+              onClick={() => toggleSection("engineSpecs")}
+              style={{ cursor: "pointer" }}
+            >
+              <h1>
+                Engine Specs
+                <span className="arrow-icon">
+                  {openSections.engineSpecs ? "▲" : "▼"}
+                </span>
+              </h1>
+              <div
+                className={`content-wrapper ${
+                  openSections.engineSpecs ? "open" : ""
+                }`}
+              >
+                {car.Engine_Specs.map((spec, index) => (
+                  <p key={index}>{spec}</p>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {car.Exterior && (
+            <div
+              className="exterior"
+              data-aos="fade-right"
+              onClick={() => toggleSection("exterior")}
+              style={{ cursor: "pointer" }}
+            >
+              <h1>
+                Exterior
+                <span className="arrow-icon">
+                  {openSections.exterior ? "▲" : "▼"}
+                </span>
+              </h1>
+              <div
+                className={`content-wrapper ${
+                  openSections.exterior ? "open" : ""
+                }`}
+              >
+                {car.Exterior.map((ex, index) => (
+                  <p key={index}>{ex}</p>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {car.Interior && (
+            <div
+              className="interior"
+              data-aos="fade-right"
+              onClick={() => toggleSection("interior")}
+              style={{ cursor: "pointer" }}
+            >
+              <h1>
+                Interior
+                <span className="arrow-icon">
+                  {openSections.interior ? "▲" : "▼"}
+                </span>
+              </h1>
+              <div
+                className={`content-wrapper ${
+                  openSections.interior ? "open" : ""
+                }`}
+              >
+                {car.Interior.map((int, index) => (
+                  <p key={index}>{int}</p>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      )}
-
-      <div className="details">
-        {car.Special_Features && (
-          <div
-            className="special-features"
-            data-aos="fade-right"
-            onClick={() => toggleSection("specialFeatures")}
-            style={{ cursor: "pointer" }}>
-            <h1>
-              Special Features
-              <span className="arrow-icon">
-                {openSections.specialFeatures ? "▲" : "▼"}
-              </span>
-            </h1>
-            <div
-              className={`content-wrapper ${
-                openSections.specialFeatures ? "open" : ""
-              }`}>
-              {car.Special_Features.map((feature, index) => (
-                <p key={index}>{feature}</p>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {car.Engine_Specs && (
-          <div
-            className="engine-specs"
-            data-aos="fade-right"
-            onClick={() => toggleSection("engineSpecs")}
-            style={{ cursor: "pointer" }}>
-            <h1>
-              Engine Specs
-              <span className="arrow-icon">
-                {openSections.engineSpecs ? "▲" : "▼"}
-              </span>
-            </h1>
-            <div
-              className={`content-wrapper ${
-                openSections.engineSpecs ? "open" : ""
-              }`}>
-              {car.Engine_Specs.map((spec, index) => (
-                <p key={index}>{spec}</p>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {car.Exterior && (
-          <div
-            className="exterior"
-            data-aos="fade-right"
-            onClick={() => toggleSection("exterior")}
-            style={{ cursor: "pointer" }}>
-            <h1>
-              Exterior
-              <span className="arrow-icon">
-                {openSections.exterior ? "▲" : "▼"}
-              </span>
-            </h1>
-            <div
-              className={`content-wrapper ${
-                openSections.exterior ? "open" : ""
-              }`}>
-              {car.Exterior.map((ex, index) => (
-                <p key={index}>{ex}</p>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {car.Interior && (
-          <div
-            className="interior"
-            data-aos="fade-right"
-            onClick={() => toggleSection("interior")}
-            style={{ cursor: "pointer" }}>
-            <h1>
-              Interior
-              <span className="arrow-icon">
-                {openSections.interior ? "▲" : "▼"}
-              </span>
-            </h1>
-            <div
-              className={`content-wrapper ${
-                openSections.interior ? "open" : ""
-              }`}>
-              {car.Interior.map((int, index) => (
-                <p key={index}>{int}</p>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
-    </div>
     </>
   );
 };

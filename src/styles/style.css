@@ -1500,6 +1500,11 @@ a {
   flex-direction: column;
   align-items: center;
   width: 80%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 3px;
+  padding-bottom: 30px;
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .card {
@@ -1508,13 +1513,14 @@ a {
 }
 .app .layout .car-details .card img {
   width: 100%;
-  margin: 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .card img {
-    width: 90%;
+    width: 100%;
   }
 }
 .app .layout .car-details .card .general {
@@ -1526,6 +1532,7 @@ a {
 }
 @media screen and (max-width: 1000px) {
   .app .layout .car-details .card .general {
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -1537,7 +1544,7 @@ a {
 @media screen and (max-width: 1000px) {
   .app .layout .car-details .card .general p {
     font-size: 2vw;
-    margin: 5px 0px;
+    margin: 5px 20px;
   }
 }
 .app .layout .car-details .gallery-carousel {
@@ -1556,17 +1563,18 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  padding: 2px;
-  border-radius: 10px;
-  background-color: white;
+  padding: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .car-details .gallery-carousel .main-image img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  border-radius: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .car-details .gallery-carousel .thumbnails {
@@ -1574,9 +1582,11 @@ a {
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 15px;
-  background-color: white;
-  border-radius: 10px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .car-details .gallery-carousel .thumbnails img {
@@ -1618,7 +1628,7 @@ a {
   display: flex;
   flex-direction: column;
   margin: 25px 0px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 0px 20px;
