@@ -1530,11 +1530,12 @@ a {
   }
 }
 .app .layout .car-details .card .general {
-  width: 65%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 5%;
 }
 @media screen and (max-width: 1000px) {
   .app .layout .car-details .card .general {
