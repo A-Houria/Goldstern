@@ -169,7 +169,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Featured Cars Section */}
         <div className="featured" data-aos="fade-left">
           <h1 className="header">Our Featured Cars</h1>
           <div className="cards">
@@ -184,6 +183,10 @@ const Home = () => {
                         <p>
                           {car.Name} {car.Model} {car.Production_Year}
                         </p>
+                        <p>
+                          <div className="green"></div> Available Immediately
+                        </p>
+                        <p>{car.Price}</p>
                       </div>
                       <NavLink onClick={handleBurgerClick} to="/inventory">
                         <button className="inventory">View Inventory</button>
@@ -195,7 +198,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Process Section */}
         <div className="details" data-aos="fade-up">
           <h1 className="how">How it works</h1>
           <div className="process" data-aos="fade-right">

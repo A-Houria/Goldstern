@@ -669,7 +669,7 @@ a {
 }
 .app .layout .home .featured .cards .card .text .parts {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
@@ -679,12 +679,25 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   font-size: 1vw;
   letter-spacing: 2px;
   font-weight: 400;
   text-align: start;
   margin: 10px;
   color: black;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  border-radius: 5px;
+  min-width: 60%;
+}
+.app .layout .home .featured .cards .card .text .parts p .green {
+  width: 8px;
+  margin-right: 5px;
+  aspect-ratio: 1/1;
+  background-color: green;
+  border-radius: 50%;
 }
 .app .layout .home .featured .cards .card .text .parts p img {
   width: 1.5vw;
@@ -705,30 +718,30 @@ a {
     font-size: 2vw;
   }
 }
-.app .layout .home .featured .cards .card .text .inventory {
+.app .layout .home .featured .cards .card .text a {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.app .layout .home .featured .cards .card .text a .inventory {
   padding: 12px 40px;
   background-color: transparent;
   color: white;
   background-color: black;
-  box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.2);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
   outline: none;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 15px;
   transition: all 0.2s ease;
   margin-top: 20px;
   cursor: pointer;
+  min-width: 60%;
 }
-@media screen and (max-width: 1150px) {
-  .app .layout .home .featured .cards .card .text .inventory {
-    background-color: black;
-    color: white;
-  }
-}
-.app .layout .home .featured .cards .card .text .inventory:hover {
-  background-color: black;
-  color: white;
-  transform: scale(1.1);
+.app .layout .home .featured .cards .card .text a .inventory:hover {
+  transform: scale(1.05);
 }
 .app .layout .home .details {
   display: flex;
@@ -1269,7 +1282,7 @@ a {
   border-radius: 5px;
 }
 .app .layout .inventory .featured .cards .card .text .parts p .green {
-  width: 7px;
+  width: 8px;
   margin-right: 5px;
   aspect-ratio: 1/1;
   background-color: green;
@@ -1662,6 +1675,7 @@ a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 0px 20px;
+  width: 100%;
 }
 .app .layout .car-details .details .special-features .content-wrapper,
 .app .layout .car-details .details .engine-specs .content-wrapper,
@@ -1683,20 +1697,24 @@ a {
 .app .layout .car-details .details .engine-specs h1,
 .app .layout .car-details .details .exterior h1,
 .app .layout .car-details .details .interior h1 {
-  margin: 20px 0px;
+  width: 100%;
+  margin: 20px;
   font-size: 1.5vw;
   font-weight: 400;
   letter-spacing: 2px;
-  margin-left: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .app .layout .car-details .details .special-features h1 .arrow-icon,
 .app .layout .car-details .details .engine-specs h1 .arrow-icon,
 .app .layout .car-details .details .exterior h1 .arrow-icon,
 .app .layout .car-details .details .interior h1 .arrow-icon {
-  margin-left: 10px;
+  margin-right: 25px;
   font-size: 0.8em;
 }
 @media screen and (max-width: 850px) {
