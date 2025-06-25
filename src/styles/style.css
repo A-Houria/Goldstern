@@ -1245,22 +1245,35 @@ a {
 }
 .app .layout .inventory .featured .cards .card .text .parts {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
   flex-wrap: wrap;
 }
 .app .layout .inventory .featured .cards .card .text .parts p {
+  min-width: 60%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   font-size: 1vw;
   letter-spacing: 2px;
   font-weight: 400;
   text-align: start;
   margin: 10px;
   color: grey;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.app .layout .inventory .featured .cards .card .text .parts p .green {
+  width: 7px;
+  margin-right: 5px;
+  aspect-ratio: 1/1;
+  background-color: green;
+  border-radius: 50%;
 }
 .app .layout .inventory .featured .cards .card .text .parts p img {
   width: 1.5vw;
@@ -1390,6 +1403,10 @@ a {
   font-weight: 400;
   margin: 10px;
   color: grey;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 1100px) {
   .app .layout .inventory .car-list .filtered-cars .card p {
