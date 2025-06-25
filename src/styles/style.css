@@ -630,7 +630,7 @@ a {
   flex-direction: column;
   align-items: center;
   min-width: 35%;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -680,7 +680,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1vw;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 400;
   text-align: start;
@@ -696,7 +696,7 @@ a {
   width: 8px;
   margin-right: 5px;
   aspect-ratio: 1/1;
-  background-color: green;
+  background-color: rgb(0, 255, 0);
   border-radius: 50%;
 }
 .app .layout .home .featured .cards .card .text .parts p img {
@@ -1221,7 +1221,7 @@ a {
   flex-direction: column;
   align-items: center;
   min-width: 35%;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1270,22 +1270,23 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1vw;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 400;
   text-align: start;
   margin: 10px;
-  color: grey;
+  color: black;
+  font-weight: 400;
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 5px 15px;
+  padding: 10px 15px;
   border-radius: 5px;
 }
 .app .layout .inventory .featured .cards .card .text .parts p .green {
   width: 8px;
   margin-right: 5px;
   aspect-ratio: 1/1;
-  background-color: green;
+  background-color: rgb(0, 255, 0);
   border-radius: 50%;
 }
 .app .layout .inventory .featured .cards .card .text .parts p img {
@@ -1384,7 +1385,7 @@ a {
   flex-direction: column;
   align-items: center;
   min-width: 35%;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   background-color: rgb(248, 248, 248);
   border: 2px solid rgb(235, 235, 235);
   border-radius: 10px;
@@ -1408,26 +1409,32 @@ a {
     width: 100%;
   }
 }
-.app .layout .inventory .car-list .filtered-cars .card p {
+.app .layout .inventory .car-list .filtered-cars .card .text {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app .layout .inventory .car-list .filtered-cars .card .text p {
+  min-width: 60%;
   text-align: center;
-  font-size: 1vw;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 400;
   margin: 10px;
-  color: grey;
+  color: black;
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 5px 15px;
+  padding: 10px 15px;
   border-radius: 5px;
 }
 @media screen and (max-width: 1100px) {
-  .app .layout .inventory .car-list .filtered-cars .card p {
+  .app .layout .inventory .car-list .filtered-cars .card .text p {
     font-size: 1.5vw;
   }
 }
 @media screen and (max-width: 700px) {
-  .app .layout .inventory .car-list .filtered-cars .card p {
+  .app .layout .inventory .car-list .filtered-cars .card .text p {
     font-size: 2vw;
   }
 }
