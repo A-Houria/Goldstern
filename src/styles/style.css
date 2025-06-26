@@ -2346,7 +2346,7 @@ a {
   align-items: center;
   width: 100%;
   margin-top: 50px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: black;
   box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
 }
 .app .layout .footer .line-break {
