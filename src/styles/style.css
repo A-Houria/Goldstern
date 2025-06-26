@@ -1585,37 +1585,100 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  margin-top: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 3px;
   padding-bottom: 30px;
+  position: relative;
 }
 @media screen and (max-width: 850px) {
   .app .layout .car-details .card {
+    margin-top: 50px;
     width: 90%;
   }
 }
-.app .layout .car-details .card img {
-  width: 100%;
-  margin-bottom: 50px;
+.app .layout .car-details .card .carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.app .layout .car-details .card .img-wrapper {
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+.app .layout .car-details .card .img-wrapper .image-index {
+  position: absolute;
+  bottom: 15px;
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  left: 48%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 5px 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.app .layout .car-details .card .img-wrapper .arrow {
+  position: absolute;
+  height: 99%;
+  width: 100px;
+  font-size: 44px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  top: 0;
+  bottom: 0;
+}
+.app .layout .car-details .card .img-wrapper .arrow.left {
+  left: 0px;
+  border-top-left-radius: 15px;
+}
+.app .layout .car-details .card .img-wrapper .arrow.right {
+  right: 0px;
+  border-top-right-radius: 15px;
+}
+.app .layout .car-details .card .img-wrapper img {
+  height: 90vh;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-@media screen and (max-width: 850px) {
-  .app .layout .car-details .card img {
+@media screen and (max-width: 1080px) {
+  .app .layout .car-details .card .img-wrapper img {
+    height: 80vh;
+  }
+}
+@media screen and (max-width: 960px) {
+  .app .layout .car-details .card .img-wrapper img {
+    height: unset;
     width: 100%;
   }
 }
 .app .layout .car-details .card .general {
   width: 100%;
+  z-index: 150;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 5%;
+  padding: 10px 5%;
+  padding-top: 40px;
 }
 @media screen and (max-width: 1000px) {
   .app .layout .car-details .card .general {
@@ -1632,73 +1695,6 @@ a {
   .app .layout .car-details .card .general p {
     font-size: 2vw;
     margin: 5px 20px;
-  }
-}
-.app .layout .car-details .gallery-carousel {
-  width: 80%;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.app .layout .car-details .gallery-carousel h1 {
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 50px;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 10px;
-  border-radius: 10x;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.app .layout .car-details .gallery-carousel .main-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.app .layout .car-details .gallery-carousel .main-image img {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.app .layout .car-details .gallery-carousel .thumbnails {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  min-width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.app .layout .car-details .gallery-carousel .thumbnails img {
-  width: 80px;
-  height: 60px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: border 0.3s ease;
-}
-.app .layout .car-details .gallery-carousel .thumbnails img.selected {
-  border: 2px solid #333;
-}
-@media screen and (max-width: 850px) {
-  .app .layout .car-details .gallery-carousel .thumbnails img {
-    width: 60px;
-    height: 45px;
   }
 }
 .app .layout .car-details .details {
@@ -1801,6 +1797,7 @@ a {
 .app .layout .car-details .description {
   width: 80%;
   margin: 100px auto;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

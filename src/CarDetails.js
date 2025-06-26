@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 const CarDetails = () => {
   // New state for form visibility
   const [showInquiryForm, setShowInquiryForm] = useState(false);
+  const [visibleThumbnails, setVisibleThumbnails] = useState(4);
+
   const [isFocused, setIsFocused] = useState(false);
   const [status, setStatus] = useState("");
   const { id } = useParams();
@@ -286,7 +288,42 @@ const CarDetails = () => {
         )}
         {car && (
           <div className="card" data-aos="fade-up">
-            <img src={car.imageUrl} alt={car.Model} />
+            <div className="carousel-container">
+              <div className="img-wrapper">
+                <button
+                  className="arrow left"
+                  onClick={() =>
+                    setSelectedImageIndex((prev) =>
+                      prev === 0 ? car.galleryUrls.length - 1 : prev - 1
+                    )
+                  }
+                >
+                  ‹
+                </button>
+
+                <img
+                  className="main-image"
+                  loading="lazy"
+                  src={car.galleryUrls[selectedImageIndex]}
+                  alt={`Image ${selectedImageIndex + 1}`}
+                />
+
+                <button
+                  className="arrow right"
+                  onClick={() =>
+                    setSelectedImageIndex((prev) =>
+                      prev === car.galleryUrls.length - 1 ? 0 : prev + 1
+                    )
+                  }
+                >
+                  ›
+                </button>
+                <div className="image-index">
+                  {selectedImageIndex + 1} / {car.galleryUrls.length}
+                </div>
+              </div>
+            </div>
+
             <div className="general">
               <p>Car Brand: {car.Name}</p>
               <p>Car Model: {car.Model}</p>
@@ -301,31 +338,6 @@ const CarDetails = () => {
           <div className="description" data-aos="fade-up">
             <h1>Description</h1>
             <p>{car.Description}</p>
-          </div>
-        )}
-
-        {car.galleryUrls && car.galleryUrls.length > 0 && (
-          <div className="gallery-carousel" data-aos="fade-right">
-            <h1>Gallery</h1>
-
-            <div className="main-image">
-              <img
-                src={car.galleryUrls[selectedImageIndex]}
-                alt={`Main ${car.Model}`}
-              />
-            </div>
-
-            <div className="thumbnails">
-              {car.galleryUrls.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Thumbnail ${index + 1}`}
-                  className={index === selectedImageIndex ? "selected" : ""}
-                  onClick={() => setSelectedImageIndex(index)}
-                />
-              ))}
-            </div>
           </div>
         )}
 
