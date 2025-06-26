@@ -2171,6 +2171,7 @@ a {
 }
 .app .layout .contact .cont .main .text .form .btn {
   padding: 0px;
+  align-self: center;
   width: 350px;
   height: 50px;
   outline: none;
@@ -2185,6 +2186,14 @@ a {
   letter-spacing: 2px;
   font-weight: 600;
   cursor: pointer;
+}
+@media screen and (max-width: 1500px) {
+  .app .layout .contact .cont .main .text .form .btn {
+    align-self: center;
+    width: 750px;
+    height: 65px;
+    align-self: center;
+  }
 }
 @media screen and (max-width: 1100px) {
   .app .layout .contact .cont .main .text .form .btn {
