@@ -183,9 +183,9 @@ const Home = () => {
                         <p>
                           {car.Name} {car.Model} {car.Production_Year}
                         </p>
-                        <p>
+                        {/*<p>
                           <div className="green"></div> Available Immediately
-                        </p>
+                        </p>*/}
                         <p>{car.Price}</p>
                       </div>
                       <NavLink onClick={handleBurgerClick} to="/inventory">

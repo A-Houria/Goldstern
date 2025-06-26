@@ -103,9 +103,9 @@ const Inventory = () => {
                       <p>
                         {car.Name} {car.Model} {car.Production_Year}
                       </p>
-                      <p>
-                        <div className="green"></div> Available Immediately
-                      </p>
+                      {/*<p>
+                          <div className="green"></div> Available Immediately
+                        </p>*/}
                       <p>{car.Price}</p>
                     </div>
                   </div>
