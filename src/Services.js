@@ -259,18 +259,6 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="cst-test" data-aos="fade-up">
-        <h1>Our customers trust us</h1>
-        <div className="carousel">
-          <div className="carousel-inner">
-            <h1>Carousel Images</h1>
-            <h1>Carousel Images</h1>
-            <h1>Carousel Images</h1>
-            <h1>Carousel Images</h1>
-          </div>
-        </div>
-      </div>
-
       <div className="faqs" data-aos="fade-up">
         <h1>FAQs</h1>
         {faqs.map((faq, index) => (

@@ -49,42 +49,43 @@ const About = () => {
   return (
     <div className="about">
       <div className="story" data-aos="fade-up">
-        <h1>Our Story</h1>
+        <h1>
+          <img src="./Icons/story.png" alt="Our Story" />
+          Our Story
+        </h1>
         <p>
-          It all started with a passion, When Abderhaman Horia, a brilliant car
-          engineer who set out to make a difference. While studying automotive
-          engineering in Germany. Abderhaman noticed a Huge gap between the car
-          industry in Egypt and Europe. The result? Overpriced vehicles and a
-          limited selection for Egyptian car enthusiasts.
+          While studying software engineering in Germany, Abderhaman Houria
+          noticed a problem. Back in Egypt, people were paying too much for cars
+          with too few choices. In Europe, great cars were affordable and
+          everywhere.
+        </p>
+        <p>So in 2019, he started Goldstern to bring those same cars home.</p>
+        <p>
+          At first, it was all about helping dealers and businesses import
+          premium vehicles. But it quickly became clear: everyday people were
+          stuck paying high prices through layers of middlemen.
+        </p>
+        <p>So we shifted focus.</p>
+        <p>
+          Today, Goldstern works directly with customers making car imports
+          simple, transparent, and fair. You can pick from available models or
+          order a car built just the way you want it.
         </p>
         <p>
-          But he couldn’t do it alone. Mr. Mostafa Shafie, his trusted partner
-          and co-founder, joined him on this ambitious journey. Together, they
-          launched Goldstern in 2019, with a clear mission: to close the gap and
-          offer Egyptian consumers access to the finest European cars at
-          reasonable prices. In the early years, Goldstern focused on B2B deals,
-          importing unique and luxury cars to Egypt, and helping businesses and
-          dealers get access to these high-demand vehicles.
-        </p>
-        <p>
-          By the end of 2023, after exporting over 5,000 cars to Egypt and the
-          Arabian world—Jordan, Dubai, and Saudi Arabia—Abderhaman and Mostafa
-          saw another crucial gap: the Over prices customers were paying at
-          local car dealerships and importers. The system was broken, and they
-          knew they had to fix it.
-        </p>
-        <p>
-          So they decided to offer seamless car imports, no middlemen
-          experience, a wide range of options, and transparent pricing.
+          Because buying a car should feel exciting not frustrating. And above
+          all, you deserve better.
         </p>
       </div>
 
       <div className="mission" data-aos="fade-up">
         <div className="cards">
           <div className="card" data-aos="fade-right">
-            <h1>Our Mission</h1>
+            <h1>
+              <img src="./Icons/mission.png" alt="Our Mission" />
+              Our Mission
+            </h1>
             <p>
-              revolutionize the car-buying experience in Egypt by providing
+              Revolutionizing the car-buying experience in Egypt by providing
               luxury European cars directly to customers at factory prices. We
               are committed to delivering a seamless, transparent, and
               affordable car import service, ensuring that every car enthusiast
@@ -93,14 +94,39 @@ const About = () => {
             </p>
           </div>
           <div className="card" data-aos="fade-left">
-            <h1>Our Values</h1>
-            <p>Transparency, Trust, Satisfaction, and Quality</p>
+            <h1>
+              <img src="./Icons/values.png" alt="Our Values" />
+              Our Values
+            </h1>
+            <p>
+              <strong>Transparency</strong> We believe in open and honest
+              communication, ensuring clarity and accountability in every
+              interaction.
+            </p>
+            <p>
+              <strong>Trust</strong> We strive to earn and uphold the confidence
+              of our customers, partners, and team through consistency,
+              integrity, and reliability.
+            </p>
+            <p>
+              <strong>Satisfaction</strong> Your experience matters. We are
+              committed to exceeding expectations and delivering service that
+              truly resonates with your needs.
+            </p>
+            <p>
+              <strong>Quality</strong> Excellence is our standard. We take pride
+              in offering top-tier products and services that reflect our
+              dedication to craftsmanship and detail.
+            </p>
           </div>
         </div>
       </div>
 
       <div className="message" data-aos="fade-up">
-        <h1>Founders' Message</h1>
+        <h1>
+          <img src="./Icons/founder-message.png" alt="Founders' Message" />
+          Founders' Message
+        </h1>
         <p>
           At Goldstern, we’re not just bringing luxury cars to Egypt—we’re
           delivering dreams. With a passion for excellence and a commitment to
@@ -114,63 +140,75 @@ const About = () => {
         <h1>Why Import with Us</h1>
         <div className="cards">
           <div className="card" data-aos="zoom-in">
-            <h1>Cheapest Prices, No Middlemen</h1>
-            <p>
-              We bring you luxury European cars at direct prices, cutting out
-              the extra cost from middlemen and giving you the best deal
-              possible.
-            </p>
+            <img
+              src="./Icons/Piggy_Bank.jpg"
+              alt="Cheapest Prices, No Middlemen"
+            />
+            <div className="text">
+              <h1>Cheapest Prices, No Middlemen</h1>
+              <p>
+                We bring you luxury European cars at direct prices, cutting out
+                the extra cost from middlemen and giving you the best deal
+                possible.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Wide Range of Options</h1>
-            <p>
-              Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or any
-              other European Brand we offer a variety of high-end vehicles to
-              match your style and needs.
-            </p>
+            <img src="./Icons/Options.jpg" alt="Wide Range of Options" />
+            <div className="text">
+              <h1>Wide Range of Options</h1>
+              <p>
+                Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or
+                any other European Brand we offer a variety of high-end vehicles
+                to match your style and needs.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Fast & Seamless Process</h1>
-            <p>
-              Forget about long waiting times and complicated processes. We
-              provide a smooth and fast import experience, getting your dream
-              car to you quicker.
-            </p>
+            <img src="./Icons/Fast_Ship.jpg" alt="Fast & Seamless Process" />
+            <div className="text">
+              <h1>Fast & Seamless Process</h1>
+              <p>
+                Forget about long waiting times and complicated processes. We
+                provide a smooth and fast import experience, getting your dream
+                car to you quicker.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Transparent Pricing</h1>
-            <p>
-              No hidden fees, no surprises. We believe in honesty and
-              transparency throughout your buying journey.
-            </p>
+            <img
+              src="./Icons/Transparent_Pricing.jpg"
+              alt="Transparent Pricing"
+            />
+            <div className="text">
+              <h1>Transparent Pricing</h1>
+              <p>
+                No hidden fees, no surprises. We believe in honesty and
+                transparency throughout your buying journey.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Trusted Expertise</h1>
-            <p>
-              With over 5,000 cars imported to Egypt and the Middle East, we
-              have the experience and knowledge to guide you every step of the
-              way.
-            </p>
+            <img src="./Icons/Trust.jpg" alt="Trusted Expertise" />
+            <div className="text">
+              <h1>Trusted Expertise</h1>
+              <p>
+                With over 5,000 cars imported to Egypt and the Middle East, we
+                have the experience and knowledge to guide you every step of the
+                way.
+              </p>
+            </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <h1>Customer-Focused Service</h1>
-            <p>
-              Your satisfaction is our priority. From the moment you choose your
-              car until it’s delivered to your door, we ensure you have the best
-              experience possible.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="cst-test" data-aos="fade-up">
-        <h1>Our customers trust us</h1>
-        <div className="carousel">
-          <div className="carousel-inner">
-            <h1>Carousel Images</h1>
-            <h1>Carousel Images</h1>
-            <h1>Carousel Images</h1>
-            <h1>Carousel Images</h1>
+            <img src="./Icons/Rating.jpg" alt="Customer-Focused Service" />
+            <div className="text">
+              <h1>Customer-Focused Service</h1>
+              <p>
+                Your satisfaction is our priority. From the moment you choose
+                your car until it’s delivered to your door, we ensure you have
+                the best experience possible.
+              </p>
+            </div>
           </div>
         </div>
       </div>

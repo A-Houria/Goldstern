@@ -878,38 +878,53 @@ a {
 .app .layout .about {
   width: 100%;
   overflow: hidden;
+  margin-top: 100px;
 }
 .app .layout .about .story {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 100px 0px;
-}
-@media screen and (max-width: 750px) {
-  .app .layout .about .story {
-    width: 100%;
-  }
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  padding: 5%;
 }
 .app .layout .about .story h1 {
-  font-size: 52px;
-  font-weight: 700;
+  font-size: 38px;
+  font-weight: 400;
   letter-spacing: 2px;
+  align-self: start;
+  width: 100%;
   margin: 15px auto;
-  align-self: flex-start;
-  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 @media screen and (max-width: 750px) {
   .app .layout .about .story h1 {
-    font-size: 42px;
+    font-size: 22px;
   }
 }
-@media screen and (max-width: 550px) {
-  .app .layout .about .story h1 {
-    font-size: 32px;
+.app .layout .about .story h1 img {
+  width: 75px;
+  aspect-ratio: 1/1;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .story h1 img {
+    width: 50px;
+    padding: 5px;
   }
 }
 .app .layout .about .story p {
-  width: 80%;
+  width: 100%;
   letter-spacing: 2px;
   font-weight: 400;
   font-size: 18px;
@@ -940,57 +955,92 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 80%;
   margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5%;
 }
 .app .layout .about .mission .cards .card h1 {
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
   align-self: start;
-  width: 80%;
+  width: 100%;
   margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 @media screen and (max-width: 750px) {
   .app .layout .about .mission .cards .card h1 {
-    font-size: 42px;
+    font-size: 22px;
   }
 }
-@media screen and (max-width: 550px) {
-  .app .layout .about .mission .cards .card h1 {
-    font-size: 32px;
+.app .layout .about .mission .cards .card h1 img {
+  width: 75px;
+  aspect-ratio: 1/1;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .mission .cards .card h1 img {
+    width: 50px;
+    padding: 5px;
   }
 }
 .app .layout .about .mission .cards .card p {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 2px;
-  width: 80%;
+  width: 100%;
   margin: 25px 0px;
-  line-height: 25px;
+  line-height: 1.5;
 }
 .app .layout .about .message {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 80%;
-  margin: 100px auto;
-  padding: 0px;
+  margin: 50px auto;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 .app .layout .about .message h1 {
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
-  text-align: start;
+  align-self: start;
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 @media screen and (max-width: 750px) {
   .app .layout .about .message h1 {
-    font-size: 42px;
+    font-size: 22px;
   }
 }
-@media screen and (max-width: 550px) {
-  .app .layout .about .message h1 {
-    font-size: 28px;
+.app .layout .about .message h1 img {
+  width: 75px;
+  aspect-ratio: 1/1;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .message h1 img {
+    width: 50px;
+    padding: 5px;
   }
 }
 .app .layout .about .message p {
@@ -1005,134 +1055,127 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 80%;
+  margin: 100px auto;
 }
 .app .layout .about .import h1 {
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: 400;
   letter-spacing: 2px;
-}
-@media screen and (max-width: 1000px) {
-  .app .layout .about .import h1 {
-    text-align: center;
-  }
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
+  align-self: flex-start;
 }
 @media screen and (max-width: 750px) {
   .app .layout .about .import h1 {
-    font-size: 42px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .app .layout .about .import h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 .app .layout .about .import .cards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.app .layout .about .import .cards .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 100px;
-  width: 80%;
-}
-.app .layout .about .import .cards .card h1 {
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin: 25px 0px;
-  width: 90%;
-  text-align: start;
-}
-@media screen and (max-width: 1000px) {
-  .app .layout .about .import .cards .card h1 {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 750px) {
-  .app .layout .about .import .cards .card h1 {
-    font-size: 21px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .app .layout .about .import .cards .card h1 {
-    font-size: 18px;
-  }
-}
-.app .layout .about .import .cards .card p {
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  width: 90%;
-  margin: 25px 0px;
-  line-height: 1.5;
-}
-@media screen and (max-width: 1000px) {
-  .app .layout .about .import .cards .card p {
-    width: 100%;
-  }
-}
-.app .layout .about .cst-test {
-  display: flex;
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 100px 50px;
-  overflow-x: hidden;
-}
-.app .layout .about .cst-test h1 {
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin: 50px 0px;
-}
-@media screen and (max-width: 650px) {
-  .app .layout .about .cst-test h1 {
-    font-size: 7.5vw;
-  }
-}
-.app .layout .about .cst-test .carousel {
-  width: 100%;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  margin: 100px 0px 50px 0px;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  gap: 50px;
+  width: 100%;
 }
-.app .layout .about .cst-test .carousel .carousel-inner {
-  display: inline-block;
-  animation: slide-left 10s linear infinite;
-  white-space: nowrap;
+@media screen and (max-width: 1150px) {
+  .app .layout .about .import .cards {
+    flex-direction: column;
+    margin-top: 50px;
+  }
 }
-.app .layout .about .cst-test .carousel .carousel-inner h1 {
-  font-size: 32px;
+.app .layout .about .import .cards .card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 19px;
+}
+@media screen and (max-width: 1150px) {
+  .app .layout .about .import .cards .card {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .app .layout .about .import .cards .card {
+    width: 90%;
+  }
+}
+.app .layout .about .import .cards .card img {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  filter: brightness(0.7) blur(1px);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.app .layout .about .import .cards .card img:hover {
+  filter: brightness(1) blur(0px);
+}
+.app .layout .about .import .cards .card .text {
+  padding: 50px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+  .app .layout .about .import .cards .card .text {
+    padding: 50px 20px 20px 20px;
+  }
+}
+.app .layout .about .import .cards .card .text h1 {
+  font-size: 22px;
   font-weight: 400;
   letter-spacing: 2px;
-  display: inline-block;
-  margin-right: 150px;
+  text-align: start;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+@media screen and (max-width: 750px) {
+  .app .layout .about .import .cards .card .text h1 {
+    font-size: 4.5vw;
+  }
+}
+.app .layout .about .import .cards .card .text p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: start;
+  margin: 25px 0px;
+  line-height: 25px;
+}
+@media screen and (max-width: 550px) {
+  .app .layout .about .import .cards .card .text p {
+    font-size: 3.5vw;
+  }
 }
 .app .layout .about .faqs {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 100px 50px 0px 50px;
+  margin: 50px auto;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
 }
 .app .layout .about .faqs h1 {
   font-size: 52px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
-  margin: 50px 0px;
+  margin: 50px 20px;
 }
 @media screen and (max-width: 650px) {
   .app .layout .about .faqs h1 {
@@ -1155,7 +1198,7 @@ a {
 }
 @media screen and (max-width: 650px) {
   .app .layout .about .faqs .card h1 {
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
 }
 .app .layout .about .faqs .card p {
@@ -1172,7 +1215,7 @@ a {
 }
 @media screen and (max-width: 650px) {
   .app .layout .about .faqs .card p {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 }
 .app .layout .about .faqs .card p.show {
@@ -1796,13 +1839,17 @@ a {
 .app .layout .services {
   display: flex;
   flex-direction: column;
-  margin: 100px 0px;
   overflow: hidden;
 }
 .app .layout .services .service {
+  width: 80%;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
-  margin: 0px 50px;
+}
+.app .layout .services .service .services {
+  width: 100%;
+  margin: 50px 0px;
 }
 .app .layout .services .service .title {
   font-size: 42px;
@@ -1816,6 +1863,7 @@ a {
   }
 }
 .app .layout .services .service h1 {
+  width: 100%;
   font-size: 22px;
   font-weight: 400;
   margin: 20px 0px;
@@ -1855,37 +1903,40 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin: auto;
+  width: 80%;
+  margin: 50px auto;
 }
 .app .layout .services .import h1 {
+  width: 100%;
   font-size: 42px;
   font-weight: 400;
   letter-spacing: 2px;
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 10px 30px;
-  margin-left: 2.5%;
+  margin-bottom: 50px;
   border-radius: 10px;
   align-self: flex-start;
 }
 @media screen and (max-width: 750px) {
   .app .layout .services .import h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 .app .layout .services .import .cards {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 100px;
   gap: 50px;
-  width: 95%;
+  width: 100%;
 }
 @media screen and (max-width: 1150px) {
   .app .layout .services .import .cards {
     flex-direction: column;
+    margin-top: 50px;
   }
 }
 .app .layout .services .import .cards .card {
@@ -1930,9 +1981,10 @@ a {
 }
 .app .layout .services .import .cards .card .text h1 {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
   text-align: start;
+  margin: 0px;
   background-color: transparent;
   box-shadow: none;
   padding: 0;
@@ -1956,53 +2008,12 @@ a {
     font-size: 3.5vw;
   }
 }
-.app .layout .services .cst-test {
-  display: flex;
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 100px 50px;
-  overflow-x: hidden;
-}
-.app .layout .services .cst-test h1 {
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin: 50px 0px;
-}
-@media screen and (max-width: 650px) {
-  .app .layout .services .cst-test h1 {
-    font-size: 7.5vw;
-  }
-}
-.app .layout .services .cst-test .carousel {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  margin: 100px 0px 50px 0px;
-}
-.app .layout .services .cst-test .carousel .carousel-inner {
-  display: inline-block;
-  animation: slide-left 10s linear infinite;
-  white-space: nowrap;
-}
-.app .layout .services .cst-test .carousel .carousel-inner h1 {
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  display: inline-block;
-  margin-right: 150px;
-}
 .app .layout .services .faqs {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 50px;
+  margin: 50px auto;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -2013,7 +2024,7 @@ a {
 }
 .app .layout .services .faqs h1 {
   font-size: 52px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 2px;
   margin: 50px 20px;
 }
