@@ -17,6 +17,7 @@ const CarDetails = () => {
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [arrowClicked, setArrowClicked] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [openSections, setOpenSections] = useState({
     specialFeatures: false,
@@ -33,6 +34,20 @@ const CarDetails = () => {
     car: "",
     message: "",
   });
+
+  const handlePrevClick = () => {
+    setArrowClicked(true);
+    setSelectedImageIndex((prev) =>
+      prev === 0 ? car.galleryUrls.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setArrowClicked(true);
+    setSelectedImageIndex((prev) =>
+      prev === car.galleryUrls.length - 1 ? 0 : prev + 1
+    );
+  };
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -288,40 +303,31 @@ const CarDetails = () => {
         )}
         {car && (
           <div className="card" data-aos="fade-up">
+            <img
+              className="main-image"
+              loading="lazy"
+              src={car.galleryUrls[selectedImageIndex]}
+              alt={`Image ${selectedImageIndex + 1}`}
+            />
+
             <div className="carousel-container">
-              <div className="img-wrapper">
-                <button
-                  className="arrow left"
-                  onClick={() =>
-                    setSelectedImageIndex((prev) =>
-                      prev === 0 ? car.galleryUrls.length - 1 : prev - 1
-                    )
-                  }
-                >
-                  ‹
-                </button>
+              <button
+                className={`arrow left ${!arrowClicked ? "bounce" : ""}`}
+                onClick={handlePrevClick}
+              >
+                ‹
+              </button>
 
-                <img
-                  className="main-image"
-                  loading="lazy"
-                  src={car.galleryUrls[selectedImageIndex]}
-                  alt={`Image ${selectedImageIndex + 1}`}
-                />
-
-                <button
-                  className="arrow right"
-                  onClick={() =>
-                    setSelectedImageIndex((prev) =>
-                      prev === car.galleryUrls.length - 1 ? 0 : prev + 1
-                    )
-                  }
-                >
-                  ›
-                </button>
-                <div className="image-index">
-                  {selectedImageIndex + 1} / {car.galleryUrls.length}
-                </div>
+              <div className="image-index">
+                {selectedImageIndex + 1} / {car.galleryUrls.length}
               </div>
+
+              <button
+                className={`arrow right ${!arrowClicked ? "bounce" : ""}`}
+                onClick={handleNextClick}
+              >
+                ›
+              </button>
             </div>
 
             <div className="general">
