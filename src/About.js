@@ -128,7 +128,7 @@ const About = () => {
           Founders' Message
         </h1>
         <p>
-          At Goldstern, we’re not just bringing luxury cars to Egypt—we’re
+          At Goldstern, we’re not just bringing luxury cars to Egypt, we’re
           delivering dreams. With a passion for excellence and a commitment to
           transparency, we’re here to redefine the car-buying experience. From
           our family to yours, thank you for trusting us to bring your dream
