@@ -1063,7 +1063,7 @@ a {
           margin-top: 100px;
           gap: 50px;
           width: 100%;
-          @media screen and (max-width: 1150px) {
+          @media screen and (max-width: 1300px) {
             flex-direction: column;
             margin-top: 50px;
           }
@@ -1075,7 +1075,7 @@ a {
             background-color: rgba($color: white, $alpha: 0.4);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 19px;
-            @media screen and (max-width: 1150px) {
+            @media screen and (max-width: 1300px) {
               width: 70%;
             }
             @media screen and (max-width: 850px) {
@@ -1835,7 +1835,7 @@ a {
           margin-top: 100px;
           gap: 50px;
           width: 100%;
-          @media screen and (max-width: 1150px) {
+          @media screen and (max-width: 1300px) {
             flex-direction: column;
             margin-top: 50px;
           }
@@ -1847,7 +1847,7 @@ a {
             background-color: rgba($color: white, $alpha: 0.4);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 19px;
-            @media screen and (max-width: 1150px) {
+            @media screen and (max-width: 1300px) {
               width: 70%;
             }
             @media screen and (max-width: 850px) {

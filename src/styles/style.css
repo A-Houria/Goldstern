@@ -1083,7 +1083,7 @@ a {
   gap: 50px;
   width: 100%;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1300px) {
   .app .layout .about .import .cards {
     flex-direction: column;
     margin-top: 50px;
@@ -1098,7 +1098,7 @@ a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 19px;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1300px) {
   .app .layout .about .import .cards .card {
     width: 70%;
   }
@@ -1933,7 +1933,7 @@ a {
   gap: 50px;
   width: 100%;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1300px) {
   .app .layout .services .import .cards {
     flex-direction: column;
     margin-top: 50px;
@@ -1948,7 +1948,7 @@ a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 19px;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1300px) {
   .app .layout .services .import .cards .card {
     width: 70%;
   }
