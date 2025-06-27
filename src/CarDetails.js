@@ -9,8 +9,6 @@ import "aos/dist/aos.css";
 const CarDetails = () => {
   // New state for form visibility
   const [showInquiryForm, setShowInquiryForm] = useState(false);
-  const [visibleThumbnails, setVisibleThumbnails] = useState(4);
-
   const [isFocused, setIsFocused] = useState(false);
   const [status, setStatus] = useState("");
   const { id } = useParams();
@@ -157,11 +155,18 @@ const CarDetails = () => {
             })
           );
 
+          // ✅ Preload all gallery images
+          imageUrls.forEach((url) => {
+            const img = new Image();
+            img.src = url;
+          });
+
           const carWithImages = {
             ...carData,
             imageUrl,
             galleryUrls: imageUrls,
           };
+
           setCar(carWithImages);
         } else {
           setError("Car not found.");
@@ -318,7 +323,7 @@ const CarDetails = () => {
                 ‹
               </button>
 
-              <div className="image-index">
+              <div className={`image-index ${!arrowClicked ? "bounce" : ""}`}>
                 {selectedImageIndex + 1} / {car.galleryUrls.length}
               </div>
 

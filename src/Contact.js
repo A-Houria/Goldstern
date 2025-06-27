@@ -204,7 +204,7 @@ const Contact = () => {
         </div>
         <div className="icons">
           <div className="card">
-            <img src="./Icons/location.png" alt="Location" />
+            <img loading="lazy" src="./Icons/location.png" alt="Location" />
             <div className="details">
               <h1>Location</h1>
               <p>
@@ -214,25 +214,29 @@ const Contact = () => {
             </div>
           </div>
           <div className="card">
-            <img src="./Icons/email.png" alt="Email" />
+            <img loading="lazy" src="./Icons/email.png" alt="Email" />
             <div className="details">
               <h1>Email</h1>
               <p>info@goldsternonline.de</p>
             </div>
           </div>
           <div className="card">
-            <img src="./Icons/phone.png" alt="Phone" />
+            <img loading="lazy" src="./Icons/phone.png" alt="Phone" />
             <div className="details">
               <h1>Phone</h1>
               <p>
                 <span>
-                  <img src="./Icons/call.png" alt="Phone" />
+                  <img loading="lazy" src="./Icons/call.png" alt="Phone" />
                 </span>
                 +20-10-00445786
               </p>
               <p>
                 <span>
-                  <img src="./Icons/whatsapp.png" alt="Whatsapp" />
+                  <img
+                    loading="lazy"
+                    src="./Icons/whatsapp.png"
+                    alt="Whatsapp"
+                  />
                 </span>
                 +20-10-00445786
               </p>
