@@ -1122,12 +1122,8 @@ a {
   width: 100%;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
-  filter: brightness(0.7) blur(1px);
   transition: all 0.5s ease;
   cursor: pointer;
-}
-.app .layout .about .import .cards .card img:hover {
-  filter: brightness(1) blur(0px);
 }
 .app .layout .about .import .cards .card .text {
   padding: 50px 50px 20px 50px;
@@ -1946,12 +1942,8 @@ a {
   width: 100%;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
-  filter: brightness(0.7) blur(1px);
   transition: all 0.5s ease;
   cursor: pointer;
-}
-.app .layout .services .import .cards .card img:hover {
-  filter: brightness(1) blur(0px);
 }
 .app .layout .services .import .cards .card .text {
   padding: 50px 50px 20px 50px;
