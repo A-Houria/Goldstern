@@ -310,7 +310,6 @@ const CarDetails = () => {
           <div className="card" data-aos="fade-up">
             <img
               className="main-image"
-              loading="lazy"
               src={car.galleryUrls[selectedImageIndex]}
               alt={`Image ${selectedImageIndex + 1}`}
             />

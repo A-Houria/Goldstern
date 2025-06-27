@@ -97,7 +97,7 @@ const Inventory = () => {
             .map((car) => (
               <Link to={`/car/${car.id}`} key={car.id}>
                 <div className="card" data-aos="fade-up">
-                  <img loading="lazy" src={car.imageUrl} alt={car.Model} />
+                  <img src={car.imageUrl} alt={car.Model} />
                   <div className="text">
                     <div className="parts">
                       <p>
@@ -137,7 +137,7 @@ const Inventory = () => {
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
                   <div className="card">
-                    <img loading="lazy" src={car.imageUrl} alt={car.Model} />
+                    <img src={car.imageUrl} alt={car.Model} />
                     <div className="text">
                       <p>
                         {car.Name} {car.Model} {car.Production_Year}
