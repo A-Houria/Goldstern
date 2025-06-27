@@ -57,7 +57,7 @@ const Home = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.webp" alt="" />
+        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
@@ -138,7 +138,12 @@ const Home = () => {
             //<h1 className="heading-1">SAVE BIG,</h1>
             //<h1 className="heading-2">DRIVE BOLD.</h1>
           }
-          <img src="./Icons/hero.webp" alt="background" className="hero" />
+          <img
+            loading="lazy"
+            src="./Icons/hero.webp"
+            alt="background"
+            className="hero"
+          />
         </div>
 
         {/* Services Section */}
@@ -147,19 +152,28 @@ const Home = () => {
             <h1>Our Services</h1>
             <ul className="services-list">
               <li data-aos="fade-right">
-                <img src="./Icons/speed.webp" alt="immediate delivery" />
+                <img
+                  loading="lazy"
+                  src="./Icons/speed.webp"
+                  alt="immediate delivery"
+                />
                 In-Stock Cars - Ready for Immediate Delivery
               </li>
               <li data-aos="fade-right" data-aos-delay="100">
-                <img src="./Icons/ship.webp" alt="Import" />
+                <img loading="lazy" src="./Icons/ship.webp" alt="Import" />
                 Import Your Dream Car
               </li>
               <li data-aos="fade-right" data-aos-delay="200">
-                <img src="./Icons/guide.webp" alt="Most Secure shipping" />
+                <img
+                  loading="lazy"
+                  src="./Icons/guide.webp"
+                  alt="Most Secure shipping"
+                />
                 Expert Guidance & Consultation
               </li>
               <li data-aos="fade-right" data-aos-delay="300">
                 <img
+                  loading="lazy"
                   src="./Icons/support.webp"
                   alt="Guaranteed Delivery promises"
                 />
@@ -177,7 +191,7 @@ const Home = () => {
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
                   <div className="card" data-aos="fade-up">
-                    <img src={car.imageUrl} alt={car.Model} />
+                    <img loading="lazy" src={car.imageUrl} alt={car.Model} />
                     <div className="text">
                       <div className="parts">
                         <p>

@@ -164,20 +164,29 @@ const Services = () => {
         <h1 className="title">Our Services</h1>
         <div className="services">
           <h1>
-            <img src="./Icons/speed.webp" alt="immediate delivery" />
+            <img
+              loading="lazy"
+              src="./Icons/speed.webp"
+              alt="immediate delivery"
+            />
             In-Stock Cars - Ready for Immediate Delivery
           </h1>
           <h1>
-            <img src="./Icons/ship.webp" alt="Import" />
+            <img loading="lazy" src="./Icons/ship.webp" alt="Import" />
             Import Your Dream Car
           </h1>
           <h1>
             {" "}
-            <img src="./Icons/guide.webp" alt="Most Secure shipping" />
+            <img
+              loading="lazy"
+              src="./Icons/guide.webp"
+              alt="Most Secure shipping"
+            />
             Expert Guidance & Consultation
           </h1>
           <h1>
             <img
+              loading="lazy"
               src="./Icons/support.webp"
               alt="Guaranteed Delivery promises"
             />
@@ -190,6 +199,7 @@ const Services = () => {
         <div className="cards">
           <div className="card" data-aos="zoom-in">
             <img
+              loading="lazy"
               src="./Icons/Piggy_Bank.webp"
               alt="Cheapest Prices, No Middlemen"
             />
@@ -203,7 +213,11 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Options.webp" alt="Wide Range of Options" />
+            <img
+              loading="lazy"
+              src="./Icons/Options.webp"
+              alt="Wide Range of Options"
+            />
             <div className="text">
               <h1>Wide Range of Options</h1>
               <p>
@@ -214,7 +228,11 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Fast_Ship.webp" alt="Fast & Seamless Process" />
+            <img
+              loading="lazy"
+              src="./Icons/Fast_Ship.webp"
+              alt="Fast & Seamless Process"
+            />
             <div className="text">
               <h1>Fast & Seamless Process</h1>
               <p>
@@ -226,6 +244,7 @@ const Services = () => {
           </div>
           <div className="card" data-aos="zoom-in">
             <img
+              loading="lazy"
               src="./Icons/Transparent_Pricing.webp"
               alt="Transparent Pricing"
             />
@@ -238,7 +257,11 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Trust.webp" alt="Trusted Expertise" />
+            <img
+              loading="lazy"
+              src="./Icons/Trust.webp"
+              alt="Trusted Expertise"
+            />
             <div className="text">
               <h1>Trusted Expertise</h1>
               <p>
@@ -249,7 +272,11 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Rating.webp" alt="Customer-Focused Service" />
+            <img
+              loading="lazy"
+              src="./Icons/Rating.webp"
+              alt="Customer-Focused Service"
+            />
             <div className="text">
               <h1>Customer-Focused Service</h1>
               <p>

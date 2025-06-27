@@ -184,7 +184,7 @@ const CarDetails = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.webp" alt="" />
+        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
@@ -248,7 +248,7 @@ const CarDetails = () => {
           style={{ cursor: "pointer" }}
           onClick={() => setShowInquiryForm(!showInquiryForm)}
         >
-          <img src="/Icons/message.webp" alt="Message" />
+          <img loading="lazy" src="/Icons/message.webp" alt="Message" />
           <div className="notification"></div>
         </div>
         {showInquiryForm && (
@@ -309,6 +309,7 @@ const CarDetails = () => {
         {car && (
           <div className="card" data-aos="fade-up">
             <img
+              loading="lazy"
               className="main-image"
               src={car.galleryUrls[selectedImageIndex]}
               alt={`Image ${selectedImageIndex + 1}`}

@@ -193,6 +193,7 @@ const Contact = () => {
           </div>
           <div className="map">
             <iframe
+              loading="lazy"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8626251711094!2d30.952414111132747!3d30.040798774820875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859dff6b9c047%3A0x452cc613a0ce1844!2zR29sZHN0ZXJuIC0g2KzZiNmE2K_YtNiq2LHZhg!5e0!3m2!1sen!2sde!4v1748620027312!5m2!1sen!2sde"
               width="600"
               height="450"
@@ -203,7 +204,7 @@ const Contact = () => {
         </div>
         <div className="icons">
           <div className="card">
-            <img src="./Icons/location.webp" alt="Location" />
+            <img loading="lazy" src="./Icons/location.webp" alt="Location" />
             <div className="details">
               <h1>Location</h1>
               <p>
@@ -213,25 +214,29 @@ const Contact = () => {
             </div>
           </div>
           <div className="card">
-            <img src="./Icons/email.webp" alt="Email" />
+            <img loading="lazy" src="./Icons/email.webp" alt="Email" />
             <div className="details">
               <h1>Email</h1>
               <p>info@goldsternonline.de</p>
             </div>
           </div>
           <div className="card">
-            <img src="./Icons/phone.webp" alt="Phone" />
+            <img loading="lazy" src="./Icons/phone.webp" alt="Phone" />
             <div className="details">
               <h1>Phone</h1>
               <p>
                 <span>
-                  <img src="./Icons/call.webp" alt="Phone" />
+                  <img loading="lazy" src="./Icons/call.webp" alt="Phone" />
                 </span>
                 +20-10-00445786
               </p>
               <p>
                 <span>
-                  <img src="./Icons/whatsapp.webp" alt="Whatsapp" />
+                  <img
+                    loading="lazy"
+                    src="./Icons/whatsapp.webp"
+                    alt="Whatsapp"
+                  />
                 </span>
                 +20-10-00445786
               </p>

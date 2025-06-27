@@ -75,7 +75,7 @@ const Inventory = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.webp" alt="" />
+        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
@@ -97,7 +97,7 @@ const Inventory = () => {
             .map((car) => (
               <Link to={`/car/${car.id}`} key={car.id}>
                 <div className="card" data-aos="fade-up">
-                  <img src={car.imageUrl} alt={car.Model} />
+                  <img loading="lazy" src={car.imageUrl} alt={car.Model} />
                   <div className="text">
                     <div className="parts">
                       <p>
@@ -137,7 +137,7 @@ const Inventory = () => {
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
                   <div className="card">
-                    <img src={car.imageUrl} alt={car.Model} />
+                    <img loading="lazy" src={car.imageUrl} alt={car.Model} />
                     <div className="text">
                       <p>
                         {car.Name} {car.Model} {car.Production_Year}
