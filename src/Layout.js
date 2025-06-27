@@ -30,11 +30,12 @@ const Layout = () => {
         <div className="cont">
           <div className="burger-cont">
             <Link to="/">
-              <img src="/Icons/Logo-black.png" alt="Goldstern" />
+              <img src="/Icons/Logo-black.webp" alt="Goldstern" />
             </Link>
             <div
               className={`burger ${isOpen ? "open" : ""}`}
-              onClick={handleBurgerClick}>
+              onClick={handleBurgerClick}
+            >
               <div className="line"></div>
               <div className="line"></div>
               <div className="line"></div>
@@ -63,7 +64,8 @@ const Layout = () => {
           <Link
             className={`login ${isOpen ? "open" : ""}`}
             onClick={handleBurgerClick}
-            to="/">
+            to="/"
+          >
             User-Portal
           </Link>
         </div>
@@ -77,36 +79,40 @@ const Layout = () => {
           <a
             href="https://www.facebook.com/profile.php?id=61552608263446"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <p>
-              <img src="/Icons/facebook.png" alt="Facebook" />
+              <img src="/Icons/facebook.webp" alt="Facebook" />
               Goldstern
             </p>
           </a>
           <a
             href="https://www.instagram.com/goldstern_eg/"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <p>
-              <img src="/Icons/instagram.png" alt="Instagram" />
+              <img src="/Icons/instagram.webp" alt="Instagram" />
               goldstern_eg
             </p>
           </a>
           <a
             href="https://www.tiktok.com/@goldstern.eg"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <p>
-              <img src="/Icons/tiktok.png" alt="Tiktok" />
+              <img src="/Icons/tiktok.webp" alt="Tiktok" />
               goldstern.eg
             </p>
           </a>
           <a
             href="https://www.linkedin.com/company/103967635"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <p>
-              <img src="/Icons/LinkedIn.png" alt="LinkedIn" />
+              <img src="/Icons/LinkedIn.webp" alt="LinkedIn" />
               Goldstern
             </p>
           </a>

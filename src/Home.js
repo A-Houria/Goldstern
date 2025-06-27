@@ -57,7 +57,7 @@ const Home = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.png" alt="" />
+        <img src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
@@ -78,8 +78,8 @@ const Home = () => {
             "@type": "CarDealer",
             name: "Goldstern",
             url: "https://goldsternonline.de",
-            logo: "https://goldsternonline.de/Icons/Logo.png",
-            image: "https://goldsternonline.de/Icons/Logo.png",
+            logo: "https://goldsternonline.de/Icons/Logo.webp",
+            image: "https://goldsternonline.de/Icons/Logo.webp",
             description:
               "Goldstern, founded in 2019 by automotive engineer Abderhaman Horia, offers premium European cars to Egypt and the Arabian region with transparent pricing and a seamless import process.",
             telephone: "+20-10-00445786",
@@ -138,7 +138,7 @@ const Home = () => {
             //<h1 className="heading-1">SAVE BIG,</h1>
             //<h1 className="heading-2">DRIVE BOLD.</h1>
           }
-          <img src="./Icons/hero.png" alt="background" className="hero" />
+          <img src="./Icons/hero.webp" alt="background" className="hero" />
         </div>
 
         {/* Services Section */}
@@ -147,20 +147,20 @@ const Home = () => {
             <h1>Our Services</h1>
             <ul className="services-list">
               <li data-aos="fade-right">
-                <img src="./Icons/speed.png" alt="immediate delivery" />
+                <img src="./Icons/speed.webp" alt="immediate delivery" />
                 In-Stock Cars - Ready for Immediate Delivery
               </li>
               <li data-aos="fade-right" data-aos-delay="100">
-                <img src="./Icons/ship.png" alt="Import" />
+                <img src="./Icons/ship.webp" alt="Import" />
                 Import Your Dream Car
               </li>
               <li data-aos="fade-right" data-aos-delay="200">
-                <img src="./Icons/guide.png" alt="Most Secure shipping" />
+                <img src="./Icons/guide.webp" alt="Most Secure shipping" />
                 Expert Guidance & Consultation
               </li>
               <li data-aos="fade-right" data-aos-delay="300">
                 <img
-                  src="./Icons/support.png"
+                  src="./Icons/support.webp"
                   alt="Guaranteed Delivery promises"
                 />
                 After-Sales Support

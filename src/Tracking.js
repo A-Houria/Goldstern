@@ -126,7 +126,8 @@ function Tracking() {
           <button
             onClick={handleTrack}
             className="search-button"
-            disabled={loading}>
+            disabled={loading}
+          >
             {loading ? "Loading Data..." : "Track"}
           </button>
         </div>
@@ -179,7 +180,8 @@ const TrackingProgress = ({ steps }) => {
       {steps.map((step, index) => (
         <div
           key={step.id}
-          className={`step ${step.completed ? "completed" : ""}`}>
+          className={`step ${step.completed ? "completed" : ""}`}
+        >
           <div className="step-icon">{step.completed ? "✓" : index + 1}</div>
           <div className="step-text">
             {step.name}

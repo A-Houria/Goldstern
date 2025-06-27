@@ -50,7 +50,7 @@ const About = () => {
     <div className="about">
       <div className="story" data-aos="fade-up">
         <h1>
-          <img src="./Icons/story.png" alt="Our Story" />
+          <img src="./Icons/story.webp" alt="Our Story" />
           Our Story
         </h1>
         <p>
@@ -81,7 +81,7 @@ const About = () => {
         <div className="cards">
           <div className="card" data-aos="fade-right">
             <h1>
-              <img src="./Icons/mission.png" alt="Our Mission" />
+              <img src="./Icons/mission.webp" alt="Our Mission" />
               Our Mission
             </h1>
             <p>
@@ -95,7 +95,7 @@ const About = () => {
           </div>
           <div className="card" data-aos="fade-left">
             <h1>
-              <img src="./Icons/values.png" alt="Our Values" />
+              <img src="./Icons/values.webp" alt="Our Values" />
               Our Values
             </h1>
             <p>
@@ -124,7 +124,7 @@ const About = () => {
 
       <div className="message" data-aos="fade-up">
         <h1>
-          <img src="./Icons/founder-message.png" alt="Founders' Message" />
+          <img src="./Icons/founder-message.webp" alt="Founders' Message" />
           Founders' Message
         </h1>
         <p>
@@ -141,7 +141,7 @@ const About = () => {
         <div className="cards">
           <div className="card" data-aos="zoom-in">
             <img
-              src="./Icons/Piggy_Bank.jpg"
+              src="./Icons/Piggy_Bank.webp"
               alt="Cheapest Prices, No Middlemen"
             />
             <div className="text">
@@ -154,7 +154,7 @@ const About = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Options.jpg" alt="Wide Range of Options" />
+            <img src="./Icons/Options.webp" alt="Wide Range of Options" />
             <div className="text">
               <h1>Wide Range of Options</h1>
               <p>
@@ -165,7 +165,7 @@ const About = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Fast_Ship.jpg" alt="Fast & Seamless Process" />
+            <img src="./Icons/Fast_Ship.webp" alt="Fast & Seamless Process" />
             <div className="text">
               <h1>Fast & Seamless Process</h1>
               <p>
@@ -177,7 +177,7 @@ const About = () => {
           </div>
           <div className="card" data-aos="zoom-in">
             <img
-              src="./Icons/Transparent_Pricing.jpg"
+              src="./Icons/Transparent_Pricing.webp"
               alt="Transparent Pricing"
             />
             <div className="text">
@@ -189,7 +189,7 @@ const About = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Trust.jpg" alt="Trusted Expertise" />
+            <img src="./Icons/Trust.webp" alt="Trusted Expertise" />
             <div className="text">
               <h1>Trusted Expertise</h1>
               <p>
@@ -200,7 +200,7 @@ const About = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Rating.jpg" alt="Customer-Focused Service" />
+            <img src="./Icons/Rating.webp" alt="Customer-Focused Service" />
             <div className="text">
               <h1>Customer-Focused Service</h1>
               <p>

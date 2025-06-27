@@ -184,7 +184,7 @@ const CarDetails = () => {
   if (loading)
     return (
       <div className="loading-container">
-        <img src="/Icons/Logo-black.png" alt="" />
+        <img src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
@@ -248,7 +248,7 @@ const CarDetails = () => {
           style={{ cursor: "pointer" }}
           onClick={() => setShowInquiryForm(!showInquiryForm)}
         >
-          <img src="/Icons/message.png" alt="Message" />
+          <img src="/Icons/message.webp" alt="Message" />
           <div className="notification"></div>
         </div>
         {showInquiryForm && (

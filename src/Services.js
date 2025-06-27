@@ -84,7 +84,7 @@ const Services = () => {
         "@type": "Organization",
         name: "Goldstern",
         url: "https://goldsternonline.de",
-        logo: "https://goldsternonline.de/logo.png", // update if you have logo
+        logo: "https://goldsternonline.de/logo.webp", // update if you have logo
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+20-10-00445786",
@@ -164,20 +164,23 @@ const Services = () => {
         <h1 className="title">Our Services</h1>
         <div className="services">
           <h1>
-            <img src="./Icons/speed.png" alt="immediate delivery" />
+            <img src="./Icons/speed.webp" alt="immediate delivery" />
             In-Stock Cars - Ready for Immediate Delivery
           </h1>
           <h1>
-            <img src="./Icons/ship.png" alt="Import" />
+            <img src="./Icons/ship.webp" alt="Import" />
             Import Your Dream Car
           </h1>
           <h1>
             {" "}
-            <img src="./Icons/guide.png" alt="Most Secure shipping" />
+            <img src="./Icons/guide.webp" alt="Most Secure shipping" />
             Expert Guidance & Consultation
           </h1>
           <h1>
-            <img src="./Icons/support.png" alt="Guaranteed Delivery promises" />
+            <img
+              src="./Icons/support.webp"
+              alt="Guaranteed Delivery promises"
+            />
             After-Sales Support
           </h1>
         </div>
@@ -187,7 +190,7 @@ const Services = () => {
         <div className="cards">
           <div className="card" data-aos="zoom-in">
             <img
-              src="./Icons/Piggy_Bank.jpg"
+              src="./Icons/Piggy_Bank.webp"
               alt="Cheapest Prices, No Middlemen"
             />
             <div className="text">
@@ -200,7 +203,7 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Options.jpg" alt="Wide Range of Options" />
+            <img src="./Icons/Options.webp" alt="Wide Range of Options" />
             <div className="text">
               <h1>Wide Range of Options</h1>
               <p>
@@ -211,7 +214,7 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Fast_Ship.jpg" alt="Fast & Seamless Process" />
+            <img src="./Icons/Fast_Ship.webp" alt="Fast & Seamless Process" />
             <div className="text">
               <h1>Fast & Seamless Process</h1>
               <p>
@@ -223,7 +226,7 @@ const Services = () => {
           </div>
           <div className="card" data-aos="zoom-in">
             <img
-              src="./Icons/Transparent_Pricing.jpg"
+              src="./Icons/Transparent_Pricing.webp"
               alt="Transparent Pricing"
             />
             <div className="text">
@@ -235,7 +238,7 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Trust.jpg" alt="Trusted Expertise" />
+            <img src="./Icons/Trust.webp" alt="Trusted Expertise" />
             <div className="text">
               <h1>Trusted Expertise</h1>
               <p>
@@ -246,7 +249,7 @@ const Services = () => {
             </div>
           </div>
           <div className="card" data-aos="zoom-in">
-            <img src="./Icons/Rating.jpg" alt="Customer-Focused Service" />
+            <img src="./Icons/Rating.webp" alt="Customer-Focused Service" />
             <div className="text">
               <h1>Customer-Focused Service</h1>
               <p>
