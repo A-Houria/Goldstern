@@ -316,21 +316,30 @@ const CarDetails = () => {
             />
 
             <div className="carousel-container">
-              <button
+              {/*<button
                 className={`arrow left ${!arrowClicked ? "bounce" : ""}`}
                 onClick={handlePrevClick}
               >
                 ‹
+              </button> */}
+              <button className={`arrow left`} onClick={handlePrevClick}>
+                ‹
               </button>
 
-              <div className={`image-index ${!arrowClicked ? "bounce" : ""}`}>
+              {/*<div className={`image-index ${!arrowClicked ? "bounce" : ""}`}>
+                {selectedImageIndex + 1} / {car.galleryUrls.length}
+              </div>*/}
+              <div className={`image-index`}>
                 {selectedImageIndex + 1} / {car.galleryUrls.length}
               </div>
 
-              <button
+              {/* <button
                 className={`arrow right ${!arrowClicked ? "bounce" : ""}`}
                 onClick={handleNextClick}
               >
+                ›
+              </button>*/}
+              <button className={`arrow right`} onClick={handleNextClick}>
                 ›
               </button>
             </div>
