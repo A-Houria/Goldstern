@@ -824,12 +824,14 @@ a {
   padding: 2%;
   text-wrap: wrap;
   line-height: 1.5;
+  font-weight: 400;
   letter-spacing: 2px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .home .details .process .process-list li h1 {
+  width: 100%;
   font-size: 32px;
   margin: 25px 0px;
   padding-top: 30px;
@@ -837,18 +839,19 @@ a {
 }
 @media screen and (max-width: 780px) {
   .app .layout .home .details .process .process-list li h1 {
-    font-size: 28px;
+    font-size: 18px;
   }
 }
 .app .layout .home .details .process .process-list li p {
   font-size: 22px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 10px 30px 30px 30px;
+  line-height: 1.5;
   box-shadow: none;
 }
 @media screen and (max-width: 780px) {
   .app .layout .home .details .process .process-list li p {
-    font-size: 18px;
+    font-size: 12px;
   }
 }
 .app .layout .home .details .customs,
