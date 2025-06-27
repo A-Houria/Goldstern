@@ -263,7 +263,7 @@ const Home = () => {
                   your car stays in top condition.
                 </p>
               </li>
-              <h1>
+              <h1 className="quote">
                 "From the first step to the final handover, we make importing
                 your dream car easy, seamless, and completely transparent — so
                 you can drive with confidence and peace of mind."
