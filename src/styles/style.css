@@ -648,7 +648,7 @@ a {
   border-radius: 10px;
 }
 .app .layout .home .featured .cards .card img {
-  width: 500px;
+  width: 400px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
   border-top-right-radius: 10px;
@@ -1297,7 +1297,7 @@ a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .app .layout .inventory .featured .cards .card img {
-  width: 500px;
+  width: 400px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
   border-top-left-radius: 10px;
@@ -1468,7 +1468,7 @@ a {
   }
 }
 .app .layout .inventory .car-list .filtered-cars .card img {
-  width: 500px;
+  width: 400px;
   aspect-ratio: 3/2;
   margin-bottom: 20px;
   border-top-left-radius: 10px;
