@@ -577,6 +577,7 @@ a {
         align-items: center;
         width: fit-content;
         width: 100%;
+        margin-top: 100px;
         h1 {
           letter-spacing: 2px;
           font-size: 3.5vw;
@@ -641,6 +642,8 @@ a {
 
         .header {
           font-size: 3.5vw;
+          width: 90%;
+          margin: auto;
           margin-top: 150px;
           margin-bottom: 50px;
           text-align: center;
