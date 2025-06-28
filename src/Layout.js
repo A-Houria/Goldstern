@@ -30,7 +30,11 @@ const Layout = () => {
         <div className="cont">
           <div className="burger-cont">
             <Link to="/">
-              <img src="/Icons/Logo-black.webp" alt="Goldstern" />
+              <img
+                loading="lazy"
+                src="/Icons/Logo-black.webp"
+                alt="Goldstern"
+              />
             </Link>
             <div
               className={`burger ${isOpen ? "open" : ""}`}
@@ -82,7 +86,7 @@ const Layout = () => {
             rel="noreferrer"
           >
             <p>
-              <img src="/Icons/facebook.webp" alt="Facebook" />
+              <img loading="lazy" src="/Icons/facebook.webp" alt="Facebook" />
               Goldstern
             </p>
           </a>
@@ -92,7 +96,7 @@ const Layout = () => {
             rel="noreferrer"
           >
             <p>
-              <img src="/Icons/instagram.webp" alt="Instagram" />
+              <img loading="lazy" src="/Icons/instagram.webp" alt="Instagram" />
               goldstern_eg
             </p>
           </a>
@@ -102,7 +106,7 @@ const Layout = () => {
             rel="noreferrer"
           >
             <p>
-              <img src="/Icons/tiktok.webp" alt="Tiktok" />
+              <img loading="lazy" src="/Icons/tiktok.webp" alt="Tiktok" />
               goldstern.eg
             </p>
           </a>
@@ -112,7 +116,7 @@ const Layout = () => {
             rel="noreferrer"
           >
             <p>
-              <img src="/Icons/LinkedIn.webp" alt="LinkedIn" />
+              <img loading="lazy" src="/Icons/LinkedIn.webp" alt="LinkedIn" />
               Goldstern
             </p>
           </a>
