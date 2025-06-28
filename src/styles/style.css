@@ -1712,15 +1712,13 @@ a {
 .app .layout .car-details .details .interior .content-wrapper {
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.8s ease, opacity 0.3s ease;
+  transition: max-height 1s ease-in-out;
 }
 .app .layout .car-details .details .special-features .content-wrapper.open,
 .app .layout .car-details .details .engine-specs .content-wrapper.open,
 .app .layout .car-details .details .exterior .content-wrapper.open,
 .app .layout .car-details .details .interior .content-wrapper.open {
   max-height: 1500px;
-  opacity: 1;
 }
 .app .layout .car-details .details .special-features h1,
 .app .layout .car-details .details .engine-specs h1,

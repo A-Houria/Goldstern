@@ -1650,13 +1650,11 @@ a {
           .content-wrapper {
             max-height: 0;
             overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.8s ease, opacity 0.3s ease;
+            transition: max-height 1s ease-in-out;
           }
 
           .content-wrapper.open {
             max-height: 1500px;
-            opacity: 1;
           }
 
           h1 {
