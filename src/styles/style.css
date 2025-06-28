@@ -789,6 +789,7 @@ a {
 }
 .app .layout .home .details .process .process-title {
   margin: 25px 0px;
+  padding: 20px 50px;
 }
 .app .layout .home .details .process h1 {
   text-align: start;
@@ -806,6 +807,7 @@ a {
   font-size: 1.2vw;
   letter-spacing: 2px;
   line-height: 1.5;
+  max-width: 100%;
 }
 .app .layout .home .details .process .process-list h1 {
   width: 100%;
@@ -836,15 +838,33 @@ a {
   margin: 25px 0px;
   padding-top: 30px;
   box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app .layout .home .details .process .process-list li h1 span {
+  font-size: 32px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  aspect-ratio: 1/1;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 780px) {
   .app .layout .home .details .process .process-list li h1 {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 400px) {
+  .app .layout .home .details .process .process-list li h1 {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+}
 .app .layout .home .details .process .process-list li p {
   font-size: 22px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 10px 30px 30px 30px;
   line-height: 1.5;
   box-shadow: none;

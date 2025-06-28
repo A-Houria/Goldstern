@@ -218,7 +218,9 @@ const Home = () => {
             <h1 className="process-title">Step By Step Process</h1>
             <ul className="process-list">
               <li>
-                <h1>1. Contact Our Team</h1>
+                <h1>
+                  <span>1</span> Contact Our Team
+                </h1>
                 <p>
                   Reach out to us via phone, email, or our website. Our friendly
                   team will assist you in choosing the perfect car based on your
@@ -226,7 +228,9 @@ const Home = () => {
                 </p>
               </li>
               <li>
-                <h1>2. Consultation & Car Selection</h1>
+                <h1>
+                  <span>2</span> Consultation & Car Selection
+                </h1>
                 <p>
                   Once we understand your requirements, we’ll provide you with a
                   range of options from European car inventory. You can ask any
@@ -235,7 +239,9 @@ const Home = () => {
                 </p>
               </li>
               <li>
-                <h1>3. Quotation & Agreement</h1>
+                <h1>
+                  <span>3</span> Quotation & Agreement
+                </h1>
                 <p>
                   After selecting your car, we’ll give you a clear and
                   transparent quote with factory-direct pricing, including all
@@ -244,7 +250,9 @@ const Home = () => {
                 </p>
               </li>
               <li>
-                <h1>4. Car Ordering & Shipping</h1>
+                <h1>
+                  <span>4</span> Car Ordering & Shipping
+                </h1>
                 <p>
                   After finalizing your order, we will process the import and
                   handle all the logistics, including shipping and
@@ -252,7 +260,9 @@ const Home = () => {
                 </p>
               </li>
               <li>
-                <h1>5. Customs Clearance & Delivery</h1>
+                <h1>
+                  <span>5</span> Customs Clearance & Delivery
+                </h1>
                 <p>
                   Your car will be cleared through customs quickly and
                   efficiently. Once everything is in order, we’ll schedule a
@@ -260,7 +270,9 @@ const Home = () => {
                 </p>
               </li>
               <li>
-                <h1>6. Car Inspection & Handover</h1>
+                <h1>
+                  <span>6</span> Car Inspection & Handover
+                </h1>
                 <p>
                   Upon delivery, we’ll conduct a thorough inspection to ensure
                   the car meets your expectations. You’ll receive all the
@@ -269,7 +281,9 @@ const Home = () => {
                 </p>
               </li>
               <li>
-                <h1>7. After-Sales Service</h1>
+                <h1>
+                  <span>7</span> After-Sales Service
+                </h1>
                 <p>
                   Our relationship doesn’t end at delivery. We provide
                   post-purchase support and offer ongoing services through our
