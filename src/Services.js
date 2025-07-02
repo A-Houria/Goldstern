@@ -162,36 +162,60 @@ const Services = () => {
       </Helmet>
       <div className="service" data-aos="fade-up">
         <h1 className="title">Our Services</h1>
-        <div className="services">
-          <h1>
-            <img
-              loading="lazy"
-              src="./Icons/speed.webp"
-              alt="immediate delivery"
-            />
-            In-Stock Cars - Ready for Immediate Delivery
-          </h1>
-          <h1>
-            <img loading="lazy" src="./Icons/ship.webp" alt="Import" />
-            Import Your Dream Car
-          </h1>
-          <h1>
-            {" "}
-            <img
-              loading="lazy"
-              src="./Icons/guide.webp"
-              alt="Most Secure shipping"
-            />
-            Expert Guidance & Consultation
-          </h1>
-          <h1>
-            <img
-              loading="lazy"
-              src="./Icons/support.webp"
-              alt="Guaranteed Delivery promises"
-            />
-            After-Sales Support
-          </h1>
+        <div className="services-cards">
+          <div className="card">
+            <h1>
+              <img
+                loading="lazy"
+                src="./Icons/speed.webp"
+                alt="immediate delivery"
+              />
+              Available Now , Drive Without Delay
+            </h1>
+            <p>
+              Explore a curated selection of in-stock vehicles, ready for
+              immediate delivery.
+            </p>
+          </div>
+          <div className="card">
+            <h1>
+              <img loading="lazy" src="./Icons/ship.webp" alt="Import" />
+              Custom Import Your Dream Car, Delivered
+            </h1>
+            <p>
+              Order your ideal car with the exact specifications, straight from
+              Europe to your doorstep.
+            </p>
+          </div>
+          <div className="card">
+            <h1>
+              {" "}
+              <img
+                loading="lazy"
+                src="./Icons/guide.webp"
+                alt="Most Secure shipping"
+              />
+              Personalized Consultation & Expert Advice
+            </h1>
+            <p>
+              Receive tailored guidance from our specialists to help you choose
+              with confidence.
+            </p>
+          </div>
+          <div className="card">
+            <h1>
+              <img
+                loading="lazy"
+                src="./Icons/support.webp"
+                alt="Guaranteed Delivery promises"
+              />
+              Premium After-Sales Care
+            </h1>
+            <p>
+              Enjoy continued support and service that extends well
+              beyond the purchase.
+            </p>
+          </div>
         </div>
       </div>
       <div className="import" data-aos="fade-up">

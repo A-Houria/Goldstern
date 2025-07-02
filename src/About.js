@@ -55,25 +55,25 @@ const About = () => {
         </h1>
         <p>
           While studying software engineering in Germany, Abderhaman Houria
-          noticed a problem. Back in Egypt, people were paying too much for cars
+          noticed a problem: back in Egypt, people were paying too much for cars
           with too few choices. In Europe, great cars were affordable and
-          everywhere.
+          readily available.
         </p>
-        <p>So in 2019, he started Goldstern to bring those same cars home.</p>
+        <p>So in 2019, he founded Goldstern to bring those same cars home.</p>
         <p>
-          At first, it was all about helping dealers and businesses import
-          premium vehicles. But it quickly became clear: everyday people were
-          stuck paying high prices through layers of middlemen.
+          At first, the mission was to help dealers and businesses import
+          premium vehicles. But it quickly became clear that everyday people
+          were stuck paying inflated prices through layers of middlemen.
         </p>
         <p>So we shifted focus.</p>
         <p>
           Today, Goldstern works directly with customers making car imports
-          simple, transparent, and fair. You can pick from available models or
-          order a car built just the way you want it.
+          simple, transparent, and fair. You can choose from ready-to-ship
+          models or order a car built exactly the way you want it.
         </p>
         <p>
-          Because buying a car should feel exciting not frustrating. And above
-          all, you deserve better.
+          Because buying a car should feel exciting, not frustrating. And above
+          all you deserve better
         </p>
       </div>
 
@@ -103,24 +103,24 @@ const About = () => {
               Our Values
             </h1>
             <p>
-              <strong>Transparency</strong> We believe in open and honest
-              communication, ensuring clarity and accountability in every
-              interaction.
+              <strong>Transparency</strong> We believe in open, honest
+              communication ensuring clarity and accountability in every step of
+              the process
             </p>
             <p>
-              <strong>Trust</strong> We strive to earn and uphold the confidence
-              of our customers, partners, and team through consistency,
-              integrity, and reliability.
+              <strong>Trust</strong> We earn and maintain trust through
+              consistency, integrity, and reliability with customers, partners,
+              and our team.
             </p>
             <p>
-              <strong>Satisfaction</strong> Your experience matters. We are
+              <strong>Satisfaction</strong> Your experience comes first. We’re
               committed to exceeding expectations and delivering service that
-              truly resonates with your needs.
+              truly meets your needs.
             </p>
             <p>
-              <strong>Quality</strong> Excellence is our standard. We take pride
-              in offering top-tier products and services that reflect our
-              dedication to craftsmanship and detail.
+              <strong>Quality</strong> Excellence is our standard. From vehicle
+              selection to final delivery, we take pride in offering premium
+              products and detail-driven service.
             </p>
           </div>
         </div>

@@ -799,6 +799,7 @@ a {
   font-size: 2.5vw;
   letter-spacing: 2px;
   font-weight: 400;
+  padding: 0px;
 }
 @media screen and (max-width: 750px) {
   .app .layout .home .details .process h1 {
@@ -838,7 +839,7 @@ a {
 .app .layout .home .details .process .process-list li h1 {
   width: 100%;
   font-size: 32px;
-  margin: 25px 0px;
+  margin: 0px 0px 25px 0px;
   padding-top: 30px;
   box-shadow: none;
   display: flex;
@@ -1841,71 +1842,86 @@ a {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin-top: 100px;
 }
 .app .layout .services .service {
   width: 80%;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-}
-.app .layout .services .service .services {
-  width: 100%;
-  margin: 50px 0px;
+  margin: auto;
+  margin-bottom: 50px;
 }
 .app .layout .services .service .title {
   font-size: 42px;
-  letter-spacing: 2px;
-  align-self: flex-start;
-  padding: 10px 30px;
+  font-weight: 400;
+  padding: 10px 35px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px 0px 50px 0px;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 500px) {
   .app .layout .services .service .title {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
-.app .layout .services .service h1 {
-  width: 100%;
-  font-size: 22px;
-  font-weight: 400;
-  margin: 20px 0px;
-  letter-spacing: 2px;
+.app .layout .services .service .services-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.app .layout .services .service .services-cards .card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2%;
+}
+@media screen and (max-width: 500px) {
+  .app .layout .services .service .services-cards .card {
+    padding: 5%;
+  }
+}
+.app .layout .services .service .services-cards .card h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 500px) {
+  .app .layout .services .service .services-cards .card h1 {
+    font-size: 18px;
+  }
+}
+.app .layout .services .service .services-cards .card h1 img {
+  width: 50px;
+  margin-right: 20px;
   background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 7px;
 }
-.app .layout .services .service h1 img {
-  max-width: 50px;
-  margin: 0px 25px;
-}
-@media screen and (max-width: 650px) {
-  .app .layout .services .service h1 img {
-    max-width: 35px;
-  }
-}
-@media screen and (max-width: 650px) {
-  .app .layout .services .service h1 {
-    font-size: 3.5vw;
-  }
-}
-.app .layout .services .service p {
-  text-align: center;
-  width: 50%;
-  margin: 50px auto;
-  font-size: 20px;
+.app .layout .services .service .services-cards .card p {
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 1.5;
+  padding-left: 7%;
+}
+@media screen and (max-width: 500px) {
+  .app .layout .services .service .services-cards .card p {
+    font-size: 14px;
+  }
 }
 .app .layout .services .import {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
-  margin: 50px auto;
+  margin: 100px auto;
 }
 .app .layout .services .import h1 {
   width: 100%;

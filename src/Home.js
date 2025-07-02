@@ -222,9 +222,9 @@ const Home = () => {
                   <span>1</span> Contact Our Team
                 </h1>
                 <p>
-                  Reach out to us via phone, email, or our website. Our friendly
-                  team will assist you in choosing the perfect car based on your
-                  preferences, budget, and needs.
+                  Get in touch with us by phone, email, or through our website.
+                  Our dedicated team is here to help you find the perfect car
+                  tailored to your preferences, budget, and lifestyle.
                 </p>
               </li>
               <li>
@@ -232,10 +232,10 @@ const Home = () => {
                   <span>2</span> Consultation & Car Selection
                 </h1>
                 <p>
-                  Once we understand your requirements, we’ll provide you with a
-                  range of options from European car inventory. You can ask any
-                  questions and get expert advice to help you make the right
-                  choice.
+                  Once we understand your needs, our team will present you with
+                  a curated selection from our European car inventory. Feel free
+                  to ask any questions our experts are here to guide you with
+                  personalized advice and help you make the perfect choice.
                 </p>
               </li>
               <li>
@@ -243,10 +243,10 @@ const Home = () => {
                   <span>3</span> Quotation & Agreement
                 </h1>
                 <p>
-                  After selecting your car, we’ll give you a clear and
-                  transparent quote with factory-direct pricing, including all
-                  costs involved—no hidden fees. Once you’re happy, we move
-                  forward with the agreement.
+                  Once you’ve selected your car, we’ll provide a transparent
+                  quotation with factory direct pricing clearly outlining all
+                  costs with no hidden fees. When you’re fully satisfied, we
+                  proceed with the agreement and next steps.
                 </p>
               </li>
               <li>
@@ -254,12 +254,13 @@ const Home = () => {
                   <span>4</span> Car Ordering & Shipping
                 </h1>
                 <p>
-                  After finalizing your order, we will process the import and
-                  handle all the logistics, including shipping and
-                  documentation.
+                  Once your order is confirmed, we take care of the entire
+                  import process including international shipping, customs
+                  clearance, and all required documentation ensuring a smooth
+                  and hassle free experience
                 </p>
               </li>
-              <li>
+              {/*<li>
                 <h1>
                   <span>5</span> Customs Clearance & Delivery
                 </h1>
@@ -268,27 +269,25 @@ const Home = () => {
                   efficiently. Once everything is in order, we’ll schedule a
                   convenient delivery date right to your doorstep.
                 </p>
-              </li>
+              </li> */}
               <li>
                 <h1>
-                  <span>6</span> Car Inspection & Handover
+                  <span>5</span> Car Inspection & Handover
                 </h1>
                 <p>
-                  Upon delivery, we’ll conduct a thorough inspection to ensure
-                  the car meets your expectations. You’ll receive all the
-                  necessary documentation, and we’ll explain all the car
-                  features before handing over the keys.
+                  and our team will walk you through the car’s features before
+                  handing over the keys
                 </p>
               </li>
               <li>
                 <h1>
-                  <span>7</span> After-Sales Service
+                  <span>6</span> After-Sales Service
                 </h1>
                 <p>
-                  Our relationship doesn’t end at delivery. We provide
-                  post-purchase support and offer ongoing services through our
-                  partners like maintenance, repairs, and assistance, ensuring
-                  your car stays in top condition.
+                  Our relationship doesn’t end at delivery. We offer
+                  comprehensive post-purchase support through our trusted
+                  partners including maintenance, repairs, and assistance to
+                  keep your vehicle in excellent condition for years to come.
                 </p>
               </li>
               <h1 className="quote">
