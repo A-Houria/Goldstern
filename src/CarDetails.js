@@ -231,6 +231,12 @@ const CarDetails = () => {
                 })),
               ],
               url: window.location.href,
+              offers: {
+                "@type": "Offer",
+                price: car.Price,
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+              },
             }),
           }}
         />
