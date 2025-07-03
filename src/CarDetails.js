@@ -197,45 +197,26 @@ const CarDetails = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Vehicle",
+              "@context": "https://schema.org/",
+              "@type": "Product",
               name: `${car.Name} ${car.Model}`,
-              modelDate: car.Production_Year,
-              vehicleEngine: car.Engine_Specs
-                ? {
-                    "@type": "EngineSpecification",
-                    engineType: car.Engine_Specs.join(", "),
-                  }
-                : undefined,
-              description: car.Description,
               image: car.imageUrl,
-              manufacturer: {
-                "@type": "Organization",
+              description: car.Description,
+              sku: id,
+              brand: {
+                "@type": "Brand",
                 name: car.Name,
               },
-              additionalProperty: [
-                ...(car.Special_Features || []).map((feature) => ({
-                  "@type": "PropertyValue",
-                  name: "Special Feature",
-                  value: feature,
-                })),
-                ...(car.Exterior || []).map((ex) => ({
-                  "@type": "PropertyValue",
-                  name: "Exterior",
-                  value: ex,
-                })),
-                ...(car.Interior || []).map((int) => ({
-                  "@type": "PropertyValue",
-                  name: "Interior",
-                  value: int,
-                })),
-              ],
-              url: window.location.href,
               offers: {
                 "@type": "Offer",
                 price: car.Price,
                 priceCurrency: "EGP",
                 availability: "https://schema.org/InStock",
+                itemCondition:
+                  car.Condition === "New"
+                    ? "https://schema.org/NewCondition"
+                    : "https://schema.org/UsedCondition",
+                url: window.location.href,
               },
             }),
           }}
