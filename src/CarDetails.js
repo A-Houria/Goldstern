@@ -234,7 +234,7 @@ const CarDetails = () => {
               offers: {
                 "@type": "Offer",
                 price: car.Price,
-                priceCurrency: "EUR",
+                priceCurrency: "EGP",
                 availability: "https://schema.org/InStock",
               },
             }),
