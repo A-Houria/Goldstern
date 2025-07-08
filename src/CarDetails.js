@@ -134,7 +134,6 @@ const CarDetails = () => {
   };
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
-
     const fetchCarDetails = async () => {
       try {
         const docRef = doc(db, "Cars", id);
@@ -189,7 +188,6 @@ const CarDetails = () => {
         <p>Please refresh the page.</p>
       </div>
     );
-
   return (
     <>
       {car && (
@@ -198,7 +196,7 @@ const CarDetails = () => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org/",
-              "@type": "Product",
+              "@type": ["Product", "Car"],
               name: `${car.Name} ${car.Model}`,
               image: car.imageUrl,
               description: car.Description,
@@ -209,7 +207,9 @@ const CarDetails = () => {
               },
               offers: {
                 "@type": "Offer",
-                price: car.Price,
+                price: Number(
+                  parseFloat(car.Price.replace(/,/g, "")).toFixed(2)
+                ),
                 priceCurrency: "EGP",
                 availability: "https://schema.org/InStock",
                 itemCondition:
