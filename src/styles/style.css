@@ -1,3 +1,13 @@
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 @keyframes slide-left {
   0% {
     transform: translateX(100%);
@@ -508,6 +518,119 @@ a {
 }
 .app .layout .home {
   overflow: hidden;
+}
+.app .layout .home .reviews {
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 3%;
+  border-radius: 10px;
+  width: 50%;
+  overflow: hidden;
+}
+@media screen and (max-width: 800px) {
+  .app .layout .home .reviews {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .app .layout .home .reviews {
+    width: 70%;
+    padding: 10%;
+  }
+}
+.app .layout .home .reviews .title {
+  align-self: center;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 900px) {
+  .app .layout .home .reviews .title {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .app .layout .home .reviews .title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+.app .layout .home .reviews .sub-title {
+  align-self: center;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 20px 0px 70px 0px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  min-width: 150px;
+  max-width: 70%;
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .app .layout .home .reviews .sub-title {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .app .layout .home .reviews .sub-title {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+.app .layout .home .reviews .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.app .layout .home .reviews .card.slide-right {
+  animation: slideRight 0.4s ease-in-out;
+}
+.app .layout .home .reviews .card .message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0px 0px 50px 0px;
+  min-width: 150px;
+  max-width: 70%;
+  align-self: center;
+  text-align: center;
+}
+.app .layout .home .reviews .card .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 150px;
+  max-width: 70%;
+  align-self: center;
+}
+.app .layout .home .reviews .card .stars img {
+  width: 30px;
+}
+.app .layout .home .reviews .card .name {
+  font-size: 24px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  min-width: 150px;
+  max-width: 70%;
+  align-self: center;
+  text-align: center;
+  margin-top: 30px;
+}
+@media screen and (max-width: 1000px) {
+  .app .layout .home .reviews .card .name {
+    font-size: 14px;
+  }
 }
 .app .layout .home .hero {
   width: 100%;

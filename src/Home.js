@@ -12,10 +12,47 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [reviews, setReviews] = useState([]);
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState("right");
+  const [animate, setAnimate] = useState(false);
 
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
   };
+
+  // Fetch reviews from Firestore
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "Goldstern-reviews"));
+        const data = snapshot.docs.map((doc) => doc.data());
+        setReviews(data);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
+    };
+    fetchReviews();
+  }, []);
+
+  // Auto-rotate every 5 seconds
+  useEffect(() => {
+    if (reviews.length === 0) return;
+
+    const interval = setInterval(() => {
+      setAnimate(true); // trigger animation
+      setSlideDirection("right");
+
+      setTimeout(() => {
+        setCurrentReviewIndex((prev) =>
+          prev === reviews.length - 1 ? 0 : prev + 1
+        );
+        setAnimate(false); // reset animation after update
+      }, 400); // duration should match the CSS transition time
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [reviews]);
 
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
@@ -297,6 +334,33 @@ const Home = () => {
               </h1>
             </ul>
           </div>
+        </div>
+        <div className="reviews" data-aos="fade-up">
+          <h1 className="title">Our clients trust us</h1>
+          <p className="sub-title">
+            Here's what some of our satisfied clients had to say about us
+          </p>
+          {reviews.length > 0 ? (
+            <div
+              className={`card ${animate ? `slide-${slideDirection}` : ""}`}
+              key={currentReviewIndex}
+            >
+              <p className="message">
+                {reviews[currentReviewIndex].Message || "No message provided."}
+              </p>
+              <div className="stars">
+                {Array.from(
+                  { length: reviews[currentReviewIndex].Rating || 0 },
+                  (_, i) => (
+                    <img key={i} src="./Icons/star.webp" alt="review star" />
+                  )
+                )}
+              </div>
+              <p className="name">- {reviews[currentReviewIndex].Name} -</p>
+            </div>
+          ) : (
+            <p>Loading reviews...</p>
+          )}
         </div>
       </div>
     </>
