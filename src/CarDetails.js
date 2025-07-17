@@ -330,7 +330,6 @@ const CarDetails = () => {
               <p>Car Model: {car.Model}</p>
               <p>Production Year: {car.Production_Year}</p>
               <p>Condition: {car.Condition}</p>
-              <p>Price: {car.Price}</p>
             </div>
           </div>
         )}
