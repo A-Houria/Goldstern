@@ -569,8 +569,6 @@ a {
   letter-spacing: 2px;
   line-height: 1.5;
   min-width: 150px;
-  max-width: 70%;
-  text-align: center;
 }
 @media screen and (max-width: 900px) {
   .app .layout .home .reviews .sub-title {
@@ -599,25 +597,34 @@ a {
   font-size: 18px;
   letter-spacing: 2px;
   line-height: 1.5;
-  margin: 0px 0px 50px 0px;
+  margin: 0px 0px 30px 0px;
   min-width: 150px;
   max-width: 70%;
+  padding: 5px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   align-self: center;
-  text-align: center;
+}
+@media screen and (max-width: 500px) {
+  .app .layout .home .reviews .card .message {
+    font-size: 12px;
+    max-width: 100%;
+  }
 }
 .app .layout .home .reviews .card .stars {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   min-width: 150px;
   max-width: 70%;
   align-self: center;
 }
 .app .layout .home .reviews .card .stars img {
-  width: 30px;
+  width: 15px;
 }
 .app .layout .home .reviews .card .name {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bolder;
   letter-spacing: 2px;
   line-height: 1.5;
@@ -634,7 +641,7 @@ a {
 }
 @media screen and (max-width: 500px) {
   .app .layout .home .reviews .card .name {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 .app .layout .home .reviews .card small {
