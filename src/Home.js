@@ -357,6 +357,10 @@ const Home = () => {
                 )}
               </div>
               <p className="name">- {reviews[currentReviewIndex].Name} -</p>
+              <small>
+                <img src="./Icons/google.webp" alt="google" />
+                Google Review
+              </small>
             </div>
           ) : (
             <p>Loading reviews...</p>
