@@ -632,6 +632,11 @@ a {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 500px) {
+  .app .layout .home .reviews .card .name {
+    font-size: 12px;
+  }
+}
 .app .layout .home .hero {
   width: 100%;
   aspect-ratio: 16/9;
