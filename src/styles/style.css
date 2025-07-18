@@ -2371,7 +2371,7 @@ a {
   .app .layout .contact .cont .main .map iframe {
     width: 100%;
     height: unset;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1/1;
   }
 }
 .app .layout .contact .cont .icons {
