@@ -238,14 +238,14 @@ const Home = () => {
                           <div className="green"></div> Available Immediately
                         </p>*/}
                       </div>
-                      <NavLink onClick={handleBurgerClick} to="/inventory">
-                        <button className="inventory">View Inventory</button>
-                      </NavLink>
                     </div>
                   </div>
                 </Link>
               ))}
           </div>
+          <NavLink onClick={handleBurgerClick} to="/inventory">
+            <button className="inventory">View Inventory</button>
+          </NavLink>
         </div>
 
         <div className="details" data-aos="fade-up">
