@@ -690,7 +690,6 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   width: 100%;
-  margin-top: 100px;
 }
 .app .layout .home .text h1 {
   letter-spacing: 2px;
@@ -706,6 +705,8 @@ a {
   justify-content: space-between;
   width: 90%;
   padding: 0px 10%;
+  margin: 0px;
+  margin-top: 50px;
 }
 @media screen and (max-width: 1100px) {
   .app .layout .home .text .services {
@@ -765,7 +766,7 @@ a {
   font-size: 3.5vw;
   width: 90%;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -908,7 +909,7 @@ a {
 .app .layout .home .details {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .app .layout .home .details .how {
   width: 95%;
@@ -1410,8 +1411,7 @@ a {
 }
 .app .layout .inventory .featured .header {
   font-size: 3vw;
-  margin-top: 150px;
-  margin-bottom: 100px;
+  margin: 50px 0px;
   text-align: center;
 }
 @media screen and (max-width: 650px) {
@@ -2422,6 +2422,8 @@ a {
 @media screen and (max-width: 1500px) {
   .app .layout .contact .cont .main .map iframe {
     width: 100%;
+    height: unset;
+    aspect-ratio: 16/9;
   }
 }
 .app .layout .contact .cont .icons {
