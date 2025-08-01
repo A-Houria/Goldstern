@@ -78,6 +78,80 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.login {
+  .cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    width: fit-content;
+    background-color: rgba($color: white, $alpha: 0.4);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      letter-spacing: 2px;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      margin: 20px;
+
+      .error {
+        width: 100%;
+        color: red;
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 1.5;
+      }
+
+      input {
+        height: 50px;
+        padding-left: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        color: grey;
+        background-color: rgba($color: white, $alpha: 0.4);
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+      }
+      button {
+        cursor: pointer;
+        height: 50px;
+        border: none;
+        outline: none;
+        background-color: black;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+      }
+    }
+  }
+}
+
 .tracking-container {
   max-width: 1200px;
   min-height: 60vh;
@@ -94,7 +168,6 @@
   .search-section {
     margin-bottom: 40px;
     background-color: rgba($color: white, $alpha: 0.4);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
