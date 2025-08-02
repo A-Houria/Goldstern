@@ -19,6 +19,7 @@ import Nopage from "./Nopage";
 import Login from "./Login";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "./Dashboard";
+import CarEdit from "./CarEdit";
 
 //Router
 const router = createBrowserRouter(
@@ -37,6 +38,14 @@ const router = createBrowserRouter(
         element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/edit-car/:id"
+        element={
+          <ProtectedRoute>
+            <CarEdit />
           </ProtectedRoute>
         }
       />
