@@ -20,6 +20,7 @@ import Login from "./Login";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "./Dashboard";
 import CarEdit from "./CarEdit";
+import AddCar from "./AddCar";
 
 //Router
 const router = createBrowserRouter(
@@ -46,6 +47,14 @@ const router = createBrowserRouter(
         element={
           <ProtectedRoute>
             <CarEdit />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/add-car"
+        element={
+          <ProtectedRoute>
+            <AddCar />
           </ProtectedRoute>
         }
       />

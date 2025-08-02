@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ref, listAll, getDownloadURL, uploadBytes } from "firebase/storage";
+import {
+  ref,
+  listAll,
+  getDownloadURL,
+  uploadBytes,
+  deleteObject,
+} from "firebase/storage";
 import { storage } from "./firebase";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase"; // make sure this points to your Firestore db
@@ -10,9 +16,13 @@ const Dashboard = () => {
   const [cars, setCars] = useState([]);
   const [confirmDeleteId, setConfirmDeleteId] = useState(null);
   const navigate = useNavigate();
+  const carToDelete = cars.find((c) => c.id === confirmDeleteId);
 
   const handleEdit = (carId) => {
     navigate(`/dashboard/edit-car/${carId}`);
+  };
+  const handleAdd = (carId) => {
+    navigate(`/dashboard/add-car`);
   };
 
   useEffect(() => {
@@ -102,6 +112,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="cont">
+        <h1 className="dash-title">Dashboard</h1>
         <div className="hero-section">
           <div className="title">
             <h1>Hero Section</h1>
@@ -137,7 +148,7 @@ const Dashboard = () => {
         <div className="cars-section">
           <div className="title">
             <h1>Cars Section</h1>
-            <button>*Add New</button>
+            <button onClick={handleAdd}>*Add New</button>
           </div>
           <div className="cards">
             {cars.map((car) => (
@@ -171,13 +182,36 @@ const Dashboard = () => {
                     className="yes"
                     onClick={async () => {
                       try {
+                        const carToDelete = cars.find(
+                          (c) => c.id === confirmDeleteId
+                        );
+
+                        if (!carToDelete) {
+                          alert("Car not found.");
+                          return;
+                        }
+
+                        // Delete image files from Firebase Storage
+                        if (Array.isArray(carToDelete.Images)) {
+                          const deletePromises = carToDelete.Images.map(
+                            (path) => {
+                              const imageRef = ref(storage, path);
+                              return deleteObject(imageRef);
+                            }
+                          );
+                          await Promise.all(deletePromises);
+                        }
+
+                        // Delete Firestore document
                         await deleteDoc(doc(db, "Cars", confirmDeleteId));
+
+                        // Update state
                         setCars((prev) =>
                           prev.filter((c) => c.id !== confirmDeleteId)
                         );
-                        alert("Car deleted successfully.");
+                        alert("Car and its images deleted successfully.");
                       } catch (error) {
-                        alert("Failed to delete car.");
+                        alert("Failed to delete car or its images.");
                         console.error(error);
                       } finally {
                         setConfirmDeleteId(null);

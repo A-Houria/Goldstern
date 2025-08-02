@@ -76,6 +76,13 @@
   margin: auto;
   margin-top: 50px;
 }
+.dashboard .cont .dash-title {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  margin-bottom: 100px;
+}
 .dashboard .cont .hero-section {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 50px;
@@ -466,6 +473,422 @@
 .dashboard .cont .blogs-section .cards img {
   max-width: 100px;
   margin: 30px;
+}
+
+.edit-car .cont,
+.add-car .cont {
+  margin: auto;
+  margin-top: 100px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.edit-car .cont .submit-btn,
+.add-car .cont .submit-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.1s;
+}
+.edit-car .cont .submit-btn:hover,
+.add-car .cont .submit-btn:hover {
+  background-color: rgb(83, 252, 83);
+}
+.edit-car .cont .main-title,
+.add-car .cont .main-title {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.edit-car .cont .images-section,
+.add-car .cont .images-section {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 500px) {
+  .edit-car .cont .images-section,
+  .add-car .cont .images-section {
+    padding: 15px;
+  }
+}
+.edit-car .cont .images-section .images-title,
+.add-car .cont .images-section .images-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 420px) {
+  .edit-car .cont .images-section .images-title,
+  .add-car .cont .images-section .images-title {
+    flex-direction: column;
+  }
+}
+.edit-car .cont .images-section .images-title .add-image,
+.add-car .cont .images-section .images-title .add-image {
+  background-color: transparent;
+  cursor: pointer;
+  justify-self: flex-end;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  outline: none;
+  border: none;
+  transition: all ease-in-out 0.05s;
+}
+.edit-car .cont .images-section .images-title .add-image:hover,
+.add-car .cont .images-section .images-title .add-image:hover {
+  color: lightgreen;
+  text-decoration: underline;
+  transform: scale(1.03);
+}
+.edit-car .cont .images-section .images-title h1,
+.add-car .cont .images-section .images-title h1 {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .edit-car .cont .images-section .images-title h1,
+  .add-car .cont .images-section .images-title h1 {
+    margin-bottom: 20px;
+  }
+}
+.edit-car .cont .images-section .rules,
+.add-car .cont .images-section .rules {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  margin-top: 20px;
+}
+@media screen and (max-width: 950px) {
+  .edit-car .cont .images-section .rules,
+  .add-car .cont .images-section .rules {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.edit-car .cont .images-section .rules p,
+.add-car .cont .images-section .rules p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: rgb(255, 97, 97);
+  margin: 0px 5px;
+}
+@media screen and (max-width: 950px) {
+  .edit-car .cont .images-section .rules p,
+  .add-car .cont .images-section .rules p {
+    margin: 5px 0px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .edit-car .cont .images-section .rules p,
+  .add-car .cont .images-section .rules p {
+    font-size: 10px;
+    line-height: 2;
+  }
+}
+.edit-car .cont .images-section .images-cards,
+.add-car .cont .images-section .images-cards {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+.edit-car .cont .images-section .images-cards .image-card,
+.add-car .cont .images-section .images-cards .image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1100px) {
+  .edit-car .cont .images-section .images-cards .image-card,
+  .add-car .cont .images-section .images-cards .image-card {
+    min-width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit-car .cont .images-section .images-cards .image-card,
+  .add-car .cont .images-section .images-cards .image-card {
+    width: 100%;
+  }
+}
+.edit-car .cont .images-section .images-cards .image-card img,
+.add-car .cont .images-section .images-cards .image-card img {
+  max-width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.edit-car .cont .images-section .images-cards .image-card .image-actions,
+.add-car .cont .images-section .images-cards .image-card .image-actions {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (max-width: 500px) {
+  .edit-car .cont .images-section .images-cards .image-card .image-actions,
+  .add-car .cont .images-section .images-cards .image-card .image-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+}
+.edit-car .cont .images-section .images-cards .image-card .image-actions button,
+.add-car .cont .images-section .images-cards .image-card .image-actions button {
+  min-width: 120px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .edit-car .cont .images-section .images-cards .image-card .image-actions button,
+  .add-car .cont .images-section .images-cards .image-card .image-actions button {
+    min-width: 100%;
+  }
+}
+.edit-car .cont .images-section .images-cards .image-card .image-actions button:hover.delete,
+.add-car .cont .images-section .images-cards .image-card .image-actions button:hover.delete {
+  background-color: red;
+}
+.edit-car .cont .images-section .images-cards .image-card .image-actions button:hover.main,
+.add-car .cont .images-section .images-cards .image-card .image-actions button:hover.main {
+  background-color: lightgreen;
+}
+.edit-car .cont .string-section,
+.add-car .cont .string-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 700px) {
+  .edit-car .cont .string-section,
+  .add-car .cont .string-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.edit-car .cont .string-section input,
+.edit-car .cont .string-section textarea,
+.add-car .cont .string-section input,
+.add-car .cont .string-section textarea {
+  min-height: 40px;
+  max-width: 350px;
+  min-width: 350px;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 700px) {
+  .edit-car .cont .string-section input,
+  .edit-car .cont .string-section textarea,
+  .add-car .cont .string-section input,
+  .add-car .cont .string-section textarea {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+.edit-car .cont .string-section h1,
+.add-car .cont .string-section h1 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+.edit-car .cont .bool-section,
+.add-car .cont .bool-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.edit-car .cont .bool-section h1,
+.add-car .cont .bool-section h1 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+.edit-car .cont .bool-section input,
+.add-car .cont .bool-section input {
+  margin-left: 20px;
+  width: 20px;
+  aspect-ratio: 1/1;
+}
+.edit-car .cont .array-section,
+.add-car .cont .array-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.edit-car .cont .array-section .array-btn,
+.add-car .cont .array-section .array-btn {
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.1s;
+}
+.edit-car .cont .array-section .array-btn:hover,
+.add-car .cont .array-section .array-btn:hover {
+  background-color: rgb(83, 252, 83);
+}
+.edit-car .cont .array-section .array-item,
+.add-car .cont .array-section .array-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 550px) {
+  .edit-car .cont .array-section .array-item,
+  .add-car .cont .array-section .array-item {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+.edit-car .cont .array-section .array-item input,
+.add-car .cont .array-section .array-item input {
+  min-height: 40px;
+  max-width: 350px;
+  min-width: 350px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 420px) {
+  .edit-car .cont .array-section .array-item input,
+  .add-car .cont .array-section .array-item input {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+}
+.edit-car .cont .array-section .array-item button,
+.add-car .cont .array-section .array-item button {
+  margin-left: 20px;
+  cursor: pointer;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.1s;
+}
+@media screen and (max-width: 700px) {
+  .edit-car .cont .array-section .array-item button,
+  .add-car .cont .array-section .array-item button {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+.edit-car .cont .array-section .array-item button:hover,
+.add-car .cont .array-section .array-item button:hover {
+  background-color: red;
+}
+@media screen and (max-width: 420px) {
+  .edit-car .cont .string-section input,
+  .edit-car .cont .string-section textarea,
+  .edit-car .cont .array-section.array-item input,
+  .edit-car .cont .array-section.array-item textarea,
+  .add-car .cont .string-section input,
+  .add-car .cont .string-section textarea,
+  .add-car .cont .array-section.array-item input,
+  .add-car .cont .array-section.array-item textarea {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
 }
 
 .login .cont {
