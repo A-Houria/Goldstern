@@ -11,7 +11,9 @@ const ProtectedRoute = ({ children }) => {
         <img loading="lazy" src="/Icons/Logo-black.webp" alt="Loading..." />
       </div>
     );
+
   if (!user) return <Navigate to="/login" />;
+
   return children;
 };
 

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  setPersistence,
+  browserSessionPersistence,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "./firebase";
 
 const Login = () => {
@@ -9,14 +13,16 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError(null);
+  const handleLogin = async () => {
     try {
+      // Set to session-only before logging in
+      await setPersistence(auth, browserSessionPersistence);
+      // Now log in
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // Redirect after successful login
-    } catch (err) {
-      setError("Login failed. Check your credentials.");
+      // Redirect to dashboard or wherever
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Login failed", error);
     }
   };
 
