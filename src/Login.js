@@ -30,7 +30,6 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="border p-2 w-full mb-2"
             required
           />
           <input
@@ -38,16 +37,10 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="border p-2 w-full mb-2"
             required
           />
           {error && <div className="error">{error}</div>}
-          <button
-            type="submit"
-            className="bg-blue-600 text-white px-4 py-2 w-full"
-          >
-            Login
-          </button>
+          <button type="submit">Login</button>
         </form>
       </div>
     </div>
