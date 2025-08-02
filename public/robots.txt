@@ -3,6 +3,5 @@ Allow: /
 Disallow: /dashboard
 Disallow: /dashboard/*
 Disallow: /login
-Disallow: /protectedroute
 
 Sitemap: https://goldsternonline.de/sitemap.xml
