@@ -15,22 +15,6 @@ const Dashboard = () => {
     navigate(`/dashboard/edit-car/${carId}`);
   };
 
-  const handleDelete = async (carId) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this car?"
-    );
-    if (!confirmDelete) return;
-
-    try {
-      await deleteDoc(doc(db, "Cars", carId));
-      setCars((prevCars) => prevCars.filter((car) => car.id !== carId));
-      alert("Car deleted successfully.");
-    } catch (error) {
-      console.error("Error deleting car:", error);
-      alert("Failed to delete car.");
-    }
-  };
-
   useEffect(() => {
     const fetchCars = async () => {
       try {
