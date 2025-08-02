@@ -16,7 +16,6 @@ const Dashboard = () => {
   const [cars, setCars] = useState([]);
   const [confirmDeleteId, setConfirmDeleteId] = useState(null);
   const navigate = useNavigate();
-  const carToDelete = cars.find((c) => c.id === confirmDeleteId);
 
   const handleEdit = (carId) => {
     navigate(`/dashboard/edit-car/${carId}`);
