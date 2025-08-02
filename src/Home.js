@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db, storage } from "./firebase"; // Adjust this import path based on your project structure
-import { ref, getDownloadURL } from "firebase/storage";
+import { db, storage } from "./firebase";
+import { ref, getDownloadURL, listAll } from "firebase/storage";
 import AOS from "aos";
 import { Helmet } from "react-helmet";
 import "aos/dist/aos.css";
@@ -16,6 +16,7 @@ const Home = () => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState("right");
   const [animate, setAnimate] = useState(false);
+  const [heroImageUrl, setHeroImageUrl] = useState(null);
 
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
@@ -33,6 +34,28 @@ const Home = () => {
       }
     };
     fetchReviews();
+  }, []);
+
+  // Fetch Hero Image from Firestore
+  useEffect(() => {
+    const fetchHeroImage = async () => {
+      try {
+        const folderRef = ref(storage, "Hero/");
+        const result = await listAll(folderRef);
+
+        // Only take the first image in the folder (you can loop if needed)
+        if (result.items.length > 0) {
+          const url = await getDownloadURL(result.items[0]);
+          setHeroImageUrl(url);
+        } else {
+          console.warn("No hero images found in 'Hero/' folder.");
+        }
+      } catch (error) {
+        console.error("Error fetching hero image:", error);
+      }
+    };
+
+    fetchHeroImage();
   }, []);
 
   // Auto-rotate every 5 seconds
@@ -54,6 +77,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [reviews]);
 
+  // Fetch Cars from Firestore
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
 
@@ -175,12 +199,14 @@ const Home = () => {
             //<h1 className="heading-1">SAVE BIG,</h1>
             //<h1 className="heading-2">DRIVE BOLD.</h1>
           }
-          <img
-            loading="lazy"
-            src="./Icons/hero.webp"
-            alt="background"
-            className="hero"
-          />
+          {heroImageUrl && (
+            <img
+              loading="lazy"
+              src={heroImageUrl}
+              alt="hero"
+              className="hero"
+            />
+          )}
         </div>
 
         {/* Services Section */}
