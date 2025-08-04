@@ -962,6 +962,11 @@
     min-width: 0px;
   }
 }
+.login .cont form .error-box {
+  padding: 10px 0px;
+  color: red;
+  text-align: center;
+}
 .login .cont form button {
   cursor: pointer;
   height: 50px;

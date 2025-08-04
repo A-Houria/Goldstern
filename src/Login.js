@@ -10,20 +10,39 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(""); // Clear previous error
 
     try {
-      // Make sure persistence is set *before* login
       await setPersistence(auth, browserSessionPersistence);
-
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
     } catch (err) {
       console.error("Login error:", err.message);
-      alert("Login failed.");
+
+      switch (err.code) {
+        case "auth/invalid-email":
+          setError("Invalid email format.");
+          break;
+        case "auth/user-disabled":
+          setError("This account has been disabled.");
+          break;
+        case "auth/user-not-found":
+          setError("No user found with this email.");
+          break;
+        case "auth/wrong-password":
+          setError("Incorrect password.");
+          break;
+        case "auth/too-many-requests":
+          setError("Too many attempts. Please try again later.");
+          break;
+        default:
+          setError("Unexpected error: " + err.message);
+      }
     }
   };
 
@@ -46,6 +65,7 @@ const Login = () => {
             placeholder="Password"
             required
           />
+          {error && <div className="error-box">{error}</div>}
           <button type="submit">Login</button>
         </form>
       </div>
