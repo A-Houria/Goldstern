@@ -3301,6 +3301,7 @@ a {
 .app .layout .contact .cont .icons .card {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 @media screen and (max-width: 1150px) {
   .app .layout .contact .cont .icons .card {
