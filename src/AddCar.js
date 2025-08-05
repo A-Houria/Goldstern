@@ -16,6 +16,7 @@ const AddCar = () => {
     Condition: "",
     Description: "",
     Featured: false,
+    Hidden: false,
     Engine_Specs: [],
     Exterior: [],
     Interior: [],
@@ -227,15 +228,17 @@ const AddCar = () => {
           </div>
         ))}
 
-        <div className="bool-section">
-          <h1>Featured</h1>
-          <input
-            type="checkbox"
-            id="featured-checkbox"
-            checked={formData.Featured || false}
-            onChange={(e) => handleChange("Featured", e.target.checked)}
-          />
-        </div>
+        {["Featured", "Hidden"].map((field) => (
+          <div className="bool-section" key={field}>
+            <h1>{field}</h1>
+            <input
+              type="checkbox"
+              id={`${field.toLowerCase()}-checkbox`}
+              checked={formData[field] || false}
+              onChange={(e) => handleChange(field, e.target.checked)}
+            />
+          </div>
+        ))}
 
         {["Engine_Specs", "Exterior", "Interior", "Special_Features"].map(
           (field) => (
