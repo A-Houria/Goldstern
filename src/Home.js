@@ -250,7 +250,9 @@ const Home = () => {
           <h1 className="header">Our Featured Cars</h1>
           <div className="cards">
             {featuredCars
-              .filter((car) => car.Featured === true && car.imageUrl)
+              .filter(
+                (car) => car.Featured === true && car.imageUrl && !car.Hidden
+              )
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
                   <div className="card" data-aos="fade-up">
@@ -260,9 +262,6 @@ const Home = () => {
                         <p>
                           {car.Name} {car.Model} {car.Production_Year}
                         </p>
-                        {/*<p>
-                          <div className="green"></div> Available Immediately
-                        </p>*/}
                       </div>
                     </div>
                   </div>

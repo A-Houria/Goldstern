@@ -93,7 +93,9 @@ const Inventory = () => {
         <h1 className="header">Our Featured Cars</h1>
         <div className="cards">
           {cars
-            .filter((car) => car.Featured === true && car.imageUrl)
+            .filter(
+              (car) => car.Featured === true && car.imageUrl && !car.Hidden
+            )
             .map((car) => (
               <Link to={`/car/${car.id}`} key={car.id}>
                 <div className="card" data-aos="fade-up">
@@ -103,9 +105,6 @@ const Inventory = () => {
                       <p>
                         {car.Name} {car.Model} {car.Production_Year}
                       </p>
-                      {/*<p>
-                          <div className="green"></div> Available Immediately
-                        </p>*/}
                     </div>
                   </div>
                 </div>
@@ -132,7 +131,7 @@ const Inventory = () => {
         <div className="filtered-cars">
           {filteredCars.filter((car) => car.imageUrl).length > 0 ? (
             filteredCars
-              .filter((car) => car.imageUrl)
+              .filter((car) => car.imageUrl && !car.Hidden)
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
                   <div className="card">
