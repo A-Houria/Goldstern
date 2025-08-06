@@ -1,4 +1,4 @@
-import Style from "./styles/Contact.module.css";
+import Style from "../../styles/Contact/Contact.module.css";
 
 import { Helmet } from "react-helmet";
 import { useState } from "react";

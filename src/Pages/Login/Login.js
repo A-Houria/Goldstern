@@ -1,11 +1,11 @@
-import Style from "./styles/Login.module.css";
+import Style from "../../styles/Login/Login.module.css";
 
 import {
   setPersistence,
   browserSessionPersistence,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "../../firebase";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

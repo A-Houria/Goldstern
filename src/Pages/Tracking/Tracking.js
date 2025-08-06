@@ -1,4 +1,4 @@
-import Style from "./styles/Tracking.module.css";
+import Style from "../../styles/Tracking/Tracking.module.css";
 
 import { useState, useEffect } from "react";
 

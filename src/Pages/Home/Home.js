@@ -1,9 +1,9 @@
-import Style from "./styles/Home.module.css";
+import Style from "../../styles/Home/Home.module.css";
 
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db, storage } from "./firebase";
+import { db, storage } from "../../firebase";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
 import AOS from "aos";
 import { Helmet } from "react-helmet";

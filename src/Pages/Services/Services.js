@@ -1,14 +1,15 @@
-import Style from "./styles/About.module.css";
+import Style from "../../styles/Services/Services.module.css";
 
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
-const About = () => {
+const Services = () => {
   const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
-    AOS.init({ duration: 800 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   const toggleCard = (index) => {
@@ -48,104 +49,147 @@ const About = () => {
     },
   ];
 
-  return (
-    <div className={Style.about}>
-      <div className={Style.story} data-aos="fade-up">
-        <h1>
-          <img loading="lazy" src="./Icons/story.webp" alt="Our Story" />
-          Our Story
-        </h1>
-        <p>
-          While studying software engineering in Germany, Abderhaman Houria
-          noticed a problem: back in Egypt, people were paying too much for cars
-          with too few choices. In Europe, great cars were affordable and
-          readily available.
-        </p>
-        <p>So in 2019, he founded Goldstern to bring those same cars home.</p>
-        <p>
-          At first, the mission was to help dealers and businesses import
-          premium vehicles. But it quickly became clear that everyday people
-          were stuck paying inflated prices through layers of middlemen.
-        </p>
-        <p>So we shifted focus.</p>
-        <p>
-          Today, Goldstern works directly with customers making car imports
-          simple, transparent, and fair. You can choose from ready-to-ship
-          models or order a car built exactly the way you want it.
-        </p>
-        <p>
-          Because buying a car should feel exciting, not frustrating. And above
-          all you deserve better
-        </p>
-      </div>
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "Goldstern",
+        url: "https://goldsternonline.de",
+        logo: "https://goldsternonline.de/logo.webp",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+20-10-00445786",
+          contactType: "customer service",
+          areaServed: "EG",
+          availableLanguage: ["English", "German", "Arabic"],
+        },
+        sameAs: [
+          "https://www.facebook.com/profile.php?id=61552608263446",
+          "https://www.instagram.com/goldstern_eg",
+          "https://www.tiktok.com/@goldstern.eg",
+          "https://www.linkedin.com/company/103967635",
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Goldstern Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "In-Stock Cars - Ready for Immediate Delivery",
+                description:
+                  "Luxury European cars ready for immediate delivery.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Import Your Dream Car",
+                description:
+                  "We assist with importing your dream car from Europe.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Expert Guidance & Consultation",
+                description:
+                  "Professional guidance and consultation during the import process.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "After-Sales Support",
+                description:
+                  "Comprehensive after-sales support for all imported vehicles.",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: answer,
+          },
+        })),
+      },
+    ],
+  };
 
-      <div className={Style.mission} data-aos="fade-up">
-        <div className={Style.cards}>
-          <div className={Style.card} data-aos="fade-right">
+  return (
+    <div className={Style.services}>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      </Helmet>
+      <div className={Style.service} data-aos="fade-up">
+        <h1 className={Style.title}>Our Services</h1>
+        <div className={Style.servicesCards}>
+          <div className={Style.card}>
             <h1>
               <img
                 loading="lazy"
-                src="./Icons/mission.webp"
-                alt="Our Mission"
+                src="./Icons/speed.webp"
+                alt="immediate delivery"
               />
-              Our Mission
+              Available Now , Drive Without Delay
             </h1>
             <p>
-              Revolutionizing the car-buying experience in Egypt by providing
-              luxury European cars directly to customers at factory prices. We
-              are committed to delivering a seamless, transparent, and
-              affordable car import service, ensuring that every car enthusiast
-              can access their dream vehicle with ease, efficiency, and
-              unmatched value.
+              Explore a curated selection of in-stock vehicles, ready for
+              immediate delivery.
             </p>
           </div>
-          <div className={Style.card} data-aos="fade-left">
+          <div className={Style.card}>
             <h1>
-              <img loading="lazy" src="./Icons/values.webp" alt="Our Values" />
-              Our Values
+              <img loading="lazy" src="./Icons/ship.webp" alt="Import" />
+              Custom Import Your Dream Car, Delivered
             </h1>
             <p>
-              <strong>Transparency</strong> We believe in open, honest
-              communication ensuring clarity and accountability in every step of
-              the process
+              Order your ideal car with the exact specifications, straight from
+              Europe to your doorstep.
             </p>
+          </div>
+          <div className={Style.card}>
+            <h1>
+              {" "}
+              <img
+                loading="lazy"
+                src="./Icons/guide.webp"
+                alt="Most Secure shipping"
+              />
+              Personalized Consultation & Expert Advice
+            </h1>
             <p>
-              <strong>Trust</strong> We earn and maintain trust through
-              consistency, integrity, and reliability with customers, partners,
-              and our team.
+              Receive tailored guidance from our specialists to help you choose
+              with confidence.
             </p>
+          </div>
+          <div className={Style.card}>
+            <h1>
+              <img
+                loading="lazy"
+                src="./Icons/support.webp"
+                alt="Guaranteed Delivery promises"
+              />
+              Premium After-Sales Care
+            </h1>
             <p>
-              <strong>Satisfaction</strong> Your experience comes first. We’re
-              committed to exceeding expectations and delivering service that
-              truly meets your needs.
-            </p>
-            <p>
-              <strong>Quality</strong> Excellence is our standard. From vehicle
-              selection to final delivery, we take pride in offering premium
-              products and detail-driven service.
+              Enjoy continued support and service that extends well
+              beyond the purchase.
             </p>
           </div>
         </div>
       </div>
-
-      <div className={Style.message} data-aos="fade-up">
-        <h1>
-          <img
-            loading="lazy"
-            src="./Icons/founder-message.webp"
-            alt="Founders' Message"
-          />
-          Founders' Message
-        </h1>
-        <p>
-          At Goldstern, we’re not just bringing luxury cars to Egypt, we’re
-          delivering dreams. With a passion for excellence and a commitment to
-          transparency, we’re here to redefine the car-buying experience. From
-          our family to yours, thank you for trusting us to bring your dream
-          ride to life.
-        </p>
-      </div>
-
       <div className={Style.import} data-aos="fade-up">
         <h1>Why Import with Us</h1>
         <div className={Style.cards}>
@@ -251,11 +295,7 @@ const About = () => {
             style={{ cursor: "pointer" }}
           >
             <h1>{faq.question}</h1>
-            <p
-              className={`${Style.baseClass} ${
-                activeCard === index ? Style.show : ""
-              }`}
-            >
+            <p className={`${activeCard === index ? Style.show : ""}`}>
               {faq.answer}
             </p>
           </div>
@@ -265,4 +305,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Services;

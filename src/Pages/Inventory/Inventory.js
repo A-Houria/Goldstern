@@ -1,8 +1,8 @@
-import Style from "./styles/Inventory.module.css";
+import Style from "../../styles/Inventory/Inventory.module.css";
 
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db, storage } from "./firebase";
+import { db, storage } from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import AOS from "aos";
 import "aos/dist/aos.css";

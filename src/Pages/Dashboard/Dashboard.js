@@ -1,4 +1,4 @@
-import Style from "./styles/Dashboard.module.css";
+import Style from "../../styles/Dashboard/Dashboard.module.css";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,9 +9,8 @@ import {
   uploadBytes,
   deleteObject,
 } from "firebase/storage";
-import { storage } from "./firebase";
+import { storage, db } from "../../firebase";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
-import { db } from "./firebase"; // make sure this points to your Firestore db
 
 const Dashboard = () => {
   const [heroImgUrl, setHeroImgUrl] = useState("");

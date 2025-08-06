@@ -1,20 +1,31 @@
-import Style from "./styles/Editcar.module.css";
+import Style from "../../styles/AddCar/Addcar.module.css";
 
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { db, storage } from "./firebase";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { db, storage } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const EditCar = () => {
-  const { id } = useParams();
+const AddCar = () => {
   const navigate = useNavigate();
-  const [car, setCar] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [formData, setFormData] = useState(null);
+  const [formData, setFormData] = useState({
+    Images: [],
+    Img: "",
+    Name: "",
+    Model: "",
+    Price: "",
+    Production_Year: "",
+    Condition: "",
+    Description: "",
+    Featured: false,
+    Hidden: false,
+    Engine_Specs: [],
+    Exterior: [],
+    Interior: [],
+    Special_Features: [],
+  });
   const [imageUrls, setImageUrls] = useState([]);
 
-  // Handle upload
   const handleImageUpload = async (e) => {
     const files = Array.from(e.target.files);
     if (!files.length) return;
@@ -25,7 +36,6 @@ const EditCar = () => {
         continue;
       }
 
-      // Validate image using FileReader + Image
       const isValid = await new Promise((resolve) => {
         const reader = new FileReader();
         reader.onload = (event) => {
@@ -58,7 +68,6 @@ const EditCar = () => {
         const url = await getDownloadURL(imageRef);
         const newPath = `Cars/${fileName}`;
 
-        // Update state
         setFormData((prev) => ({
           ...prev,
           Images: [...(prev.Images || []), newPath],
@@ -71,52 +80,8 @@ const EditCar = () => {
         alert(`Upload failed for ${file.name}`);
       }
     }
-
-    // ✅ Reset input value so selecting same files again will trigger onChange
     e.target.value = null;
   };
-
-  // Load image URLs from paths
-  useEffect(() => {
-    const fetchImageURLs = async () => {
-      if (formData?.Images?.length) {
-        try {
-          const urls = await Promise.all(
-            formData.Images.map(async (path) => {
-              const imgRef = ref(storage, path);
-              return await getDownloadURL(imgRef);
-            })
-          );
-          setImageUrls(urls);
-        } catch (error) {
-          console.error("Failed to load image URLs:", error);
-        }
-      }
-    };
-
-    fetchImageURLs();
-  }, [formData]);
-
-  // Fetch car data
-  useEffect(() => {
-    const fetchCar = async () => {
-      try {
-        const docRef = doc(db, "Cars", id);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setCar(docSnap.data());
-          setFormData(docSnap.data());
-        } else {
-          alert("Car not found.");
-        }
-      } catch (error) {
-        console.error("Error fetching car:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchCar();
-  }, [id]);
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({
@@ -143,35 +108,45 @@ const EditCar = () => {
   };
 
   const handleSubmit = async () => {
+    // Validation
+    if (!formData.Images || formData.Images.length < 1) {
+      alert("Please upload at least one image.");
+      return;
+    }
+
+    const requiredFields = [
+      "Name",
+      "Model",
+      "Price",
+      "Production_Year",
+      "Condition",
+    ];
+    for (const field of requiredFields) {
+      if (!formData[field] || formData[field].trim() === "") {
+        alert(`Please fill in the ${field} field.`);
+        return;
+      }
+    }
+
     const confirmed = window.confirm(
-      "Are you sure you want to submit changes?"
+      "Are you sure you want to submit this new car?"
     );
     if (!confirmed) return;
 
     try {
-      const docRef = doc(db, "Cars", id);
-      await updateDoc(docRef, formData);
-      alert("Car updated successfully!");
+      await addDoc(collection(db, "Cars"), formData);
+      alert("New car added successfully!");
       navigate("/dashboard");
     } catch (error) {
-      console.error("Update failed:", error);
-      alert("Failed to update car.");
+      console.error("Failed to add new car:", error);
+      alert("Failed to add new car.");
     }
   };
 
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-      </div>
-    );
-
-  if (!car || !formData) return <p>Car not found.</p>;
-
   return (
-    <div className={Style.editCar}>
+    <div className={Style.addCar}>
       <div className={Style.cont}>
-        <h1 className={Style.mainTitle}>Edit car details</h1>
+        <h1 className={Style.mainTitle}>Add New Car</h1>
 
         <div className={Style.imagesSection}>
           <div className={Style.imagesTitle}>
@@ -305,4 +280,4 @@ const EditCar = () => {
   );
 };
 
-export default EditCar;
+export default AddCar;

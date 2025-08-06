@@ -1,4 +1,4 @@
-import Style from "./styles/Layout.module.css";
+import Style from "../../styles/Layout/Layout.module.css";
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 

@@ -1,9 +1,9 @@
-import Style from "./styles/CarDetails.module.css";
+import Style from "../../styles/CarDetails/CarDetails.module.css";
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
-import { db, storage } from "./firebase";
+import { db, storage } from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import AOS from "aos";
 import "aos/dist/aos.css";

@@ -7,20 +7,20 @@ import {
 } from "react-router-dom";
 
 //Pages
-import Layout from "./Layout";
-import Home from "./Home";
-import About from "./About";
-import Inventory from "./Inventory";
-import Services from "./Services";
-import Contact from "./Contact";
-import CarDetails from "./CarDetails";
-import Tracking from "./Tracking";
-import Nopage from "./Nopage";
-import Login from "./Login";
-import ProtectedRoute from "./ProtectedRoute";
-import Dashboard from "./Dashboard";
-import CarEdit from "./CarEdit";
-import AddCar from "./AddCar";
+import Layout from "../Layout/Layout";
+import Home from "../Home/Home";
+import About from "../About/About";
+import Inventory from "../Inventory/Inventory";
+import Services from "../Services/Services";
+import Contact from "../Contact/Contact";
+import CarDetails from "../CarDetails/CarDetails";
+import Tracking from "../Tracking/Tracking";
+import Nopage from "../NoPage/Nopage";
+import Login from "../Login/Login";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import Dashboard from "../Dashboard/Dashboard";
+import CarEdit from "../CarEdit/CarEdit";
+import AddCar from "../AddCar/AddCar";
 
 //Router
 const router = createBrowserRouter(
