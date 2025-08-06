@@ -3,5 +3,6 @@ Allow: /
 Disallow: /dashboard
 Disallow: /dashboard/*
 Disallow: /login
+Disallow: /blogs
 
 Sitemap: https://goldsternonline.de/sitemap.xml
