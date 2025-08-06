@@ -1,0 +1,234 @@
+//Transitions
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//Styles
+
+.loadingContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100px;
+    animation: rotate 0.5s linear infinite;
+  }
+}
+
+.inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .featured {
+    margin: 50px;
+    margin-top: 0px;
+    .header {
+      font-size: 3vw;
+      margin: 50px 0px;
+      text-align: center;
+      @media screen and (max-width: 650px) {
+        font-size: 4.5vw;
+      }
+    }
+    h1 {
+      font-size: 3.5px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      background-color: rgba($color: white, $alpha: 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 10px 30px;
+      border-radius: 10px;
+    }
+    .cards {
+      min-width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      flex-wrap: wrap;
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 35%;
+        padding-bottom: 20px;
+        background-color: rgba($color: white, $alpha: 0.4);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        img {
+          width: 400px;
+          aspect-ratio: 3/2;
+          margin-bottom: 20px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          @media screen and (max-width: 500px) {
+            width: 100%;
+          }
+        }
+        .text {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          h1 {
+            text-align: center;
+            width: 100%;
+            font-size: 1.5vw;
+            letter-spacing: 3px;
+            margin: 15px;
+            @media screen and (max-width: 1100px) {
+              font-size: 3.5vw;
+            }
+          }
+          .parts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            flex-wrap: wrap;
+            p {
+              min-width: 60%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              font-size: 18px;
+              letter-spacing: 2px;
+              font-weight: 400;
+              text-align: start;
+              color: black;
+              font-weight: 400;
+              border-radius: 5px;
+              @media screen and (max-width: 500px) {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .carList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    .carNav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 90%;
+      justify-content: space-between;
+      padding: 25px 50px;
+      border-bottom: 1px solid lightgray;
+
+      @media screen and (max-width: 650px) {
+        flex-direction: column;
+        padding: 25px 0px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2.5vw;
+        font-weight: 400;
+        letter-spacing: 2px;
+        background-color: rgba($color: white, $alpha: 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 10px 30px;
+        border-radius: 10px;
+        @media screen and (max-width: 650px) {
+          font-size: 3.5vw;
+          margin: 25px;
+        }
+      }
+
+      .searchBar {
+        display: flex;
+        justify-content: center;
+        width: 45%;
+        background-color: rgba($color: white, $alpha: 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        @media screen and (max-width: 650px) {
+          width: 80%;
+        }
+
+        .searchInput {
+          width: 100%;
+          padding: 20px;
+          font-size: 16px;
+          border-radius: 4px;
+          background-color: rgba($color: white, $alpha: 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border: none;
+          outline: none;
+        }
+      }
+    }
+    .filteredCars {
+      min-width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin: 50px;
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 35%;
+        padding-bottom: 20px;
+        background-color: rgb(248, 248, 248);
+        border: 2px solid rgb(235, 235, 235);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        @media screen and (max-width: 500px) {
+          width: 80%;
+          margin: auto;
+        }
+        img {
+          width: 400px;
+          aspect-ratio: 3/2;
+          margin-bottom: 20px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          @media screen and (max-width: 500px) {
+            width: 100%;
+          }
+        }
+        .text {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          p {
+            min-width: 60%;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: 400;
+            color: black;
+            border-radius: 5px;
+            @media screen and (max-width: 500px) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

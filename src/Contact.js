@@ -1,3 +1,5 @@
+import Style from "./styles/Contact.module.css";
+
 import { Helmet } from "react-helmet";
 import { useState } from "react";
 
@@ -122,19 +124,19 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
+    <div className={Style.contact}>
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(contactSchema)}
         </script>
       </Helmet>
-      <div className="cont">
-        <div className="main">
-          <div className="text">
+      <div className={Style.cont}>
+        <div className={Style.main}>
+          <div className={Style.text}>
             <h1>Contact US</h1>
-            <div className="line"></div>
+            <div className={Style.line}></div>
             <p>Reach out to us for any inquiry</p>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className={Style.form} onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="firstName"
@@ -187,11 +189,11 @@ const Contact = () => {
                 onChange={handleChange}
                 required
               ></textarea>
-              <input className="btn" type="submit" value="Submit" />
+              <input className={Style.btn} type="submit" value="Submit" />
               {status && <p>{status}</p>}
             </form>
           </div>
-          <div className="map">
+          <div className={Style.map}>
             <iframe
               loading="lazy"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8626251711094!2d30.952414111132747!3d30.040798774820875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859dff6b9c047%3A0x452cc613a0ce1844!2zR29sZHN0ZXJuIC0g2KzZiNmE2K_YtNiq2LHZhg!5e0!3m2!1sen!2sde!4v1748620027312!5m2!1sen!2sde"
@@ -202,10 +204,10 @@ const Contact = () => {
             ></iframe>
           </div>
         </div>
-        <div className="icons">
-          <div className="card">
+        <div className={Style.icons}>
+          <div className={Style.card}>
             <img loading="lazy" src="./Icons/location.webp" alt="Location" />
-            <div className="details">
+            <div className={Style.details}>
               <h1>Location</h1>
               <p>
                 Goldstern: Makan Mall, Waslet Dahshur Rd, Second Al Sheikh
@@ -213,16 +215,16 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <div className="card">
+          <div className={Style.card}>
             <img loading="lazy" src="./Icons/email.webp" alt="Email" />
-            <div className="details">
+            <div className={Style.details}>
               <h1>Email</h1>
               <p>info@goldsternonline.de</p>
             </div>
           </div>
-          <div className="card">
+          <div className={Style.card}>
             <img loading="lazy" src="./Icons/phone.webp" alt="Phone" />
-            <div className="details">
+            <div className={Style.details}>
               <h1>Phone</h1>
               <p>
                 <span>

@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
 
   if (loading)
     return (
-      <div className="loading-container">
+      <div className="loadingContainer">
         <img loading="lazy" src="/Icons/Logo-black.webp" alt="Loading..." />
       </div>
     );

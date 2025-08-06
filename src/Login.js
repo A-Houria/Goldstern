@@ -1,3 +1,5 @@
+import Style from "./styles/Login.module.css";
+
 import {
   setPersistence,
   browserSessionPersistence,
@@ -47,8 +49,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="cont">
+    <div className={Style.login}>
+      <div className={Style.cont}>
         <h1>Admin Login</h1>
         <form onSubmit={handleLogin}>
           <input
@@ -65,7 +67,7 @@ const Login = () => {
             placeholder="Password"
             required
           />
-          {error && <div className="error-box">{error}</div>}
+          {error && <div className={Style.errorBox}>{error}</div>}
           <button type="submit">Login</button>
         </form>
       </div>

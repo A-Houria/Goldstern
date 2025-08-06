@@ -1,0 +1,329 @@
+//Transitions
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//Styles
+
+.loadingContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100px;
+    animation: rotate 0.5s linear infinite;
+  }
+}
+
+.carDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .floatingMessage {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 500;
+    cursor: pointer;
+
+    img {
+      max-width: 75px;
+      aspect-ratio: 1 / 1;
+      transform: rotate(180deg);
+    }
+
+    .notification {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      width: 15px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background-color: red;
+    }
+  }
+  .inquiryFormContainer {
+    z-index: 1000;
+    background-color: rgba($color: white, $alpha: 0.9);
+    position: fixed;
+    bottom: 90px;
+    right: 90px;
+    width: 350px;
+    max-width: 90vw;
+    border-radius: 10px;
+    padding: 25px 20px;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideDownFadeIn 0.3s ease forwards;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    @media screen and (max-width: 500px) {
+      bottom: 100px;
+      right: 15px;
+    }
+    h1 {
+      font-size: 19.5px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 1.25;
+      margin: 20px 0px 40px 0px;
+      text-align: center;
+      letter-spacing: 1.2px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin: 20px 0px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input,
+      textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        &:focus {
+          border-color: #555;
+        }
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+        max-height: 150px;
+      }
+
+      button {
+        padding: 12px 0;
+        font-weight: 600;
+        font-size: 1.1rem;
+        background-color: #222;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .card {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    width: fit-content;
+    background-color: rgba($color: white, $alpha: 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 3px;
+    padding-bottom: 30px;
+    position: relative;
+    @media screen and (max-width: 850px) {
+      max-width: unset;
+      margin-top: 50px;
+      width: 90%;
+    }
+
+    .mainImage {
+      width: 100%;
+      //border: 3px solid white;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      @media screen and (max-width: 1080px) {
+        height: 80vh;
+      }
+      @media screen and (max-width: 960px) {
+        height: unset;
+        width: 100%;
+      }
+    }
+    .carouselContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      background-color: black;
+      color: white;
+
+      .imageIndex {
+        flex: 1;
+        text-align: center;
+      }
+      .arrow {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 44px;
+        padding: 10px 40px;
+        cursor: pointer;
+        @media screen and (max-width: 500px) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .general {
+      width: 100%;
+      z-index: 150;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 5%;
+      padding-top: 40px;
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      p {
+        font-size: 0.8vw;
+        letter-spacing: 2px;
+        @media screen and (max-width: 1000px) {
+          font-size: 2vw;
+          margin: 5px 20px;
+        }
+      }
+    }
+  }
+
+  .details {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media screen and (max-width: 850px) {
+      width: 90%;
+      margin: 25px auto;
+    }
+
+    .specialFeatures,
+    .engineSpecs,
+    .exterior,
+    .interior {
+      display: flex;
+      flex-direction: column;
+      margin: 25px 0px;
+      background-color: rgba($color: white, $alpha: 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 0px 20px;
+      width: 100%;
+      .contentWrapper {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+      }
+
+      .contentWrapper.open {
+        max-height: 1500px;
+      }
+
+      h1 {
+        width: 100%;
+        margin: 20px;
+        font-size: 1.5vw;
+        font-weight: 400;
+        letter-spacing: 2px;
+        user-select: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .arrowIcon {
+          margin-right: 25px;
+          font-size: 0.8em;
+        }
+        @media screen and (max-width: 850px) {
+          font-size: 2.5vw;
+        }
+      }
+      p {
+        font-size: 0.9vw;
+        letter-spacing: 2px;
+        line-height: 2.5;
+        font-weight: 400;
+        margin: 20px 20px 20px 20px;
+        padding: 5px 20px;
+        border-bottom: 1px solid rgb(235, 235, 235);
+        user-select: none;
+        @media screen and (max-width: 850px) {
+          font-size: 2vw;
+        }
+      }
+    }
+  }
+  .description {
+    width: 80%;
+    margin: 100px auto;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba($color: white, $alpha: 0.4);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: 850px) {
+      width: 90%;
+    }
+
+    h1 {
+      margin: 20px 0px;
+      font-size: 1.5vw;
+      font-weight: 400;
+      letter-spacing: 2px;
+
+      @media screen and (max-width: 850px) {
+        font-size: 2.5vw;
+      }
+    }
+    p {
+      font-size: 0.9vw;
+      letter-spacing: 2px;
+      line-height: 2.5;
+      font-weight: 400;
+      @media screen and (max-width: 850px) {
+        font-size: 2vw;
+      }
+    }
+  }
+}

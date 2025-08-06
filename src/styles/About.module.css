@@ -1,0 +1,343 @@
+.about {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100px;
+}
+.about .story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+}
+.about .story h1 {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  align-self: start;
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 750px) {
+  .about .story h1 {
+    font-size: 22px;
+  }
+}
+.about .story h1 img {
+  width: 75px;
+  aspect-ratio: 1/1;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 750px) {
+  .about .story h1 img {
+    width: 50px;
+    padding: 5px;
+  }
+}
+.about .story p {
+  width: 100%;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 15px 0px;
+  line-height: 1.5;
+}
+.about .mission {
+  margin: 0px;
+}
+@media screen and (max-width: 750px) {
+  .about .mission {
+    width: 100%;
+    margin: 0px;
+  }
+}
+.about .mission .cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 750px) {
+  .about .mission .cards {
+    width: 100%;
+    margin: 0px;
+  }
+}
+.about .mission .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5%;
+}
+.about .mission .cards .card h1 {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  align-self: start;
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 750px) {
+  .about .mission .cards .card h1 {
+    font-size: 22px;
+  }
+}
+.about .mission .cards .card h1 img {
+  width: 75px;
+  aspect-ratio: 1/1;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 750px) {
+  .about .mission .cards .card h1 img {
+    width: 50px;
+    padding: 5px;
+  }
+}
+.about .mission .cards .card p {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: 100%;
+  margin: 25px 0px;
+  line-height: 1.5;
+}
+.about .message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: 50px auto;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.about .message h1 {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  align-self: start;
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 750px) {
+  .about .message h1 {
+    font-size: 22px;
+  }
+}
+.about .message h1 img {
+  width: 75px;
+  aspect-ratio: 1/1;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 750px) {
+  .about .message h1 img {
+    width: 50px;
+    padding: 5px;
+  }
+}
+.about .message p {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: 100%;
+  margin: 25px 0px;
+  line-height: 25px;
+}
+.about .import {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 100px auto;
+}
+.about .import h1 {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
+  align-self: flex-start;
+}
+@media screen and (max-width: 750px) {
+  .about .import h1 {
+    font-size: 28px;
+  }
+}
+.about .import .cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  gap: 50px;
+  width: 100%;
+}
+@media screen and (max-width: 1300px) {
+  .about .import .cards {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+}
+.about .import .cards .card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 19px;
+}
+@media screen and (max-width: 1300px) {
+  .about .import .cards .card {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .about .import .cards .card {
+    width: 90%;
+  }
+}
+.about .import .cards .card img {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.about .import .cards .card .text {
+  padding: 50px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+  .about .import .cards .card .text {
+    padding: 50px 20px 20px 20px;
+  }
+}
+.about .import .cards .card .text h1 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: start;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+@media screen and (max-width: 750px) {
+  .about .import .cards .card .text h1 {
+    font-size: 4.5vw;
+  }
+}
+.about .import .cards .card .text p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: start;
+  margin: 25px 0px;
+  line-height: 25px;
+}
+@media screen and (max-width: 550px) {
+  .about .import .cards .card .text p {
+    font-size: 3.5vw;
+  }
+}
+.about .faqs {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 50px auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 5%;
+  border-radius: 10px;
+}
+.about .faqs h1 {
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 50px 20px;
+}
+@media screen and (max-width: 650px) {
+  .about .faqs h1 {
+    font-size: 7.5vw;
+  }
+}
+.about .faqs .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px 0px;
+}
+.about .faqs .card h1 {
+  font-size: 34px;
+  padding: 5px 20px;
+  width: 100%;
+  margin: 15px 0px;
+  text-align: start;
+  cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+  .about .faqs .card h1 {
+    font-size: 3vw;
+  }
+}
+.about .faqs .card p {
+  padding-left: 25px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: 80%;
+  line-height: 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+@media screen and (max-width: 650px) {
+  .about .faqs .card p {
+    font-size: 2.5vw;
+  }
+}
+.about .faqs .card p.show {
+  max-height: 100px;
+  opacity: 1;
+}/*# sourceMappingURL=About.module.css.map */

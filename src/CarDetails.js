@@ -1,3 +1,5 @@
+import Style from "./styles/CarDetails.module.css";
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
@@ -176,14 +178,14 @@ const CarDetails = () => {
 
   if (loading)
     return (
-      <div className="loading-container">
+      <div className={Style.loadingContainer}>
         <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
   if (error)
     return (
-      <div className="error-container">
+      <div>
         <p>Error: {error}</p>
         <p>Please refresh the page.</p>
       </div>
@@ -223,17 +225,17 @@ const CarDetails = () => {
         />
       )}
 
-      <div className="car-details">
+      <div className={Style.carDetails}>
         <div
-          className="floating-message"
+          className={Style.floatingMessage}
           style={{ cursor: "pointer" }}
           onClick={() => setShowInquiryForm(!showInquiryForm)}
         >
           <img loading="lazy" src="/Icons/message.webp" alt="Message" />
-          <div className="notification"></div>
+          <div className={Style.notification}></div>
         </div>
         {showInquiryForm && (
-          <div className="inquiry-form-container" data-aos="fade-down">
+          <div className={Style.inquiryFormContainer} data-aos="fade-down">
             <h1>Interested? Send your car inquiry!</h1>
             <p>
               {car.Name} {car.Model} {car.Production_Year}
@@ -288,44 +290,35 @@ const CarDetails = () => {
           </div>
         )}
         {car && (
-          <div className="card" data-aos="fade-up">
+          <div className={Style.card} data-aos="fade-up">
             <img
               loading="lazy"
-              className="main-image"
+              className={Style.mainImage}
               src={car.galleryUrls[selectedImageIndex]}
               alt={`Image ${selectedImageIndex + 1}`}
             />
 
-            <div className="carousel-container">
-              {/*<button
-                className={`arrow left ${!arrowClicked ? "bounce" : ""}`}
+            <div className={Style.carouselContainer}>
+              <button
+                className={`${Style.arrow} ${Style.left}`}
                 onClick={handlePrevClick}
               >
                 ‹
-              </button> */}
-              <button className={`arrow left`} onClick={handlePrevClick}>
-                ‹
               </button>
 
-              {/*<div className={`image-index ${!arrowClicked ? "bounce" : ""}`}>
-                {selectedImageIndex + 1} / {car.galleryUrls.length}
-              </div>*/}
-              <div className={`image-index`}>
+              <div className={Style.imageIndex}>
                 {selectedImageIndex + 1} / {car.galleryUrls.length}
               </div>
 
-              {/* <button
-                className={`arrow right ${!arrowClicked ? "bounce" : ""}`}
+              <button
+                className={`${Style.arrow} ${Style.right}`}
                 onClick={handleNextClick}
               >
-                ›
-              </button>*/}
-              <button className={`arrow right`} onClick={handleNextClick}>
                 ›
               </button>
             </div>
 
-            <div className="general">
+            <div className={Style.general}>
               <p>Car Brand: {car.Name}</p>
               <p>Car Model: {car.Model}</p>
               <p>Production Year: {car.Production_Year}</p>
@@ -335,29 +328,29 @@ const CarDetails = () => {
         )}
 
         {car.Description && (
-          <div className="description" data-aos="fade-up">
+          <div className={Style.description} data-aos="fade-up">
             <h1>Description</h1>
             <p>{car.Description}</p>
           </div>
         )}
 
-        <div className="details">
+        <div className={Style.details}>
           {car.Special_Features && (
             <div
-              className="special-features"
+              className={Style.specialFeatures}
               data-aos="fade-right"
               onClick={() => toggleSection("specialFeatures")}
               style={{ cursor: "pointer" }}
             >
               <h1>
                 Special Features
-                <span className="arrow-icon">
+                <span className={Style.arrowIcon}>
                   {openSections.specialFeatures ? "▲" : "▼"}
                 </span>
               </h1>
               <div
-                className={`content-wrapper ${
-                  openSections.specialFeatures ? "open" : ""
+                className={`${Style.contentWrapper} ${
+                  openSections.specialFeatures ? Style.open : ""
                 }`}
               >
                 {car.Special_Features.map((feature, index) => (
@@ -369,20 +362,20 @@ const CarDetails = () => {
 
           {car.Engine_Specs && (
             <div
-              className="engine-specs"
+              className={Style.engineSpecs}
               data-aos="fade-right"
               onClick={() => toggleSection("engineSpecs")}
               style={{ cursor: "pointer" }}
             >
               <h1>
                 Engine Specs
-                <span className="arrow-icon">
+                <span className={Style.arrowIcon}>
                   {openSections.engineSpecs ? "▲" : "▼"}
                 </span>
               </h1>
               <div
-                className={`content-wrapper ${
-                  openSections.engineSpecs ? "open" : ""
+                className={`${Style.contentWrapper} ${
+                  openSections.engineSpecs ? Style.open : ""
                 }`}
               >
                 {car.Engine_Specs.map((spec, index) => (
@@ -394,20 +387,20 @@ const CarDetails = () => {
 
           {car.Exterior && (
             <div
-              className="exterior"
+              className={Style.exterior}
               data-aos="fade-right"
               onClick={() => toggleSection("exterior")}
               style={{ cursor: "pointer" }}
             >
               <h1>
                 Exterior
-                <span className="arrow-icon">
+                <span className={Style.arrowIcon}>
                   {openSections.exterior ? "▲" : "▼"}
                 </span>
               </h1>
               <div
-                className={`content-wrapper ${
-                  openSections.exterior ? "open" : ""
+                className={`${Style.contentWrapper} ${
+                  openSections.exterior ? Style.open : ""
                 }`}
               >
                 {car.Exterior.map((ex, index) => (
@@ -419,20 +412,20 @@ const CarDetails = () => {
 
           {car.Interior && (
             <div
-              className="interior"
+              className={Style.interior}
               data-aos="fade-right"
               onClick={() => toggleSection("interior")}
               style={{ cursor: "pointer" }}
             >
               <h1>
                 Interior
-                <span className="arrow-icon">
+                <span className={Style.arrowIcon}>
                   {openSections.interior ? "▲" : "▼"}
                 </span>
               </h1>
               <div
-                className={`content-wrapper ${
-                  openSections.interior ? "open" : ""
+                className={`${Style.contentWrapper} ${
+                  openSections.interior ? Style.open : ""
                 }`}
               >
                 {car.Interior.map((int, index) => (

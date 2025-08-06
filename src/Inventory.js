@@ -1,3 +1,5 @@
+import Style from "./styles/Inventory.module.css";
+
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db, storage } from "./firebase";
@@ -68,40 +70,36 @@ const Inventory = () => {
     setSearchQuery(query);
   };
 
-  const handleBrandSelect = (brand) => {
-    setSelectedBrand(brand);
-  };
-
   if (loading)
     return (
-      <div className="loading-container">
+      <div className={Style.loadingContainer}>
         <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
   if (error)
     return (
-      <div className="error-container">
+      <div>
         <p>Error: {error}</p>
         <p>Please refresh the page.</p>
       </div>
     );
 
   return (
-    <div className="inventory">
-      <div className="featured" data-aos="fade-left">
-        <h1 className="header">Our Featured Cars</h1>
-        <div className="cards">
+    <div className={Style.inventory}>
+      <div className={Style.featured} data-aos="fade-left">
+        <h1 className={Style.header}>Our Featured Cars</h1>
+        <div className={Style.cards}>
           {cars
             .filter(
               (car) => car.Featured === true && car.imageUrl && !car.Hidden
             )
             .map((car) => (
               <Link to={`/car/${car.id}`} key={car.id}>
-                <div className="card" data-aos="fade-up">
+                <div className={Style.card} data-aos="fade-up">
                   <img loading="lazy" src={car.imageUrl} alt={car.Model} />
-                  <div className="text">
-                    <div className="parts">
+                  <div className={Style.text}>
+                    <div className={Style.parts}>
                       <p>
                         {car.Name} {car.Model} {car.Production_Year}
                       </p>
@@ -113,14 +111,14 @@ const Inventory = () => {
         </div>
       </div>
 
-      <div className="car-list">
-        <div className="car-nav">
+      <div className={Style.carList}>
+        <div className={Style.carNav}>
           <h1>Our Inventory</h1>
 
-          <div className="search-bar">
+          <div className={Style.searchBar}>
             <input
               type="text"
-              className="search-input"
+              className={Style.searchInput}
               placeholder="Search cars..."
               value={searchQuery}
               onChange={handleSearch}
@@ -128,15 +126,15 @@ const Inventory = () => {
           </div>
         </div>
 
-        <div className="filtered-cars">
+        <div className={Style.filteredCars}>
           {filteredCars.filter((car) => car.imageUrl).length > 0 ? (
             filteredCars
               .filter((car) => car.imageUrl && !car.Hidden)
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
-                  <div className="card">
+                  <div className={Style.card}>
                     <img loading="lazy" src={car.imageUrl} alt={car.Model} />
-                    <div className="text">
+                    <div className={Style.text}>
                       <p>
                         {car.Name} {car.Model} {car.Production_Year}
                       </p>
@@ -145,7 +143,7 @@ const Inventory = () => {
                 </Link>
               ))
           ) : (
-            <p className="no-cars-message">No cars were found.</p>
+            <p>No cars were found.</p>
           )}
         </div>
       </div>

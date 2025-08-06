@@ -1,0 +1,220 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 100px;
+  .service {
+    width: 80%;
+    margin: auto;
+
+    margin-bottom: 50px;
+    .title {
+      font-size: 42px;
+      font-weight: 400;
+      padding: 10px 35px;
+      background-color: rgba($color: white, $alpha: 0.4);
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: fit-content;
+      margin: 20px 0px 50px 0px;
+      @media screen and (max-width: 500px) {
+        font-size: 24px;
+      }
+    }
+    .servicesCards {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .card {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba($color: white, $alpha: 0.4);
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 2%;
+        @media screen and (max-width: 500px) {
+          padding: 5%;
+        }
+        h1 {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 26px;
+          font-weight: 400;
+          margin-bottom: 15px;
+          @media screen and (max-width: 500px) {
+            font-size: 18px;
+          }
+          img {
+            width: 50px;
+            margin-right: 20px;
+            background-color: rgba($color: white, $alpha: 0.4);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 7px;
+          }
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 2px;
+          line-height: 1.5;
+          padding-left: 7%;
+          @media screen and (max-width: 500px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .import {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 100px auto;
+    h1 {
+      width: 100%;
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      background-color: rgba($color: white, $alpha: 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 10px 30px;
+      margin-bottom: 50px;
+      border-radius: 10px;
+      align-self: flex-start;
+      @media screen and (max-width: 750px) {
+        font-size: 28px;
+      }
+    }
+    .cards {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      gap: 50px;
+      width: 100%;
+      @media screen and (max-width: 1300px) {
+        flex-direction: column;
+        margin-top: 50px;
+      }
+      .card {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba($color: white, $alpha: 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 19px;
+        @media screen and (max-width: 1300px) {
+          width: 70%;
+        }
+        @media screen and (max-width: 850px) {
+          width: 90%;
+        }
+        img {
+          width: 100%;
+          border-top-right-radius: 8px;
+          border-top-left-radius: 8px;
+          transition: all 0.5s ease;
+          cursor: pointer;
+        }
+        .text {
+          padding: 50px 50px 20px 50px;
+          display: flex;
+          flex-direction: column;
+          @media screen and (max-width: 500px) {
+            padding: 50px 20px 20px 20px;
+          }
+          h1 {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-align: start;
+            margin: 0px;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+            @media screen and (max-width: 750px) {
+              font-size: 4.5vw;
+            }
+          }
+          p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            width: 100%;
+            text-align: start;
+            margin: 25px 0px;
+            line-height: 25px;
+            @media screen and (max-width: 550px) {
+              font-size: 3.5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .faqs {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 50px auto;
+    user-select: none;
+    background-color: rgba($color: white, $alpha: 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 5%;
+    border-radius: 10px;
+    h1 {
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin: 50px 20px;
+      @media screen and (max-width: 650px) {
+        font-size: 7.5vw;
+      }
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 15px 0px;
+      h1 {
+        font-size: 34px;
+        padding: 5px 20px;
+        width: 100%;
+        margin: 15px 0px;
+        text-align: start;
+        cursor: pointer;
+        @media screen and (max-width: 650px) {
+          font-size: 3vw;
+        }
+      }
+      p {
+        padding-left: 25px;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        width: 80%;
+        line-height: 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+        @media screen and (max-width: 650px) {
+          font-size: 2.5vw;
+        }
+        &.show {
+          max-height: 100px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+import Style from "./styles/Dashboard.module.css";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -109,11 +111,11 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard">
-      <div className="cont">
-        <h1 className="dash-title">Dashboard</h1>
-        <div className="hero-section">
-          <div className="title">
+    <div className={Style.dashboard}>
+      <div className={Style.cont}>
+        <h1 className={Style.dashTitle}>Dashboard</h1>
+        <div className={Style.heroSection}>
+          <div className={Style.title}>
             <h1>Hero Section</h1>
             <input
               type="file"
@@ -128,8 +130,8 @@ const Dashboard = () => {
               *Replace
             </button>
           </div>
-          <div className="card">
-            <div className="text">
+          <div className={Style.card}>
+            <div className={Style.text}>
               <p>(*Image must have a .webp file extension,</p>
               <p>*Image must have 16/9 ratio,</p>
               <p>*Image must have a 1200px maximum width)</p>
@@ -139,31 +141,34 @@ const Dashboard = () => {
                 loading="lazy"
                 src={heroImgUrl}
                 alt="hero"
-                className="hero"
+                className={Style.hero}
               />
             )}
           </div>
         </div>
-        <div className="cars-section">
-          <div className="title">
+        <div className={Style.carsSection}>
+          <div className={Style.title}>
             <h1>Cars Section</h1>
             <button onClick={handleAdd}>*Add New</button>
           </div>
-          <div className="cards">
+          <div className={Style.cards}>
             {cars.map((car) => (
-              <div className="card" key={car.id}>
+              <div className={Style.card} key={car.id}>
                 <img src={car.imageUrl} alt={car.Model} />
-                <div className="text">
+                <div className={Style.text}>
                   <p>
                     {car.Name} {car.Model} {car.Production_Year}
                   </p>
                 </div>
-                <div className="settings">
-                  <button className="edit" onClick={() => handleEdit(car.id)}>
+                <div className={Style.settings}>
+                  <button
+                    className={Style.edit}
+                    onClick={() => handleEdit(car.id)}
+                  >
                     Edit
                   </button>
                   <button
-                    className="delete"
+                    className={Style.delete}
                     onClick={() => setConfirmDeleteId(car.id)}
                   >
                     Delete
@@ -173,12 +178,12 @@ const Dashboard = () => {
             ))}
           </div>
           {confirmDeleteId && (
-            <div className="modal-overlay">
-              <div className="modal">
+            <div className={Style.modalOverlay}>
+              <div className={Style.modal}>
                 <p>Are you sure you want to delete this car?</p>
-                <div className="modal-buttons">
+                <div className={Style.modalButtons}>
                   <button
-                    className="yes"
+                    className={Style.yes}
                     onClick={async () => {
                       try {
                         const carToDelete = cars.find(
@@ -220,7 +225,7 @@ const Dashboard = () => {
                     Yes
                   </button>
                   <button
-                    className="no"
+                    className={Style.no}
                     onClick={() => setConfirmDeleteId(null)}
                   >
                     No
@@ -230,12 +235,12 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className="blogs-section">
-          <div className="title">
+        <div className={Style.blogsSection}>
+          <div className={Style.title}>
             <h1>Blogs Section</h1>
             <button>*Add New</button>
           </div>
-          <div className="cards">
+          <div className={Style.cards}>
             <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />
             <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />
             <img src=".\Icons\worker.png" alt="Under Construction" />

@@ -1,23 +1,24 @@
+import Style from "./styles/Layout.module.css";
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const location = useLocation(); // 👈 get current route
+  const location = useLocation();
 
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); // 👈 scroll to top on route change
-  }, [location.pathname]); // 👈 trigger on pathname change
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      setIsSticky(offset > 100); // Adjust threshold as needed
+      setIsSticky(offset > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,10 +26,10 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="layout">
-      <div className={`nav ${isSticky ? "sticky" : ""}`}>
-        <div className="cont">
-          <div className="burger-cont">
+    <div className={Style.layout}>
+      <div className={`${Style.nav} ${isSticky ? Style.sticky : ""}`}>
+        <div className={Style.cont}>
+          <div className={Style.burgerCont}>
             <Link to="/">
               <img
                 loading="lazy"
@@ -37,49 +38,66 @@ const Layout = () => {
               />
             </Link>
             <div
-              className={`burger ${isOpen ? "open" : ""}`}
+              className={`${Style.burger} ${isOpen ? Style.open : ""}`}
               onClick={handleBurgerClick}
             >
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
+              <div className={Style.line}></div>
+              <div className={Style.line}></div>
+              <div className={Style.line}></div>
             </div>
           </div>
-          <ul className={`list ${isOpen ? "open" : ""}`}>
-            <NavLink onClick={handleBurgerClick} to="/">
+          <ul className={`${Style.list} ${isOpen ? Style.open : ""}`}>
+            <NavLink
+              onClick={handleBurgerClick}
+              to="/"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
               Home
             </NavLink>
-            <NavLink onClick={handleBurgerClick} to="/about">
+            <NavLink
+              onClick={handleBurgerClick}
+              to="/about"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
               About Us
             </NavLink>
-            <NavLink onClick={handleBurgerClick} to="/inventory">
+            <NavLink
+              onClick={handleBurgerClick}
+              to="/inventory"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
               Car Inventory
             </NavLink>
-            <NavLink onClick={handleBurgerClick} to="/services">
+            <NavLink
+              onClick={handleBurgerClick}
+              to="/services"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
               Services
             </NavLink>
-            <NavLink onClick={handleBurgerClick} to="/contact">
+            <NavLink
+              onClick={handleBurgerClick}
+              to="/contact"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
               Contact Us
             </NavLink>
-            <NavLink onClick={handleBurgerClick} to="/tracking">
+            <NavLink
+              onClick={handleBurgerClick}
+              to="/tracking"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
               Tracking
             </NavLink>
           </ul>
-          <Link
-            className={`login ${isOpen ? "open" : ""}`}
-            onClick={handleBurgerClick}
-            to="/"
-          >
-            User-Portal
-          </Link>
         </div>
       </div>
-      <main className={isSticky ? "padded" : ""}>
+      <main className={isSticky ? Style.padded : ""}>
         <Outlet />
-        <div className="wrapper"></div>
+        <div className={Style.wrapper}></div>
       </main>
-      <div className="footer">
-        <div className="social-media">
+      <div className={Style.footer}>
+        <div className={Style.socialMedia}>
           <a
             href="https://www.facebook.com/profile.php?id=61552608263446"
             target="_blank"
@@ -121,7 +139,7 @@ const Layout = () => {
             </p>
           </a>
         </div>
-        <div className="line-break"></div>
+        <div className={Style.lineBreak}></div>
         <p>&copy; Goldstern, All Rights Reserved.</p>
       </div>
     </div>

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import Style from "./styles/About.module.css";
+
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -47,8 +49,8 @@ const About = () => {
   ];
 
   return (
-    <div className="about">
-      <div className="story" data-aos="fade-up">
+    <div className={Style.about}>
+      <div className={Style.story} data-aos="fade-up">
         <h1>
           <img loading="lazy" src="./Icons/story.webp" alt="Our Story" />
           Our Story
@@ -77,9 +79,9 @@ const About = () => {
         </p>
       </div>
 
-      <div className="mission" data-aos="fade-up">
-        <div className="cards">
-          <div className="card" data-aos="fade-right">
+      <div className={Style.mission} data-aos="fade-up">
+        <div className={Style.cards}>
+          <div className={Style.card} data-aos="fade-right">
             <h1>
               <img
                 loading="lazy"
@@ -97,7 +99,7 @@ const About = () => {
               unmatched value.
             </p>
           </div>
-          <div className="card" data-aos="fade-left">
+          <div className={Style.card} data-aos="fade-left">
             <h1>
               <img loading="lazy" src="./Icons/values.webp" alt="Our Values" />
               Our Values
@@ -126,7 +128,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="message" data-aos="fade-up">
+      <div className={Style.message} data-aos="fade-up">
         <h1>
           <img
             loading="lazy"
@@ -144,16 +146,16 @@ const About = () => {
         </p>
       </div>
 
-      <div className="import" data-aos="fade-up">
+      <div className={Style.import} data-aos="fade-up">
         <h1>Why Import with Us</h1>
-        <div className="cards">
-          <div className="card" data-aos="zoom-in">
+        <div className={Style.cards}>
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Piggy_Bank.webp"
               alt="Cheapest Prices, No Middlemen"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Cheapest Prices, No Middlemen</h1>
               <p>
                 We bring you luxury European cars at direct prices, cutting out
@@ -162,13 +164,13 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Options.webp"
               alt="Wide Range of Options"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Wide Range of Options</h1>
               <p>
                 Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or
@@ -177,13 +179,13 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Fast_Ship.webp"
               alt="Fast & Seamless Process"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Fast & Seamless Process</h1>
               <p>
                 Forget about long waiting times and complicated processes. We
@@ -192,13 +194,13 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Transparent_Pricing.webp"
               alt="Transparent Pricing"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Transparent Pricing</h1>
               <p>
                 No hidden fees, no surprises. We believe in honesty and
@@ -206,13 +208,13 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Trust.webp"
               alt="Trusted Expertise"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Trusted Expertise</h1>
               <p>
                 With over 5,000 cars imported to Egypt and the Middle East, we
@@ -221,13 +223,13 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Rating.webp"
               alt="Customer-Focused Service"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Customer-Focused Service</h1>
               <p>
                 Your satisfaction is our priority. From the moment you choose
@@ -239,17 +241,21 @@ const About = () => {
         </div>
       </div>
 
-      <div className="faqs" data-aos="fade-up">
+      <div className={Style.faqs} data-aos="fade-up">
         <h1>FAQs</h1>
         {faqs.map((faq, index) => (
           <div
-            className="card"
+            className={Style.card}
             key={index}
             onClick={() => toggleCard(index)}
             style={{ cursor: "pointer" }}
           >
             <h1>{faq.question}</h1>
-            <p className={`${activeCard === index ? "show" : ""}`}>
+            <p
+              className={`${Style.baseClass} ${
+                activeCard === index ? Style.show : ""
+              }`}
+            >
               {faq.answer}
             </p>
           </div>

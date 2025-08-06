@@ -1,0 +1,246 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loadingContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.loadingContainer img {
+  width: 100px;
+  animation: rotate 0.5s linear infinite;
+}
+
+.inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inventory .featured {
+  margin: 50px;
+  margin-top: 0px;
+}
+.inventory .featured .header {
+  font-size: 3vw;
+  margin: 50px 0px;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .inventory .featured .header {
+    font-size: 4.5vw;
+  }
+}
+.inventory .featured h1 {
+  font-size: 3.5px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+.inventory .featured .cards {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+.inventory .featured .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 35%;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.inventory .featured .cards .card img {
+  width: 400px;
+  aspect-ratio: 3/2;
+  margin-bottom: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+@media screen and (max-width: 500px) {
+  .inventory .featured .cards .card img {
+    width: 100%;
+  }
+}
+.inventory .featured .cards .card .text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inventory .featured .cards .card .text h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 1.5vw;
+  letter-spacing: 3px;
+  margin: 15px;
+}
+@media screen and (max-width: 1100px) {
+  .inventory .featured .cards .card .text h1 {
+    font-size: 3.5vw;
+  }
+}
+.inventory .featured .cards .card .text .parts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.inventory .featured .cards .card .text .parts p {
+  min-width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-align: start;
+  color: black;
+  font-weight: 400;
+  border-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .inventory .featured .cards .card .text .parts p {
+    font-size: 12px;
+  }
+}
+.inventory .carList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+}
+.inventory .carList .carNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  padding: 25px 50px;
+  border-bottom: 1px solid lightgray;
+}
+@media screen and (max-width: 650px) {
+  .inventory .carList .carNav {
+    flex-direction: column;
+    padding: 25px 0px;
+    width: 100%;
+  }
+}
+.inventory .carList .carNav h1 {
+  font-size: 2.5vw;
+  font-weight: 400;
+  letter-spacing: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 650px) {
+  .inventory .carList .carNav h1 {
+    font-size: 3.5vw;
+    margin: 25px;
+  }
+}
+.inventory .carList .carNav .searchBar {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+@media screen and (max-width: 650px) {
+  .inventory .carList .carNav .searchBar {
+    width: 80%;
+  }
+}
+.inventory .carList .carNav .searchBar .searchInput {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+}
+.inventory .carList .filteredCars {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+.inventory .carList .filteredCars .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 35%;
+  padding-bottom: 20px;
+  background-color: rgb(248, 248, 248);
+  border: 2px solid rgb(235, 235, 235);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 500px) {
+  .inventory .carList .filteredCars .card {
+    width: 80%;
+    margin: auto;
+  }
+}
+.inventory .carList .filteredCars .card img {
+  width: 400px;
+  aspect-ratio: 3/2;
+  margin-bottom: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+@media screen and (max-width: 500px) {
+  .inventory .carList .filteredCars .card img {
+    width: 100%;
+  }
+}
+.inventory .carList .filteredCars .card .text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inventory .carList .filteredCars .card .text p {
+  min-width: 60%;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: black;
+  border-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .inventory .carList .filteredCars .card .text p {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=Inventory.module.css.map */

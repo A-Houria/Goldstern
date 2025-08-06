@@ -21,28 +21,21 @@
 
 //Styles
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+.loadingContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100px;
+    animation: rotate 0.5s linear infinite;
+  }
 }
 
 .home {
   overflow: hidden;
-
-  .loadingContainer {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 100px;
-      animation: rotate 0.5s linear infinite;
-    }
-  }
 
   .reviews {
     display: flex;

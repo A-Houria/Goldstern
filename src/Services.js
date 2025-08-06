@@ -1,44 +1,16 @@
-import React, { useState, useEffect } from "react";
+import Style from "./styles/Services.module.css";
+
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
 
 const Services = () => {
   const [activeCard, setActiveCard] = useState(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert("Your inquiry was sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("There was an issue sending your inquiry.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("There was an error sending your inquiry.");
-    }
-  };
 
   const toggleCard = (index) => {
     setActiveCard(activeCard === index ? null : index);
@@ -84,7 +56,7 @@ const Services = () => {
         "@type": "Organization",
         name: "Goldstern",
         url: "https://goldsternonline.de",
-        logo: "https://goldsternonline.de/logo.webp", // update if you have logo
+        logo: "https://goldsternonline.de/logo.webp",
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+20-10-00445786",
@@ -156,14 +128,14 @@ const Services = () => {
   };
 
   return (
-    <div className="services">
+    <div className={Style.services}>
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
-      <div className="service" data-aos="fade-up">
-        <h1 className="title">Our Services</h1>
-        <div className="services-cards">
-          <div className="card">
+      <div className={Style.service} data-aos="fade-up">
+        <h1 className={Style.title}>Our Services</h1>
+        <div className={Style.servicesCards}>
+          <div className={Style.card}>
             <h1>
               <img
                 loading="lazy"
@@ -177,7 +149,7 @@ const Services = () => {
               immediate delivery.
             </p>
           </div>
-          <div className="card">
+          <div className={Style.card}>
             <h1>
               <img loading="lazy" src="./Icons/ship.webp" alt="Import" />
               Custom Import Your Dream Car, Delivered
@@ -187,7 +159,7 @@ const Services = () => {
               Europe to your doorstep.
             </p>
           </div>
-          <div className="card">
+          <div className={Style.card}>
             <h1>
               {" "}
               <img
@@ -202,7 +174,7 @@ const Services = () => {
               with confidence.
             </p>
           </div>
-          <div className="card">
+          <div className={Style.card}>
             <h1>
               <img
                 loading="lazy"
@@ -218,16 +190,16 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="import" data-aos="fade-up">
+      <div className={Style.import} data-aos="fade-up">
         <h1>Why Import with Us</h1>
-        <div className="cards">
-          <div className="card" data-aos="zoom-in">
+        <div className={Style.cards}>
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Piggy_Bank.webp"
               alt="Cheapest Prices, No Middlemen"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Cheapest Prices, No Middlemen</h1>
               <p>
                 We bring you luxury European cars at direct prices, cutting out
@@ -236,13 +208,13 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Options.webp"
               alt="Wide Range of Options"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Wide Range of Options</h1>
               <p>
                 Whether you're looking for a Mercedes, BMW, Porsche, Skoda, or
@@ -251,13 +223,13 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Fast_Ship.webp"
               alt="Fast & Seamless Process"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Fast & Seamless Process</h1>
               <p>
                 Forget about long waiting times and complicated processes. We
@@ -266,13 +238,13 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Transparent_Pricing.webp"
               alt="Transparent Pricing"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Transparent Pricing</h1>
               <p>
                 No hidden fees, no surprises. We believe in honesty and
@@ -280,13 +252,13 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Trust.webp"
               alt="Trusted Expertise"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Trusted Expertise</h1>
               <p>
                 With over 5,000 cars imported to Egypt and the Middle East, we
@@ -295,13 +267,13 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="card" data-aos="zoom-in">
+          <div className={Style.card} data-aos="zoom-in">
             <img
               loading="lazy"
               src="./Icons/Rating.webp"
               alt="Customer-Focused Service"
             />
-            <div className="text">
+            <div className={Style.text}>
               <h1>Customer-Focused Service</h1>
               <p>
                 Your satisfaction is our priority. From the moment you choose
@@ -313,17 +285,17 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="faqs" data-aos="fade-up">
+      <div className={Style.faqs} data-aos="fade-up">
         <h1>FAQs</h1>
         {faqs.map((faq, index) => (
           <div
-            className="card"
+            className={Style.card}
             key={index}
             onClick={() => toggleCard(index)}
             style={{ cursor: "pointer" }}
           >
             <h1>{faq.question}</h1>
-            <p className={`${activeCard === index ? "show" : ""}`}>
+            <p className={`${activeCard === index ? Style.show : ""}`}>
               {faq.answer}
             </p>
           </div>

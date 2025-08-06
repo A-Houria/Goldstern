@@ -1,3 +1,5 @@
+import Style from "./styles/Tracking.module.css";
+
 import { useState, useEffect } from "react";
 
 function Tracking() {
@@ -110,22 +112,21 @@ function Tracking() {
   const currentOrder = findOrder();
 
   return (
-    <div className="tracking-container">
+    <div className={Style.trackingContainer}>
       <h1>Track Your Vehicle Shipment</h1>
-      <div className="search-section">
-        <div className="search-inputs">
+      <div className={Style.searchSection}>
+        <div className={Style.searchInputs}>
           <input
             type="text"
             value={vinInput}
             onChange={(e) => setVinInput(e.target.value)}
             placeholder="Enter VIN Number"
-            className="search-field"
-            onKeyPress={(e) => e.key === "Enter" && handleTrack()}
+            className={Style.searchField}
           />
 
           <button
             onClick={handleTrack}
-            className="search-button"
+            className={Style.searchButton}
             disabled={loading}
           >
             {loading ? "Loading Data..." : "Track"}
@@ -133,28 +134,36 @@ function Tracking() {
         </div>
       </div>
 
-      {loading && <div className="status-message loading">Loading data...</div>}
-      {error && <div className="status-message error">Error: {error}</div>}
+      {loading && (
+        <div className={`${Style.statusMessage} ${Style.loading}`}>
+          Loading data...
+        </div>
+      )}
+      {error && (
+        <div className={`${Style.statusMessage} ${Style.error}`}>
+          Error: {error}
+        </div>
+      )}
 
       {showResults && currentOrder && (
-        <div className="order-details">
+        <div className={Style.orderDetails}>
           <h2>Order Details</h2>
-          <div className="details-grid">
-            <div className="element">
+          <div className={Style.detailsGrid}>
+            <div className={Style.element}>
               <strong>Car Model</strong> {currentOrder["Car Model"]}
             </div>
-            <div className="element">
+            <div className={Style.element}>
               <strong>VIN</strong> {currentOrder["VIN"]}
             </div>
-            <div className="element">
+            <div className={Style.element}>
               <strong>Invoice No.</strong> {currentOrder["Invoice No."]}
             </div>
-            <div className="element">
+            <div className={Style.element}>
               <strong>Buyer</strong> {currentOrder["Buyer"]}
             </div>
           </div>
 
-          <div className="history-log">
+          <div className={Style.historyLog}>
             <h3>History Log</h3>
             <HistoryTimeline steps={getTrackingSteps(currentOrder)} />
           </div>
@@ -162,7 +171,7 @@ function Tracking() {
       )}
 
       {showResults && !currentOrder && (
-        <div className="status-message no-results">
+        <div className={`${Style.statusMessage} ${Style.noResults}`}>
           No order found with VIN: {searchedVin}
         </div>
       )}
@@ -170,42 +179,25 @@ function Tracking() {
   );
 }
 
-const TrackingProgress = ({ steps }) => {
-  const completedSteps = steps.filter((step) => step.completed).length;
-  const progress = (completedSteps / steps.length) * 100;
-
-  return (
-    <div className="tracking-progress">
-      <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-      {steps.map((step, index) => (
-        <div
-          key={step.id}
-          className={`step ${step.completed ? "completed" : ""}`}
-        >
-          <div className="step-icon">{step.completed ? "✓" : index + 1}</div>
-          <div className="step-text">
-            {step.name}
-            {step.date && <div className="step-date">{step.date}</div>}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const HistoryTimeline = ({ steps }) => {
   return (
-    <div className="timeline">
+    <div className={Style.timeline}>
       {steps
         .filter((step) => step.completed || step.id === "order_received")
         .map((step, index) => (
-          <div key={step.id} className="history-item">
-            <div className="history-icon">{step.completed ? "✓" : "•"}</div>
-            <div className="history-content">
+          <div key={step.id} className={Style.historyItem}>
+            <div className={Style.historyIcon}>
+              {step.completed ? "✓" : "•"}
+            </div>
+            <div className={Style.historyContent}>
               <strong>{step.name}</strong>
-              {step.date && <div className="history-date">{step.date}</div>}
+              {step.date && (
+                <div className={Style.historyDate}>{step.date}</div>
+              )}
               {!step.date && step.id === "order_received" && (
-                <div className="history-date">We've received your order</div>
+                <div className={Style.historyDate}>
+                  We've received your order
+                </div>
               )}
             </div>
           </div>

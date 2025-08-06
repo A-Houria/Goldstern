@@ -1,3 +1,5 @@
+import Style from "./styles/Addcar.module.css";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db, storage } from "./firebase";
@@ -142,12 +144,12 @@ const AddCar = () => {
   };
 
   return (
-    <div className="add-car">
-      <div className="cont">
-        <h1 className="main-title">Add New Car</h1>
+    <div className={Style.addCar}>
+      <div className={Style.cont}>
+        <h1 className={Style.mainTitle}>Add New Car</h1>
 
-        <div className="images-section">
-          <div className="images-title">
+        <div className={Style.imagesSection}>
+          <div className={Style.imagesTitle}>
             <h1>Images</h1>
             <input
               type="file"
@@ -158,24 +160,24 @@ const AddCar = () => {
               onChange={handleImageUpload}
             />
             <button
-              className="add-image"
+              className={Style.addImage}
               onClick={() => document.getElementById("upload-image").click()}
             >
               *Add Image
             </button>
           </div>
-          <div className="rules">
+          <div className={Style.rules}>
             <p>(*Image must have a .webp file extension,</p>
             <p>*Image must have 3/2 ratio,</p>
             <p>*Image must have a 1200px maximum width)</p>
           </div>
-          <div className="images-cards">
+          <div className={Style.imagesCards}>
             {imageUrls.map((url, index) => (
-              <div key={index} className="image-card">
+              <div key={index} className={Style.imageCard}>
                 <img src={url} alt={`Car ${index}`} />
-                <div className="image-actions">
+                <div className={Style.imageActions}>
                   <button
-                    className="main"
+                    className={Style.main}
                     onClick={() => handleChange("Img", formData.Images[index])}
                     disabled={formData.Images[index] === formData.Img}
                   >
@@ -184,7 +186,7 @@ const AddCar = () => {
                       : "Set as Main"}
                   </button>
                   <button
-                    className="delete"
+                    className={Style.delete}
                     onClick={() => handleRemoveItem("Images", index)}
                   >
                     Delete
@@ -203,7 +205,7 @@ const AddCar = () => {
           "Condition",
           "Description",
         ].map((field) => (
-          <div key={field} className="string-section">
+          <div key={field} className={Style.stringSection}>
             <h1>{field}</h1>
             {field === "Description" ? (
               <textarea
@@ -229,7 +231,7 @@ const AddCar = () => {
         ))}
 
         {["Featured", "Hidden"].map((field) => (
-          <div className="bool-section" key={field}>
+          <div className={Style.boolSection} key={field}>
             <h1>{field}</h1>
             <input
               type="checkbox"
@@ -242,10 +244,10 @@ const AddCar = () => {
 
         {["Engine_Specs", "Exterior", "Interior", "Special_Features"].map(
           (field) => (
-            <div key={field} className="array-section">
+            <div key={field} className={Style.arraySection}>
               <h1>{field}</h1>
               {(formData[field] || []).map((item, index) => (
-                <div key={index} className="array-item">
+                <div key={index} className={Style.arrayItem}>
                   <input
                     type="text"
                     value={item}
@@ -259,7 +261,7 @@ const AddCar = () => {
                 </div>
               ))}
               <button
-                className="array-btn"
+                className={Style.arrayBtn}
                 onClick={() => handleAddItem(field)}
               >
                 + Add
@@ -269,7 +271,7 @@ const AddCar = () => {
         )}
 
         <div>
-          <button className="submit-btn" onClick={handleSubmit}>
+          <button className={Style.submitBtn} onClick={handleSubmit}>
             Submit
           </button>
         </div>

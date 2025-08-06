@@ -1,0 +1,91 @@
+.login .cont {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 550px) {
+  .login .cont {
+    width: 90%;
+    padding: 10px;
+  }
+}
+.login .cont h1 {
+  letter-spacing: 2px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.login .cont form {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 20px;
+}
+@media screen and (max-width: 550px) {
+  .login .cont form {
+    width: 100%;
+  }
+}
+.login .cont form .error {
+  width: 100%;
+  color: rgb(255, 97, 97);
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+.login .cont form input {
+  min-width: 350px;
+  height: 50px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: grey;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+}
+@media screen and (max-width: 550px) {
+  .login .cont form input {
+    min-width: 0px;
+  }
+}
+.login .cont form .errorBox {
+  padding: 10px 0px;
+  color: red;
+  text-align: center;
+}
+.login .cont form button {
+  cursor: pointer;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}/*# sourceMappingURL=Login.module.css.map */
