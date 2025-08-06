@@ -1,0 +1,73 @@
+.addBlog .cont {
+  width: 70%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+@media screen and (max-width: 1100px) {
+  .addBlog .cont {
+    width: 90%;
+  }
+}
+.addBlog .cont .mainTitle {
+  letter-spacing: 3px;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.addBlog .cont input,
+.addBlog .cont textarea,
+.addBlog .cont .imageUpload {
+  width: inherit;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.addBlog .cont input input,
+.addBlog .cont textarea input,
+.addBlog .cont .imageUpload input {
+  background: none;
+}
+@media screen and (max-width: 1100px) {
+  .addBlog .cont input,
+  .addBlog .cont textarea,
+  .addBlog .cont .imageUpload {
+    width: 100%;
+  }
+}
+.addBlog .cont .submit {
+  min-height: 35px;
+  width: inherit;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addBlog .cont .submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+@media screen and (max-width: 1100px) {
+  .addBlog .cont .submit {
+    width: 100%;
+  }
+}
+.addBlog .cont textarea {
+  padding: 5px 0px 0px 5px;
+  min-height: 70px;
+}/*# sourceMappingURL=AddBlog.module.css.map */

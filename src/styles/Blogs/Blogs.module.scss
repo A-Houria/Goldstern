@@ -1,0 +1,114 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100px;
+    animation: rotate 0.5s linear infinite;
+  }
+}
+
+.blogs {
+  .cont {
+    width: 70%;
+    margin: 50px auto;
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
+
+    .mainTitle {
+      margin: 30px 0px;
+      letter-spacing: 3px;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 50px;
+
+      .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 20px;
+        padding: 10px 30px 10px 10px;
+        background-color: rgba($color: white, $alpha: 0.4);
+        color: black;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        transition: all ease 0.5s;
+
+        @media screen and (max-width: 1100px) {
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        cursor: pointer;
+        &:hover {
+          background-color: rgba($color: white, $alpha: 1);
+          transform: scale(1.02);
+        }
+
+        .image {
+          max-width: 50%;
+          @media screen and (max-width: 1100px) {
+            max-width: unset;
+            width: 100%;
+          }
+          img {
+            max-width: 100%;
+            border-radius: 5px;
+          }
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .blogTitle {
+            font-size: 32px;
+            letter-spacing: 3px;
+            line-height: 1.5;
+            font-weight: 400;
+            margin-bottom: 10px;
+          }
+
+          p {
+            margin: 5px 0px;
+            line-height: 1.5;
+
+            &.author,
+            &.date {
+              font-size: 14px;
+              letter-spacing: 2px;
+              font-weight: 400;
+            }
+            &.summary {
+              font-size: 18px;
+              letter-spacing: 2px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import Style from "../../styles/ProtectedRoute/ProtectedRoute.module.css";
 import { Navigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
@@ -7,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
 
   if (loading)
     return (
-      <div className="loadingContainer">
+      <div className={Style.loadingContainer}>
         <img loading="lazy" src="/Icons/Logo-black.webp" alt="Loading..." />
       </div>
     );

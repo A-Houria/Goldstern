@@ -10,6 +10,7 @@ import {
 import Layout from "../Layout/Layout";
 import Home from "../Home/Home";
 import About from "../About/About";
+import Blogs from "../Blogs/Blogs";
 import Inventory from "../Inventory/Inventory";
 import Services from "../Services/Services";
 import Contact from "../Contact/Contact";
@@ -21,6 +22,8 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import CarEdit from "../CarEdit/CarEdit";
 import AddCar from "../AddCar/AddCar";
+import AddBlog from "../AddBlog/AddBlog";
+import BlogDetails from "../BlogDetails/BlogDetails";
 
 //Router
 const router = createBrowserRouter(
@@ -28,10 +31,12 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/blogs" element={<Blogs />} />
       <Route path="/inventory" element={<Inventory />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/car/:id" element={<CarDetails />} />
+      <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path="/tracking" element={<Tracking />} />
       <Route path="/login" element={<Login />} />
       <Route
@@ -55,6 +60,14 @@ const router = createBrowserRouter(
         element={
           <ProtectedRoute>
             <AddCar />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/add-blog"
+        element={
+          <ProtectedRoute>
+            <AddBlog />
           </ProtectedRoute>
         }
       />

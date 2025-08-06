@@ -21,8 +21,11 @@ const Dashboard = () => {
   const handleEdit = (carId) => {
     navigate(`/dashboard/edit-car/${carId}`);
   };
-  const handleAdd = (carId) => {
+  const handleAddCar = (carId) => {
     navigate(`/dashboard/add-car`);
+  };
+  const handleAddBlog = (carId) => {
+    navigate(`/dashboard/add-blog`);
   };
 
   useEffect(() => {
@@ -148,7 +151,7 @@ const Dashboard = () => {
         <div className={Style.carsSection}>
           <div className={Style.title}>
             <h1>Cars Section</h1>
-            <button onClick={handleAdd}>*Add New</button>
+            <button onClick={handleAddCar}>*Add New</button>
           </div>
           <div className={Style.cards}>
             {cars.map((car) => (
@@ -237,7 +240,7 @@ const Dashboard = () => {
         <div className={Style.blogsSection}>
           <div className={Style.title}>
             <h1>Blogs Section</h1>
-            <button>*Add New</button>
+            <button onClick={handleAddBlog}>*Add New</button>
           </div>
           <div className={Style.cards}>
             <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />

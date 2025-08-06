@@ -61,6 +61,13 @@ const Layout = () => {
             >
               About Us
             </NavLink>
+            {/*<NavLink
+              onClick={handleBurgerClick}
+              to="/blogs"
+              className={({ isActive }) => (isActive ? Style.active : "")}
+            >
+              Blogs
+            </NavLink>*/}
             <NavLink
               onClick={handleBurgerClick}
               to="/inventory"
