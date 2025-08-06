@@ -10,6 +10,11 @@
     padding: 30px;
     border-radius: 5px;
 
+    @media screen and (max-width: 600px) {
+      width: 90%;
+      padding: 10px;
+    }
+
     .title {
       letter-spacing: 3px;
       font-size: 32px;

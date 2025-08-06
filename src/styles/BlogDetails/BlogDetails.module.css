@@ -9,6 +9,12 @@
   padding: 30px;
   border-radius: 5px;
 }
+@media screen and (max-width: 600px) {
+  .blogDetails .cont {
+    width: 90%;
+    padding: 10px;
+  }
+}
 .blogDetails .cont .title {
   letter-spacing: 3px;
   font-size: 32px;
