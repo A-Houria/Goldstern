@@ -1,3 +1,5 @@
+import Style from "./styles/Home.module.css";
+
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
@@ -117,14 +119,14 @@ const Home = () => {
 
   if (loading)
     return (
-      <div className="loading-container">
+      <div className={Style.loadingContainer}>
         <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
       </div>
     );
 
   if (error)
     return (
-      <div className="error-container">
+      <div>
         <p>Error: {error}</p>
         <p>Please refresh the page.</p>
       </div>
@@ -192,28 +194,24 @@ const Home = () => {
           })}
         </script>
       </Helmet>
-      <div className="home">
+      <div className={Style.home}>
         {/* Hero Section */}
-        <div className="hero" data-aos="fade-up">
-          {
-            //<h1 className="heading-1">SAVE BIG,</h1>
-            //<h1 className="heading-2">DRIVE BOLD.</h1>
-          }
+        <div className={Style.hero} data-aos="fade-up">
           {heroImageUrl && (
             <img
               loading="lazy"
               src={heroImageUrl}
               alt="hero"
-              className="hero"
+              className={Style.hero}
             />
           )}
         </div>
 
         {/* Services Section */}
-        <div className="text">
-          <div className="services" data-aos="fade-right">
+        <div className={Style.text}>
+          <div className={Style.services} data-aos="fade-right">
             <h1>Our Services</h1>
-            <ul className="services-list">
+            <ul className={Style.servicesList}>
               <li data-aos="fade-right">
                 <img
                   loading="lazy"
@@ -246,19 +244,19 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="featured" data-aos="fade-left">
-          <h1 className="header">Our Featured Cars</h1>
-          <div className="cards">
+        <div className={Style.featured} data-aos="fade-left">
+          <h1 className={Style.header}>Our Featured Cars</h1>
+          <div className={Style.cards}>
             {featuredCars
               .filter(
                 (car) => car.Featured === true && car.imageUrl && !car.Hidden
               )
               .map((car) => (
                 <Link to={`/car/${car.id}`} key={car.id}>
-                  <div className="card" data-aos="fade-up">
+                  <div className={Style.card} data-aos="fade-up">
                     <img loading="lazy" src={car.imageUrl} alt={car.Model} />
-                    <div className="text">
-                      <div className="parts">
+                    <div className={Style.text}>
+                      <div className={Style.parts}>
                         <p>
                           {car.Name} {car.Model} {car.Production_Year}
                         </p>
@@ -269,15 +267,15 @@ const Home = () => {
               ))}
           </div>
           <NavLink onClick={handleBurgerClick} to="/inventory">
-            <button className="inventory">View Inventory</button>
+            <button className={Style.inventory}>View Inventory</button>
           </NavLink>
         </div>
 
-        <div className="details" data-aos="fade-up">
-          <h1 className="how">How it works</h1>
-          <div className="process" data-aos="fade-right">
-            <h1 className="process-title">Step By Step Process</h1>
-            <ul className="process-list">
+        <div className={Style.details} data-aos="fade-up">
+          <h1 className={Style.how}>How it works</h1>
+          <div className={Style.process} data-aos="fade-right">
+            <h1 className={Style.processTitle}>Step By Step Process</h1>
+            <ul className={Style.processList}>
               <li>
                 <h1>
                   <span>1</span> Contact Our Team
@@ -351,7 +349,7 @@ const Home = () => {
                   keep your vehicle in excellent condition for years to come.
                 </p>
               </li>
-              <h1 className="quote">
+              <h1 className={Style.quote}>
                 "From the first step to the final handover, we make importing
                 your dream car easy, seamless, and completely transparent — so
                 you can drive with confidence and peace of mind."
@@ -359,20 +357,22 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        <div className="reviews" data-aos="fade-up">
-          <h1 className="title">Our clients trust us</h1>
-          <p className="sub-title">
+        <div className={Style.reviews} data-aos="fade-up">
+          <h1 className={Style.title}>Our clients trust us</h1>
+          <p className={Style.subTitle}>
             Here's what some of our satisfied clients had to say about us
           </p>
           {reviews.length > 0 ? (
             <div
-              className={`card ${animate ? `slide-${slideDirection}` : ""}`}
+              className={`${Style.card} ${
+                animate ? Style[`slide-${slideDirection}`] : ""
+              }`}
               key={currentReviewIndex}
             >
-              <p className="message">
+              <p className={Style.message}>
                 {reviews[currentReviewIndex].Message || "No message provided."}
               </p>
-              <div className="stars">
+              <div className={Style.stars}>
                 {Array.from(
                   { length: reviews[currentReviewIndex].Rating || 0 },
                   (_, i) => (
@@ -380,7 +380,9 @@ const Home = () => {
                   )
                 )}
               </div>
-              <p className="name">- {reviews[currentReviewIndex].Name} -</p>
+              <p className={Style.name}>
+                - {reviews[currentReviewIndex].Name} -
+              </p>
               <small>
                 <img src="./Icons/google.webp" alt="google" />
                 Google Review
