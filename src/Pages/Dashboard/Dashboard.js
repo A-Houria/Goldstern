@@ -27,8 +27,13 @@ const Dashboard = () => {
   const [blogs, setBlogs] = useState([]);
   const [confirmDeleteBlogId, setConfirmDeleteBlogId] = useState(null);
 
+  const [carsLoading, setCarsLoading] = useState(true);
+  const [blogsLoading, setBlogsLoading] = useState(true);
+  const [heroLoading, setHeroLoading] = useState(true);
+
   useEffect(() => {
     const fetchBlogs = async () => {
+      setBlogsLoading(true);
       try {
         const q = query(collection(db, "Blogs"), orderBy("createdAt", "desc"));
         const snapshot = await getDocs(q);
@@ -39,6 +44,8 @@ const Dashboard = () => {
         setBlogs(blogList);
       } catch (error) {
         console.error("Error fetching blogs:", error);
+      } finally {
+        setBlogsLoading(false);
       }
     };
 
@@ -48,10 +55,10 @@ const Dashboard = () => {
   const handleEdit = (carId) => {
     navigate(`/dashboard/edit-car/${carId}`);
   };
-  const handleAddCar = (carId) => {
+  const handleAddCar = () => {
     navigate(`/dashboard/add-car`);
   };
-  const handleAddBlog = (carId) => {
+  const handleAddBlog = () => {
     navigate(`/dashboard/add-blog`);
   };
   const handleEditBlog = (blogId) => {
@@ -73,6 +80,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchCars = async () => {
+      setCarsLoading(true);
       try {
         const snapshot = await getDocs(collection(db, "Cars"));
         const carData = await Promise.all(
@@ -91,6 +99,8 @@ const Dashboard = () => {
         setCars(carData);
       } catch (error) {
         console.error("Error fetching cars:", error);
+      } finally {
+        setCarsLoading(false);
       }
     };
 
@@ -99,6 +109,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchHeroImage = async () => {
+      setHeroLoading(true);
       try {
         const listRef = ref(storage, "Hero/");
         const res = await listAll(listRef);
@@ -111,6 +122,8 @@ const Dashboard = () => {
         }
       } catch (error) {
         console.error("Error fetching hero image:", error);
+      } finally {
+        setHeroLoading(false);
       }
     };
 
@@ -159,6 +172,8 @@ const Dashboard = () => {
     <div className={Style.dashboard}>
       <div className={Style.cont}>
         <h1 className={Style.dashTitle}>Dashboard</h1>
+
+        {/* Hero Section */}
         <div className={Style.heroSection}>
           <div className={Style.title}>
             <h1>Hero Section</h1>
@@ -181,24 +196,37 @@ const Dashboard = () => {
               <p>*Image must have 16/9 ratio,</p>
               <p>*Image must have a 1200px maximum width)</p>
             </div>
-            {heroImgUrl && (
-              <img
-                loading="lazy"
-                src={heroImgUrl}
-                alt="hero"
-                className={Style.hero}
-              />
+            {heroLoading ? (
+              <div className={Style.loadingContainer}>
+                <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
+              </div>
+            ) : (
+              heroImgUrl && (
+                <img
+                  loading="lazy"
+                  src={heroImgUrl}
+                  alt="hero"
+                  className={Style.hero}
+                />
+              )
             )}
           </div>
         </div>
+
+        {/* Cars Section */}
         <div className={Style.carsSection}>
           <div className={Style.title}>
             <h1>Cars Section</h1>
             <button onClick={handleAddCar}>*Add New</button>
           </div>
           <div className={Style.cards}>
-            {cars.length === 0 && <h1>No cars Found!</h1>}
-            {cars &&
+            {carsLoading ? (
+              <div className={Style.loadingContainer}>
+                <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
+              </div>
+            ) : cars.length === 0 ? (
+              <h1>No cars Found!</h1>
+            ) : (
               cars.map((car) => (
                 <div className={Style.card} key={car.id}>
                   <img src={car.imageUrl} alt={car.Model} />
@@ -222,8 +250,10 @@ const Dashboard = () => {
                     </button>
                   </div>
                 </div>
-              ))}
+              ))
+            )}
           </div>
+
           {confirmDeleteId && (
             <div className={Style.modalOverlay}>
               <div className={Style.modal}>
@@ -242,7 +272,6 @@ const Dashboard = () => {
                           return;
                         }
 
-                        // Delete image files from Firebase Storage
                         if (Array.isArray(carToDelete.Images)) {
                           const deletePromises = carToDelete.Images.map(
                             (path) => {
@@ -253,10 +282,7 @@ const Dashboard = () => {
                           await Promise.all(deletePromises);
                         }
 
-                        // Delete Firestore document
                         await deleteDoc(doc(db, "Cars", confirmDeleteId));
-
-                        // Update state
                         setCars((prev) =>
                           prev.filter((c) => c.id !== confirmDeleteId)
                         );
@@ -282,14 +308,21 @@ const Dashboard = () => {
             </div>
           )}
         </div>
+
+        {/* Blogs Section */}
         <div className={Style.blogsSection}>
           <div className={Style.title}>
             <h1>Blogs Section</h1>
             <button onClick={handleAddBlog}>*Add New</button>
           </div>
           <div className={Style.cards}>
-            {blogs.length === 0 && <h1>No Blogs Found!</h1>}
-            {blogs &&
+            {blogsLoading ? (
+              <div className={Style.loadingContainer}>
+                <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
+              </div>
+            ) : blogs.length === 0 ? (
+              <h1>No Blogs Found!</h1>
+            ) : (
               blogs.map((blog) => (
                 <div className={Style.card} key={blog.id}>
                   <div className={Style.image}>
@@ -327,7 +360,8 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))
+            )}
           </div>
 
           {confirmDeleteBlogId && (
