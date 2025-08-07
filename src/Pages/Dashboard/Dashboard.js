@@ -10,13 +10,40 @@ import {
   deleteObject,
 } from "firebase/storage";
 import { storage, db } from "../../firebase";
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  doc,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [heroImgUrl, setHeroImgUrl] = useState("");
   const [cars, setCars] = useState([]);
   const [confirmDeleteId, setConfirmDeleteId] = useState(null);
-  const navigate = useNavigate();
+  const [blogs, setBlogs] = useState([]);
+  const [confirmDeleteBlogId, setConfirmDeleteBlogId] = useState(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const q = query(collection(db, "Blogs"), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+        const blogList = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setBlogs(blogList);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   const handleEdit = (carId) => {
     navigate(`/dashboard/edit-car/${carId}`);
@@ -26,6 +53,22 @@ const Dashboard = () => {
   };
   const handleAddBlog = (carId) => {
     navigate(`/dashboard/add-blog`);
+  };
+  const handleEditBlog = (blogId) => {
+    navigate(`/dashboard/edit-blog/${blogId}`);
+  };
+
+  const handleDeleteBlog = async () => {
+    try {
+      await deleteDoc(doc(db, "Blogs", confirmDeleteBlogId));
+      setBlogs((prev) => prev.filter((b) => b.id !== confirmDeleteBlogId));
+      alert("Blog deleted successfully.");
+    } catch (error) {
+      console.error("Failed to delete blog:", error);
+      alert("Failed to delete blog.");
+    } finally {
+      setConfirmDeleteBlogId(null);
+    }
   };
 
   useEffect(() => {
@@ -154,30 +197,32 @@ const Dashboard = () => {
             <button onClick={handleAddCar}>*Add New</button>
           </div>
           <div className={Style.cards}>
-            {cars.map((car) => (
-              <div className={Style.card} key={car.id}>
-                <img src={car.imageUrl} alt={car.Model} />
-                <div className={Style.text}>
-                  <p>
-                    {car.Name} {car.Model} {car.Production_Year}
-                  </p>
+            {cars.length === 0 && <h1>No cars Found!</h1>}
+            {cars &&
+              cars.map((car) => (
+                <div className={Style.card} key={car.id}>
+                  <img src={car.imageUrl} alt={car.Model} />
+                  <div className={Style.text}>
+                    <p>
+                      {car.Name} {car.Model} {car.Production_Year}
+                    </p>
+                  </div>
+                  <div className={Style.settings}>
+                    <button
+                      className={Style.edit}
+                      onClick={() => handleEdit(car.id)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className={Style.delete}
+                      onClick={() => setConfirmDeleteId(car.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-                <div className={Style.settings}>
-                  <button
-                    className={Style.edit}
-                    onClick={() => handleEdit(car.id)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className={Style.delete}
-                    onClick={() => setConfirmDeleteId(car.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
           {confirmDeleteId && (
             <div className={Style.modalOverlay}>
@@ -243,13 +288,66 @@ const Dashboard = () => {
             <button onClick={handleAddBlog}>*Add New</button>
           </div>
           <div className={Style.cards}>
-            <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />
-            <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />
-            <img src=".\Icons\worker.png" alt="Under Construction" />
-            <img src=".\Icons\work-in-progress.png" alt="Under Construction" />
-            <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />
-            <img src=".\Icons\traffic-barrier.png" alt="Under Construction" />
+            {blogs.length === 0 && <h1>No Blogs Found!</h1>}
+            {blogs &&
+              blogs.map((blog) => (
+                <div className={Style.card} key={blog.id}>
+                  <div className={Style.image}>
+                    <img
+                      src={blog.mainImage || "/Icons/blog.jpg"}
+                      alt={blog.title}
+                    />
+                  </div>
+                  <div className={Style.text}>
+                    <div className={Style.details}>
+                      <p className={Style.blogTitle}>{blog.title}</p>
+                      <p className={Style.author}>{blog.author}</p>
+                      <p className={Style.date}>
+                        {blog.createdAt?.toDate().toLocaleDateString("de-DE", {
+                          day: "2-digit",
+                          month: "2-digit",
+                          year: "numeric",
+                        })}
+                      </p>
+                      <p className={Style.summary}>{blog.summary}</p>
+                    </div>
+                    <div className={Style.settings}>
+                      <button
+                        className={Style.edit}
+                        onClick={() => handleEditBlog(blog.id)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className={Style.delete}
+                        onClick={() => setConfirmDeleteBlogId(blog.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
+
+          {confirmDeleteBlogId && (
+            <div className={Style.modalOverlay}>
+              <div className={Style.modal}>
+                <p>Are you sure you want to delete this blog post?</p>
+                <div className={Style.modalButtons}>
+                  <button className={Style.yes} onClick={handleDeleteBlog}>
+                    Yes
+                  </button>
+                  <button
+                    className={Style.no}
+                    onClick={() => setConfirmDeleteBlogId(null)}
+                  >
+                    No
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

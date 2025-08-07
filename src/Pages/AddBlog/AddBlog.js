@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -8,6 +9,7 @@ import { storage, db } from "../../firebase";
 import Style from "../../styles/AddBlog/AddBlog.module.css";
 
 const AddBlog = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [summary, setSummary] = useState("");
@@ -136,13 +138,13 @@ const AddBlog = () => {
       });
 
       alert("✅ Blog post added!");
-
       // Reset form
       setTitle("");
       setAuthor("");
       setSummary("");
       setContent("");
       setMainImageFile(null);
+      navigate("/dashboard");
     } catch (err) {
       console.error("Firestore Error:", err);
       alert("❌ Failed to save blog post.");

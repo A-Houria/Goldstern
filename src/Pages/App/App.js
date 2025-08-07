@@ -24,6 +24,7 @@ import CarEdit from "../CarEdit/CarEdit";
 import AddCar from "../AddCar/AddCar";
 import AddBlog from "../AddBlog/AddBlog";
 import BlogDetails from "../BlogDetails/BlogDetails";
+import BlogEdit from "../BlogEdit/BlogEdit";
 
 //Router
 const router = createBrowserRouter(
@@ -52,6 +53,14 @@ const router = createBrowserRouter(
         element={
           <ProtectedRoute>
             <CarEdit />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/edit-blog/:blogId"
+        element={
+          <ProtectedRoute>
+            <BlogEdit />
           </ProtectedRoute>
         }
       />

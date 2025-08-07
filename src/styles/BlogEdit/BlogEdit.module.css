@@ -1,0 +1,399 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loadingContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.loadingContainer img {
+  width: 100px;
+  animation: rotate 0.5s linear infinite;
+}
+
+.editBlog .cont {
+  margin: auto;
+  margin-top: 100px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.editBlog .cont .submitBtn {
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.1s;
+}
+.editBlog .cont .submitBtn:hover {
+  background-color: rgb(83, 252, 83);
+}
+.editBlog .cont .mainTitle {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.editBlog .cont .imagesSection {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 500px) {
+  .editBlog .cont .imagesSection {
+    padding: 15px;
+  }
+}
+.editBlog .cont .imagesSection .imagesTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 420px) {
+  .editBlog .cont .imagesSection .imagesTitle {
+    flex-direction: column;
+  }
+}
+.editBlog .cont .imagesSection .imagesTitle .addImage {
+  background-color: transparent;
+  cursor: pointer;
+  justify-self: flex-end;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  outline: none;
+  border: none;
+  transition: all ease-in-out 0.05s;
+}
+.editBlog .cont .imagesSection .imagesTitle .addImage:hover {
+  color: lightgreen;
+  text-decoration: underline;
+  transform: scale(1.03);
+}
+.editBlog .cont .imagesSection .imagesTitle h1 {
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .editBlog .cont .imagesSection .imagesTitle h1 {
+    margin-bottom: 20px;
+  }
+}
+.editBlog .cont .imagesSection .rules {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  margin-top: 20px;
+}
+@media screen and (max-width: 950px) {
+  .editBlog .cont .imagesSection .rules {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.editBlog .cont .imagesSection .rules p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: rgb(255, 97, 97);
+  margin: 0px 5px;
+}
+@media screen and (max-width: 950px) {
+  .editBlog .cont .imagesSection .rules p {
+    margin: 5px 0px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .editBlog .cont .imagesSection .rules p {
+    font-size: 10px;
+    line-height: 2;
+  }
+}
+.editBlog .cont .imagesSection .imagesCards {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+.editBlog .cont .imagesSection .imagesCards .imageCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1100px) {
+  .editBlog .cont .imagesSection .imagesCards .imageCard {
+    min-width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .editBlog .cont .imagesSection .imagesCards .imageCard {
+    width: 100%;
+  }
+}
+.editBlog .cont .imagesSection .imagesCards .imageCard img {
+  max-width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.editBlog .cont .imagesSection .imagesCards .imageCard .imageActions {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (max-width: 500px) {
+  .editBlog .cont .imagesSection .imagesCards .imageCard .imageActions {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+}
+.editBlog .cont .imagesSection .imagesCards .imageCard .imageActions button {
+  min-width: 120px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .editBlog .cont .imagesSection .imagesCards .imageCard .imageActions button {
+    min-width: 100%;
+  }
+}
+.editBlog .cont .imagesSection .imagesCards .imageCard .imageActions button:hover.delete {
+  background-color: red;
+}
+.editBlog .cont .imagesSection .imagesCards .imageCard .imageActions button:hover.main {
+  background-color: lightgreen;
+}
+.editBlog .cont .stringSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 700px) {
+  .editBlog .cont .stringSection {
+    flex-direction: column;
+  }
+}
+.editBlog .cont .stringSection.contentSection {
+  flex-direction: column;
+}
+@media screen and (max-width: 700px) {
+  .editBlog .cont .stringSection.contentSection {
+    padding: 20px 10px;
+  }
+}
+.editBlog .cont .stringSection input {
+  min-height: 40px;
+  max-width: 350px;
+  min-width: 350px;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 700px) {
+  .editBlog .cont .stringSection input {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+.editBlog .cont .stringSection .quill {
+  background: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 90%;
+}
+.editBlog .cont .stringSection .ql-editor {
+  min-height: 300px;
+}
+.editBlog .cont .stringSection .ql-editor p {
+  max-width: 100%;
+}
+.editBlog .cont .stringSection h1 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+.editBlog .cont .boolSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.editBlog .cont .boolSection h1 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+.editBlog .cont .boolSection input {
+  margin-left: 20px;
+  width: 20px;
+  aspect-ratio: 1/1;
+}
+.editBlog .cont .arraySection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.editBlog .cont .arraySection .arrayBtn {
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.1s;
+}
+.editBlog .cont .arraySection .arrayBtn:hover {
+  background-color: rgb(83, 252, 83);
+}
+.editBlog .cont .arraySection .arrayItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 550px) {
+  .editBlog .cont .arraySection .arrayItem {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+.editBlog .cont .arraySection .arrayItem input {
+  min-height: 40px;
+  max-width: 350px;
+  min-width: 350px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 420px) {
+  .editBlog .cont .arraySection .arrayItem input {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+}
+.editBlog .cont .arraySection .arrayItem button {
+  margin-left: 20px;
+  cursor: pointer;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.1s;
+}
+@media screen and (max-width: 700px) {
+  .editBlog .cont .arraySection .arrayItem button {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+.editBlog .cont .arraySection .arrayItem button:hover {
+  background-color: red;
+}
+@media screen and (max-width: 420px) {
+  .editBlog .cont .stringSection input,
+  .editBlog .cont .arraySection.arrayItem input {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+}/*# sourceMappingURL=BlogEdit.module.css.map */
