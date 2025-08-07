@@ -30,6 +30,13 @@ const Dashboard = () => {
   const [carsLoading, setCarsLoading] = useState(true);
   const [blogsLoading, setBlogsLoading] = useState(true);
   const [heroLoading, setHeroLoading] = useState(true);
+  const [pageLoading, setPageLoading] = useState(true);
+
+  useEffect(() => {
+    if (!carsLoading && !blogsLoading && !heroLoading) {
+      setPageLoading(false);
+    }
+  }, [carsLoading, blogsLoading, heroLoading]);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -167,6 +174,13 @@ const Dashboard = () => {
       }
     };
   };
+  if (pageLoading) {
+    return (
+      <div className={Style.loadingContainer}>
+        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
+      </div>
+    );
+  }
 
   return (
     <div className={Style.dashboard}>
@@ -196,19 +210,13 @@ const Dashboard = () => {
               <p>*Image must have 16/9 ratio,</p>
               <p>*Image must have a 1200px maximum width)</p>
             </div>
-            {heroLoading ? (
-              <div className={Style.loadingContainer}>
-                <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-              </div>
-            ) : (
-              heroImgUrl && (
-                <img
-                  loading="lazy"
-                  src={heroImgUrl}
-                  alt="hero"
-                  className={Style.hero}
-                />
-              )
+            {heroImgUrl && (
+              <img
+                loading="lazy"
+                src={heroImgUrl}
+                alt="hero"
+                className={Style.hero}
+              />
             )}
           </div>
         </div>
@@ -220,11 +228,7 @@ const Dashboard = () => {
             <button onClick={handleAddCar}>*Add New</button>
           </div>
           <div className={Style.cards}>
-            {carsLoading ? (
-              <div className={Style.loadingContainer}>
-                <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-              </div>
-            ) : cars.length === 0 ? (
+            {cars.length === 0 ? (
               <h1>No cars Found!</h1>
             ) : (
               cars.map((car) => (
@@ -316,11 +320,7 @@ const Dashboard = () => {
             <button onClick={handleAddBlog}>*Add New</button>
           </div>
           <div className={Style.cards}>
-            {blogsLoading ? (
-              <div className={Style.loadingContainer}>
-                <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-              </div>
-            ) : blogs.length === 0 ? (
+            {blogs.length === 0 ? (
               <h1>No Blogs Found!</h1>
             ) : (
               blogs.map((blog) => (
