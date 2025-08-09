@@ -28,6 +28,12 @@ const Layout = () => {
   return (
     <div className={Style.layout}>
       <div className={`${Style.nav} ${isSticky ? Style.sticky : ""}`}>
+        <div className={Style.lang}>
+          <p className={Style.langSelect}>
+            <img src="./Icons/english.webp" alt="" />
+            En
+          </p>
+        </div>
         <div className={Style.cont}>
           <div className={Style.burgerCont}>
             <Link to="/">
