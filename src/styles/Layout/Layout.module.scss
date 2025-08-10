@@ -44,32 +44,6 @@ a {
     display: flex;
     flex-direction: column;
 
-    .lang {
-      width: 100%;
-      padding: 0px 4%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-end;
-      @media screen and (max-width: 1150px) {
-        padding: 0px 25px;
-      }
-
-      .langSelect {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-size: 11px;
-        font-weight: 400;
-        letter-spacing: 2px;
-        cursor: pointer;
-        img {
-          width: 15px;
-          margin-right: 4px;
-        }
-      }
-    }
-
     &.sticky {
       position: fixed;
       top: 3%;
@@ -136,6 +110,32 @@ a {
         img {
           width: 50px;
         }
+        .lang {
+          width: 100%;
+          padding: 0px 4%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+
+          .langSelect {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            cursor: pointer;
+            img {
+              width: 15px;
+              margin-right: 4px;
+            }
+          }
+          @media screen and (max-width: 1150px) {
+            padding: 0px 25px;
+          }
+        }
+
         .burger {
           display: none;
           flex-direction: column;
