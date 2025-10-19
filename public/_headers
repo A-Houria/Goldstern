@@ -4,4 +4,9 @@
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://*.firebaseapp.com https://*.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:;
+  Content-Security-Policy: 
+    default-src 'self';
+    script-src 'self' https://*.firebaseapp.com https://*.googleapis.com https://apis.google.com;
+    connect-src 'self' https://*.firebaseio.com https://*.firebasestorage.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://*.googleapis.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' https: data:;
