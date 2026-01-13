@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 const Inventory = () => {
   const [cars, setCars] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("");
@@ -44,8 +43,6 @@ const Inventory = () => {
         setFilteredCars(carsWithImages);
       } catch (err) {
         setError(err.message);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -69,13 +66,6 @@ const Inventory = () => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
   };
-
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-      </div>
-    );
 
   if (error)
     return (

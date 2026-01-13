@@ -6,7 +6,6 @@ function Tracking() {
   const SHEET_URL =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrcxZN4BaGXZ14SiTGu9QKAvmquwgfOUdzFl5GZ3ayaOSPxYMdQMroXp6QgeWl7E4jPeYZXEi4mY-s/pub?output=csv";
   const [orderData, setOrderData] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [vinInput, setVinInput] = useState("");
   const [searchedVin, setSearchedVin] = useState("");
@@ -21,8 +20,6 @@ function Tracking() {
         setOrderData(parsedData);
       } catch (err) {
         setError(err.message);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -124,21 +121,10 @@ function Tracking() {
             className={Style.searchField}
           />
 
-          <button
-            onClick={handleTrack}
-            className={Style.searchButton}
-            disabled={loading}
-          >
-            {loading ? "Loading Data..." : "Track"}
-          </button>
+          <button onClick={handleTrack} className={Style.searchButton}></button>
         </div>
       </div>
 
-      {loading && (
-        <div className={`${Style.statusMessage} ${Style.loading}`}>
-          Loading data...
-        </div>
-      )}
       {error && (
         <div className={`${Style.statusMessage} ${Style.error}`}>
           Error: {error}
