@@ -11,7 +11,6 @@ import "aos/dist/aos.css";
 
 const Home = () => {
   const [featuredCars, setFeaturedCars] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [reviews, setReviews] = useState([]);
@@ -109,20 +108,11 @@ const Home = () => {
         setFeaturedCars(featuredCarsWithImages);
       } catch (err) {
         setError(err.message);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchFeaturedCars();
   }, []);
-
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-      </div>
-    );
 
   if (error)
     return (
