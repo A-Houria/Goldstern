@@ -6,7 +6,6 @@ import Style from "../../styles/Blogs/Blogs.module.css";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -21,8 +20,6 @@ const Blogs = () => {
         setBlogs(blogList);
       } catch (error) {
         setError("Failed to fetch blogs.");
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -46,13 +43,6 @@ const Blogs = () => {
 
     fetchBlogs();
   }, []);
-
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-      </div>
-    );
 
   if (error)
     return (

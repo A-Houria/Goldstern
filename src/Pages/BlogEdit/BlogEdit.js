@@ -16,7 +16,6 @@ const EditBlog = () => {
   const [blog, setBlog] = useState(null);
   const [formData, setFormData] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
-  const [loading, setLoading] = useState(true);
   const quillRef = useRef();
 
   const handleQuillImageUpload = useCallback(() => {
@@ -105,8 +104,6 @@ const EditBlog = () => {
       } catch (error) {
         console.error("Error fetching blog:", error);
         alert("Failed to load blog.");
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -171,13 +168,6 @@ const EditBlog = () => {
       alert("Failed to update blog.");
     }
   };
-
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="loading" />
-      </div>
-    );
 
   if (!blog || !formData) return <p>Blog not found.</p>;
 

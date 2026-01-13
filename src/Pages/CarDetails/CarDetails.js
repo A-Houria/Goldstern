@@ -15,7 +15,6 @@ const CarDetails = () => {
   const [status, setStatus] = useState("");
   const { id } = useParams();
   const [car, setCar] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [arrowClicked, setArrowClicked] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -168,20 +167,11 @@ const CarDetails = () => {
         }
       } catch (err) {
         setError(err.message);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchCarDetails();
   }, [id]);
-
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-      </div>
-    );
 
   if (error)
     return (

@@ -8,7 +8,6 @@ import { db } from "../../firebase";
 const BlogDetails = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -23,15 +22,12 @@ const BlogDetails = () => {
         }
       } catch (err) {
         console.error("Failed to fetch blog details:", err);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchBlog();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
   if (!blog) return <p>Blog not found.</p>;
 
   return (

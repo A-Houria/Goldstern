@@ -10,7 +10,6 @@ const EditCar = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [car, setCar] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
 
@@ -111,8 +110,6 @@ const EditCar = () => {
         }
       } catch (error) {
         console.error("Error fetching car:", error);
-      } finally {
-        setLoading(false);
       }
     };
     fetchCar();
@@ -158,13 +155,6 @@ const EditCar = () => {
       alert("Failed to update car.");
     }
   };
-
-  if (loading)
-    return (
-      <div className={Style.loadingContainer}>
-        <img loading="lazy" src="/Icons/Logo-black.webp" alt="" />
-      </div>
-    );
 
   if (!car || !formData) return <p>Car not found.</p>;
 
