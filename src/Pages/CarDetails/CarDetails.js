@@ -317,7 +317,7 @@ const CarDetails = () => {
           </div>
         )}
 
-        {car.Description && (
+        {car?.Description && (
           <div className={Style.description} data-aos="fade-up">
             <h1>Description</h1>
             <p>{car.Description}</p>
@@ -325,7 +325,7 @@ const CarDetails = () => {
         )}
 
         <div className={Style.details}>
-          {car.Special_Features && (
+          {car?.Special_Features && (
             <div
               className={Style.specialFeatures}
               data-aos="fade-right"
@@ -350,7 +350,7 @@ const CarDetails = () => {
             </div>
           )}
 
-          {car.Engine_Specs && (
+          {car?.Engine_Specs && (
             <div
               className={Style.engineSpecs}
               data-aos="fade-right"
@@ -375,7 +375,7 @@ const CarDetails = () => {
             </div>
           )}
 
-          {car.Exterior && (
+          {car?.Exterior && (
             <div
               className={Style.exterior}
               data-aos="fade-right"
@@ -400,7 +400,7 @@ const CarDetails = () => {
             </div>
           )}
 
-          {car.Interior && (
+          {car?.Interior && (
             <div
               className={Style.interior}
               data-aos="fade-right"

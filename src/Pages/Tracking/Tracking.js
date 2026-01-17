@@ -121,7 +121,9 @@ function Tracking() {
             className={Style.searchField}
           />
 
-          <button onClick={handleTrack} className={Style.searchButton}></button>
+          <button onClick={handleTrack} className={Style.searchButton}>
+            Track
+          </button>
         </div>
       </div>
 
